@@ -1,0 +1,578 @@
+{
+  "brand": {
+    "name": "ARABTEC · أربتك",
+    "mark": "A"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "industries": "Industries",
+    "partners": "Partners & Clients",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close menu",
+    "language": "العربية"
+  },
+  "cta": {
+    "consult": "Request a consultation",
+    "discuss": "Discuss your project",
+    "explore": "Explore our solutions",
+    "contact": "Contact our team",
+    "service": "Explore service",
+    "demo": "Request a demo",
+    "useCase": "Discuss your use case",
+    "start": "Start the conversation"
+  },
+  "common": {
+    "home": "Home",
+    "service": "Service",
+    "included": "What's included",
+    "sectors": "Suitable sectors",
+    "faq": "Frequently asked questions",
+    "related": "Related services",
+    "explore": "Explore",
+    "talkAbout": "Talk to us about {{service}}"
+  },
+  "footer": {
+    "about": "ARABTEC is a Saudi technology solutions company founded in 1996, delivering integrated solutions to enterprises and government entities.",
+    "quicklinks": "Quick links",
+    "services": "Our services",
+    "contact": "Contact info",
+    "rights": "All rights reserved",
+    "location": "Riyadh, Saudi Arabia",
+    "email": "info@arabtec.example",
+    "phone": "+966 — — —",
+    "history": "1996 — {{year}}"
+  },
+  "accessibility": {
+    "skip": "Skip to main content",
+    "breadcrumb": "Breadcrumb",
+    "toggleLanguage": "Switch language to Arabic",
+    "loading": "Loading page"
+  },
+  "errors": {
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "The page you're looking for doesn't exist or has been moved.",
+    "goHome": "Go home",
+    "loadTitle": "This page didn't load",
+    "loadBody": "Something went wrong. Try again or return home.",
+    "retry": "Try again"
+  },
+  "services": [
+    {
+      "slug": "ai-agents",
+      "path": "/services/ai-agents",
+      "title": "AI Solutions & AI Agents",
+      "seoTitle": "Enterprise AI & AI Agents | ARABTEC",
+      "seoDesc": "Enterprise AI and intelligent business agents for government and enterprises: smart assistants, document search, automation, and analytics.",
+      "short": "AI solutions that help government and enterprises automate tasks, improve access to information, analyze data, and support employees and customers.",
+      "hero": "We help government entities and enterprises put AI to practical use by building intelligent solutions and business agents that access authorized information, execute tasks, and support employees and customers. AI Agents are designed around each organization's needs and integrated with internal systems, databases, documents, service portals, ERP and CRM platforms.",
+      "subServices": [
+        {
+          "title": "AI agents for customer service",
+          "desc": "Intelligent assistants that answer questions, guide users, follow up on requests and surface information from approved sources."
+        },
+        {
+          "title": "AI copilots for employees",
+          "desc": "Solutions that help employees quickly access policies, procedures, documents, forms and enterprise information."
+        },
+        {
+          "title": "Intelligent document search",
+          "desc": "Natural-language search across contracts, policies, reports, manuals and enterprise documents."
+        },
+        {
+          "title": "Process & task automation",
+          "desc": "Automating request handling, summarization, document classification, data extraction and workflow routing."
+        },
+        {
+          "title": "Data analytics & decision support",
+          "desc": "Turning operational data into analytics, reports and KPIs that support leadership and decision-making."
+        },
+        {
+          "title": "AI integration with systems",
+          "desc": "Integrating AI with ERP, CRM, portals, databases and APIs."
+        }
+      ],
+      "sectors": [
+        "Government",
+        "Banking & finance",
+        "Healthcare",
+        "Education",
+        "Oil & gas",
+        "Large enterprises"
+      ],
+      "faqs": [
+        {
+          "q": "How is an AI Agent different from a traditional chatbot?",
+          "a": "An AI Agent understands context, connects to authorized systems and documents, and can execute actions — a traditional chatbot is usually limited to scripted replies."
+        },
+        {
+          "q": "Can the agent be integrated with our existing systems?",
+          "a": "Yes — through APIs, respecting the organization's data controls and access policies."
+        }
+      ]
+    },
+    {
+      "slug": "erp-business-applications",
+      "path": "/services/erp-business-applications",
+      "title": "ERP & Enterprise Business Applications",
+      "seoTitle": "ERP & Business Applications | ARABTEC",
+      "seoDesc": "Integrated ERP solutions covering finance, HR, procurement, inventory, sales, assets and projects — with customization and integration.",
+      "short": "We help enterprises unify processes and data through integrated ERP and business applications.",
+      "hero": "We design and implement ERP and business applications to unify operations, improve financial and administrative control, and connect departments and branches into a single system — customizable and integratable via APIs.",
+      "subServices": [
+        {
+          "title": "Finance & accounting",
+          "desc": "General ledger, AP/AR, budgets and financial reporting."
+        },
+        {
+          "title": "HR & payroll",
+          "desc": "Employee management, payroll, leave, evaluation and recruitment."
+        },
+        {
+          "title": "Procurement & inventory",
+          "desc": "Purchase requests, vendors, warehouse management and stock levels."
+        },
+        {
+          "title": "Sales & CRM",
+          "desc": "Sales cycle, invoicing and customer relationship management."
+        },
+        {
+          "title": "Assets & projects",
+          "desc": "Fixed asset tracking and project & resource management."
+        },
+        {
+          "title": "Customization & integration",
+          "desc": "System customization and integration via APIs."
+        }
+      ],
+      "sectors": [
+        "Government",
+        "Education",
+        "Healthcare",
+        "Oil & gas",
+        "Banking",
+        "Enterprises"
+      ],
+      "faqs": [
+        {
+          "q": "Is the ERP customizable?",
+          "a": "Yes — the system is tailored to your processes with integration options for existing systems."
+        }
+      ]
+    },
+    {
+      "slug": "software-development",
+      "path": "/services/software-development",
+      "title": "Software Development & System Integration",
+      "seoTitle": "Software Development & System Integration | ARABTEC",
+      "seoDesc": "Enterprise systems, web/mobile/desktop apps, digital portals and API integration.",
+      "short": "We design and build custom software — enterprise systems, web portals, and mobile & desktop applications.",
+      "hero": "We design and build custom software aligned with your organization's processes — enterprise systems, web apps, iOS/Android, desktop applications, and API-based system integration.",
+      "subServices": [
+        {
+          "title": "Custom enterprise systems",
+          "desc": "Systems tailored to your organization's processes and business rules."
+        },
+        {
+          "title": "Web portals & sites",
+          "desc": "Service portals, corporate sites and internal platforms."
+        },
+        {
+          "title": "iOS & Android apps",
+          "desc": "Apps for employees or customers."
+        },
+        {
+          "title": "Desktop applications",
+          "desc": "Specialized operational desktop applications."
+        },
+        {
+          "title": "System integration & APIs",
+          "desc": "Integrating internal and external systems via secure APIs."
+        },
+        {
+          "title": "AI-enabled applications",
+          "desc": "Embedding AI capabilities inside systems and applications."
+        }
+      ],
+      "sectors": [
+        "Government",
+        "Education",
+        "Healthcare",
+        "Banking",
+        "Oil & gas",
+        "Enterprises"
+      ],
+      "faqs": [
+        {
+          "q": "Do you build custom mobile apps?",
+          "a": "Yes — iOS and Android, tailored to your requirements."
+        }
+      ]
+    },
+    {
+      "slug": "cloud-infrastructure",
+      "path": "/services/cloud-infrastructure",
+      "title": "Cloud & IT Infrastructure",
+      "seoTitle": "Cloud & IT Infrastructure | ARABTEC",
+      "seoDesc": "Servers, storage, cloud solutions, backup, business continuity and workplace enablement.",
+      "short": "We plan and implement resilient technology environments that support growth and operational stability.",
+      "hero": "We plan and implement flexible technology environments including servers, storage, cloud, backup, workplace setup, licensing and business continuity.",
+      "subServices": [
+        {
+          "title": "Servers & storage",
+          "desc": "Design, supply and operation of enterprise servers and storage systems."
+        },
+        {
+          "title": "Cloud solutions",
+          "desc": "Hosting, cloud migration and hybrid environments."
+        },
+        {
+          "title": "Backup & disaster recovery",
+          "desc": "Data protection and business continuity."
+        },
+        {
+          "title": "Workplace enablement",
+          "desc": "Devices, printers, OS and enterprise software."
+        },
+        {
+          "title": "Licensing",
+          "desc": "Enterprise software licensing supply and management."
+        },
+        {
+          "title": "Support & maintenance",
+          "desc": "Ongoing operational support for infrastructure."
+        }
+      ],
+      "sectors": [
+        "Government",
+        "Education",
+        "Oil & gas",
+        "Healthcare",
+        "Banking",
+        "Enterprises"
+      ],
+      "faqs": [
+        {
+          "q": "Do you support cloud migration?",
+          "a": "Yes — public, private and hybrid cloud based on your requirements."
+        }
+      ]
+    },
+    {
+      "slug": "network-connectivity",
+      "path": "/services/network-connectivity",
+      "title": "Networks, Connectivity & Multi-site Linking",
+      "seoTitle": "Networks & Connectivity | ARABTEC",
+      "seoDesc": "Design, implementation and management of enterprise networks, fiber, wireless, structured cabling and VoIP.",
+      "short": "We design, implement and operate enterprise networks and multi-site linking.",
+      "hero": "We deliver enterprise network design, implementation and management, multi-site linking, fiber optics, wireless, structured cabling, VoIP and multi-vendor connectivity — with experience across LAN, WAN, Fiber, WiMax, VSAT and Point-to-Point.",
+      "subServices": [
+        {
+          "title": "LAN & WAN networks",
+          "desc": "Design and implementation of stable, secure enterprise networks."
+        },
+        {
+          "title": "Multi-site linking",
+          "desc": "Branch linking via fiber, VSAT, Point-to-Point and WiMax."
+        },
+        {
+          "title": "Wireless networks",
+          "desc": "Wireless coverage for offices and facilities."
+        },
+        {
+          "title": "Structured cabling",
+          "desc": "Structured cabling design and implementation."
+        },
+        {
+          "title": "VoIP & unified comms",
+          "desc": "Unified communications inside the organization."
+        },
+        {
+          "title": "Operations & maintenance",
+          "desc": "Network operations, monitoring and maintenance."
+        }
+      ],
+      "sectors": [
+        "Government",
+        "Oil & gas",
+        "Education",
+        "Healthcare",
+        "Banking",
+        "Enterprises"
+      ],
+      "faqs": [
+        {
+          "q": "Do you support multi-site branch linking?",
+          "a": "Yes — via fiber, VSAT and Point-to-Point technologies."
+        }
+      ]
+    },
+    {
+      "slug": "surveillance-access-control",
+      "path": "/services/surveillance-access-control",
+      "title": "Surveillance, Attendance & Access Control",
+      "seoTitle": "Surveillance, Attendance & Access Control | ARABTEC",
+      "seoDesc": "Video surveillance, attendance logging, biometrics, face recognition and access control.",
+      "short": "Smart security solutions: cameras, attendance, biometrics and access control.",
+      "hero": "We provide video surveillance, attendance systems, biometrics and face recognition, RFID and access control — with installation, integration, operation and maintenance.",
+      "subServices": [
+        {
+          "title": "CCTV surveillance",
+          "desc": "Design and installation of video surveillance systems."
+        },
+        {
+          "title": "Attendance systems",
+          "desc": "Attendance logging via biometrics, face or cards."
+        },
+        {
+          "title": "Face & palm recognition",
+          "desc": "Advanced biometric recognition."
+        },
+        {
+          "title": "Access control",
+          "desc": "Managing access permissions to facilities and offices."
+        },
+        {
+          "title": "RFID cards",
+          "desc": "Identification and smart card solutions."
+        },
+        {
+          "title": "Integration & maintenance",
+          "desc": "Integration with enterprise systems and periodic maintenance."
+        }
+      ],
+      "sectors": [
+        "Government",
+        "Education",
+        "Healthcare",
+        "Oil & gas",
+        "Banking",
+        "Enterprises"
+      ],
+      "faqs": [
+        {
+          "q": "Can attendance be linked with HR systems?",
+          "a": "Yes — via direct integration with HR or ERP systems."
+        }
+      ]
+    }
+  ],
+  "industries": [
+    {
+      "key": "government",
+      "ar": "الجهات الحكومية",
+      "en": "Government",
+      "desc": "Digital and intelligent solutions to modernize services, automate procedures, integrate systems and improve employee and customer experience."
+    },
+    {
+      "key": "oil-gas",
+      "ar": "النفط والغاز",
+      "en": "Oil & Gas",
+      "desc": "Infrastructure, connectivity and enterprise systems for demanding multi-site operations."
+    },
+    {
+      "key": "education",
+      "ar": "التعليم",
+      "en": "Education",
+      "desc": "Networks, admin systems, attendance, infrastructure and digital platforms for educational institutions."
+    },
+    {
+      "key": "healthcare",
+      "ar": "الرعاية الصحية",
+      "en": "Healthcare",
+      "desc": "Systems and infrastructure supporting healthcare operations, data and services."
+    },
+    {
+      "key": "banking",
+      "ar": "البنوك والخدمات المالية",
+      "en": "Banking & Finance",
+      "desc": "Enterprise solutions, integrations and automation with strong privacy, access control and continuity."
+    },
+    {
+      "key": "enterprises",
+      "ar": "الشركات والمؤسسات",
+      "en": "Corporates & Enterprises",
+      "desc": "ERP, software development, cloud, networks and intelligent systems to support growth and efficiency."
+    }
+  ],
+  "pages": {
+    "about": {
+      "text1": "About us",
+      "text2": "A technology partner with extensive experience in integrated enterprise solutions",
+      "text3": "ARABTEC is a Saudi technology solutions company founded in 1996. We help organizations plan, design, implement, operate and support their technology environments through a single point of accountability. Our expertise evolved from networks and infrastructure to include software development, business applications, automation, cloud and AI.",
+      "text4": "ARABTEC team designing enterprise technology solutions",
+      "text5": "Our vision",
+      "text6": "To be a trusted technology partner for organizations and government entities — building integrated, scalable technology environments that serve their future goals.",
+      "text7": "Our mission",
+      "text8": "Delivering practical, measurable technology solutions that connect systems, data and operations to create clear operational value.",
+      "text9": "What distinguishes ARABTEC?",
+      "text10": "Our values",
+      "text11": "Let's build your technology project together",
+      "text12": "Contact ARABTEC"
+    },
+    "contact": {
+      "text1": "Please fill required fields and accept the privacy policy.",
+      "text2": "Invalid email.",
+      "text3": "Contact us",
+      "text4": "Contact us to discuss your organization's technology needs",
+      "text5": "Share your project details or technology challenges, and the ARABTEC team will reach out to discuss scope and propose a suitable solution.",
+      "text6": "Choose your request type",
+      "text7": "Main contact form",
+      "text8": "Full name *",
+      "text9": "Organization *",
+      "text10": "Job title",
+      "text11": "Work email *",
+      "text12": "Phone *",
+      "text13": "Country",
+      "text14": "Saudi Arabia",
+      "text15": "City",
+      "text16": "Sector",
+      "text17": "Request type",
+      "text18": "Required service",
+      "text19": "Project title",
+      "text20": "Describe your need or challenge *",
+      "text21": "Number of employees",
+      "text22": "Number of sites/branches",
+      "text23": "Expected start timeline",
+      "text24": "As soon as possible",
+      "text25": "1–3 months",
+      "text26": "3–6 months",
+      "text27": "6+ months",
+      "text28": "Preferred contact method",
+      "text29": "Email",
+      "text30": "Phone",
+      "text31": "Attachment (PDF/DOC/JPG/PNG — up to 10MB)",
+      "text32": "I accept the privacy policy and consent to my data being processed.",
+      "text33": "Sending...",
+      "text34": "Send request",
+      "text35": "Official contact details",
+      "text36": "Riyadh, Saudi Arabia",
+      "text37": "Sun–Thu, 8:30–17:00",
+      "text38": "What happens after you submit?",
+      "text39": "Request received and confirmed.",
+      "text40": "Initial review by ARABTEC team.",
+      "text41": "Contact within two business days.",
+      "text42": "Meeting to discuss scope.",
+      "text43": "Proposal or work plan.",
+      "text44": "Contact FAQs"
+    },
+    "index": {
+      "text1": "Saudi technology solutions company delivering integrated services to enterprises and government entities.",
+      "text2": "Since 1996",
+      "text3": "Integrated technology solutions that drive your organization's transformation",
+      "text4": "Since 1996, ARABTEC Saudi has delivered integrated technology solutions that help government entities, institutions and companies grow, raise operational efficiency, and connect their systems and data in a more flexible and sustainable technology environment.",
+      "text5": "Explore our solutions",
+      "text6": "Discuss your project",
+      "text7": "ARABTEC integrated technology solutions for enterprises and government",
+      "text8": "About us",
+      "text9": "Deep technology expertise, aligned with the future of business",
+      "text10": "ARABTEC is a Saudi technology solutions company founded in 1996. We help organizations plan, design, implement, operate and support their technology environments through a single point of accountability.",
+      "text11": "Our expertise evolved from networks, connectivity, infrastructure, surveillance and attendance systems, to include software development, business applications, automation, cloud and modern AI solutions.",
+      "text12": "Learn about ARABTEC",
+      "text13": "ARABTEC team planning enterprise technology solutions",
+      "text14": "Our services",
+      "text15": "Integrated solutions from strategy to execution and operations",
+      "text16": "A connected set of technology services that help organizations modernize operations, evolve their systems, improve connectivity across departments and sites, and leverage data and AI.",
+      "text17": "Explore service",
+      "text18": "Why ARABTEC",
+      "text19": "Why organizations choose ARABTEC as a technology partner",
+      "text20": "Industries we serve",
+      "text21": "Technology expertise for vital sectors",
+      "text22": "Priorities differ by sector, so ARABTEC tailors solutions to your operations, data sensitivity, user scale, integration needs and continuity requirements.",
+      "text23": "Explore all industries",
+      "text24": "Our methodology",
+      "text25": "A clear methodology from need to executable solution",
+      "text26": "Planning a new technology project or transformation?",
+      "text27": "Talk to the ARABTEC team about your needs and the right solutions for your organization.",
+      "text28": "Request a consultation",
+      "text29": "Contact our team",
+      "text30": "Frequently asked questions"
+    },
+    "industries": {
+      "text1": "Industries",
+      "text2": "Integrated technology solutions for government, vital sectors and enterprises",
+      "text3": "Priorities differ by sector — ARABTEC tailors solutions to your operations, data sensitivity, user scale and integration needs.",
+      "text4": "Discuss your sector",
+      "text5": "Let's design a solution for your sector",
+      "text6": "Start the conversation"
+    },
+    "partners-clients": {
+      "text1": "Partners & clients",
+      "text2": "Partners and clients supporting ARABTEC's journey in enterprise technology",
+      "text3": "ARABTEC has delivered technology services and solutions to organizations across government, industrial, educational and commercial sectors — leveraging relationships with global technology vendors to provide the right systems, hardware and services for each project.",
+      "text4": "Clients we have served",
+      "text5": "Only authorized client logos are displayed here. Contact the marketing team to update this list.",
+      "text6": "Client logo",
+      "text7": "Industries we have experience in",
+      "text8": "Technology partners",
+      "text9": "Partner logos are only published with verified, active relationships. We use precise descriptions such as 'Authorized distributor', 'Technology provider', or 'We work with'.",
+      "text10": "How we pick the right technology",
+      "text11": "Our collaboration model",
+      "text12": "Interested in becoming an ARABTEC technology partner?",
+      "text13": "Submit partnership request"
+    },
+    "services_$slug": {
+      "text1": "Service",
+      "text2": "Request a demo",
+      "text3": "Discuss your use case",
+      "text4": "What's included",
+      "text5": "Suitable sectors",
+      "text6": "Frequently asked questions",
+      "text7": "Related services",
+      "text8": "Explore",
+      "text9": "Contact ARABTEC"
+    },
+    "services_index": {
+      "text1": "Our services",
+      "text2": "Integrated technology solutions for organizations and government",
+      "text3": "A connected portfolio of technology services helping organizations and government entities evolve their systems, automate operations, improve connectivity across departments and sites, and leverage modern data and AI capabilities.",
+      "text4": "Request a consultation",
+      "text5": "Discuss your needs",
+      "text6": "One system covering your enterprise technology needs",
+      "text7": "Enterprise systems are not islands. Software needs stable infrastructure, AI needs integrated data and systems, and ERP needs development, integration and secure connectivity across departments and branches.",
+      "text8": "Explore",
+      "text9": "Our service methodology",
+      "text10": "Service FAQs"
+    },
+    "thank-you_$type": {
+      "text1": "Thank you for contacting ARABTEC. Our team will review your request and reach out within two business days.",
+      "text2": "Back home",
+      "text3": "Explore services",
+      "text4": "Request type",
+      "text5": "Next steps",
+      "text6": "You will receive an email confirmation with a request reference number.",
+      "text7": "A dedicated consultant will contact you to schedule a convenient time.",
+      "text8": "You can follow up on your request anytime by replying to the confirmation email.",
+      "default": {
+        "title": "Your request was received",
+        "message": "Thank you for contacting ARABTEC. Our team will review your request and reach out within two business days."
+      },
+      "consult": {
+        "title": "Technical consultation request received",
+        "message": "Thank you for your trust. Our technical consultants will review your requirements and contact you within two business days to schedule your consultation session."
+      },
+      "rfp": {
+        "title": "Technical proposal request received",
+        "message": "We have received your requirements and our solutions team has started preparing the technical and commercial proposal. We will reach out within 3–5 business days to present it or request further clarifications."
+      },
+      "demo": {
+        "title": "Demo request received",
+        "message": "We appreciate your interest. Our team will contact you within two business days to schedule a live demo and prepare an environment tailored to your needs."
+      },
+      "visit": {
+        "title": "Site visit request received",
+        "message": "We have received your site visit request. Our operations team will coordinate with you within two business days to schedule the visit and assign the right field engineers."
+      },
+      "partner": {
+        "title": "Partnership request received",
+        "message": "Thank you for your interest in partnering with ARABTEC. Our business development team will review your profile and contact you within three business days to discuss collaboration opportunities."
+      },
+      "support": {
+        "title": "Support request received",
+        "message": "Your support request for your existing project has been logged. A dedicated support engineer will contact you within one business day to address it."
+      }
+    }
+  }
+}
