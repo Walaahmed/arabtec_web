@@ -40,10 +40,10 @@
     "services": "Our services",
     "contact": "Contact info",
     "rights": "All rights reserved",
-    "location": "Riyadh, Saudi Arabia",
-    "email": "info@arabtec.example",
-    "phone": "+966 — — —",
-    "history": "1996 — {{year}}"
+   "location": "Al khobar mall, Al hizam Al thahabi",
+  "email": "contact@arabtec.com",
+    "phone": "+966 53 289 1000",
+     "history": "1996 — {{year}}"
   },
   "accessibility": {
     "skip": "Skip to main content",

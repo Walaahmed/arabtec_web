@@ -39,7 +39,10 @@ import heroImg from "@/assets/arabtec-enterprise-technology-team.jpg";
 import aboutImg from "@/assets/arabtec-technology-experience.webp";
 import industriesImg from "@/assets/arabtec-industries-served.jpg";
 import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
-
+import aramcoLogo from "@/assets/logos/clients/aramco.png";
+import moeLogo from "@/assets/logos/clients/ministry-of-education.png";
+import sabicLogo from "@/assets/logos/clients/sabic.jpg";
+import otherLogo from "@/assets/logos/clients/client-4.png";
 const expertiseIcons = [Cpu, Database, Code2, Cloud, Network, ShieldCheck];
 
 export default function AboutPage() {
@@ -563,23 +566,44 @@ export default function AboutPage() {
               : "ARABTEC has delivered technology services and solutions to organizations across government, industrial, educational and commercial sectors — helping clients build networks and infrastructure, implement attendance and surveillance systems, develop software and connect sites."
           }
         />
-
-        {/* شريط الشعارات — أسماء الجهات كنص (استبدلها بشعارات عند الحصول على إذن) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-          {[
-            { ar: "أرامكو السعودية", en: "Saudi Aramco" },
-            { ar: "وزارة التعليم", en: "Ministry of Education" },
-            { ar: "سابك", en: "SABIC" },
-            { ar: "جهات أخرى", en: "Other entities" },
-          ].map((c, i) => (
-            <div
-              key={i}
-              className="h-20 rounded-lg border border-border bg-card grid place-items-center text-xs text-muted-foreground text-center px-3"
-            >
-              {isAr ? c.ar : c.en}
-            </div>
-          ))}
-        </div>
+{/* شريط شعارات العملاء */}
+<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+  {[
+    {
+      logo: aramcoLogo,
+      altAr: "أرامكو السعودية",
+      altEn: "Saudi Aramco",
+    },
+    {
+      logo: moeLogo,
+      altAr: "وزارة التعليم",
+      altEn: "Ministry of Education",
+    },
+    {
+      logo: sabicLogo,
+      altAr: "سابك",
+      altEn: "SABIC",
+    },
+    {
+      logo: otherLogo,
+      altAr: "جهات أخرى",
+      altEn: "Other entities",
+    },
+  ].map((c, i) => (
+    <div
+      key={i}
+      className="h-20 rounded-lg border border-border bg-card grid place-items-center p-3 hover:shadow-md transition-shadow"
+    >
+      <img
+        src={c.logo}
+        alt={isAr ? c.altAr : c.altEn}
+        loading="lazy"
+        decoding="async"
+        className="max-h-12 max-w-full w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+      />
+    </div>
+  ))}
+</div>
 
         <div className="mt-8">
           <CTAButton to="/partners-clients" variant="outline">

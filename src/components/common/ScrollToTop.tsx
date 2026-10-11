@@ -24,13 +24,13 @@ export default function ScrollToTop() {
       onClick={scrollToTop}
       aria-label="Scroll to top"
       title="Scroll to top"
-      className={`fixed bottom-6 end-6 z-50 grid place-items-center
-        h-11 w-11 rounded-full
-        bg-[color:var(--brand-deep)] text-white
-        shadow-lg hover:shadow-xl hover:scale-105
-        transition-all duration-300
-        ${visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"}
-      `}
+     className={`fixed bottom-6 left-6 z-50 grid place-items-center
+  h-11 w-11 rounded-full
+  bg-[color:var(--brand-deep)] text-white
+  shadow-lg hover:shadow-xl hover:scale-105
+  transition-all duration-300
+  ${visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"}
+`}
     >
       <ArrowUp className="h-5 w-5" strokeWidth={2.5} />
     </button>

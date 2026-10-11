@@ -17,6 +17,7 @@ import PartnersClients from "@/pages/PartnersClients";
 import Contact from "@/pages/Contact";
 import ThankYou from "@/pages/ThankYou";
 import NotFound from "@/pages/NotFound";
+import WhatsAppButton from "@/components/common/WhatsAppButton";  // ← ضيف ده
 
 export default function App() {
   return (
@@ -48,6 +49,8 @@ export default function App() {
 
       {/* Scroll to Top Button — ظاهر في كل الصفحات */}
       <ScrollToTop />
+            <WhatsAppButton />
+
     </>
   );
 }

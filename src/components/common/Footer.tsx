@@ -70,10 +70,34 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-3">{t("footer.contact")}</h4>
           <ul className="space-y-2 text-sm">
-            <li>{t("footer.location")}</li>
-            <li>{t("footer.email")}</li>
-            <li>{t("footer.phone")}</li>
-          </ul>
+  <li>
+    <a
+      href="https://maps.app.goo.gl/4tnGNj6Zu1NCWxTKA?g_st=iw"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-[color:var(--gold)] transition"
+    >
+      Al khobar mall, Al hizam Al thahabi
+    </a>
+  </li>
+  <li>
+    <a
+      href="mailto:contact@arabtec.com"
+      className="hover:text-[color:var(--gold)] transition"
+    >
+      contact@arabtec.com
+    </a>
+  </li>
+  <li>
+    <a
+      href="tel:+966532891000"
+      dir="ltr"
+      className="hover:text-[color:var(--gold)] transition"
+    >
+      +966 53 289 1000
+    </a>
+  </li>
+</ul>
         </div>
       </div>
 

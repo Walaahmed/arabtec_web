@@ -44,6 +44,18 @@ import {
 import { Button } from "@/components/ui/button";
 
 // ============================================================
+// بيانات الاتصال الرسمية (مكان واحد للتحكم)
+// ============================================================
+const CONTACT = {
+  phone: "+966532891000",
+  phoneDisplay: "+966 53 289 1000",
+  email: "contact@arabtec.com",
+  addressAr: "الخبر مول، الحزام الذهبي",
+  addressEn: "Al khobar mall, Al hizam Al thahabi",
+  mapUrl: "https://maps.app.goo.gl/4tnGNj6Zu1NCWxTKA?g_st=iw",
+};
+
+// ============================================================
 // الصور
 // ============================================================
 import heroImg from "@/assets/enterprise-technology-consultation.webp";
@@ -293,6 +305,7 @@ const usefulInfoItems = [
   { ar: "وثيقة نطاق العمل أو RFP إن وجدت", en: "Scope of work or RFP if available" },
   { ar: "الشخص المسؤول عن المتابعة", en: "Person responsible for follow-up" },
 ];
+
 export default function ContactPage() {
   const { lang, t } = useI18n();
   const l = useL();
@@ -392,7 +405,8 @@ export default function ContactPage() {
               {
                 "@type": "ContactPoint",
                 contactType: "customer support",
-                email: "info@arabtec.example",
+                telephone: CONTACT.phone,
+                email: CONTACT.email,
                 areaServed: "SA",
               },
             ],
@@ -879,29 +893,34 @@ export default function ContactPage() {
             <Phone className="h-5 w-5 text-[color:var(--gold)] mb-3" />
             <h3 className="font-bold mb-2">{isAr ? "الهاتف" : "Phone"}</h3>
             <a
-              href="tel:+966000000000"
+              href={`tel:${CONTACT.phone}`}
               dir="ltr"
               className="text-sm text-brand-deep hover:underline"
             >
-              +966 — — —
+              {CONTACT.phoneDisplay}
             </a>
           </Card>
           <Card>
             <Mail className="h-5 w-5 text-[color:var(--gold)] mb-3" />
             <h3 className="font-bold mb-2">{isAr ? "البريد الإلكتروني" : "Email"}</h3>
             <a
-              href="mailto:info@arabtec.example"
+              href={`mailto:${CONTACT.email}`}
               className="text-sm text-brand-deep hover:underline"
             >
-              info@arabtec.example
+              {CONTACT.email}
             </a>
           </Card>
           <Card>
             <MapPin className="h-5 w-5 text-[color:var(--gold)] mb-3" />
             <h3 className="font-bold mb-2">{isAr ? "العنوان" : "Address"}</h3>
-            <p className="text-sm text-muted-foreground">
-              {isAr ? "الرياض، المملكة العربية السعودية" : "Riyadh, Saudi Arabia"}
-            </p>
+            <a
+              href={CONTACT.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-brand-deep hover:underline"
+            >
+              {isAr ? CONTACT.addressAr : CONTACT.addressEn}
+            </a>
           </Card>
           <Card>
             <Clock className="h-5 w-5 text-[color:var(--gold)] mb-3" />
@@ -914,13 +933,13 @@ export default function ContactPage() {
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a
-            href="tel:+966000000000"
+            href={`tel:${CONTACT.phone}`}
             className="rounded-md bg-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
           >
             {isAr ? "اتصل بنا" : "Call us"}
           </a>
           <a
-            href="mailto:info@arabtec.example"
+            href={`mailto:${CONTACT.email}`}
             className="rounded-md border border-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-[color:var(--brand-deep)] hover:bg-[color:var(--brand-deep)]/5 transition"
           >
             {isAr ? "راسلنا عبر البريد الإلكتروني" : "Email us"}
@@ -937,37 +956,21 @@ export default function ContactPage() {
         />
 
         <div className="mt-6 rounded-2xl border border-border bg-card p-8 text-center">
-          {!mapLoaded ? (
-            <>
-              <p className="text-sm text-muted-foreground mb-4">
-                {isAr
-                  ? "لعرض الخريطة، اضغط على الزر أدناه."
-                  : "To view the map, click the button below."}
-              </p>
-              <Button type="button" onClick={() => setMapLoaded(true)} size="lg">
-                {isAr ? "عرض الخريطة" : "Show map"}
-              </Button>
-            </>
-          ) : (
-            <div className="aspect-video w-full bg-background rounded-lg grid place-items-center text-muted-foreground">
-              <div>
-                <MapPin className="h-8 w-8 mx-auto mb-2 text-[color:var(--gold)]" />
-                <p className="text-sm">
-                  {isAr
-                    ? "موقع مكتب أربتك الرئيسي على الخريطة"
-                    : "ARABTEC main office location on the map"}
-                </p>
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-block text-xs text-brand-deep hover:underline"
-                >
-                  {isAr ? "فتح الموقع في Google Maps" : "Open in Google Maps"}
-                </a>
-              </div>
-            </div>
-          )}
+          <MapPin className="h-8 w-8 mx-auto mb-3 text-[color:var(--gold)]" />
+          <h3 className="text-lg font-bold mb-2">
+            {isAr ? "مقر أربتك" : "ARABTEC Office"}
+          </h3>
+          <p className="text-sm text-muted-foreground mb-6">
+            {isAr ? CONTACT.addressAr : CONTACT.addressEn}
+          </p>
+          <a
+            href={CONTACT.mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md bg-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition inline-block"
+          >
+            {isAr ? "افتح الموقع في Google Maps" : "Open in Google Maps"}
+          </a>
         </div>
       </Section>
 
