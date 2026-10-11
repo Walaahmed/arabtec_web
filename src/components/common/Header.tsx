@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import { SERVICES } from "@/lib/services-data";
 import { Button } from "@/components/ui/button";
 
+// ⚠️ استبدل المسار ده بمسار اللوجو الحقيقي عندك
+import logoImg from "@/assets/arabtec-logo.jpg";
+
 export default function Header() {
   const { t, lang, setLang } = useI18n();
   const [open, setOpen] = useState(false);
@@ -31,16 +34,20 @@ export default function Header() {
           : "border-b border-border bg-background/95 shadow-sm backdrop-blur"
       }`}
     >
-      <div className="container-page flex h-16 items-center justify-between gap-4">
+      <div className="container-page flex h-20 items-center justify-between gap-4">
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2 font-extrabold text-lg text-[color:var(--brand-deep)]"
+          className="flex items-center gap-3 font-extrabold text-xl text-[color:var(--brand-deep)]"
         >
-          <span className="inline-block h-8 w-8 rounded-md bg-brand-deep text-primary-foreground grid place-items-center text-sm">
-            {t("brand.mark")}
-          </span>
-          <span>{t("brand.name")}</span>
+          <img
+            src={logoImg}
+            alt={lang === "ar" ? "أربتك" : "Arabtec"}
+            width={56}
+            height={56}
+            className="h-14 w-14 object-contain"
+          />
+          <span>{lang === "ar" ? "أربتك" : "Arabtec"}</span>
         </Link>
 
         {/* Desktop nav */}

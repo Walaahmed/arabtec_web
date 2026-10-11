@@ -42,6 +42,7 @@ import {
   Info,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { z } from "zod";
 
 // ============================================================
 // بيانات الاتصال الرسمية (مكان واحد للتحكم)
@@ -56,11 +57,160 @@ const CONTACT = {
 };
 
 // ============================================================
+// Web3Forms Access Key
+// ============================================================
+const WEB3FORMS_ACCESS_KEY = "9daac662-70db-4422-94ad-37a0a82f02e0";
+
+// ============================================================
 // الصور
 // ============================================================
 import heroImg from "@/assets/enterprise-technology-consultation.webp";
 import contactTeamImg from "@/assets/arabtec-contact-technology-team.jpg";
 import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
+
+// ============================================================
+// Zod Schemas
+// ============================================================
+
+// ✅ النموذج الرئيسي
+const mainFormSchema = z.object({
+  name: z.string().trim().min(2, "الاسم قصير جدًا"),
+  org: z.string().trim().min(2, "اسم الجهة مطلوب"),
+  title: z.string().trim().optional().or(z.literal("")),
+  email: z.string().trim().email("بريد إلكتروني غير صالح"),
+  phone: z
+    .string()
+    .trim()
+    .min(8, "رقم الهاتف قصير جدًا")
+    .regex(/^[\d\s\-+()]+$/, "رقم الهاتف يحتوي على أحرف غير مسموحة"),
+  country: z.string().optional().or(z.literal("")),
+  city: z.string().optional().or(z.literal("")),
+  sector: z.string().optional().or(z.literal("")),
+  empCount: z
+    .string()
+    .optional()
+    .or(z.literal(""))
+    .refine((v) => !v || /^\d+$/.test(v), "يجب أن يكون رقمًا صحيحًا"),
+  sites: z
+    .string()
+    .optional()
+    .or(z.literal(""))
+    .refine((v) => !v || /^\d+$/.test(v), "يجب أن يكون رقمًا صحيحًا"),
+  reqType: z.string().min(1, "نوع الطلب مطلوب"),
+  service: z.string().min(1, "الخدمة المطلوبة مطلوبة"),
+  projectTitle: z.string().optional().or(z.literal("")),
+  desc: z.string().trim().min(10, "يجب أن يكون وصف الاحتياج 10 أحرف على الأقل"),
+  hasSystem: z.string().optional().or(z.literal("")),
+  currentSystem: z.string().optional().or(z.literal("")),
+  timeline: z.string().optional().or(z.literal("")),
+  pref: z.string().optional().or(z.literal("")),
+  wantMeeting: z.string().optional(),
+  consent: z.union([z.literal("on"), z.literal("true"), z.boolean()]).refine(
+    (v) => v === "on" || v === "true" || v === true,
+    "يجب الموافقة على سياسة الخصوصية"
+  ),
+});
+
+// ✅ نموذج الاجتماع الاستشاري
+const meetingFormSchema = z.object({
+  name: z.string().trim().min(2, "الاسم قصير جدًا"),
+  org: z.string().trim().min(2, "اسم الجهة مطلوب"),
+  email: z.string().trim().email("بريد إلكتروني غير صالح"),
+  phone: z
+    .string()
+    .trim()
+    .optional()
+    .or(z.literal(""))
+    .refine(
+      (v) => !v || /^[\d\s\-+()]+$/.test(v),
+      "رقم الهاتف يحتوي على أحرف غير مسموحة"
+    ),
+  meetingType: z.string().min(1, "نوع الاجتماع مطلوب"),
+  service: z.string().min(1, "الخدمة المطلوبة مطلوبة"),
+  date: z.string().optional().or(z.literal("")),
+  time: z.string().optional().or(z.literal("")),
+  timezone: z.string().optional().or(z.literal("")),
+  duration: z.string().optional().or(z.literal("")),
+  topic: z.string().trim().min(5, "موضوع الاجتماع قصير جدًا"),
+  notes: z.string().optional().or(z.literal("")),
+  consent: z.union([z.literal("on"), z.literal("true"), z.boolean()]).refine(
+    (v) => v === "on" || v === "true" || v === true,
+    "يجب الموافقة على سياسة الخصوصية"
+  ),
+});
+
+// ✅ نموذج الشراكة
+const partnerFormSchema = z.object({
+  company: z.string().trim().min(2, "اسم الشركة مطلوب"),
+  website: z
+    .string()
+    .trim()
+    .min(1, "الموقع الإلكتروني مطلوب")
+    .refine(
+      (v) => /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/.*)?$/.test(v),
+      "رابط الموقع غير صالح"
+    ),
+  country: z.string().optional().or(z.literal("")),
+  name: z.string().trim().min(2, "اسم مسؤول التواصل مطلوب"),
+  title: z.string().optional().or(z.literal("")),
+  email: z.string().trim().email("بريد إلكتروني غير صالح"),
+  phone: z
+    .string()
+    .trim()
+    .optional()
+    .or(z.literal(""))
+    .refine(
+      (v) => !v || /^[\d\s\-+()]+$/.test(v),
+      "رقم الهاتف يحتوي على أحرف غير مسموحة"
+    ),
+  companyType: z.string().min(1, "نوع الشركة مطلوب"),
+  technology: z.string().trim().min(2, "مجال التقنية مطلوب"),
+  partnershipType: z.string().min(1, "نوع الشراكة المقترح مطلوب"),
+  solution: z.string().trim().min(10, "وصف الحل قصير جدًا"),
+  markets: z.string().optional().or(z.literal("")),
+  support: z.string().optional().or(z.literal("")),
+  consent: z.union([z.literal("on"), z.literal("true"), z.boolean()]).refine(
+    (v) => v === "on" || v === "true" || v === true,
+    "يجب الموافقة على سياسة الخصوصية"
+  ),
+});
+
+// ✅ النموذج المؤسسي الحكومي
+const govFormSchema = z.object({
+  entity: z.string().trim().min(2, "اسم الجهة مطلوب"),
+  department: z.string().optional().or(z.literal("")),
+  reference: z.string().optional().or(z.literal("")),
+  docType: z.string().optional().or(z.literal("")),
+  deadline: z.string().optional().or(z.literal("")),
+  contactName: z.string().trim().min(2, "اسم مسؤول التواصل مطلوب"),
+  officialEmail: z.string().trim().email("بريد إلكتروني غير صالح"),
+});
+
+// ============================================================
+// دالة مساعدة لاستخراج أول رسالة خطأ من Zod
+// ============================================================
+function getFirstError(error: z.ZodError): string {
+  return error.issues[0]?.message || "بيانات غير صالحة";
+}
+
+// ============================================================
+// دالة مساعدة لإرسال البيانات إلى Web3Forms
+// ============================================================
+async function sendToWeb3Forms(payload: Record<string, any>) {
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      access_key: WEB3FORMS_ACCESS_KEY,
+      from_name: "ARABTEC Website",
+      ...payload,
+    }),
+  });
+  return res.json();
+}
 
 // ============================================================
 // 1. أنواع الطلبات (6 بطاقات)
@@ -330,60 +480,310 @@ export default function ContactPage() {
   }, [queryRequest, queryService]);
 
   // ============================================================
-  // Submit Handler
+  // Submit Handler — النموذج الرئيسي
   // ============================================================
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
     setError("");
-    const fd = new FormData(e.currentTarget);
-    const name = String(fd.get("name") || "").trim();
-    const email = String(fd.get("email") || "").trim();
-    const phone = String(fd.get("phone") || "").trim();
-    const org = String(fd.get("org") || "").trim();
-    const desc = String(fd.get("desc") || "").trim();
-    const consent = fd.get("consent");
-    if (!name || !org || !email || !phone || !desc || !consent) {
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    // استخراج كل الحقول
+    const rawData = {
+      name: String(fd.get("name") || ""),
+      org: String(fd.get("org") || ""),
+      title: String(fd.get("title") || ""),
+      email: String(fd.get("email") || ""),
+      phone: String(fd.get("phone") || ""),
+      country: String(fd.get("country") || ""),
+      city: String(fd.get("city") || ""),
+      sector: String(fd.get("sector") || ""),
+      empCount: String(fd.get("empCount") || ""),
+      sites: String(fd.get("sites") || ""),
+      reqType,
+      service,
+      projectTitle: String(fd.get("projectTitle") || ""),
+      desc: String(fd.get("desc") || ""),
+      hasSystem: String(fd.get("hasSystem") || ""),
+      currentSystem: String(fd.get("currentSystem") || ""),
+      timeline: String(fd.get("timeline") || ""),
+      pref: String(fd.get("pref") || ""),
+      wantMeeting: String(fd.get("wantMeeting") || ""),
+      consent: (fd.get("consent") as string | null) || "",
+    };
+
+    // ✅ التحقق بـ Zod
+    const result = mainFormSchema.safeParse(rawData);
+    if (!result.success) {
+      setStatus("error");
+      setError(getFirstError(result.error));
+      return;
+    }
+
+    const data = result.data;
+
+    // تجهيز البيانات للإرسال
+    const payload = {
+      subject: `طلب جديد من موقع Arabtec — ${data.name}`,
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      organization: data.org,
+      title: data.title,
+      country: data.country,
+      city: data.city,
+      sector: data.sector,
+      employees_count: data.empCount,
+      sites_count: data.sites,
+      request_type: data.reqType,
+      service: data.service,
+      project_title: data.projectTitle,
+      description: data.desc,
+      has_existing_system: data.hasSystem,
+      current_system: data.currentSystem,
+      timeline: data.timeline,
+      preferred_contact: data.pref,
+      wants_meeting: data.wantMeeting || "no",
+      page_language: lang,
+      submitted_at: new Date().toISOString(),
+    };
+
+    try {
+      const res = await sendToWeb3Forms(payload);
+
+      if (res.success) {
+        nav({ to: "/thank-you/$type", params: { type: reqType } });
+      } else {
+        setStatus("error");
+        setError(
+          isAr
+            ? "تعذر إرسال الطلب حاليًا. يرجى المحاولة مرة أخرى أو التواصل معنا عبر البريد الإلكتروني."
+            : "Failed to send your request. Please try again or contact us via email."
+        );
+      }
+    } catch {
       setStatus("error");
       setError(
         isAr
-          ? "يرجى استكمال الحقول الإلزامية قبل إرسال الطلب."
-          : "Please complete the required fields before submitting the request."
+          ? "خطأ في الاتصال. يرجى المحاولة مرة أخرى."
+          : "Connection error. Please try again."
       );
-      return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setStatus("error");
-      setError(isAr ? "بريد إلكتروني غير صالح." : "Invalid email address.");
-      return;
-    }
-    // Simulated submission
-    await new Promise((r) => setTimeout(r, 600));
-    nav({ to: "/thank-you/$type", params: { type: reqType } });
   }
 
-  // Submit مبسط لنموذج الاجتماع
+  // ============================================================
+  // Submit Handler — نموذج الاجتماع الاستشاري
+  // ============================================================
   async function onMeetingSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    await new Promise((r) => setTimeout(r, 500));
-    nav({ to: "/thank-you/$type", params: { type: "meeting" } });
+    setError("");
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    const rawData = {
+      name: String(fd.get("m-name") || ""),
+      org: String(fd.get("m-org") || ""),
+      email: String(fd.get("m-email") || ""),
+      phone: String(fd.get("m-phone") || ""),
+      meetingType: String(fd.get("m-type") || ""),
+      service: String(fd.get("m-service") || ""),
+      date: String(fd.get("m-date") || ""),
+      time: String(fd.get("m-time") || ""),
+      timezone: String(fd.get("m-tz") || ""),
+      duration: String(fd.get("m-duration") || ""),
+      topic: String(fd.get("m-topic") || ""),
+      notes: String(fd.get("m-notes") || ""),
+      consent: (fd.get("m-consent") as string | null) || "",
+    };
+
+    // ✅ التحقق بـ Zod
+    const result = meetingFormSchema.safeParse(rawData);
+    if (!result.success) {
+      setStatus("error");
+      setError(getFirstError(result.error));
+      return;
+    }
+
+    const data = result.data;
+
+    const payload = {
+      subject: `طلب اجتماع استشاري — ${data.name} من ${data.org}`,
+      name: data.name,
+      organization: data.org,
+      email: data.email,
+      phone: data.phone,
+      meeting_type: data.meetingType,
+      service: data.service,
+      preferred_date: data.date,
+      preferred_time: data.time,
+      time_zone: data.timezone,
+      duration: data.duration,
+      meeting_topic: data.topic,
+      additional_notes: data.notes,
+      page_language: lang,
+      submitted_at: new Date().toISOString(),
+    };
+
+    try {
+      const res = await sendToWeb3Forms(payload);
+
+      if (res.success) {
+        nav({ to: "/thank-you/$type", params: { type: "meeting" } });
+      } else {
+        setStatus("error");
+        setError(
+          isAr
+            ? "تعذر إرسال الطلب حاليًا. حاول مرة أخرى."
+            : "Failed to send. Try again."
+        );
+      }
+    } catch {
+      setStatus("error");
+      setError(isAr ? "خطأ في الاتصال." : "Connection error.");
+    }
   }
 
-  // Submit مبسط لنموذج الشراكة
+  // ============================================================
+  // Submit Handler — نموذج الشراكة
+  // ============================================================
   async function onPartnerSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    await new Promise((r) => setTimeout(r, 500));
-    nav({ to: "/thank-you/$type", params: { type: "partner" } });
+    setError("");
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    const rawData = {
+      company: String(fd.get("p-company") || ""),
+      website: String(fd.get("p-website") || ""),
+      country: String(fd.get("p-country") || ""),
+      name: String(fd.get("p-name") || ""),
+      title: String(fd.get("p-title") || ""),
+      email: String(fd.get("p-email") || ""),
+      phone: String(fd.get("p-phone") || ""),
+      companyType: String(fd.get("p-type") || ""),
+      technology: String(fd.get("p-tech") || ""),
+      partnershipType: String(fd.get("p-partnership") || ""),
+      solution: String(fd.get("p-solution") || ""),
+      markets: String(fd.get("p-markets") || ""),
+      support: String(fd.get("p-support") || ""),
+      consent: (fd.get("p-consent") as string | null) || "",
+    };
+
+    // ✅ التحقق بـ Zod
+    const result = partnerFormSchema.safeParse(rawData);
+    if (!result.success) {
+      setStatus("error");
+      setError(getFirstError(result.error));
+      return;
+    }
+
+    const data = result.data;
+
+    const payload = {
+      subject: `طلب شراكة تقنية — ${data.company}`,
+      company_name: data.company,
+      website: data.website,
+      country: data.country,
+      contact_person: data.name,
+      job_title: data.title,
+      email: data.email,
+      phone: data.phone,
+      company_type: data.companyType,
+      technology_area: data.technology,
+      partnership_type: data.partnershipType,
+      solution_description: data.solution,
+      target_markets: data.markets,
+      support_available: data.support,
+      page_language: lang,
+      submitted_at: new Date().toISOString(),
+    };
+
+    try {
+      const res = await sendToWeb3Forms(payload);
+
+      if (res.success) {
+        nav({ to: "/thank-you/$type", params: { type: "partner" } });
+      } else {
+        setStatus("error");
+        setError(
+          isAr
+            ? "تعذر إرسال الطلب حاليًا. حاول مرة أخرى."
+            : "Failed to send. Try again."
+        );
+      }
+    } catch {
+      setStatus("error");
+      setError(isAr ? "خطأ في الاتصال." : "Connection error.");
+    }
   }
 
-  // Submit مبسط للنموذج المؤسسي
+  // ============================================================
+  // Submit Handler — نموذج الطلبات المؤسسية الحكومية
+  // ============================================================
   async function onGovernmentSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    await new Promise((r) => setTimeout(r, 500));
-    nav({ to: "/thank-you/$type", params: { type: "rfp" } });
+    setError("");
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    const rawData = {
+      entity: String(fd.get("g-entity") || ""),
+      department: String(fd.get("g-department") || ""),
+      reference: String(fd.get("g-ref") || ""),
+      docType: String(fd.get("g-doctype") || ""),
+      deadline: String(fd.get("g-deadline") || ""),
+      contactName: String(fd.get("g-name") || ""),
+      officialEmail: String(fd.get("g-email") || ""),
+    };
+
+    // ✅ التحقق بـ Zod
+    const result = govFormSchema.safeParse(rawData);
+    if (!result.success) {
+      setStatus("error");
+      setError(getFirstError(result.error));
+      return;
+    }
+
+    const data = result.data;
+
+    const payload = {
+      subject: `طلب مؤسسي حكومي — ${data.entity}`,
+      entity_name: data.entity,
+      department: data.department,
+      reference_number: data.reference,
+      document_type: data.docType,
+      response_deadline: data.deadline,
+      contact_person: data.contactName,
+      official_email: data.officialEmail,
+      page_language: lang,
+      submitted_at: new Date().toISOString(),
+    };
+
+    try {
+      const res = await sendToWeb3Forms(payload);
+
+      if (res.success) {
+        nav({ to: "/thank-you/$type", params: { type: "rfp" } });
+      } else {
+        setStatus("error");
+        setError(
+          isAr
+            ? "تعذر إرسال الطلب حاليًا. حاول مرة أخرى."
+            : "Failed to send. Try again."
+        );
+      }
+    } catch {
+      setStatus("error");
+      setError(isAr ? "خطأ في الاتصال." : "Connection error.");
+    }
   }
 
   return (
@@ -564,6 +964,7 @@ export default function ContactPage() {
 
         <form
           onSubmit={onSubmit}
+          noValidate
           className="grid gap-5 md:grid-cols-2 rounded-2xl border border-border bg-card p-6"
         >
           {/* البيانات الأساسية */}
@@ -778,6 +1179,7 @@ export default function ContactPage() {
 
         <form
           onSubmit={onMeetingSubmit}
+          noValidate
           className="grid gap-5 md:grid-cols-2 rounded-2xl border border-border bg-card p-6 mt-6"
         >
           <Field
@@ -1179,6 +1581,7 @@ export default function ContactPage() {
 
         <form
           onSubmit={onPartnerSubmit}
+          noValidate
           className="grid gap-5 md:grid-cols-2 rounded-2xl border border-border bg-card p-6 mt-6"
         >
           <Field
