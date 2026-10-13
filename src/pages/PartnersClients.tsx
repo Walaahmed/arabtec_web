@@ -36,10 +36,26 @@ import {
   Lock,
 } from "lucide-react";
 
-// الصور
+// ============================================================
+// الصور الرئيسية
+// ============================================================
 import heroImg from "@/assets/enterprise-technology-partnerships.png";
 import partnerOppImg from "@/assets/technology-partnership-opportunity.jpg";
 import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
+
+// ============================================================
+// شعارات العملاء
+// ============================================================
+import aramcoLogo from "@/assets/logos/clients/aramco.png";
+import moeLogo from "@/assets/logos/clients/ministry-of-education.png";
+import sabicLogo from "@/assets/logos/clients/sabic.jpg";
+
+// ============================================================
+// شعارات الشركاء
+// ============================================================
+import microsoftLogo from "@/assets/logos/partners/microsoft.webp";
+import hpLogo from "@/assets/logos/partners/hp.webp";
+import dellLogo from "@/assets/logos/partners/dell.png";
 
 const industryIcons = [Landmark, Fuel, GraduationCap, HeartPulse, Banknote, Building2];
 
@@ -505,88 +521,81 @@ export default function PartnersPage() {
       </Section>
 
       {/* ============================================================
-    3. عملاؤنا
+          3. عملاؤنا
+          ============================================================ */}
+      <Section>
+        <SectionHead
+          title={isAr
+            ? "خبرات مع جهات ومؤسسات من قطاعات متعددة"
+            : "Experience with entities and organizations across multiple sectors"}
+          intro={isAr
+            ? "قدمت أربتك خدمات وحلولاً تقنية لجهات ومؤسسات تعمل في قطاعات حكومية وصناعية وتعليمية وتجارية. يتم عرض أسماء العملاء وشعاراتهم في هذه الصفحة بعد التحقق من العلاقة، مراجعة نوع المشروع، والحصول على الموافقة اللازمة لاستخدام الاسم أو الشعار عند الحاجة."
+            : "ARABTEC has delivered technology services and solutions to entities and organizations in government, industrial, educational and commercial sectors. Client names and logos are displayed on this page after verifying the relationship, reviewing the project type, and obtaining the necessary approval to use the name or logo when required."}
+        />
 
-    الصورة أو العنصر البصري:
-    - استخدام شبكة شعارات رسمية ومتساوية الحجم.
-    - الخلفية بيضاء أو رمادية فاتحة.
-    - عدم تكبير شعار جهة على حساب بقية الجهات.
-    - عدم استخدام شعارات منخفضة الجودة أو مأخوذة من الإنترنت دون تصريح.
-    ============================================================ */}
-<Section>
-  <SectionHead
-    title={isAr
-      ? "خبرات مع جهات ومؤسسات من قطاعات متعددة"
-      : "Experience with entities and organizations across multiple sectors"}
-    intro={isAr
-      ? "قدمت أربتك خدمات وحلولاً تقنية لجهات ومؤسسات تعمل في قطاعات حكومية وصناعية وتعليمية وتجارية. يتم عرض أسماء العملاء وشعاراتهم في هذه الصفحة بعد التحقق من العلاقة، مراجعة نوع المشروع، والحصول على الموافقة اللازمة لاستخدام الاسم أو الشعار عند الحاجة."
-      : "ARABTEC has delivered technology services and solutions to entities and organizations in government, industrial, educational and commercial sectors. Client names and logos are displayed on this page after verifying the relationship, reviewing the project type, and obtaining the necessary approval to use the name or logo when required."}
-  />
+        {/* شبكة الشعارات — موحدة الحجم، خلفية بيضاء */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {[
+            {
+              src: aramcoLogo,
+              altAr: "أرامكو السعودية",
+              altEn: "Saudi Aramco",
+              sectorAr: "طاقة",
+              sectorEn: "Energy",
+            },
+            {
+              src: moeLogo,
+              altAr: "وزارة التعليم",
+              altEn: "Ministry of Education",
+              sectorAr: "حكومي",
+              sectorEn: "Government",
+            },
+            {
+              src: sabicLogo,
+              altAr: "سابك",
+              altEn: "SABIC",
+              sectorAr: "صناعي",
+              sectorEn: "Industrial",
+            },
+          ].map((c, i) => (
+            <div
+              key={i}
+              className="rounded-xl border border-border bg-white p-6 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow"
+            >
+              {/* الشعار — حجم موحد لكل الجهات */}
+              <div className="h-20 w-full grid place-items-center">
+                <img
+                  src={c.src}
+                  alt={isAr ? c.altAr : c.altEn}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-16 max-w-[70%] w-auto object-contain"
+                />
+              </div>
 
-  {/* ──────────────────────────────────────────────────────
-      شبكة الشعارات الرسمية — موحدة الحجم، خلفية بيضاء
-      ────────────────────────────────────────────────────── */}
-  <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    {[
-      {
-        src: "src/assets/logos/clients/aramco.png",
-        altAr: "أرامكو السعودية",
-        altEn: "Saudi Aramco",
-        sectorAr: "طاقة",
-        sectorEn: "Energy",
-      },
-      {
-        src: "src/assets/logos/clients/ministry-of-education.png",
-        altAr: "وزارة التعليم",
-        altEn: "Ministry of Education",
-        sectorAr: "حكومي",
-        sectorEn: "Government",
-      },
-      {
-        src: "src/assets/logos/clients/sabic.jpg",
-        altAr: "سابك",
-        altEn: "SABIC",
-        sectorAr: "صناعي",
-        sectorEn: "Industrial",
-      },
-    ].map((c, i) => (
-      <div
-        key={i}
-        className="rounded-xl border border-border bg-white p-6 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow"
-      >
-        {/* الشعار — حجم موحد لكل الجهات (لا تكبير لشعار على حساب غيره) */}
-        <div className="h-20 w-full grid place-items-center">
-          <img
-            src={c.src}
-            alt={isAr ? c.altAr : c.altEn}
-            loading="lazy"
-            decoding="async"
-            className="max-h-16 max-w-[70%] w-auto object-contain"
-          />
+              {/* اسم الجهة */}
+              <div className="text-center">
+                <div className="font-bold text-base text-[color:var(--brand-deep)]">
+                  {isAr ? c.altAr : c.altEn}
+                </div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  {isAr ? `القطاع: ${c.sectorAr}` : `Sector: ${c.sectorEn}`}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* اسم الجهة */}
-        <div className="text-center">
-          <div className="font-bold text-base text-[color:var(--brand-deep)]">
-            {isAr ? c.altAr : c.altEn}
-          </div>
-          <div className="mt-1 text-xs text-muted-foreground">
-            {isAr ? `القطاع: ${c.sectorAr}` : `Sector: ${c.sectorEn}`}
-          </div>
+        {/* رسالة احتياطية */}
+        <div className="mt-10 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
+          <p className="text-sm text-muted-foreground leading-relaxed text-center">
+            {isAr
+              ? "عملت أربتك مع مؤسسات في قطاعات حكومية وصناعية وتعليمية وتجارية، مع الالتزام بسرية تفاصيل المشروعات وخصوصية العملاء."
+              : "ARABTEC has worked with organizations in government, industrial, educational and commercial sectors, while maintaining confidentiality of project details and client privacy."}
+          </p>
         </div>
-      </div>
-    ))}
-  </div>
+      </Section>
 
-  {/* رسالة احتياطية */}
-  <div className="mt-10 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
-    <p className="text-sm text-muted-foreground leading-relaxed text-center">
-      {isAr
-        ? "عملت أربتك مع مؤسسات في قطاعات حكومية وصناعية وتعليمية وتجارية، مع الالتزام بسرية تفاصيل المشروعات وخصوصية العملاء."
-        : "ARABTEC has worked with organizations in government, industrial, educational and commercial sectors, while maintaining confidentiality of project details and client privacy."}
-    </p>
-  </div>
-</Section>
       {/* ============================================================
           4. القطاعات التي اكتسبنا فيها الخبرة
           ============================================================ */}
@@ -636,91 +645,69 @@ export default function PartnersPage() {
         </div>
       </Section>
 
-     {/* ============================================================
-    5. شركاؤنا التقنيون
+      {/* ============================================================
+          5. شركاؤنا التقنيون
+          ============================================================ */}
+      <Section>
+        <SectionHead
+          title={isAr
+            ? "منظومة تقنية تدعم تنوع الحلول"
+            : "A technology ecosystem supporting solution diversity"}
+          intro={isAr
+            ? "تستفيد أربتك من تقنيات ومنتجات ومكونات مقدمة من شركات ومصنعين عالميين عند تصميم وتنفيذ المشاريع، وفق احتياجات العميل ونطاق العمل واعتماد التقنية المناسبة."
+            : "ARABTEC leverages technologies, products and components from global companies and manufacturers when designing and delivering projects — based on client needs, project scope and approval of the right technology."}
+        />
 
-    الأسماء الواردة في ملف الشركة (تم التحقق منها):
-    Microsoft, HP, Dell
-
-    العبارة المستخدمة عند عدم وجود اعتماد رسمي:
-    "تقنيات ومنتجات نعمل معها بحسب احتياجات المشروع."
-
-    العبارات الممنوعة دون إثبات:
-    شريك رسمي، شريك استراتيجي، Gold Partner، Authorized Partner، Certified Partner
-
-    ملاحظات العنصر البصري (للمصمم فقط — لا تظهر للزائر):
-    - استخدام شبكة شعارات رسمية ومتساوية الحجم.
-    - الخلفية بيضاء أو رمادية فاتحة.
-    - عدم تكبير شعار جهة على حساب بقية الجهات.
-    - عدم استخدام شعارات منخفضة الجودة أو مأخوذة من الإنترنت دون تصريح.
-    ============================================================ */}
-<Section>
-  <SectionHead
-    title={isAr
-      ? "منظومة تقنية تدعم تنوع الحلول"
-      : "A technology ecosystem supporting solution diversity"}
-    intro={isAr
-      ? "تستفيد أربتك من تقنيات ومنتجات ومكونات مقدمة من شركات ومصنعين عالميين عند تصميم وتنفيذ المشاريع، وفق احتياجات العميل ونطاق العمل واعتماد التقنية المناسبة."
-      : "ARABTEC leverages technologies, products and components from global companies and manufacturers when designing and delivering projects — based on client needs, project scope and approval of the right technology."}
-  />
-
-  {/* ──────────────────────────────────────────────────────
-      تنبيه مهم للزائر عن دقة وصف العلاقة
-      ────────────────────────────────────────────────────── */}
-  <div className="max-w-3xl mx-auto mt-6 rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
-    <p className="text-sm text-muted-foreground leading-relaxed">
-      {isAr
-        ? "يُعرض كل شريك بالوصف الصحيح لطبيعة العلاقة. العبارات المذكورة أدناه تعني «تقنيات ومنتجات نعمل معها بحسب احتياجات المشروع»، ولا تعني اعتمادًا رسميًا أو شراكة استراتيجية ما لم يُذكر ذلك صراحةً."
-        : "Each partner is presented with an accurate description of the relationship. The phrases below mean 'technologies and products we work with based on project needs' — they do not imply an official certification or strategic partnership unless explicitly stated."}
-    </p>
-  </div>
-
-  {/* ──────────────────────────────────────────────────────
-      شبكة الشعارات — موحدة الحجم، خلفية بيضاء
-      ────────────────────────────────────────────────────── */}
-  <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-    {[
-      { src: "src/assets/logos/partners/microsoft.webp", altAr: "مايكروسوفت", altEn: "Microsoft" },
-      { src: "src/assets/logos/partners/hp.webp", altAr: "إتش بي", altEn: "HP" },
-      { src: "src/assets/logos/partners/dell.png", altAr: "ديل", altEn: "Dell" },
-
-    ].map((c, i) => (
-      <div
-        key={i}
-        className="rounded-xl border border-border bg-white p-6 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow"
-      >
-        {/* الشعار — حجم موحد لكل الشركاء */}
-        <div className="h-20 w-full grid place-items-center">
-          <img
-            src={c.src}
-            alt={isAr ? c.altAr : c.altEn}
-            loading="lazy"
-            decoding="async"
-            className="max-h-16 max-w-[70%] w-auto object-contain"
-          />
+        {/* تنبيه مهم للزائر */}
+        <div className="max-w-3xl mx-auto mt-6 rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {isAr
+              ? "يُعرض كل شريك بالوصف الصحيح لطبيعة العلاقة. العبارات المذكورة أدناه تعني «تقنيات ومنتجات نعمل معها بحسب احتياجات المشروع»، ولا تعني اعتمادًا رسميًا أو شراكة استراتيجية ما لم يُذكر ذلك صراحةً."
+              : "Each partner is presented with an accurate description of the relationship. The phrases below mean 'technologies and products we work with based on project needs' — they do not imply an official certification or strategic partnership unless explicitly stated."}
+          </p>
         </div>
 
-        {/* اسم الشركة */}
-        <div className="text-center">
-          <div className="font-bold text-base text-[color:var(--brand-deep)]">
-            {isAr ? c.altAr : c.altEn}
-          </div>
-        </div>
-      </div>
-    ))}
-  </div>
+        {/* شبكة الشعارات — موحدة الحجم، خلفية بيضاء */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { src: microsoftLogo, altAr: "مايكروسوفت", altEn: "Microsoft" },
+            { src: hpLogo, altAr: "إتش بي", altEn: "HP" },
+            { src: dellLogo, altAr: "ديل", altEn: "Dell" },
+          ].map((c, i) => (
+            <div
+              key={i}
+              className="rounded-xl border border-border bg-white p-6 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow"
+            >
+              {/* الشعار — حجم موحد لكل الشركاء */}
+              <div className="h-20 w-full grid place-items-center">
+                <img
+                  src={c.src}
+                  alt={isAr ? c.altAr : c.altEn}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-16 max-w-[70%] w-auto object-contain"
+                />
+              </div>
 
-  {/* ──────────────────────────────────────────────────────
-      العبارة الآمنة — تظهر أسفل الشبكة
-      ────────────────────────────────────────────────────── */}
-  <div className="mt-10 max-w-3xl mx-auto text-center">
-    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-      {isAr
-        ? "تقنيات ومنتجات نعمل معها بحسب احتياجات المشروع."
-        : "Technologies and products we work with based on project needs."}
-    </p>
-  </div>
-</Section>
+              {/* اسم الشركة */}
+              <div className="text-center">
+                <div className="font-bold text-base text-[color:var(--brand-deep)]">
+                  {isAr ? c.altAr : c.altEn}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* العبارة الآمنة */}
+        <div className="mt-10 max-w-3xl mx-auto text-center">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+            {isAr
+              ? "تقنيات ومنتجات نعمل معها بحسب احتياجات المشروع."
+              : "Technologies and products we work with based on project needs."}
+          </p>
+        </div>
+      </Section>
 
       {/* ============================================================
           6. تصنيف الشركاء حسب مجال الحل
