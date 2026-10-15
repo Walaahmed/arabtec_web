@@ -2,12 +2,12 @@ import { useParams, Navigate } from "react-router-dom";
 import { Link } from "@/lib/router";
 import heroImg from "@/assets/hero-enterprise.jpg";
 import teamImg from "@/assets/team-meeting.jpg";
-import aiAgentsImg from "@/assets/service-ai-agents.webp";
+import aiAgentsImg from "@/assets/service-ai-agents.jpg";
 import erpImg from "@/assets/service-erp.webp";
-import softwareImg from "@/assets/service-software-development.webp";
-import cloudImg from "@/assets/service-cloud-infrastructure.webp";
-import networkImg from "@/assets/service-network-connectivity.webp";
-import surveillanceImg from "@/assets/service-surveillance.webp";
+import softwareImg from "@/assets/service-software-development.jpg";
+import cloudImg from "@/assets/service-cloud-infrastructure.jpg";
+import networkImg from "@/assets/service-network-connectivity.jpg";
+import surveillanceImg from "@/assets/service-surveillance.jpg";
 
 // شعارات العملاء
 import aramcoLogo from "@/assets/logos/clients/aramco.png";

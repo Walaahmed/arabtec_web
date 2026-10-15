@@ -589,7 +589,7 @@ export default function IndustriesPage() {
           </div>
 
           {/* مخطط دائري / عناصر الدراسة */}
-          <div className="rounded-2xl border border-border bg-card p-8 text-center">
+          {/* <div className="rounded-2xl border border-border bg-card p-8 text-center">
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {isAr ? "حلول تقنية حسب القطاع" : "Technology solutions by sector"}
             </div>
@@ -615,7 +615,7 @@ export default function IndustriesPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </Section>
 

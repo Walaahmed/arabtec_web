@@ -459,7 +459,7 @@ export default function NetworkConnectivityPage() {
               : "LAN connects users, devices and servers within a single site, while WAN connects branches and different sites in a unified connectivity environment. Both are designed together to ensure easy access to applications and data and to support growth and multi-site expansion."}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 mt-6">
+        {/* <div className="grid gap-6 md:grid-cols-2 mt-6">
           <Card>
             <div className="flex items-center gap-3 mb-4">
               <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center shrink-0">
@@ -499,7 +499,7 @@ export default function NetworkConnectivityPage() {
               ))}
             </ul>
           </Card>
-        </div>
+        </div> */}
 
         {/* مقارنة LAN vs WAN */}
         <div className="mt-8 rounded-2xl border border-border bg-card p-6 text-center">
@@ -540,7 +540,7 @@ export default function NetworkConnectivityPage() {
                 : "ARABTEC's services include supplying, laying, splicing and testing fiber optics, plus installing accessories and documenting paths."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            {/* <h3 className="mt-6 font-bold">
               {isAr ? "مراحل التنفيذ" : "Delivery phases"}
             </h3>
 
@@ -573,7 +573,7 @@ export default function NetworkConnectivityPage() {
                   </div>
                 </li>
               ))}
-            </ol>
+            </ol> */}
           </div>
 
           <img
@@ -605,7 +605,7 @@ export default function NetworkConnectivityPage() {
         />
 
         <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
-          <div>
+          {/* <div>
             <h3 className="font-bold mb-4">
               {isAr ? "المكونات" : "Components"}
             </h3>
@@ -620,7 +620,7 @@ export default function NetworkConnectivityPage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h3 className="font-bold mb-4">
@@ -842,8 +842,8 @@ export default function NetworkConnectivityPage() {
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {[
-            { ar: "النفط والغاز", en: "Oil & gas", itemsAr: ["ربط المواقع التشغيلية", "ربط الحقول والمستودعات", "اتصال المواقع البعيدة", "VSAT", "Point-to-Point", "الألياف الضوئية", "مراقبة الاتصال"], itemsEn: ["Operational site connectivity", "Field & warehouse connectivity", "Remote site connectivity", "VSAT", "Point-to-Point", "Fiber optics", "Connectivity monitoring"] },
-            { ar: "التعليم", en: "Education", itemsAr: ["شبكات المدارس والجامعات", "Wi-Fi", "معامل الحاسب", "ربط الفروع", "الألياف الضوئية", "الكابلات الهيكلية", "إدارة الشبكة"], itemsEn: ["School & university networks", "Wi-Fi", "Computer labs", "Branch connectivity", "Fiber optics", "Structured cabling", "Network management"] },
+            // { ar: "النفط والغاز", en: "Oil & gas", itemsAr: ["ربط المواقع التشغيلية", "ربط الحقول والمستودعات", "اتصال المواقع البعيدة", "VSAT", "Point-to-Point", "الألياف الضوئية", "مراقبة الاتصال"], itemsEn: ["Operational site connectivity", "Field & warehouse connectivity", "Remote site connectivity", "VSAT", "Point-to-Point", "Fiber optics", "Connectivity monitoring"] },
+            // { ar: "التعليم", en: "Education", itemsAr: ["شبكات المدارس والجامعات", "Wi-Fi", "معامل الحاسب", "ربط الفروع", "الألياف الضوئية", "الكابلات الهيكلية", "إدارة الشبكة"], itemsEn: ["School & university networks", "Wi-Fi", "Computer labs", "Branch connectivity", "Fiber optics", "Structured cabling", "Network management"] },
             { ar: "الرعاية الصحية", en: "Healthcare", itemsAr: ["ربط المستشفيات والمراكز", "شبكات المستخدمين", "ربط الأنظمة", "Wi-Fi", "ربط الأجهزة", "استمرارية الاتصال"], itemsEn: ["Hospital & center connectivity", "User networks", "System connectivity", "Wi-Fi", "Device connectivity", "Connectivity continuity"] },
             { ar: "الشركات والمؤسسات", en: "Enterprises", itemsAr: ["ربط المقر والفروع", "LAN و WAN", "Wi-Fi", "VoIP", "ربط ERP", "ربط السحابة", "تشغيل وصيانة الشبكة"], itemsEn: ["HQ & branch connectivity", "LAN & WAN", "Wi-Fi", "VoIP", "ERP connectivity", "Cloud connectivity", "Network operations & maintenance"] },
           ].map((sec) => (

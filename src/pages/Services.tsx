@@ -35,12 +35,12 @@ import {
 
 // الصور
 import heroImg from "@/assets/arabtec-integrated-technology-services.jpg";
-import aiImg from "@/assets/service-ai-agents.webp";
+import aiImg from "@/assets/service-ai-agents.jpg";
 import erpImg from "@/assets/enterprise-erp-business-management.webp";
-import softwareImg from "@/assets/service-software-development.webp";
-import cloudImg from "@/assets/service-cloud-infrastructure.webp";
-import networkImg from "@/assets/service-network-connectivity.webp";
-import surveillanceImg from "@/assets/service-surveillance.webp";
+import softwareImg from "@/assets/service-software-development.jpg";
+import cloudImg from "@/assets/service-cloud-infrastructure.jpg";
+import networkImg from "@/assets/service-network-connectivity.jpg";
+import surveillanceImg from "@/assets/service-surveillance.jpg";
 import industriesImg from "@/assets/technology-services-for-industries.jpg";
 import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
 
@@ -197,7 +197,7 @@ export default function ServicesIndex() {
           </div>
 
           {/* رسم دائري / مخطط مترابط */}
-          <div className="rounded-2xl border border-border bg-card p-8 text-center">
+          {/* <div className="rounded-2xl border border-border bg-card p-8 text-center">
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {isAr ? "منظومة أربتك" : "ARABTEC ecosystem"}
             </div>
@@ -216,7 +216,7 @@ export default function ServicesIndex() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </Section>
 

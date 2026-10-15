@@ -492,7 +492,7 @@ export default function PartnersPage() {
           </div>
 
           {/* مخطط دائري */}
-          <div className="rounded-2xl border border-border bg-card p-8 text-center">
+          {/* <div className="rounded-2xl border border-border bg-card p-8 text-center">
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {isAr ? "علاقة تقنية مستدامة" : "Sustainable technology relationship"}
             </div>
@@ -516,7 +516,7 @@ export default function PartnersPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </Section>
 
