@@ -1147,16 +1147,16 @@ export default function NetworkConnectivityPage() {
           19. CTA
           ============================================================ */}
       <section className="relative overflow-hidden bg-primary text-primary-foreground">
-        <img
+        {/* <img
           src={ctaBg}
           alt=""
           aria-hidden="true"
           loading="lazy"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
-        />
+        /> */}
         <div className="relative container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
             {isAr
               ? "هل تحتاج مؤسستكم إلى شبكة جديدة أو ربط عدة مواقع؟"
               : "Does your organization need a new network or multi-site connectivity?"}

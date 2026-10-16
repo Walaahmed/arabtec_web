@@ -38,7 +38,7 @@ import {
 import heroImg from "@/assets/arabtec-enterprise-technology-team.jpg";
 import aboutImg from "@/assets/arabtec-technology-experience.webp";
 import industriesImg from "@/assets/arabtec-industries-served.jpg";
-import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
+// import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
 import aramcoLogo from "@/assets/logos/clients/aramco.png";
 import moeLogo from "@/assets/logos/clients/ministry-of-education.png";
 import sabicLogo from "@/assets/logos/clients/sabic.jpg";
@@ -617,16 +617,16 @@ export default function AboutPage() {
           ============================================================ */}
       <section className="relative overflow-hidden bg-primary text-primary-foreground">
         {/* صورة الخلفية (زخرفية) */}
-        <img
+        {/* <img
           src={ctaBg}
           alt=""
           aria-hidden="true"
           loading="lazy"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
-        />
+        /> */}
         <div className="relative container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
             {isAr
               ? "نساعدكم على تحويل الاحتياج التقني إلى مشروع قابل للتنفيذ"
               : "We help you turn technical needs into an executable project"}
