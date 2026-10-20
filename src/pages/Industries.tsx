@@ -27,15 +27,14 @@ import {
   Building2,
   CheckCircle2,
 } from "lucide-react";
-
 // الصور
-import heroImg from "@/assets/technology-solutions-across-industries.webp";
-import govImg from "@/assets/government-digital-transformation-solutions.jpeg";
-import oilImg from "@/assets/oil-gas-technology-solutions.webp";
-import eduImg from "@/assets/education-technology-solutions.webp";
+import heroImg from "@/assets/technology-solutions-across-industries.jpg";
+import govImg from "@/assets/government-digital-transformation-solutions.jpg";
+import oilImg from "@/assets/oil-gas-technology-solutions.jpg";
+import eduImg from "@/assets/education-technology-solutions.jpg";
 import healthImg from "@/assets/healthcare-it-solutions.jpg";
 import financeImg from "@/assets/financial-services-technology-solutions.jpg";
-import enterpriseImg from "@/assets/enterprise-technology-solution.webp";
+import enterpriseImg from "@/assets/enterprise-technology-solution.jpg";
 import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
 
 const industryIcons = [Landmark, Fuel, GraduationCap, HeartPulse, Banknote, Building2];
@@ -447,7 +446,7 @@ export default function IndustriesPage() {
           ]}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center mt-6">
+        <div className="grid gap-10 lg:grid-cols-2 items-center mt-2">
           {/* الصورة — يسار */}
           <div className="order-2 lg:order-1">
             <img
@@ -474,33 +473,42 @@ export default function IndustriesPage() {
             </div>
             <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
               {isAr
-                ? "حلول تقنية متكاملة للقطاعات الحكومية والحيوية والمؤسسات"
-                : "Integrated technology solutions for government, vital sectors and enterprises"}
+                ? "حلول تقنية مصمّمة لقطاعك"
+                : "Technology solutions designed for your sector"}
             </h1>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
+            <p className="mt-6 text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تختلف الاحتياجات التقنية باختلاف طبيعة القطاع، حجم العمليات، عدد المواقع والمستخدمين، حساسية البيانات، ومتطلبات التكامل واستمرارية الخدمات."
                 : "Technology needs vary by sector, operation scale, number of sites and users, data sensitivity, and integration and continuity requirements."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تعمل أربتك مع الجهات الحكومية والمؤسسات والشركات على دراسة بيئة العمل وتحديد الحلول المناسبة، بدءًا من الذكاء الاصطناعي وأنظمة ERP وتطوير البرمجيات، وصولاً إلى السحابة والبنية التحتية والشبكات وأنظمة المراقبة والحضور والتحكم بالدخول."
                 : "ARABTEC works with government entities, organizations and companies to study the operating environment and identify the right solutions — from AI, ERP and software development to cloud, infrastructure, networks, surveillance, attendance and access control."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نصمم الحلول وفق أولويات كل قطاع، مع إمكانية تنفيذ خدمة محددة أو بناء منظومة تقنية متكاملة تجمع بين الأنظمة والتطبيقات والبنية التحتية والاتصال ضمن مشروع واحد."
                 : "We design solutions around each sector's priorities, delivering either a specific service or a complete technology ecosystem combining systems, applications, infrastructure and connectivity in one project."}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <CTAButton to="/contact">
-                {isAr ? "ناقش احتياجات قطاعك" : "Discuss your sector's needs"}
-              </CTAButton>
-              <CTAButton to="/services" variant="outline">
-                {isAr ? "استكشف خدماتنا التقنية" : "Explore our technology services"}
-              </CTAButton>
-            </div>
+  {/* الزر الأول — أخضر */}
+  <Link
+    to="/contact"
+    className="rounded-md bg-[#0B3D2E] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
+  >
+    {isAr ? "تواصل مع فريقنا" : "Contact our team"}
+  </Link>
+
+  {/* الزر الثاني — أبيض */}
+  <Link
+    to="/services"
+    className="rounded-md bg-white border border-[#0B3D2E] px-6 py-3 text-sm font-semibold text-[#0B3D2E] hover:bg-gray-50 transition"
+  >
+    {isAr ? "استكشف خدماتنا التقنية" : "Explore our technology services"}
+  </Link>
+</div>
 
             {/* شريط القطاعات أسفل الأزرار */}
             <div className="mt-8 flex flex-wrap gap-2">
@@ -525,7 +533,7 @@ export default function IndustriesPage() {
       {/* ============================================================
           2. حلول مصممة حسب القطاع
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section>
         <SectionHead
           title={isAr
             ? "التقنية المناسبة تبدأ بفهم طبيعة المؤسسة"
@@ -534,22 +542,22 @@ export default function IndustriesPage() {
 
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "لا يكفي تطبيق التقنية نفسها في جميع القطاعات. فالجهة الحكومية تحتاج إلى خدمات رقمية وإجراءات وموافقات مؤسسية، بينما تعتمد المنشآت الصناعية على الاتصال بين المواقع والبنية التشغيلية، وتحتاج المؤسسات التعليمية والصحية والمالية إلى حلول تناسب مستخدميها وعملياتها وأنظمتها."
                 : "Applying the same technology across all sectors is not enough. Government entities need digital services and institutional procedures and approvals, industrial facilities depend on site-to-site connectivity and operational infrastructure, and educational, healthcare and financial institutions need solutions suited to their users, operations and systems."}
             </p>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تبدأ أربتك بدراسة أهداف المؤسسة والتحديات الحالية والأنظمة والبيانات والمواقع والمستخدمين، ثم تحدد الخدمات والتقنيات التي يمكن أن تحقق قيمة عملية قابلة للتطوير."
                 : "ARABTEC starts by studying the organization's goals, current challenges, systems, data, sites and users, then identifies the services and technologies that can deliver scalable, practical value."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-8 font-bold text-lg">
               {isAr ? "العناصر التي تتم دراستها" : "Elements we study"}
             </h3>
 
-            <ul className="mt-4 grid gap-2 md:grid-cols-2">
+            <ul className="mt-5 grid gap-2.5 md:grid-cols-2">
               {(isAr
                 ? [
                     "طبيعة العمليات والخدمات",
@@ -580,42 +588,13 @@ export default function IndustriesPage() {
                     "Support and operations requirements",
                   ]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* مخطط دائري / عناصر الدراسة */}
-          {/* <div className="rounded-2xl border border-border bg-card p-8 text-center">
-            <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
-              {isAr ? "حلول تقنية حسب القطاع" : "Technology solutions by sector"}
-            </div>
-            <div className="mt-2 text-2xl md:text-3xl font-extrabold text-[color:var(--brand-deep)] leading-snug">
-              {isAr ? "حلول تقنية حسب القطاع" : "Technology solutions by sector"}
-            </div>
-            <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3">
-              {[
-                { ar: "العمليات", en: "Operations" },
-                { ar: "المستخدمون", en: "Users" },
-                { ar: "الأنظمة", en: "Systems" },
-                { ar: "البيانات", en: "Data" },
-                { ar: "المواقع", en: "Sites" },
-                { ar: "التكامل", en: "Integration" },
-                { ar: "البنية التحتية", en: "Infrastructure" },
-                { ar: "الدعم", en: "Support" },
-              ].map((x) => (
-                <div
-                  key={x.en}
-                  className="aspect-square rounded-xl border border-border bg-background grid place-items-center text-sm font-medium p-2 text-center"
-                >
-                  {isAr ? x.ar : x.en}
-                </div>
-              ))}
-            </div>
-          </div> */}
         </div>
       </Section>
 
@@ -627,11 +606,7 @@ export default function IndustriesPage() {
         const Icon = industryIcons[index];
 
         return (
-          <Section
-            key={sector.key}
-            id={sector.key}
-            className={isEven ? "" : "bg-secondary"}
-          >
+          <Section key={sector.key} id={sector.key}>
             <div className="grid gap-10 lg:grid-cols-2 items-stretch">
               {/* الصورة */}
               <img
@@ -657,13 +632,13 @@ export default function IndustriesPage() {
                   </h2>
                 </div>
 
-                <p className="mt-4 text-muted-foreground leading-relaxed">
+                <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
                   {isAr ? sector.descAr : sector.descEn}
                 </p>
 
                 {sector.noteAr && (
                   <div className="mt-5 rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-base text-[#4B5563] leading-relaxed">
                       {isAr ? sector.noteAr : sector.noteEn}
                     </p>
                   </div>
@@ -682,7 +657,7 @@ export default function IndustriesPage() {
             </div>
 
             {/* الحلول المناسبة */}
-            <div className="mt-12">
+            <div className="mt-10">
               <h3 className="text-xl font-bold mb-6">
                 {isAr ? sector.solutionsTitleAr : sector.solutionsTitleEn}
               </h3>
@@ -695,11 +670,11 @@ export default function IndustriesPage() {
                   return (
                     <Card key={sol.link}>
                       <h4 className="font-bold text-base">{solTitle}</h4>
-                      <ul className="mt-3 space-y-1.5">
+                      <ul className="mt-3 space-y-2">
                         {solItems.map((x) => (
                           <li
                             key={x}
-                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                            className="flex items-start gap-2 text-base text-[#4B5563]"
                           >
                             <span className="text-[color:var(--gold)] mt-0.5 shrink-0">
                               •
@@ -728,7 +703,7 @@ export default function IndustriesPage() {
       {/* ============================================================
           حالات المشاريع المتكاملة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section>
         <SectionHead
           title={isAr
             ? "أمثلة على حلول متكاملة حسب طبيعة المؤسسة"
@@ -776,9 +751,9 @@ export default function IndustriesPage() {
           ).map((c) => (
             <Card key={c.t}>
               <h3 className="text-lg font-bold">{c.t}</h3>
-              <ul className="mt-3 space-y-1.5">
+              <ul className="mt-4 space-y-2">
                 {c.items.map((x) => (
-                  <li key={x} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <li key={x} className="flex items-start gap-2 text-base text-[#4B5563]">
                     <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                     <span>{x}</span>
                   </li>
@@ -827,7 +802,7 @@ export default function IndustriesPage() {
                 0{i + 1}
               </div>
               <div className="mt-1 font-semibold">{step.t}</div>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-3 text-base text-[#4B5563] leading-relaxed">
                 {step.d}
               </p>
             </li>
@@ -838,7 +813,7 @@ export default function IndustriesPage() {
       {/* ============================================================
           لماذا أربتك؟
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section>
         <SectionHead
           title={isAr
             ? "لماذا تختار القطاعات الحيوية أربتك شريكًا تقنيًا؟"
@@ -870,7 +845,7 @@ export default function IndustriesPage() {
           ).map((c) => (
             <Card key={c.h}>
               <h3 className="font-bold text-base">{c.h}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+              <p className="mt-3 text-base text-[#4B5563] leading-relaxed">{c.d}</p>
             </Card>
           ))}
         </div>
@@ -920,47 +895,42 @@ export default function IndustriesPage() {
       {/* ============================================================
           CTA
           ============================================================ */}
-      <section className="relative overflow-hidden bg-primary text-primary-foreground">
-        {/* <img
-          src={ctaBg}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        /> */}
-        <div className="relative container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
-            {isAr
-              ? "ما التحدي التقني الذي يواجه قطاعكم؟"
-              : "What technology challenge does your sector face?"}
-          </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/85">
-            {isAr
-              ? "شاركوا فريق أربتك بطبيعة المؤسسة والقطاع والأنظمة الحالية والتحديات والأهداف المطلوبة، وسنعمل معكم على تحديد الخدمات والحلول التقنية المناسبة وإعداد تصور أولي لنطاق المشروع."
-              : "Share your organization type, sector, current systems, challenges and goals with the ARABTEC team — we will work with you to identify the right services and solutions and prepare an initial project scope concept."}
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/contact"
-              className="rounded-md bg-background px-6 py-3 text-sm font-semibold text-primary hover:bg-secondary"
-            >
-              {isAr ? "اطلب استشارة حسب القطاع" : "Request a sector consultation"}
-            </Link>
-            <Link
-              to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
-            >
-              {isAr ? "اطلب عرضًا فنيًا" : "Request a technical proposal"}
-            </Link>
-          </div>
-        </div>
-      </section>
+ <section className="relative overflow-hidden bg-primary text-primary-foreground">
+  <div className="relative container-page py-16 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/90">
+      {isAr
+        ? "ما التحدي التقني الذي تواجهه مؤسستك؟"
+        : "What technology challenge does your organization face?"}
+    </h2>
+    <p className="mt-6 max-w-3xl mx-auto text-lg text-primary-foreground/90 leading-relaxed">
+      {isAr
+        ? "شاركنا احتياجات مؤسستك، لنساعدك على تحديد الحلول المناسبة ونطاق المشروع."
+        : "Share your organization's needs so we can help you define the right solutions and project scope."}
+    </p>
+    <div className="mt-8 flex flex-wrap justify-center gap-3">
+      {/* الزر الأساسي — ذهبي */}
+      <Link
+        to="/contact"
+        className="rounded-md bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-[#0B3D2E] hover:bg-[#B8942E] transition"
+      >
+        {isAr ? "ناقش احتياجاتك معنا" : "Discuss your needs with us"}
+      </Link>
+
+      {/* الزر الثانوي — إطار أبيض */}
+      <Link
+        to="/contact"
+        className="rounded-md bg-transparent border border-white px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
+      >
+        {isAr ? "اطلب عرضًا فنيًا" : "Request a technical proposal"}
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* ============================================================
           نموذج التواصل المختصر
           ============================================================ */}
-      <Section className="bg-secondary">
+      {/* <Section>
         <SectionHead
           title={isAr
             ? "أخبرنا عن مؤسستكم واحتياجها التقني"
@@ -968,7 +938,7 @@ export default function IndustriesPage() {
         />
 
         <div className="max-w-3xl mx-auto rounded-2xl border border-border bg-card p-8">
-          <p className="text-sm text-muted-foreground leading-relaxed text-center">
+          <p className="text-base text-[#4B5563] leading-relaxed text-center">
             {isAr
               ? "يمكنكم التواصل مع فريق أربتك مباشرة عبر صفحة «تواصل معنا» لملء النموذج التفصيلي، حيث سيتمكن فريقنا من مراجعة طبيعة قطاعكم والاحتياجات التقنية لمؤسستكم وتقديم التصور المناسب."
               : "You can reach the ARABTEC team directly through the Contact page to fill in the detailed form. Our team will review your sector and technology needs and provide the right concept."}
@@ -983,7 +953,7 @@ export default function IndustriesPage() {
             </Link>
           </div>
 
-          <ul className="mt-6 grid gap-2 md:grid-cols-2 text-sm text-muted-foreground">
+          <ul className="mt-6 grid gap-2.5 md:grid-cols-2 text-base text-[#4B5563]">
             {(isAr
               ? [
                   "الاسم الكامل *",
@@ -1021,7 +991,7 @@ export default function IndustriesPage() {
             ))}
           </ul>
         </div>
-      </Section>
+      </Section> */}
 
       {/* ============================================================
           الأسئلة الشائعة

@@ -64,9 +64,10 @@ const WEB3FORMS_ACCESS_KEY = "9daac662-70db-4422-94ad-37a0a82f02e0";
 // ============================================================
 // الصور
 // ============================================================
-import heroImg from "@/assets/enterprise-technology-consultation.webp";
+import heroImg from "@/assets/enterprise-technology-consultation.jpg";
+import mapImag from "@/assets/image_map.jpg";
+
 import contactTeamImg from "@/assets/arabtec-contact-technology-team.jpg";
-import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
 
 // ============================================================
 // Zod Schemas
@@ -194,6 +195,20 @@ function getFirstError(error: z.ZodError): string {
 }
 
 // ============================================================
+// دالة مساعدة لتحويل أخطاء Zod إلى خريطة رسائل لكل حقل
+// ============================================================
+function extractFieldErrors(error: z.ZodError): Record<string, string> {
+  const errors: Record<string, string> = {};
+  error.issues.forEach((issue) => {
+    const field = issue.path[0] as string | undefined;
+    if (field && !errors[field]) {
+      errors[field] = issue.message;
+    }
+  });
+  return errors;
+}
+
+// ============================================================
 // دالة مساعدة لإرسال البيانات إلى Web3Forms
 // ============================================================
 async function sendToWeb3Forms(payload: Record<string, any>) {
@@ -211,6 +226,76 @@ async function sendToWeb3Forms(payload: Record<string, any>) {
   });
   return res.json();
 }
+
+// ============================================================
+// Real-time validators & sanitizers
+// ============================================================
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const WEBSITE_RE = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/.*)?$/;
+
+const validators = {
+  name: (v: string) =>
+    !v.trim() ? "الاسم مطلوب" : v.trim().length < 2 ? "الاسم قصير جدًا" : undefined,
+  org: (v: string) =>
+    !v.trim()
+      ? "اسم الجهة مطلوب"
+      : v.trim().length < 2
+      ? "اسم الجهة قصير جدًا"
+      : undefined,
+  company: (v: string) =>
+    !v.trim()
+      ? "اسم الشركة مطلوب"
+      : v.trim().length < 2
+      ? "اسم الشركة قصير جدًا"
+      : undefined,
+  email: (v: string) =>
+    !v.trim()
+      ? "البريد الإلكتروني مطلوب"
+      : !EMAIL_RE.test(v.trim())
+      ? "بريد إلكتروني غير صالح"
+      : undefined,
+  phone: (v: string) =>
+    !v.trim()
+      ? "رقم الهاتف مطلوب"
+      : v.replace(/\D/g, "").length < 8
+      ? "رقم الهاتف قصير جدًا"
+      : undefined,
+  optionalPhone: (v: string) =>
+    !v.trim() || v.replace(/\D/g, "").length >= 8
+      ? undefined
+      : "رقم الهاتف قصير جدًا",
+  number: (v: string) =>
+    !v || /^\d+$/.test(v) ? undefined : "يجب أن يكون رقمًا صحيحًا",
+  website: (v: string) =>
+    !v.trim()
+      ? "الموقع الإلكتروني مطلوب"
+      : !WEBSITE_RE.test(v.trim())
+      ? "رابط الموقع غير صالح"
+      : undefined,
+  minLen:
+    (n: number, required: string, short: string) => (v: string) =>
+      !v.trim() ? required : v.trim().length < n ? short : undefined,
+  selectRequired: (msg: string) => (v: string) => (!v ? msg : undefined),
+};
+
+const sanitizers = {
+  // يمنع كتابة أي حرف غير رقم/مسافة/-/+/() في الهاتف
+  phone: (v: string) => v.replace(/[^\d\s\-+()]/g, ""),
+  digits: (v: string) => v.replace(/\D/g, ""),
+};
+
+// مساعد لتحديث رسائل الخطأ لكل حقل منفرد
+const makeFieldErrorSetter =
+  (setter: React.Dispatch<React.SetStateAction<Record<string, string>>>) =>
+  (field: string) =>
+  (err: string | undefined) => {
+    setter((prev) => {
+      const next = { ...prev };
+      if (err) next[field] = err;
+      else delete next[field];
+      return next;
+    });
+  };
 
 // ============================================================
 // 1. أنواع الطلبات (6 بطاقات)
@@ -463,7 +548,6 @@ export default function ContactPage() {
   const [searchParams] = useSearchParams();
   const isAr = lang === "ar";
 
-  // قراءة query params لتحديد نوع الطلب/الخدمة تلقائيًا
   const queryRequest = searchParams.get("request") || "";
   const queryService = searchParams.get("service") || "";
 
@@ -472,11 +556,34 @@ export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "submitting" | "error" | "success">("idle");
   const [error, setError] = useState<string>("");
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [submittedForm, setSubmittedForm] = useState<"main" | "meeting" | "partner" | null>(null);
 
-  // مزامنة query params لو تغيرت
+  // ✅ رسائل الأخطاء لكل حقل (نص رسالة بدل boolean) — الفورم الرئيسي
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [consentError, setConsentError] = useState(false);
+
+  // ✅ رسائل الأخطاء — فورم الاجتماع
+  const [meetingErrors, setMeetingErrors] = useState<Record<string, string>>({});
+  const [meetingConsentError, setMeetingConsentError] = useState(false);
+
+  // ✅ رسائل الأخطاء — فورم الشراكة
+  const [partnerErrors, setPartnerErrors] = useState<Record<string, string>>({});
+  const [partnerConsentError, setPartnerConsentError] = useState(false);
+
+  const setMainFieldError = makeFieldErrorSetter(setFormErrors);
+  const setMeetingFieldError = makeFieldErrorSetter(setMeetingErrors);
+  const setPartnerFieldError = makeFieldErrorSetter(setPartnerErrors);
+
   useEffect(() => {
-    if (queryRequest) setReqType(queryRequest);
-    if (queryService) setService(queryService);
+    if (queryRequest) {
+      setReqType(queryRequest);
+      setMainFieldError("reqType")(undefined);
+    }
+    if (queryService) {
+      setService(queryService);
+      setMainFieldError("service")(undefined);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queryRequest, queryService]);
 
   // ============================================================
@@ -486,11 +593,13 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("submitting");
     setError("");
+    setSubmittedForm("main");
+    setFormErrors({});
+    setConsentError(false);
 
     const form = e.currentTarget;
     const fd = new FormData(form);
 
-    // استخراج كل الحقول
     const rawData = {
       name: String(fd.get("name") || ""),
       org: String(fd.get("org") || ""),
@@ -514,17 +623,24 @@ export default function ContactPage() {
       consent: (fd.get("consent") as string | null) || "",
     };
 
-    // ✅ التحقق بـ Zod
     const result = mainFormSchema.safeParse(rawData);
+
     if (!result.success) {
       setStatus("error");
       setError(getFirstError(result.error));
+
+      const errs = extractFieldErrors(result.error);
+      delete errs["consent"];
+      setFormErrors(errs);
+
+      if (rawData.consent !== "on") {
+        setConsentError(true);
+      }
       return;
     }
 
     const data = result.data;
 
-    // تجهيز البيانات للإرسال
     const payload = {
       subject: `طلب جديد من موقع Arabtec — ${data.name}`,
       name: data.name,
@@ -580,6 +696,9 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("submitting");
     setError("");
+    setSubmittedForm("meeting");
+    setMeetingErrors({});
+    setMeetingConsentError(false);
 
     const form = e.currentTarget;
     const fd = new FormData(form);
@@ -600,11 +719,15 @@ export default function ContactPage() {
       consent: (fd.get("m-consent") as string | null) || "",
     };
 
-    // ✅ التحقق بـ Zod
     const result = meetingFormSchema.safeParse(rawData);
     if (!result.success) {
       setStatus("error");
       setError(getFirstError(result.error));
+
+      const errs = extractFieldErrors(result.error);
+      delete errs["consent"];
+      setMeetingErrors(errs);
+      setMeetingConsentError(rawData.consent !== "on");
       return;
     }
 
@@ -654,6 +777,9 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("submitting");
     setError("");
+    setSubmittedForm("partner");
+    setPartnerErrors({});
+    setPartnerConsentError(false);
 
     const form = e.currentTarget;
     const fd = new FormData(form);
@@ -675,11 +801,15 @@ export default function ContactPage() {
       consent: (fd.get("p-consent") as string | null) || "",
     };
 
-    // ✅ التحقق بـ Zod
     const result = partnerFormSchema.safeParse(rawData);
     if (!result.success) {
       setStatus("error");
       setError(getFirstError(result.error));
+
+      const errs = extractFieldErrors(result.error);
+      delete errs["consent"];
+      setPartnerErrors(errs);
+      setPartnerConsentError(rawData.consent !== "on");
       return;
     }
 
@@ -725,11 +855,13 @@ export default function ContactPage() {
 
   // ============================================================
   // Submit Handler — نموذج الطلبات المؤسسية الحكومية
+  // (لا يوجد Form مرسوم له حاليًا — محفوظ للاستخدام المستقبلي)
   // ============================================================
   async function onGovernmentSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
     setError("");
+    setSubmittedForm(null);
 
     const form = e.currentTarget;
     const fd = new FormData(form);
@@ -744,7 +876,6 @@ export default function ContactPage() {
       officialEmail: String(fd.get("g-email") || ""),
     };
 
-    // ✅ التحقق بـ Zod
     const result = govFormSchema.safeParse(rawData);
     if (!result.success) {
       setStatus("error");
@@ -788,9 +919,6 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* ============================================================
-          JSON-LD
-          ============================================================ */}
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -836,7 +964,6 @@ export default function ContactPage() {
         />
 
         <div className="grid gap-10 lg:grid-cols-2 items-center mt-6">
-          {/* الصورة — يسار */}
           <div className="order-2 lg:order-1">
             <img
               src={heroImg}
@@ -853,68 +980,48 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* النص — يمين */}
-          <div className="order-1 lg:order-2">
-            <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
-              {isAr ? "ابدأ مشروعك مع أربتك" : "Start your project with ARABTEC"}
-            </div>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
-              {isAr
-                ? "تواصل معنا لمناقشة احتياجات مؤسستكم التقنية"
-                : "Contact us to discuss your organization's technology needs"}
-            </h1>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
-              {isAr
-                ? "سواء كنتم تخططون لتطوير منصة رقمية، تطبيق نظام ERP، إطلاق حل ذكاء اصطناعي، تحديث البنية التحتية، ربط الفروع والمواقع أو تنفيذ أنظمة المراقبة والحضور والتحكم بالدخول، يمكن لفريق أربتك مساعدتكم على دراسة الاحتياج وتحديد نطاق الحل المناسب."
-                : "Whether you are planning a digital platform, an ERP system, launching an AI solution, modernizing infrastructure, connecting branches and sites, or implementing surveillance, attendance and access control — the ARABTEC team can help you study the need and define the right solution scope."}
-            </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
-              {isAr
-                ? "شاركوا معنا معلومات المشروع والأهداف والتحديات الحالية، وسيتولى الفريق المختص مراجعة الطلب والتواصل معكم لمناقشة المتطلبات والخطوات التالية."
-                : "Share your project information, objectives and current challenges — our specialized team will review your request and contact you to discuss requirements and next steps."}
-            </p>
+         <div className="order-1 lg:order-2">
+  <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
+    {isAr ? "ابدأ مشروعك مع أربتك" : "Start your project with ARABTEC"}
+  </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#contact-form"
-                className="rounded-md bg-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
-              >
-                {isAr ? "أرسل طلب مشروع" : "Submit project request"}
-              </a>
-              <a
-                href="#meeting-request"
-                className="rounded-md border border-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-[color:var(--brand-deep)] hover:bg-[color:var(--brand-deep)]/5 transition"
-              >
-                {isAr ? "اطلب اجتماعًا استشاريًا" : "Request a consultation meeting"}
-              </a>
-            </div>
+  <h1 className="mt-2 text-3xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
+    {isAr
+      ? "لنبدأ مشروعك التقني بثقة"
+      : "Let's start your technology project with confidence"}
+  </h1>
 
-            {/* شريط مختصر */}
-            <div className="mt-8 flex flex-wrap gap-2">
-              {[
-                { ar: "استشارة تقنية", en: "Technical consultation" },
-                { ar: "طلب عرض فني", en: "Technical proposal" },
-                { ar: "مشروع حكومي", en: "Government project" },
-                { ar: "طلب شراكة", en: "Partnership" },
-                { ar: "زيارة ميدانية", en: "Site survey" },
-                { ar: "مشروع دعم قائم", en: "Existing project support" },
-              ].map((x) => (
-                <span
-                  key={x.en}
-                  className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium"
-                >
-                  {isAr ? x.ar : x.en}
-                </span>
-              ))}
-            </div>
-          </div>
+  <p className="mt-5 text-base md:text-lg text-[#4B5563] leading-relaxed">
+    {isAr
+      ? "سواء كنتم تخططون للتحول الرقمي، تطوير أنظمة ERP، تطبيق الذكاء الاصطناعي أو تحديث البنية التحتية، فإن فريق أربتك يساعدكم على تحديد الحلول المناسبة وتنفيذها بكفاءة."
+      : "Whether you're planning digital transformation, ERP development, AI adoption, or infrastructure modernization — the ARABTEC team helps you identify the right solutions and implement them efficiently."}
+  </p>
+
+  <div className="mt-8 flex flex-wrap gap-3">
+    {/* الزر الأساسي */}
+    <a
+      href="#contact-form"
+      className="rounded-md bg-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
+    >
+      {isAr ? "أرسل طلب مشروع" : "Submit a project request"}
+    </a>
+
+    {/* الزر الثانوي */}
+    <a
+      href="#meeting-request"
+      className="rounded-md border border-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-[color:var(--brand-deep)] hover:bg-[color:var(--brand-deep)]/5 transition"
+    >
+      {isAr ? "احجز استشارة" : "Book a consultation"}
+    </a>
+  </div>
+</div>
         </div>
       </Section>
 
       {/* ============================================================
           2. كيف يمكننا مساعدتكم؟ — 6 بطاقات
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr ? "اختر نوع الطلب المناسب" : "Choose the right request type"}
         />
@@ -929,6 +1036,7 @@ export default function ContactPage() {
                 type="button"
                 onClick={() => {
                   setReqType(r.key);
+                  setMainFieldError("reqType")(undefined);
                   document
                     .getElementById("contact-form")
                     ?.scrollIntoView({ behavior: "smooth" });
@@ -967,7 +1075,6 @@ export default function ContactPage() {
           noValidate
           className="grid gap-5 md:grid-cols-2 rounded-2xl border border-border bg-card p-6"
         >
-          {/* البيانات الأساسية */}
           <div className="md:col-span-2">
             <h3 className="font-bold mb-3">
               {isAr ? "بيانات التواصل" : "Contact information"}
@@ -978,11 +1085,17 @@ export default function ContactPage() {
             label={isAr ? "الاسم الكامل *" : "Full name *"}
             name="name"
             required
+            error={formErrors["name"]}
+            validate={validators.name}
+            onValidate={setMainFieldError("name")}
           />
           <Field
             label={isAr ? "اسم الجهة أو المؤسسة *" : "Organization name *"}
             name="org"
             required
+            error={formErrors["org"]}
+            validate={validators.org}
+            onValidate={setMainFieldError("org")}
           />
           <Field
             label={isAr ? "المسمى الوظيفي" : "Job title"}
@@ -993,12 +1106,20 @@ export default function ContactPage() {
             name="email"
             type="email"
             required
+            error={formErrors["email"]}
+            validate={validators.email}
+            onValidate={setMainFieldError("email")}
           />
           <Field
             label={isAr ? "رقم الهاتف *" : "Phone number *"}
             name="phone"
             type="tel"
+            inputMode="tel"
             required
+            error={formErrors["phone"]}
+            sanitize={sanitizers.phone}
+            validate={validators.phone}
+            onValidate={setMainFieldError("phone")}
           />
           <Select
             label={isAr ? "الدولة" : "Country"}
@@ -1014,7 +1135,6 @@ export default function ContactPage() {
             name="city"
           />
 
-          {/* بيانات المؤسسة */}
           <div className="md:col-span-2 mt-2">
             <h3 className="font-bold mb-3">
               {isAr ? "بيانات المؤسسة" : "Organization details"}
@@ -1033,14 +1153,19 @@ export default function ContactPage() {
             label={isAr ? "عدد الموظفين" : "Number of employees"}
             name="empCount"
             type="number"
+            error={formErrors["empCount"]}
+            validate={validators.number}
+            onValidate={setMainFieldError("empCount")}
           />
           <Field
             label={isAr ? "عدد المواقع أو الفروع" : "Number of sites or branches"}
             name="sites"
             type="number"
+            error={formErrors["sites"]}
+            validate={validators.number}
+            onValidate={setMainFieldError("sites")}
           />
 
-          {/* تفاصيل الطلب */}
           <div className="md:col-span-2 mt-2">
             <h3 className="font-bold mb-3">
               {isAr ? "تفاصيل الطلب" : "Request details"}
@@ -1056,6 +1181,9 @@ export default function ContactPage() {
               value: r.value,
               label: isAr ? r.ar : r.en,
             }))}
+            error={formErrors["reqType"]}
+            validate={validators.selectRequired("نوع الطلب مطلوب")}
+            onValidate={setMainFieldError("reqType")}
           />
           <Select
             label={isAr ? "الخدمة المطلوبة *" : "Required service *"}
@@ -1066,6 +1194,9 @@ export default function ContactPage() {
               value: s.value,
               label: isAr ? s.ar : s.en,
             }))}
+            error={formErrors["service"]}
+            validate={validators.selectRequired("الخدمة المطلوبة مطلوبة")}
+            onValidate={setMainFieldError("service")}
           />
           <Field
             label={isAr ? "عنوان المشروع" : "Project title"}
@@ -1077,6 +1208,9 @@ export default function ContactPage() {
             name="desc"
             required
             className="md:col-span-2"
+            error={formErrors["desc"]}
+            validate={validators.minLen(10, "وصف الاحتياج مطلوب", "يجب أن يكون وصف الاحتياج 10 أحرف على الأقل")}
+            onValidate={setMainFieldError("desc")}
           />
 
           <Select
@@ -1114,7 +1248,6 @@ export default function ContactPage() {
             <span>{isAr ? "هل ترغب في اجتماع؟" : "Would you like a meeting?"}</span>
           </label>
 
-          {/* المرفقات */}
           <div className="md:col-span-2">
             <label className="text-sm font-medium block mb-1">
               {isAr ? "إرفاق ملف" : "Attach a file"}
@@ -1132,9 +1265,18 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* الموافقة */}
-          <label className="md:col-span-2 flex items-start gap-2 text-sm">
-            <input type="checkbox" name="consent" required className="mt-1" />
+          {/* ✅ الموافقة (تتحول لأحمر لو مش متعلمة) */}
+          <label
+            className={`md:col-span-2 flex items-start gap-2 text-sm ${
+              consentError ? "text-red-500" : ""
+            }`}
+          >
+            <input
+              type="checkbox"
+              name="consent"
+              required
+              className={`mt-1 ${consentError ? "outline outline-1 outline-red-500" : ""}`}
+            />
             <span>
               {isAr
                 ? "أوافق على استخدام بياناتي للتواصل معي ومراجعة طلبي وفق "
@@ -1145,14 +1287,23 @@ export default function ContactPage() {
               .
             </span>
           </label>
+          {consentError && (
+            <div className="md:col-span-2 text-xs text-red-500 font-bold -mt-3">
+              {isAr
+                ? "يجب الموافقة على سياسة الخصوصية للمتابعة."
+                : "You must accept the privacy policy to continue."}
+            </div>
+          )}
 
-          {status === "error" && (
-            <div className="md:col-span-2 text-sm text-destructive">{error}</div>
+          {status === "error" && submittedForm === "main" && (
+            <div className="md:col-span-2 text-sm text-red-500 font-semibold bg-red-50 p-3 rounded-md border border-red-200">
+              {error}
+            </div>
           )}
 
           <div className="md:col-span-2">
             <Button type="submit" disabled={status === "submitting"} size="lg">
-              {status === "submitting"
+              {status === "submitting" && submittedForm === "main"
                 ? isAr
                   ? "جارٍ إرسال طلبكم..."
                   : "Submitting your request..."
@@ -1186,22 +1337,36 @@ export default function ContactPage() {
             label={isAr ? "الاسم الكامل *" : "Full name *"}
             name="m-name"
             required
+            error={meetingErrors["name"]}
+            validate={validators.name}
+            onValidate={setMeetingFieldError("name")}
           />
           <Field
             label={isAr ? "اسم الجهة *" : "Organization name *"}
             name="m-org"
             required
+            error={meetingErrors["org"]}
+            validate={validators.org}
+            onValidate={setMeetingFieldError("org")}
           />
           <Field
             label={isAr ? "البريد الإلكتروني للعمل *" : "Work email *"}
             name="m-email"
             type="email"
             required
+            error={meetingErrors["email"]}
+            validate={validators.email}
+            onValidate={setMeetingFieldError("email")}
           />
           <Field
             label={isAr ? "رقم الهاتف" : "Phone number"}
             name="m-phone"
             type="tel"
+            inputMode="tel"
+            error={meetingErrors["phone"]}
+            sanitize={sanitizers.phone}
+            validate={validators.optionalPhone}
+            onValidate={setMeetingFieldError("phone")}
           />
 
           <Select
@@ -1212,6 +1377,9 @@ export default function ContactPage() {
               { value: "inperson", label: isAr ? "اجتماع حضوري" : "In-person meeting" },
               { value: "phone", label: isAr ? "مكالمة هاتفية" : "Phone call" },
             ]}
+            error={meetingErrors["meetingType"]}
+            validate={validators.selectRequired("نوع الاجتماع مطلوب")}
+            onValidate={setMeetingFieldError("meetingType")}
           />
           <Select
             label={isAr ? "الخدمة المطلوبة *" : "Required service *"}
@@ -1220,18 +1388,13 @@ export default function ContactPage() {
               value: s.value,
               label: isAr ? s.ar : s.en,
             }))}
+            error={meetingErrors["service"]}
+            validate={validators.selectRequired("الخدمة المطلوبة مطلوبة")}
+            onValidate={setMeetingFieldError("service")}
           />
 
-          <Field
-            label={isAr ? "التاريخ المفضل" : "Preferred date"}
-            name="m-date"
-            type="date"
-          />
-          <Field
-            label={isAr ? "الوقت المفضل" : "Preferred time"}
-            name="m-time"
-            type="time"
-          />
+          <Field label={isAr ? "التاريخ المفضل" : "Preferred date"} name="m-date" type="date" />
+          <Field label={isAr ? "الوقت المفضل" : "Preferred time"} name="m-time" type="time" />
 
           <Field
             label={isAr ? "المنطقة الزمنية" : "Time zone"}
@@ -1253,6 +1416,9 @@ export default function ContactPage() {
             name="m-topic"
             required
             className="md:col-span-2"
+            error={meetingErrors["topic"]}
+            validate={validators.minLen(5, "موضوع الاجتماع مطلوب", "موضوع الاجتماع قصير جدًا")}
+            onValidate={setMeetingFieldError("topic")}
           />
           <Textarea
             label={isAr ? "ملاحظات إضافية" : "Additional notes"}
@@ -1260,14 +1426,36 @@ export default function ContactPage() {
             className="md:col-span-2"
           />
 
-          <label className="md:col-span-2 flex items-start gap-2 text-sm">
-            <input type="checkbox" name="m-consent" required className="mt-1" />
+          <label
+            className={`md:col-span-2 flex items-start gap-2 text-sm ${
+              meetingConsentError ? "text-red-500" : ""
+            }`}
+          >
+            <input
+              type="checkbox"
+              name="m-consent"
+              required
+              className={`mt-1 ${meetingConsentError ? "outline outline-1 outline-red-500" : ""}`}
+            />
             <span>
               {isAr
                 ? "أوافق على سياسة الخصوصية ومعالجة بياناتي للتواصل بشأن الاجتماع."
                 : "I agree to the privacy policy and processing of my data for contact about the meeting."}
             </span>
           </label>
+          {meetingConsentError && (
+            <div className="md:col-span-2 text-xs text-red-500 font-bold -mt-3">
+              {isAr
+                ? "يجب الموافقة على سياسة الخصوصية للمتابعة."
+                : "You must accept the privacy policy to continue."}
+            </div>
+          )}
+
+          {status === "error" && submittedForm === "meeting" && (
+            <div className="md:col-span-2 text-sm text-red-500 font-semibold bg-red-50 p-3 rounded-md border border-red-200">
+              {error}
+            </div>
+          )}
 
           <div className="md:col-span-2">
             <p className="text-xs text-muted-foreground mb-3">
@@ -1276,24 +1464,33 @@ export default function ContactPage() {
                 : "Note: The meeting is not confirmed upon form submission. We will contact you to confirm the time or propose an alternative."}
             </p>
             <Button type="submit" disabled={status === "submitting"} size="lg">
-              {isAr ? "طلب موعد اجتماع" : "Request meeting"}
+              {status === "submitting" && submittedForm === "meeting"
+                ? isAr
+                  ? "جارٍ إرسال الطلب..."
+                  : "Submitting..."
+                : isAr
+                ? "طلب موعد اجتماع"
+                : "Request meeting"}
             </Button>
           </div>
         </form>
       </Section>
-
       {/* ============================================================
-          5. بيانات التواصل الرسمية
+          بيانات التواصل الرسمية والموقع
           ============================================================ */}
       <Section>
+        {/* العنوان الرئيسي والعنوان الفرعي */}
         <SectionHead
-          title={isAr ? "بيانات التواصل الرسمية" : "Official contact details"}
+          title={isAr ? "تواصل مع أربتك" : "Contact ARABTEC"}
+          intro={isAr ? "المملكة العربية السعودية" : "Saudi Arabia"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
+        {/* 1. كروت بيانات التواصل */}
+        <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-8">
           <Card>
             <Phone className="h-5 w-5 text-[color:var(--gold)] mb-3" />
             <h3 className="font-bold mb-2">{isAr ? "الهاتف" : "Phone"}</h3>
+            {/* تم إرجاع رقم الهاتف زي الأصل بالظبط */}
             <a
               href={`tel:${CONTACT.phone}`}
               dir="ltr"
@@ -1305,6 +1502,7 @@ export default function ContactPage() {
           <Card>
             <Mail className="h-5 w-5 text-[color:var(--gold)] mb-3" />
             <h3 className="font-bold mb-2">{isAr ? "البريد الإلكتروني" : "Email"}</h3>
+            {/* تم إرجاع الإيميل زي الأصل */}
             <a
               href={`mailto:${CONTACT.email}`}
               className="text-sm text-brand-deep hover:underline"
@@ -1333,46 +1531,58 @@ export default function ContactPage() {
           </Card>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <a
-            href={`tel:${CONTACT.phone}`}
-            className="rounded-md bg-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
-          >
-            {isAr ? "اتصل بنا" : "Call us"}
-          </a>
-          <a
-            href={`mailto:${CONTACT.email}`}
-            className="rounded-md border border-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-[color:var(--brand-deep)] hover:bg-[color:var(--brand-deep)]/5 transition"
-          >
-            {isAr ? "راسلنا عبر البريد الإلكتروني" : "Email us"}
-          </a>
-        </div>
-      </Section>
+        {/* 2. كارت الموقع والخريطة (مضبوط للموبايل واللاب) */}
+        <div className="mt-8 md:mt-12 max-w-5xl mx-auto rounded-2xl md:rounded-[32px] bg-card border border-border p-5 md:p-10 shadow-sm overflow-hidden">
+          
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-10 items-stretch">
+            
+            {/* صورة الموقع - تأخذ ارتفاع مناسب للموبايل وتتمدد على اللاب */}
+            <div className="relative w-full h-[220px] sm:h-[300px] lg:h-auto lg:min-h-[400px] rounded-xl md:rounded-2xl overflow-hidden shadow-sm order-1 lg:order-1">
+              <img
+                src={mapImag}
+                alt={isAr ? "مقر أربتك - الخبر" : "ARABTEC HQ - Al Khobar"}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
 
-      {/* ============================================================
-          6. الخريطة (Lazy)
-          ============================================================ */}
-      <Section className="bg-secondary">
-        <SectionHead
-          title={isAr ? "موقع المكتب الرئيسي" : "Main office location"}
-        />
+            {/* المحتوى (النصوص والزر) */}
+            <div className="flex flex-col justify-center order-2 lg:order-2 py-2 lg:py-0">
+              
+              {/* عنوان فرعي صغير للموقع */}
+              <div className="flex items-center gap-3 mb-5">
+                <div className="border border-border rounded-full p-2 flex items-center justify-center text-[color:var(--brand-deep)]">
+                  <MapPin className="h-4 w-4" strokeWidth={2} />
+                </div>
+                <span className="font-bold text-lg text-[color:var(--brand-deep)]">
+                  {isAr ? "موقعنا" : "Our Location"}
+                </span>
+              </div>
 
-        <div className="mt-6 rounded-2xl border border-border bg-card p-8 text-center">
-          <MapPin className="h-8 w-8 mx-auto mb-3 text-[color:var(--gold)]" />
-          <h3 className="text-lg font-bold mb-2">
-            {isAr ? "مقر أربتك" : "ARABTEC Office"}
-          </h3>
-          <p className="text-sm text-muted-foreground mb-6">
-            {isAr ? CONTACT.addressAr : CONTACT.addressEn}
-          </p>
-          <a
-            href={CONTACT.mapUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-md bg-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition inline-block"
-          >
-            {isAr ? "افتح الموقع في Google Maps" : "Open in Google Maps"}
-          </a>
+              {/* العنوان الرئيسي للمكان */}
+              <div className="flex flex-col gap-2">
+                <h3 className="text-2xl md:text-3xl font-bold text-[color:var(--brand-deep)]">
+                  {isAr ? "مقر أربتك – الخبر" : "ARABTEC HQ – Al Khobar"}
+                </h3>
+                <p className="text-base text-[#4B5563] leading-relaxed">
+                  {isAr ? CONTACT.addressAr : CONTACT.addressEn}
+                </p>
+              </div>
+
+              {/* زر الخريطة */}
+              <a
+                href={CONTACT.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 lg:mt-10 flex items-center justify-center gap-2.5 w-full bg-[color:var(--brand-deep)] text-white rounded-full py-3.5 px-4 text-sm md:text-base font-semibold hover:opacity-90 transition-colors shadow-sm"
+              >
+                <MapPin className="h-4 w-4 md:h-5 md:w-5" strokeWidth={2} />
+                {isAr ? "عرض المنطقة في خرائط Google" : "View area in Google Maps"}
+              </a>
+
+            </div>
+
+          </div>
         </div>
       </Section>
 
@@ -1400,7 +1610,10 @@ export default function ContactPage() {
                 </p>
                 <a
                   href={`#contact-form`}
-                  onClick={() => setService(sc.slug)}
+                  onClick={() => {
+                    setService(sc.slug);
+                    setMainFieldError("service")(undefined);
+                  }}
                   className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-deep hover:text-gold"
                 >
                   {isAr ? "تواصل بشأن هذه الخدمة" : "Contact about this service"}
@@ -1415,7 +1628,7 @@ export default function ContactPage() {
       {/* ============================================================
           8. ماذا يحدث بعد إرسال الطلب؟
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "خطوات واضحة لمراجعة احتياجكم"
@@ -1475,7 +1688,7 @@ export default function ContactPage() {
       {/* ============================================================
           10. طلبات الجهات الحكومية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "تواصل مخصص للمشروعات المؤسسية والحكومية"
@@ -1588,12 +1801,19 @@ export default function ContactPage() {
             label={isAr ? "اسم الشركة *" : "Company name *"}
             name="p-company"
             required
+            error={partnerErrors["company"]}
+            validate={validators.company}
+            onValidate={setPartnerFieldError("company")}
           />
           <Field
             label={isAr ? "الموقع الإلكتروني *" : "Website *"}
             name="p-website"
-            type="url"
+            type="text"
+            inputMode="url"
             required
+            error={partnerErrors["website"]}
+            validate={validators.website}
+            onValidate={setPartnerFieldError("website")}
           />
           <Select
             label={isAr ? "الدولة *" : "Country *"}
@@ -1607,21 +1827,29 @@ export default function ContactPage() {
             label={isAr ? "اسم مسؤول التواصل *" : "Contact person *"}
             name="p-name"
             required
+            error={partnerErrors["name"]}
+            validate={validators.name}
+            onValidate={setPartnerFieldError("name")}
           />
-          <Field
-            label={isAr ? "المسمى الوظيفي" : "Job title"}
-            name="p-title"
-          />
+          <Field label={isAr ? "المسمى الوظيفي" : "Job title"} name="p-title" />
           <Field
             label={isAr ? "البريد الإلكتروني *" : "Email *"}
             name="p-email"
             type="email"
             required
+            error={partnerErrors["email"]}
+            validate={validators.email}
+            onValidate={setPartnerFieldError("email")}
           />
           <Field
             label={isAr ? "رقم الهاتف" : "Phone number"}
             name="p-phone"
             type="tel"
+            inputMode="tel"
+            error={partnerErrors["phone"]}
+            sanitize={sanitizers.phone}
+            validate={validators.optionalPhone}
+            onValidate={setPartnerFieldError("phone")}
           />
           <Select
             label={isAr ? "نوع الشركة *" : "Company type *"}
@@ -1638,11 +1866,17 @@ export default function ContactPage() {
               { value: "training", label: isAr ? "شركة تدريب ودعم" : "Training & support company" },
               { value: "other", label: isAr ? "غير ذلك" : "Other" },
             ]}
+            error={partnerErrors["companyType"]}
+            validate={validators.selectRequired("نوع الشركة مطلوب")}
+            onValidate={setPartnerFieldError("companyType")}
           />
           <Field
             label={isAr ? "مجال التقنية *" : "Technology area *"}
             name="p-tech"
             required
+            error={partnerErrors["technology"]}
+            validate={validators.minLen(2, "مجال التقنية مطلوب", "مجال التقنية قصير جدًا")}
+            onValidate={setPartnerFieldError("technology")}
           />
           <Select
             label={isAr ? "نوع الشراكة المقترحة *" : "Proposed partnership type *"}
@@ -1654,21 +1888,21 @@ export default function ContactPage() {
               { value: "joint", label: isAr ? "مشروع مشترك" : "Joint project" },
               { value: "other", label: isAr ? "غير ذلك" : "Other" },
             ]}
+            error={partnerErrors["partnershipType"]}
+            validate={validators.selectRequired("نوع الشراكة المقترح مطلوب")}
+            onValidate={setPartnerFieldError("partnershipType")}
           />
           <Textarea
             label={isAr ? "نبذة عن الحل أو المنتج *" : "About the solution or product *"}
             name="p-solution"
             required
             className="md:col-span-2"
+            error={partnerErrors["solution"]}
+            validate={validators.minLen(10, "وصف الحل مطلوب", "وصف الحل قصير جدًا")}
+            onValidate={setPartnerFieldError("solution")}
           />
-          <Field
-            label={isAr ? "الأسواق المستهدفة" : "Target markets"}
-            name="p-markets"
-          />
-          <Field
-            label={isAr ? "الدعم والتدريب المتاح" : "Available support & training"}
-            name="p-support"
-          />
+          <Field label={isAr ? "الأسواق المستهدفة" : "Target markets"} name="p-markets" />
+          <Field label={isAr ? "الدعم والتدريب المتاح" : "Available support & training"} name="p-support" />
           <div className="md:col-span-2">
             <label className="text-sm font-medium block mb-1">
               {isAr ? "إرفاق الملف التعريفي" : "Attach company profile"}
@@ -1680,17 +1914,46 @@ export default function ContactPage() {
               className="text-sm"
             />
           </div>
-          <label className="md:col-span-2 flex items-start gap-2 text-sm">
-            <input type="checkbox" name="p-consent" required className="mt-1" />
+          <label
+            className={`md:col-span-2 flex items-start gap-2 text-sm ${
+              partnerConsentError ? "text-red-500" : ""
+            }`}
+          >
+            <input
+              type="checkbox"
+              name="p-consent"
+              required
+              className={`mt-1 ${partnerConsentError ? "outline outline-1 outline-red-500" : ""}`}
+            />
             <span>
               {isAr
                 ? "أوافق على سياسة الخصوصية ومعالجة بياناتي للتواصل بشأن طلب الشراكة."
                 : "I agree to the privacy policy and processing of my data for contacting me about the partnership request."}
             </span>
           </label>
+          {partnerConsentError && (
+            <div className="md:col-span-2 text-xs text-red-500 font-bold -mt-3">
+              {isAr
+                ? "يجب الموافقة على سياسة الخصوصية للمتابعة."
+                : "You must accept the privacy policy to continue."}
+            </div>
+          )}
+
+          {status === "error" && submittedForm === "partner" && (
+            <div className="md:col-span-2 text-sm text-red-500 font-semibold bg-red-50 p-3 rounded-md border border-red-200">
+              {error}
+            </div>
+          )}
+
           <div className="md:col-span-2">
             <Button type="submit" disabled={status === "submitting"} size="lg">
-              {isAr ? "إرسال طلب الشراكة" : "Submit partnership request"}
+              {status === "submitting" && submittedForm === "partner"
+                ? isAr
+                  ? "جارٍ إرسال الطلب..."
+                  : "Submitting..."
+                : isAr
+                ? "إرسال طلب الشراكة"
+                : "Submit partnership request"}
             </Button>
           </div>
         </form>
@@ -1699,7 +1962,7 @@ export default function ContactPage() {
       {/* ============================================================
           12. صورة فريق التواصل + CTA
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-center">
           <img
             src={contactTeamImg}
@@ -1748,14 +2011,6 @@ export default function ContactPage() {
           13. CTA Final
           ============================================================ */}
       <section className="relative overflow-hidden bg-primary text-primary-foreground">
-        {/* <img
-          src={ctaBg}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        /> */}
         <div className="relative container-page py-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
             {isAr
@@ -1921,49 +2176,127 @@ export default function ContactPage() {
 }
 
 // ============================================================
-// مكونات فرعية (Field, Textarea, Select)
+// Field — بيدعم sanitize + live validate + عرض رسالة تحت الخانة
 // ============================================================
 function Field({
   label,
   className = "",
+  error,
+  sanitize,
+  validate,
+  onValidate,
+  onChange: externalOnChange,
+  onBlur: externalOnBlur,
   ...props
-}: { label: string; className?: string } & React.InputHTMLAttributes<HTMLInputElement>) {
+}: {
+  label: string;
+  className?: string;
+  error?: string;
+  sanitize?: (v: string) => string;
+  validate?: (v: string) => string | undefined;
+  onValidate?: (err: string | undefined) => void;
+} & React.InputHTMLAttributes<HTMLInputElement>) {
   const id = `field-${props.name}`;
+  const [touched, setTouched] = useState(false);
+
   return (
     <div className={className}>
-      <label htmlFor={id} className="text-sm font-medium block mb-1">
+      <label
+        htmlFor={id}
+        className={`text-sm font-medium block mb-1 ${error ? "text-red-500" : ""}`}
+      >
         {label}
       </label>
       <input
         id={id}
         {...props}
-        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+        onChange={(e) => {
+          if (sanitize) {
+            const sanitized = sanitize(e.target.value);
+            if (sanitized !== e.target.value) e.target.value = sanitized;
+          }
+          const shouldValidate = touched || !!error;
+          if (shouldValidate && validate && onValidate) {
+            if (!touched) setTouched(true);
+            onValidate(validate(e.target.value));
+          }
+          externalOnChange?.(e);
+        }}
+        onBlur={(e) => {
+          setTouched(true);
+          if (validate && onValidate) onValidate(validate(e.target.value));
+          externalOnBlur?.(e);
+        }}
+        className={`w-full rounded-md border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2
+          ${error ? "border-red-500 focus:ring-red-500" : "border-input focus:ring-ring"}`}
       />
+      {error && (
+        <p className="mt-1 text-xs text-red-500 font-semibold">{error}</p>
+      )}
     </div>
   );
 }
 
+// ============================================================
+// Textarea
+// ============================================================
 function Textarea({
   label,
   className = "",
+  error,
+  validate,
+  onValidate,
+  onChange: externalOnChange,
+  onBlur: externalOnBlur,
   ...props
-}: { label: string; className?: string } & React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
+}: {
+  label: string;
+  className?: string;
+  error?: string;
+  validate?: (v: string) => string | undefined;
+  onValidate?: (err: string | undefined) => void;
+} & React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
   const id = `field-${props.name}`;
+  const [touched, setTouched] = useState(false);
+
   return (
     <div className={className}>
-      <label htmlFor={id} className="text-sm font-medium block mb-1">
+      <label
+        htmlFor={id}
+        className={`text-sm font-medium block mb-1 ${error ? "text-red-500" : ""}`}
+      >
         {label}
       </label>
       <textarea
         id={id}
         rows={4}
         {...props}
-        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+        onChange={(e) => {
+          const shouldValidate = touched || !!error;
+          if (shouldValidate && validate && onValidate) {
+            if (!touched) setTouched(true);
+            onValidate(validate(e.target.value));
+          }
+          externalOnChange?.(e);
+        }}
+        onBlur={(e) => {
+          setTouched(true);
+          if (validate && onValidate) onValidate(validate(e.target.value));
+          externalOnBlur?.(e);
+        }}
+        className={`w-full rounded-md border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2
+          ${error ? "border-red-500 focus:ring-red-500" : "border-input focus:ring-ring"}`}
       />
+      {error && (
+        <p className="mt-1 text-xs text-red-500 font-semibold">{error}</p>
+      )}
     </div>
   );
 }
 
+// ============================================================
+// Select
+// ============================================================
 function Select({
   label,
   name,
@@ -1972,6 +2305,9 @@ function Select({
   onChange,
   defaultValue,
   className = "",
+  error,
+  validate,
+  onValidate,
 }: {
   label: string;
   name: string;
@@ -1980,11 +2316,17 @@ function Select({
   onChange?: (v: string) => void;
   defaultValue?: string;
   className?: string;
+  error?: string;
+  validate?: (v: string) => string | undefined;
+  onValidate?: (err: string | undefined) => void;
 }) {
   const id = `field-${name}`;
   return (
     <div className={className}>
-      <label htmlFor={id} className="text-sm font-medium block mb-1">
+      <label
+        htmlFor={id}
+        className={`text-sm font-medium block mb-1 ${error ? "text-red-500" : ""}`}
+      >
         {label}
       </label>
       <select
@@ -1992,8 +2334,13 @@ function Select({
         name={name}
         value={value}
         defaultValue={defaultValue}
-        onChange={(e) => onChange?.(e.target.value)}
-        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+        onChange={(e) => {
+          const v = e.target.value;
+          onChange?.(v);
+          if (validate && onValidate) onValidate(validate(v));
+        }}
+        className={`w-full rounded-md border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2
+          ${error ? "border-red-500 focus:ring-red-500" : "border-input focus:ring-ring"}`}
       >
         <option value="">{"—"}</option>
         {options.map((o) => (
@@ -2002,6 +2349,9 @@ function Select({
           </option>
         ))}
       </select>
+      {error && (
+        <p className="mt-1 text-xs text-red-500 font-semibold">{error}</p>
+      )}
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link } from "@/lib/router";
 import {
   Section,
@@ -13,6 +14,7 @@ import { INDUSTRIES } from "@/lib/services-data";
 import { useI18n } from "@/lib/i18n";
 import {
   ArrowLeft,
+  ArrowRight,
   Cpu,
   Database,
   Code2,
@@ -39,23 +41,26 @@ import {
 // ============================================================
 // الصور الرئيسية
 // ============================================================
-import heroImg from "@/assets/enterprise-technology-partnerships.png";
-import partnerOppImg from "@/assets/technology-partnership-opportunity.jpg";
+import heroImg from "@/assets/enterprise-technology-partnerships.jpg";
+import partnerOppImg from "@/assets/arabtec-enterprise-technology-team.jpg";
 import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
 
 // ============================================================
-// شعارات العملاء
+// قراءة شعارات العملاء والشركاء ديناميكياً
 // ============================================================
-import aramcoLogo from "@/assets/logos/clients/aramco.png";
-import moeLogo from "@/assets/logos/clients/ministry-of-education.png";
-import sabicLogo from "@/assets/logos/clients/sabic.jpg";
+const clientLogos = Object.values(
+  import.meta.glob("@/assets/logos/clients/*.{png,jpg,jpeg,webp,svg}", {
+    eager: true,
+    import: "default",
+  })
+) as string[];
 
-// ============================================================
-// شعارات الشركاء
-// ============================================================
-import microsoftLogo from "@/assets/logos/partners/microsoft.webp";
-import hpLogo from "@/assets/logos/partners/hp.webp";
-import dellLogo from "@/assets/logos/partners/dell.png";
+const partnerLogos = Object.values(
+  import.meta.glob("@/assets/logos/partners/*.{png,jpg,jpeg,webp,svg}", {
+    eager: true,
+    import: "default",
+  })
+) as string[];
 
 const industryIcons = [Landmark, Fuel, GraduationCap, HeartPulse, Banknote, Building2];
 
@@ -63,6 +68,22 @@ export default function PartnersPage() {
   const { lang, t } = useI18n();
   const l = useL();
   const isAr = lang === "ar";
+  
+  // Refs لشريط العملاء وشريط الشركاء
+  const clientsScrollRef = useRef<HTMLDivElement>(null);
+  const partnersScrollRef = useRef<HTMLDivElement>(null);
+
+  // دالة تحريك شريط العملاء
+  const scrollClients = (direction: "left" | "right") => {
+    const amount = direction === "left" ? -300 : 300;
+    clientsScrollRef.current?.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  // دالة تحريك شريط الشركاء
+  const scrollPartners = (direction: "left" | "right") => {
+    const amount = direction === "left" ? -300 : 300;
+    partnersScrollRef.current?.scrollBy({ left: amount, behavior: "smooth" });
+  };
 
   // ============================================
   // 1. مبادئ العلاقات
@@ -101,7 +122,7 @@ export default function PartnersPage() {
     { key: "enterprise", icon: Building2, href: "/industries#enterprise" },
   ];
 
-  // وصف كل قطاع (للـ partners)
+  // وصف كل قطاع
   const sectorDescAr: Record<string, string> = {
     government: "خبرة في الحلول التقنية والبنية التحتية والأنظمة التي تدعم الموظفين والخدمات والمباني والفروع الحكومية.",
     "oil-gas": "خبرة في الشبكات وربط المواقع والبنية التحتية والأنظمة المؤسسية والمراقبة للمواقع متعددة الاحتياجات.",
@@ -410,49 +431,68 @@ export default function PartnersPage() {
           </div>
 
           {/* النص — يمين */}
-          <div className="order-1 lg:order-2">
-            <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
-              {isAr
-                ? "علاقات تقنية بُنيت على الثقة والتنفيذ"
-                : "Technology relationships built on trust and delivery"}
-            </div>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
-              {isAr
-                ? "شركاء وعملاء يدعمون مسيرة أربتك في الحلول التقنية المؤسسية"
-                : "Partners and clients supporting ARABTEC's journey in enterprise technology"}
-            </h1>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
-              {isAr
-                ? "بنت أربتك خبرتها من خلال العمل مع جهات ومؤسسات في قطاعات متعددة، والاستفادة من منظومة من التقنيات والموردين والمصنعين لتقديم حلول تقنية متكاملة تتناسب مع متطلبات كل مشروع."
-                : "ARABTEC built its expertise by working with entities and organizations across multiple sectors, leveraging an ecosystem of technologies, vendors and manufacturers to deliver integrated solutions that fit each project's requirements."}
-            </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
-              {isAr
-                ? "تساعد علاقاتنا التقنية وخبراتنا المؤسسية على توفير حلول تشمل تطوير البرمجيات، أنظمة ERP، الذكاء الاصطناعي، السحابة والبنية التحتية، الشبكات والاتصال، وأنظمة المراقبة والحضور والتحكم بالدخول."
-                : "Our technology relationships and institutional expertise help deliver solutions covering software development, ERP, AI, cloud and infrastructure, networks and connectivity, and surveillance, attendance and access control systems."}
-            </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
-              {isAr
-                ? "نعرض في هذه الصفحة الجهات والعلامات والتقنيات التي تم التحقق من علاقتها بأربتك والمصرح بنشرها، مع المحافظة على الدقة والوضوح في وصف طبيعة كل علاقة."
-                : "This page presents entities, brands and technologies whose relationship with ARABTEC has been verified and approved for publication, with accuracy and clarity in describing each relationship."}
-            </p>
+         <div className="order-1 lg:order-2">
+  {/* العنوان الفرعي الذهبي */}
+  <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
+    {isAr
+      ? "شراكات استراتيجية وثقة مؤسسية"
+      : "Strategic partnerships and institutional trust"}
+  </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <CTAButton to="/contact">
-                {isAr ? "ناقش مشروعك معنا" : "Discuss your project with us"}
-              </CTAButton>
-              <CTAButton to="/services" variant="outline">
-                {isAr ? "استكشف خدماتنا" : "Explore our services"}
-              </CTAButton>
-            </div>
-          </div>
+  {/* العنوان الرئيسي */}
+  <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
+    {isAr
+      ? "شركاؤنا وعملاؤنا | علاقات تبني الثقة وتصنع النجاح"
+      : "Our Partners & Clients | Relationships that build trust and success"}
+  </h1>
+
+  {/* الفقرة الأولى */}
+  <p className="mt-6 text-base text-[#4B5563] leading-relaxed">
+    {isAr
+      ? "بنت أربتك خبرتها من خلال العمل مع جهات ومؤسسات في قطاعات متعددة، والاستفادة من منظومة من التقنيات والموردين والمصنعين لتقديم حلول تقنية متكاملة تتناسب مع متطلبات كل مشروع."
+      : "ARABTEC built its expertise by working with entities and organizations across multiple sectors, leveraging an ecosystem of technologies, vendors and manufacturers to deliver integrated solutions that fit each project's requirements."}
+  </p>
+
+  {/* الفقرة الثانية */}
+  <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
+    {isAr
+      ? "تساعد علاقاتنا التقنية وخبراتنا المؤسسية على توفير حلول تشمل تطوير البرمجيات، أنظمة ERP، الذكاء الاصطناعي، السحابة والبنية التحتية، الشبكات والاتصال، وأنظمة المراقبة والحضور والتحكم بالدخول."
+      : "Our technology relationships and institutional expertise help deliver solutions covering software development, ERP, AI, cloud and infrastructure, networks and connectivity, and surveillance, attendance and access control systems."}
+  </p>
+
+  {/* الفقرة الثالثة */}
+  <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
+    {isAr
+      ? "نعرض في هذه الصفحة الجهات والعلامات والتقنيات التي تم التحقق من علاقتها بأربتك والمصرح بنشرها، مع المحافظة على الدقة والوضوح في وصف طبيعة كل علاقة."
+      : "This page presents entities, brands and technologies whose relationship with ARABTEC has been verified and approved for publication, with accuracy and clarity in describing each relationship."}
+  </p>
+
+  {/* الأزرار */}
+  <div className="mt-8 flex flex-wrap gap-3">
+    {/* الزر الأول — أخضر (تواصل) */}
+    <Link
+      to="/contact"
+      className="rounded-md bg-[#0B3D2E] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
+    >
+      {isAr ? "ناقش مشروعك معنا" : "Discuss your project with us"}
+    </Link>
+
+    {/* الزر الثاني — أبيض (استكشاف) */}
+    <Link
+      to="/services"
+      className="rounded-md bg-white border border-[#0B3D2E] px-6 py-3 text-sm font-semibold text-[#0B3D2E] hover:bg-gray-50 transition"
+    >
+      {isAr ? "استكشف خدماتنا" : "Explore our services"}
+    </Link>
+  </div>
+</div>
         </div>
       </Section>
 
       {/* ============================================================
           2. مقدمة العلاقات المؤسسية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "خبرة قائمة على التعاون والثقة والمسؤولية"
@@ -490,33 +530,6 @@ export default function PartnersPage() {
               ))}
             </ul>
           </div>
-
-          {/* مخطط دائري */}
-          {/* <div className="rounded-2xl border border-border bg-card p-8 text-center">
-            <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
-              {isAr ? "علاقة تقنية مستدامة" : "Sustainable technology relationship"}
-            </div>
-            <div className="mt-2 text-2xl md:text-3xl font-extrabold text-[color:var(--brand-deep)] leading-snug">
-              {isAr ? "علاقة تقنية مستدامة" : "Sustainable technology relationship"}
-            </div>
-            <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3">
-              {[
-                { ar: "الثقة", en: "Trust" },
-                { ar: "الوضوح", en: "Clarity" },
-                { ar: "التنفيذ", en: "Delivery" },
-                { ar: "التكامل", en: "Integration" },
-                { ar: "الدعم", en: "Support" },
-                { ar: "القيمة", en: "Value" },
-              ].map((x) => (
-                <div
-                  key={x.en}
-                  className="aspect-square rounded-xl border border-border bg-background grid place-items-center text-sm font-medium p-2 text-center"
-                >
-                  {isAr ? x.ar : x.en}
-                </div>
-              ))}
-            </div>
-          </div> */}
         </div>
       </Section>
 
@@ -525,65 +538,62 @@ export default function PartnersPage() {
           ============================================================ */}
       <Section>
         <SectionHead
-          title={isAr
-            ? "خبرات مع جهات ومؤسسات من قطاعات متعددة"
-            : "Experience with entities and organizations across multiple sectors"}
-          intro={isAr
-            ? "قدمت أربتك خدمات وحلولاً تقنية لجهات ومؤسسات تعمل في قطاعات حكومية وصناعية وتعليمية وتجارية. يتم عرض أسماء العملاء وشعاراتهم في هذه الصفحة بعد التحقق من العلاقة، مراجعة نوع المشروع، والحصول على الموافقة اللازمة لاستخدام الاسم أو الشعار عند الحاجة."
-            : "ARABTEC has delivered technology services and solutions to entities and organizations in government, industrial, educational and commercial sectors. Client names and logos are displayed on this page after verifying the relationship, reviewing the project type, and obtaining the necessary approval to use the name or logo when required."}
+          title={isAr ? "عملاؤنا" : "Our Clients"}
+          intro={
+            isAr
+              ? "خبرات تقنية مع جهات ومؤسسات من قطاعات متعددة."
+              : "Technology expertise with entities and organizations across multiple sectors."
+          }
         />
 
-        {/* شبكة الشعارات — موحدة الحجم، خلفية بيضاء */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {[
-            {
-              src: aramcoLogo,
-              altAr: "أرامكو السعودية",
-              altEn: "Saudi Aramco",
-              sectorAr: "طاقة",
-              sectorEn: "Energy",
-            },
-            {
-              src: moeLogo,
-              altAr: "وزارة التعليم",
-              altEn: "Ministry of Education",
-              sectorAr: "حكومي",
-              sectorEn: "Government",
-            },
-            {
-              src: sabicLogo,
-              altAr: "سابك",
-              altEn: "SABIC",
-              sectorAr: "صناعي",
-              sectorEn: "Industrial",
-            },
-          ].map((c, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-border bg-white p-6 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow"
-            >
-              {/* الشعار — حجم موحد لكل الجهات */}
-              <div className="h-20 w-full grid place-items-center">
-                <img
-                  src={c.src}
-                  alt={isAr ? c.altAr : c.altEn}
-                  loading="lazy"
-                  decoding="async"
-                  className="max-h-16 max-w-[70%] w-auto object-contain"
-                />
+        {/* شريط العملاء (نفس ستايل Partners3DSlider) */}
+        <div className="mt-8 relative w-full overflow-hidden">
+          <div className="container-page relative">
+            
+            <div className="relative">
+              {/* زر اليسار */}
+              <button
+                onClick={() => scrollClients(isAr ? "right" : "left")}
+                className="absolute start-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-sm hover:bg-gray-50"
+                aria-label="Previous"
+              >
+                <ArrowLeft className={`w-5 h-5 text-gray-600 ${isAr ? "rotate-180" : ""}`} />
+              </button>
+
+              <div
+                ref={clientsScrollRef}
+                className="flex gap-8 md:gap-12 overflow-x-auto items-center px-12 py-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              >
+                {clientLogos.length > 0 ? (
+                  [...clientLogos, ...clientLogos].map((logo, i) => (
+                    <div key={i} className="shrink-0 flex items-center justify-center">
+                      <img
+                        src={logo}
+                        alt={`Client ${i}`}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                      />
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-muted-foreground text-sm text-center w-full">
+                    {isAr ? "لا توجد شعارات عملاء مضافة حالياً." : "No client logos added yet."}
+                  </p>
+                )}
               </div>
 
-              {/* اسم الجهة */}
-              <div className="text-center">
-                <div className="font-bold text-base text-[color:var(--brand-deep)]">
-                  {isAr ? c.altAr : c.altEn}
-                </div>
-                <div className="mt-1 text-xs text-muted-foreground">
-                  {isAr ? `القطاع: ${c.sectorAr}` : `Sector: ${c.sectorEn}`}
-                </div>
-              </div>
+              {/* زر اليمين */}
+              <button
+                onClick={() => scrollClients(isAr ? "left" : "right")}
+                className="absolute end-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-sm hover:bg-gray-50"
+                aria-label="Next"
+              >
+                <ArrowRight className={`w-5 h-5 text-gray-600 ${isAr ? "rotate-180" : ""}`} />
+              </button>
             </div>
-          ))}
+
+          </div>
         </div>
 
         {/* رسالة احتياطية */}
@@ -599,7 +609,7 @@ export default function PartnersPage() {
       {/* ============================================================
           4. القطاعات التي اكتسبنا فيها الخبرة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "خبرات مؤسسية عبر قطاعات حيوية"
@@ -646,7 +656,7 @@ export default function PartnersPage() {
       </Section>
 
       {/* ============================================================
-          5. شركاؤنا التقنيون
+          5. شركاؤنا التقنيون (شريط متحرك)
           ============================================================ */}
       <Section>
         <SectionHead
@@ -667,36 +677,54 @@ export default function PartnersPage() {
           </p>
         </div>
 
-        {/* شبكة الشعارات — موحدة الحجم، خلفية بيضاء */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {[
-            { src: microsoftLogo, altAr: "مايكروسوفت", altEn: "Microsoft" },
-            { src: hpLogo, altAr: "إتش بي", altEn: "HP" },
-            { src: dellLogo, altAr: "ديل", altEn: "Dell" },
-          ].map((c, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-border bg-white p-6 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow"
-            >
-              {/* الشعار — حجم موحد لكل الشركاء */}
-              <div className="h-20 w-full grid place-items-center">
-                <img
-                  src={c.src}
-                  alt={isAr ? c.altAr : c.altEn}
-                  loading="lazy"
-                  decoding="async"
-                  className="max-h-16 max-w-[70%] w-auto object-contain"
-                />
+        {/* شريط الشركاء المتحرك */}
+        <div className="mt-8 relative w-full overflow-hidden">
+          <div className="container-page relative">
+            
+            <div className="relative">
+              {/* زر اليسار */}
+              <button
+                onClick={() => scrollPartners(isAr ? "right" : "left")}
+                className="absolute start-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-sm hover:bg-gray-50"
+                aria-label="Previous"
+              >
+                <ArrowLeft className={`w-5 h-5 text-gray-600 ${isAr ? "rotate-180" : ""}`} />
+              </button>
+
+              <div
+                ref={partnersScrollRef}
+                className="flex gap-8 md:gap-12 overflow-x-auto items-center px-12 py-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              >
+                {partnerLogos.length > 0 ? (
+                  [...partnerLogos, ...partnerLogos].map((logo, i) => (
+                    <div key={i} className="shrink-0 flex items-center justify-center">
+                      <img
+                        src={logo}
+                        alt={`Partner ${i}`}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                      />
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-muted-foreground text-sm text-center w-full">
+                    {isAr ? "لا توجد شعارات شركاء مضافة حالياً." : "No partner logos added yet."}
+                  </p>
+                )}
               </div>
 
-              {/* اسم الشركة */}
-              <div className="text-center">
-                <div className="font-bold text-base text-[color:var(--brand-deep)]">
-                  {isAr ? c.altAr : c.altEn}
-                </div>
-              </div>
+              {/* زر اليمين */}
+              <button
+                onClick={() => scrollPartners(isAr ? "left" : "right")}
+                className="absolute end-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-sm hover:bg-gray-50"
+                aria-label="Next"
+              >
+                <ArrowRight className={`w-5 h-5 text-gray-600 ${isAr ? "rotate-180" : ""}`} />
+              </button>
             </div>
-          ))}
+
+          </div>
         </div>
 
         {/* العبارة الآمنة */}
@@ -712,7 +740,7 @@ export default function PartnersPage() {
       {/* ============================================================
           6. تصنيف الشركاء حسب مجال الحل
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "تقنيات تغطي مختلف مكونات البيئة المؤسسية"
@@ -787,7 +815,7 @@ export default function PartnersPage() {
       {/* ============================================================
           8. نموذج التعاون في المشروع
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "تعاون منظم بين العميل وأربتك ومزودي التقنية"
@@ -840,7 +868,7 @@ export default function PartnersPage() {
       {/* ============================================================
           11. دعوة للانضمام كشريك
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "هل ترغبون في التعاون مع أربتك؟"
@@ -890,53 +918,42 @@ export default function PartnersPage() {
       {/* ============================================================
           12. CTA
           ============================================================ */}
-      <section className="relative overflow-hidden bg-primary text-primary-foreground">
-        {/* <img
-          src={ctaBg}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        /> */}
-        <div className="relative container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
-            {isAr
-              ? "هل تبحث مؤسستكم عن شريك تقني موثوق؟"
-              : "Is your organization looking for a trusted technology partner?"}
-          </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/85">
-            {isAr
-              ? "شاركوا فريق أربتك بطبيعة المشروع والخدمات المطلوبة والأنظمة الحالية، وسنعمل معكم على تحديد نطاق الحل والتقنيات المناسبة وخطة التنفيذ."
-              : "Share your project type, required services and current systems with the ARABTEC team — we will work with you to define the solution scope, right technologies and delivery plan."}
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/contact"
-              className="rounded-md bg-background px-6 py-3 text-sm font-semibold text-primary hover:bg-secondary"
-            >
-              {isAr ? "ناقش مشروعك معنا" : "Discuss your project"}
-            </Link>
-            <Link
-              to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
-            >
-              {isAr ? "اطلب عرضًا فنيًا" : "Request a technical proposal"}
-            </Link>
-            <Link
-              to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
-            >
-              {isAr ? "تواصل بشأن شراكة" : "Contact us about partnership"}
-            </Link>
-          </div>
-        </div>
-      </section>
+    <section className="relative overflow-hidden bg-primary text-primary-foreground">
+  <div className="relative container-page py-16 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
+      {isAr
+        ? "هل تبحث مؤسستكم عن شريك تقني موثوق؟"
+        : "Is your organization looking for a trusted technology partner?"}
+    </h2>
+    <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/85 text-lg leading-relaxed">
+      {isAr
+        ? "نساعد مؤسستكم على اختيار وتنفيذ الحلول التقنية المناسبة، بدءًا من فهم احتياجاتكم وحتى التشغيل والدعم المستمر."
+        : "We help your organization select and implement the right technology solutions — from understanding your needs to operations and ongoing support."}
+    </p>
+    <div className="mt-8 flex flex-wrap justify-center gap-3">
+      {/* الزر الأول — ناقش مشروعك معنا */}
+      <Link
+        to="/contact"
+        className="rounded-md bg-background px-6 py-3 text-sm font-semibold text-primary hover:bg-secondary transition"
+      >
+        {isAr ? "ناقش مشروعك معنا" : "Discuss your project"}
+      </Link>
+
+      {/* الزر الثاني — تواصل بشأن شراكة */}
+      <Link
+        to="/contact"
+        className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold transition"
+      >
+        {isAr ? "تواصل بشأن شراكة" : "Contact us about partnership"}
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* ============================================================
           نموذج التواصل المختصر
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "تواصل معنا بشأن مشروع أو شراكة"

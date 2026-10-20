@@ -837,12 +837,14 @@
 //     </>
 //   );
 // }
+// [البلوك المعلّق القديم في أعلى الملف تم الحفاظ عليه كما هو — لم يتغير]
+
 import { useParams, Navigate } from "react-router-dom";
 import { Link } from "@/lib/router";
 import heroImg from "@/assets/hero-enterprise.jpg";
 import teamImg from "@/assets/team-meeting.jpg";
 import aiAgentsImg from "@/assets/service-ai-agents.jpg";
-import erpImg from "@/assets/service-erp.webp";
+import erpImg from "@/assets/service-erp.jpg";
 import softwareImg from "@/assets/service-software-development.jpg";
 import cloudImg from "@/assets/service-cloud-infrastructure.jpg";
 import networkImg from "@/assets/service-network-connectivity.jpg";
@@ -928,94 +930,28 @@ export default function HomePage() {
                 ? "حلول تقنية متكاملة تقود تحول مؤسستكم نحو المستقبل"
                 : "Integrated technology solutions that drive your organization's transformation"}
             </h1>
-            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-6 text-xl text-[#4B5563] leading-relaxed">
               {lang === "ar"
                 ? "منذ 1996، نقدم حلولًا تقنية متكاملة للجهات الحكومية والشركات، من البنية التحتية والأنظمة المؤسسية إلى الذكاء الاصطناعي والحلول السحابية."
                 : "Since 1996, we've delivered integrated technology solutions for government entities and enterprises — from infrastructure and enterprise systems to AI and cloud solutions."}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <CTAButton to="/services">
-                {lang === "ar" ? "استكشف حلولنا" : "Explore our solutions"}
-              </CTAButton>
-              <CTAButton to="/contact" variant="outline">
-                {lang === "ar" ? "ناقش مشروعك معنا" : "Discuss your project"}
-              </CTAButton>
-            </div>
-          </div>
-        </div>
+           <div className="mt-8 flex flex-wrap gap-3">
+  {/* الزر الأول — أبيض (استكشاف) */}
+  <Link
+    to="/services"
+    className="rounded-md bg-white border border-[#0B3D2E] px-6 py-3 text-sm font-semibold text-[#0B3D2E] hover:bg-gray-50 transition"
+  >
+    {lang === "ar" ? "استكشف حلولنا" : "Explore our solutions"}
+  </Link>
 
-        {/* ============================================================
-            Trust bar — أرقام قوية (4 بطاقات)
-            ============================================================ */}
-        <div className="border-y border-border bg-secondary">
-          <div className="container-page py-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {[
-                {
-                  icon: Award,
-                  num: "30+",
-                  titleAr: "سنة خبرة",
-                  titleEn: "Years of experience",
-                  descAr: "خبرة تقنية ممتدة منذ 1996.",
-                  descEn: "Extended technology expertise since 1996.",
-                },
-                {
-                  icon: FileText,
-                  num: "800+",
-                  titleAr: "مشروعاً منفّذاً",
-                  titleEn: "Projects delivered",
-                  descAr: "مشاريع تقنية وحلول متكاملة في مجالات متعددة.",
-                  descEn: "Technology projects and integrated solutions across multiple domains.",
-                },
-                {
-                  icon: Users,
-                  num: "16,000+",
-                  titleAr: "عميل",
-                  titleEn: "Clients",
-                  descAr: "جهات وشركات استفادت من حلولنا التقنية.",
-                  descEn: "Entities and companies benefiting from our technology solutions.",
-                },
-                {
-                  icon: Boxes,
-                  num: "17",
-                  titleAr: "قطاعاً رئيسياً",
-                  titleEn: "Key sectors",
-                  descAr: "خبرة في خدمة قطاعات حكومية وتجارية وحيوية.",
-                  descEn: "Expertise serving government, commercial and vital sectors.",
-                },
-              ].map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={i}
-                    className="rounded-2xl border border-border bg-white p-5 flex items-start gap-3 hover:shadow-md transition-shadow"
-                  >
-                    {/* الأيقونة في دايرة */}
-                    <div className="shrink-0 h-12 w-12 rounded-full border border-[color:var(--gold)]/40 grid place-items-center text-[color:var(--brand-deep)]">
-                      <Icon className="h-5 w-5" />
-                    </div>
-
-                    {/* المحتوى */}
-                    <div className="min-w-0">
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-2xl md:text-3xl font-extrabold text-[color:var(--brand-deep)] leading-none">
-                          {item.num}
-                        </span>
-                        <span className="text-[color:var(--gold)] text-xl font-bold leading-none">
-                          +
-                        </span>
-                      </div>
-                      <div className="mt-1 font-bold text-sm text-[color:var(--brand-deep)]">
-                        {lang === "ar" ? item.titleAr : item.titleEn}
-                      </div>
-                      <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                        {lang === "ar" ? item.descAr : item.descEn}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+  {/* الزر الثاني — أخضر (تواصل) */}
+  <Link
+    to="/contact"
+    className="rounded-md bg-[#0B3D2E] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
+  >
+    {lang === "ar" ? "ناقش مشروعك معنا" : "Discuss your project"}
+  </Link>
+</div>
           </div>
         </div>
       </section>
@@ -1048,17 +984,17 @@ export default function HomePage() {
                 ? "خبرة تقنية راسخة ورؤية تواكب مستقبل الأعمال"
                 : "Deep technology expertise, aligned with the future of business"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
               {lang === "ar"
                 ? "أربتك شركة حلول تقنية سعودية تأسست عام 1996، وتعمل على مساعدة المؤسسات في تخطيط بيئاتها التقنية وتصميمها وتنفيذها وإدارتها ودعمها من خلال نقطة مسؤولية موحدة."
                 : "ARABTEC is a Saudi technology solutions company founded in 1996. We help organizations plan, design, implement, operate and support their technology environments through a single point of accountability."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
               {lang === "ar"
                 ? "تطورت خبرات الشركة من الشبكات والاتصال والبنية التحتية وأنظمة المراقبة والحضور، لتشمل تطوير البرمجيات، تطبيقات الأعمال، الأتمتة، الحلول السحابية وحلول الذكاء الاصطناعي الحديثة."
                 : "Our expertise evolved from networks, connectivity, infrastructure, surveillance and attendance systems, to include software development, business applications, automation, cloud and modern AI solutions."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
               {lang === "ar"
                 ? "نركز على فهم احتياجات المؤسسة أولاً، ثم اختيار التقنية المناسبة وربطها بالأنظمة والعمليات القائمة؛ بهدف تحقيق قيمة تشغيلية قابلة للقياس، وليس مجرد تطبيق تقنية جديدة."
                 : "We focus on understanding the organization's needs first, then selecting the right technology and integrating it with existing systems and processes — to deliver measurable operational value, not just new technology."}
@@ -1071,12 +1007,118 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
+        {/* ============================================================
+            Trust bar — أربتك بالأرقام (مصغر)
+            ============================================================ */}
+        <div className="py-12 md:py-16 border-b border-border">
+          <div className="container-page">
+            
+            {/* العنوان الرئيسي والوصف */}
+            <div className="text-center mb-10">
+              <div className="flex items-center justify-center gap-4 mb-2">
+                <span className="h-[1px] w-10 md:w-16 bg-[#D4AF37]/70 hidden sm:block"></span>
+                <h2 className="text-2xl md:text-3xl font-extrabold text-[#0B3D2E]">
+                  {lang === "ar" ? "أربتك بالأرقام" : "ARABTEC by the numbers"}
+                </h2>
+                <span className="h-[1px] w-10 md:w-16 bg-[#D4AF37]/70 hidden sm:block"></span>
+              </div>
+              <p className="text-[#4B5563] text-sm md:text-base">
+                {lang === "ar"
+                  ? "نتائج حقيقية تعكس خبرتنا وشراكاتنا طويلة الأمد"
+                  : "Real results reflecting our expertise and long-term partnerships"}
+              </p>
+            </div>
+
+            {/* الكروت الأربعة */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  icon: Building2,
+                  num: "30+",
+                  titleAr: "سنة من الخبرة",
+                  titleEn: "Years of experience",
+                  descAr: "منذ عام 1996",
+                  descEn: "Since 1996",
+                },
+                {
+                  icon: FileText,
+                  num: "800+",
+                  titleAr: "مشروع منفذ",
+                  titleEn: "Projects delivered",
+                  descAr: "في مختلف القطاعات",
+                  descEn: "Across various sectors",
+                },
+                {
+                  icon: Users,
+                  num: "16,000+",
+                  titleAr: "عميل",
+                  titleEn: "Clients",
+                  descAr: "حلول موثوقة لعملائنا",
+                  descEn: "Reliable solutions for our clients",
+                },
+                {
+                  icon: Network,
+                  num: "17",
+                  titleAr: "قطاعاً رئيسياً",
+                  titleEn: "Key sectors",
+                  descAr: "خبرة متنوعة وواسعة",
+                  descEn: "Diverse and extensive expertise",
+                },
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={i}
+                    className="rounded-[14px] border border-[#E5E7EB] bg-white p-5 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300"
+                  >
+                    {/* الأيقونة والقوس الذهبي */}
+                    <div className="relative mb-4 flex items-center justify-center h-14 w-14">
+                      <div className="absolute inset-0 rounded-full bg-[#F3F4F6]"></div>
+                      <Icon className="relative z-10 h-6 w-6 text-[#374151]" strokeWidth={1.5} />
+                      <svg
+                        className="absolute inset-0 h-full w-full rotate-[-45deg]"
+                        viewBox="0 0 100 100"
+                      >
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="48"
+                          fill="none"
+                          stroke="#D4AF37"
+                          strokeWidth="5"
+                          strokeDasharray="150 200"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </div>
+
+                    <div className="text-3xl md:text-4xl font-extrabold text-[#0B3D2E] leading-none tracking-tight mb-2">
+                      {item.num}
+                    </div>
+
+                    <div className="h-3 w-[1px] bg-[#D4AF37] mb-2"></div>
+
+                    <div className="font-bold text-sm md:text-base text-[#0B3D2E] mb-1">
+                      {lang === "ar" ? item.titleAr : item.titleEn}
+                    </div>
+
+                    <div className="text-sm text-[#4B5563]">
+                      {lang === "ar" ? item.descAr : item.descEn}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            
+          </div>
+        </div>
       </Section>
 
       {/* ============================================================
           4. SERVICES — 6 cards
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section>
         <SectionHead
           eyebrow={t("pages.index.text14")}
           title={
@@ -1251,12 +1293,12 @@ export default function HomePage() {
                   </h3>
                 </div>
 
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                <p className="mt-4 text-base text-[#4B5563] leading-relaxed">
                   {lang === "ar" ? desc.ar : desc.en}
                 </p>
 
                 {bullets && (
-                  <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                  <ul className="mt-4 space-y-2 text-base text-[#4B5563]">
                     {bullets.map((b) => (
                       <li key={b} className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
@@ -1284,259 +1326,193 @@ export default function HomePage() {
           5. WHY ARABTEC
           ============================================================ */}
       <Section>
-        <SectionHead
-          eyebrow={t("pages.index.text18")}
-          title={
-            lang === "ar"
-              ? "لماذا تختار المؤسسات أربتك شريكًا تقنيًا؟"
-              : "Why organizations choose ARABTEC as a technology partner"
-          }
-        />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#0B3D2E]">
+            {lang === "ar"
+              ? "لماذا تختار أربتك شريكاً تقنياً؟"
+              : "Why choose ARABTEC as a technology partner?"}
+          </h2>
+        </div>
+
+        {/* الصف الأول: 4 كروت */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-6xl mx-auto">
           {[
             {
               icon: BadgeCheck,
-              t: { ar: "خبرة ممتدة", en: "Extended experience" },
-              d: {
-                ar: "منذ عام 1996، راكمت أربتك خبرات في البنية التحتية والشبكات والبرمجيات والأنظمة المتكاملة، مع تطور مستمر نحو الحلول السحابية والذكاء الاصطناعي.",
-                en: "Since 1996, ARABTEC has built expertise across infrastructure, networks, software and integrated systems — continuously evolving toward cloud and AI.",
-              },
+              titleAr: "خبرة ممتدة",
+              titleEn: "Extended experience",
+              descAr: "خبرة تقنية منذ 1996.",
+              descEn: "Technology expertise since 1996.",
             },
             {
               icon: Layers,
-              t: { ar: "حلول متكاملة", en: "Integrated solutions" },
-              d: {
-                ar: "نتعامل مع المشروع باعتباره منظومة واحدة تشمل التحليل، التصميم، التوريد، التطوير، التكامل، التنفيذ، التدريب والدعم.",
-                en: "We treat the project as one system: analysis, design, supply, development, integration, delivery, training and support.",
-              },
+              titleAr: "حلول متكاملة",
+              titleEn: "Integrated solutions",
+              descAr: "من التخطيط والتطوير إلى التنفيذ والدعم.",
+              descEn: "From planning and development to execution and support.",
             },
             {
               icon: Target,
-              t: { ar: "حلول مصممة وفق احتياجاتكم", en: "Solutions tailored to your needs" },
-              d: {
-                ar: "لا نفرض منتجًا واحدًا على جميع العملاء؛ بل ندرس بيئة المؤسسة وأهدافها وأنظمتها الحالية قبل تصميم الحل.",
-                en: "We don't push one product on every client — we study your environment, goals and existing systems before designing the solution.",
-              },
+              titleAr: "حلول تناسب أعمالك",
+              titleEn: "Solutions that fit your business",
+              descAr: "نصمم التقنية وفق احتياجات مؤسستك.",
+              descEn: "We design technology to fit your organization's needs.",
             },
             {
-              icon: Users,
-              t: { ar: "مسؤولية واضحة", en: "Clear accountability" },
-              d: {
-                ar: "نوفر نقطة اتصال ومسؤولية موحدة تساعد العميل على إدارة المشروع ومتابعة التنفيذ والدعم بكفاءة.",
-                en: "A single point of contact and accountability that helps clients manage the project and follow up on delivery and support efficiently.",
-              },
+              icon: ShieldCheck,
+              titleAr: "مسؤولية واضحة",
+              titleEn: "Clear accountability",
+              descAr: "جهة واحدة تدير مشروعك وتتابع تنفيذه.",
+              descEn: "One entity manages and follows up on your project.",
             },
-          ].map((c) => {
+          ].map((c, i) => {
             const Icon = c.icon;
             return (
-              <Card key={c.t.en}>
-                <Icon className="h-6 w-6 text-[color:var(--gold)] mb-3" />
-                <h3 className="font-bold">{l(c.t)}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{l(c.d)}</p>
-              </Card>
+              <div
+                key={i}
+                className="rounded-[12px] border border-[#E5E7EB] bg-white p-5 flex flex-col items-center text-center shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow"
+              >
+                <div className="mb-4">
+                  <Icon className="h-8 w-8 text-[#0B3D2E]" strokeWidth={1.5} />
+                </div>
+
+                <h3 className="font-bold text-base md:text-lg text-[#0B3D2E] mb-2">
+                  {lang === "ar" ? c.titleAr : c.titleEn}
+                </h3>
+
+                <p className="text-sm md:text-base text-[#4B5563] leading-relaxed">
+                  {lang === "ar" ? c.descAr : c.descEn}
+                </p>
+              </div>
             );
           })}
+        </div>
+
+        {/* الصف التاني: الشريط الأخضر (الأرقام) */}
+        <div className="mt-6 md:mt-8 max-w-6xl mx-auto rounded-[16px] bg-[#0B3D2E] text-white py-5 md:py-6 px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 divide-x divide-white/20 rtl:divide-x-reverse">
+            {[
+              { num: "30+", titleAr: "عاماً من الخبرة", titleEn: "Years of experience" },
+              { num: "16,000+", titleAr: "عميل يثق بنا", titleEn: "Clients trust us" },
+              { num: "17+", titleAr: "قطاعاً نخدمه", titleEn: "Sectors we serve" },
+              { num: "800+", titleAr: "مشروع ناجح", titleEn: "Successful projects" },
+            ].map((stat, i) => (
+              <div
+                key={i}
+                className={`flex flex-col items-center justify-center text-center px-2 ${
+                  i >= 2 ? "lg:border-none" : ""
+                }`}
+              >
+                <div className="text-2xl md:text-3xl font-extrabold tracking-tight mb-1">
+                  {stat.num}
+                </div>
+                <div className="text-sm md:text-base text-white/90">
+                  {lang === "ar" ? stat.titleAr : stat.titleEn}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
       {/* ============================================================
-          6. INDUSTRIES — 6 بطاقات بأيقونات + 3 حلول لكل قطاع
+          6. INDUSTRIES — القطاعات التي نخدمها
           ============================================================ */}
-      <Section className="bg-secondary">
-        <SectionHead
-          eyebrow={t("pages.index.text20")}
-          title={
-            lang === "ar"
-              ? "خبرات تقنية تلائم متخصصة لمتطلبات القطاعات الحيوية"
-              : "Specialized technical for the requirements of vital sectors"
-          }
-          intro={
-            lang === "ar"
-              ? "تختلف الأولويات التقنية من قطاع إلى آخر. لذلك تصمم أربتك حلولها وفق طبيعة العمليات، حساسية البيانات، حجم المستخدمين، متطلبات التكامل واستمرارية الخدمة في كل مؤسسة."
-              : "Priorities differ by sector, so ARABTEC tailors solutions to your operations, data sensitivity, user scale, integration needs and continuity requirements."
-          }
-        />
+      <Section>
+        <div className="mb-8 md:mb-10 text-start">
+          <div className="text-sm font-bold text-[color:var(--gold)] mb-2">
+            {lang === "ar" ? "القطاعات التي نخدمها" : "Industries we serve"}
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3D2E]">
+            {lang === "ar" ? "حلول تقنية مصممة لقطاعك" : "Technology solutions designed for your sector"}
+          </h2>
+        </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {INDUSTRIES.map((ind) => {
-            const industryIcons: Record<string, typeof Landmark> = {
-              government: Landmark,
-              "oil-gas": Fuel,
-              education: GraduationCap,
-              healthcare: HeartPulse,
-              banking: Banknote,
-              enterprises: Building2,
-            };
-            const IndIcon = industryIcons[ind.key] ?? Landmark;
-
-            // ✅ 3 حلول لكل قطاع (مختصرة)
-            const sectorSolutions: Record<
-              string,
-              { ar: string[]; en: string[] }
-            > = {
-              government: {
-                ar: [
-                  "التحول الرقمي",
-                  "أتمتة الإجراءات",
-                  "تكامل الأنظمة",
-                ],
-                en: [
-                  "Digital transformation",
-                  "Process automation",
-                  "Systems integration",
-                ],
-              },
-              "oil-gas": {
-                ar: [
-                  "البنية التحتية",
-                  "الاتصال",
-                  "استمرارية الأعمال",
-                ],
-                en: [
-                  "Infrastructure",
-                  "Connectivity",
-                  "Business continuity",
-                ],
-              },
-              education: {
-                ar: [
-                  "الشبكات",
-                  "الأنظمة الإدارية",
-                  "المنصات الرقمية",
-                ],
-                en: [
-                  "Networks",
-                  "Administrative systems",
-                  "Digital platforms",
-                ],
-              },
-              healthcare: {
-                ar: [
-                  "البرمجيات المؤسسية",
-                  "البنية التحتية",
-                  "تكامل الأنظمة",
-                ],
-                en: [
-                  "Enterprise software",
-                  "Infrastructure",
-                  "System integration",
-                ],
-              },
-              banking: {
-                ar: [
-                  "الأنظمة المؤسسية",
-                  "الذكاء الاصطناعي",
-                  "أتمتة العمليات",
-                ],
-                en: [
-                  "Enterprise systems",
-                  "Artificial intelligence",
-                  "Process automation",
-                ],
-              },
-              enterprises: {
-                ar: [
-                  "أنظمة ERP",
-                  "تطوير البرمجيات",
-                  "السحابة والشبكات",
-                ],
-                en: [
-                  "ERP systems",
-                  "Software development",
-                  "Cloud & networks",
-                ],
-              },
-            };
-
-            const sol = sectorSolutions[ind.key];
-            const solutionItems = sol ? (lang === "ar" ? sol.ar : sol.en) : [];
-
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          {[
+            {
+              icon: Landmark,
+              titleAr: "الجهات الحكومية",
+              titleEn: "Government Entities",
+              descAr: "خدمات رقمية وأتمتة للإجراءات",
+              descEn: "Digital services and process automation",
+            },
+            {
+              icon: Fuel,
+              titleAr: "النفط والغاز",
+              titleEn: "Oil & Gas",
+              descAr: "بنية تقنية موثوقة وربط للمواقع",
+              descEn: "Reliable infrastructure and site connectivity",
+            },
+            {
+              icon: GraduationCap,
+              titleAr: "التعليم",
+              titleEn: "Education",
+              descAr: "أنظمة تعليمية ومنصات متصلة",
+              descEn: "Educational systems and connected platforms",
+            },
+            {
+              icon: HeartPulse,
+              titleAr: "الرعاية الصحية",
+              titleEn: "Healthcare",
+              descAr: "حلول رقمية تدعم الرعاية الصحية",
+              descEn: "Digital solutions supporting healthcare",
+            },
+            {
+              icon: Banknote,
+              titleAr: "البنوك والخدمات المالية",
+              titleEn: "Banking & Finance",
+              descAr: "تكامل آمن وأتمتة للعمليات",
+              descEn: "Secure integration and process automation",
+            },
+            {
+              icon: Building2,
+              titleAr: "الشركات والمؤسسات",
+              titleEn: "Enterprises",
+              descAr: "أنظمة أعمال تدعم الكفاءة والنمو",
+              descEn: "Business systems supporting efficiency and growth",
+            },
+          ].map((ind, i) => {
+            const Icon = ind.icon;
             return (
-              <Card key={ind.key}>
-                {/* الأيقونة */}
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
-                  <IndIcon className="h-5 w-5" />
+              <div
+                key={i}
+                className="rounded-xl border border-[#E5E7EB] bg-white p-5 flex items-center gap-4 shadow-sm hover:shadow-md hover:border-[#0B3D2E]/30 transition-all duration-300"
+              >
+                <div className="shrink-0 text-[#0B3D2E]">
+                  <Icon className="h-10 w-10 md:h-12 md:w-12" strokeWidth={1.2} />
                 </div>
 
-                {/* العنوان */}
-                <h3 className="text-base font-bold">
-                  {lang === "ar" ? ind.ar : ind.en}
-                </h3>
-
-                {/* الوصف */}
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  {l(ind.desc)}
-                </p>
-
-                {/* 3 حلول لكل قطاع */}
-                {solutionItems.length > 0 && (
-                  <div className="mt-4 pt-4 border-t border-border">
-                    <ul className="space-y-1.5">
-                      {solutionItems.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-2 text-sm"
-                        >
-                          <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
-                          <span className="text-[color:var(--brand-deep)] font-medium">
-                            {item}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </Card>
+                <div className="text-start">
+                  <h3 className="text-base md:text-lg font-bold text-[#0B3D2E] mb-2">
+                    {lang === "ar" ? ind.titleAr : ind.titleEn}
+                  </h3>
+                  <p className="text-sm md:text-base text-[#4B5563] leading-relaxed">
+                    {lang === "ar" ? ind.descAr : ind.descEn}
+                  </p>
+                </div>
+              </div>
             );
           })}
         </div>
 
-        <div className="mt-8">
-          <CTAButton to="/industries" variant="outline">
-            {lang === "ar" ? "استكشف القطاعات التي نخدمها" : "Explore all industries"}
-          </CTAButton>
+        <div className="mt-8 flex justify-start">
+          <Link
+            to="/industries"
+            className="inline-flex items-center gap-2 text-sm md:text-base font-bold text-[#0B3D2E] hover:text-[color:var(--gold)] transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4 md:h-5 md:w-5 rtl:rotate-180" />
+            {lang === "ar" ? "استكشف القطاعات التي نخدمها" : "Explore the sectors we serve"}
+          </Link>
         </div>
       </Section>
 
-     {/* ============================================================
-    8. PARTNERS & CLIENTS
-    ============================================================ */}
-<Section className="bg-secondary">
-  <SectionHead
-    title={
-      lang === "ar"
-        ? "علاقات تقنية بُنيت على الثقة والتنفيذ"
-        : "Technology relationships built on trust and delivery"
-    }
-    intro={
-      lang === "ar"
-        ? "عملت أربتك على تقديم خدمات وحلول تقنية لمؤسسات في قطاعات حكومية وصناعية وتعليمية وتجارية، واستفادت من علاقاتها مع مزودي تقنيات عالميين لتوفير الأنظمة والأجهزة والخدمات المناسبة لمشروعاتها."
-        : "ARABTEC has delivered technology services and solutions to organizations across government, industrial, educational and commercial sectors — leveraging relationships with global technology vendors to provide the right systems, hardware and services for each project."
-    }
-  />
-
-  {/* ✅ الجملة الفرعية "عملاء وشركاء نعمل معهم" */}
-  <div className="mt-10 text-center">
-    <h3 className="text-lg md:text-xl font-bold text-[color:var(--brand-deep)]">
-      {lang === "ar" ? "عملاء وشركاء نعمل معهم" : "Clients and partners we work with"}
-    </h3>
-  </div>
-
-  {/* 3D Slider */}
-  <div className="mt-4">
-    <Partners3DSlider />
-  </div>
-
-  {/* الزر */}
-  <div className="mt-4 text-center">
-    <CTAButton to="/partners-clients" variant="outline">
-      {lang === "ar"
-        ? "تعرّف إلى شركائنا وعملائنا"
-        : "Meet our partners & clients"}
-    </CTAButton>
-  </div>
-</Section>
-
+           {/* ============================================================
+          8. PARTNERS & CLIENTS
+          ============================================================ */}
+      <Section className="!py-4 md:!py-8">
+        <Partners3DSlider />
+      </Section>
       {/* ============================================================
           9. CTA
           ============================================================ */}
@@ -1544,24 +1520,27 @@ export default function HomePage() {
         <div className="container-page py-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold">
             {lang === "ar"
-              ? "هل تخططون لمشروع تقني أو تحول مؤسسي جديد؟"
+              ? "هل تخطط لمشروع تقني أو تحول مؤسسي جديد؟"
               : "Planning a new technology project or transformation?"}
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/85">
+          <p className="mt-6 max-w-3xl mx-auto text-lg text-primary-foreground/90 leading-relaxed">
             {lang === "ar"
               ? "تحدثوا مع فريق أربتك لمناقشة احتياجات مؤسستكم وتحديد الحلول التقنية المناسبة، سواء كنتم تبحثون عن نظام ERP، حل ذكاء اصطناعي، تطوير برمجيات، بنية تحتية، شبكات أو أنظمة مراقبة وتحكم بالدخول."
               : "Talk to the ARABTEC team about your needs and the right solutions — whether you're exploring ERP, AI, software development, infrastructure, networks, or surveillance and access control."}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {/* الزر الأول — أبيض */}
             <Link
               to="/contact"
-              className="rounded-md bg-background px-6 py-3 text-sm font-semibold text-primary hover:bg-secondary"
+              className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-[#0B3D2E] hover:bg-gray-100 transition"
             >
               {lang === "ar" ? "اطلب استشارة تقنية" : "Request a consultation"}
             </Link>
+
+            {/* الزر الثاني — أخضر */}
             <Link
               to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
+              className="rounded-md bg-[#0B3D2E] border border-[#0B3D2E] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0B3D2E]/90 transition"
             >
               {lang === "ar" ? "تواصل مع فريقنا" : "Contact our team"}
             </Link>
