@@ -839,6 +839,7 @@
 // }
 // [البلوك المعلّق القديم في أعلى الملف تم الحفاظ عليه كما هو — لم يتغير]
 
+// [البلوك المعلّق القديم في أعلى الملف تم الحفاظ عليه كما هو — لم يتغير]
 import { useParams, Navigate } from "react-router-dom";
 import { Link } from "@/lib/router";
 import heroImg from "@/assets/hero-enterprise.jpg";
@@ -902,7 +903,7 @@ export default function HomePage() {
           1. HERO
           ============================================================ */}
       <section className="relative overflow-hidden bg-background">
-        <div className="container-page grid gap-10 py-14 md:py-20 lg:grid-cols-2 items-center">
+        <div className="container-page grid gap-6 lg:gap-10 py-6 md:py-10 lg:grid-cols-2 items-center">
           {/* Image — LEFT on desktop */}
           <div className="relative order-2 lg:order-1">
             <img
@@ -925,17 +926,17 @@ export default function HomePage() {
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {t("pages.index.text2")}
             </div>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-[1.15] text-[color:var(--brand-deep)]">
+            <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.15] text-[color:var(--brand-deep)]">
               {lang === "ar"
                 ? "حلول تقنية متكاملة تقود تحول مؤسستكم نحو المستقبل"
                 : "Integrated technology solutions that drive your organization's transformation"}
             </h1>
-            <p className="mt-6 text-xl text-[#4B5563] leading-relaxed">
+            <p className="mt-4 text-lg md:text-xl text-[#4B5563] leading-relaxed">
               {lang === "ar"
                 ? "منذ 1996، نقدم حلولًا تقنية متكاملة للجهات الحكومية والشركات، من البنية التحتية والأنظمة المؤسسية إلى الذكاء الاصطناعي والحلول السحابية."
                 : "Since 1996, we've delivered integrated technology solutions for government entities and enterprises — from infrastructure and enterprise systems to AI and cloud solutions."}
             </p>
-           <div className="mt-8 flex flex-wrap gap-3">
+           <div className="mt-6 flex flex-wrap gap-3">
   {/* الزر الأول — أبيض (استكشاف) */}
   <Link
     to="/services"
@@ -959,8 +960,8 @@ export default function HomePage() {
       {/* ============================================================
           3. ABOUT
           ============================================================ */}
-      <Section>
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
+      <Section className="!py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center">
           <img
             src={teamImg}
             alt={
@@ -979,22 +980,22 @@ export default function HomePage() {
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {t("pages.index.text8")}
             </div>
-            <h2 className="mt-2 text-3xl md:text-4xl font-bold">
+            <h2 className="mt-2 text-2xl md:text-3xl lg:text-4xl font-bold">
               {lang === "ar"
                 ? "خبرة تقنية راسخة ورؤية تواكب مستقبل الأعمال"
                 : "Deep technology expertise, aligned with the future of business"}
             </h2>
-            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {lang === "ar"
                 ? "أربتك شركة حلول تقنية سعودية تأسست عام 1996، وتعمل على مساعدة المؤسسات في تخطيط بيئاتها التقنية وتصميمها وتنفيذها وإدارتها ودعمها من خلال نقطة مسؤولية موحدة."
                 : "ARABTEC is a Saudi technology solutions company founded in 1996. We help organizations plan, design, implement, operate and support their technology environments through a single point of accountability."}
             </p>
-            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {lang === "ar"
                 ? "تطورت خبرات الشركة من الشبكات والاتصال والبنية التحتية وأنظمة المراقبة والحضور، لتشمل تطوير البرمجيات، تطبيقات الأعمال، الأتمتة، الحلول السحابية وحلول الذكاء الاصطناعي الحديثة."
                 : "Our expertise evolved from networks, connectivity, infrastructure, surveillance and attendance systems, to include software development, business applications, automation, cloud and modern AI solutions."}
             </p>
-            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {lang === "ar"
                 ? "نركز على فهم احتياجات المؤسسة أولاً، ثم اختيار التقنية المناسبة وربطها بالأنظمة والعمليات القائمة؛ بهدف تحقيق قيمة تشغيلية قابلة للقياس، وليس مجرد تطبيق تقنية جديدة."
                 : "We focus on understanding the organization's needs first, then selecting the right technology and integrating it with existing systems and processes — to deliver measurable operational value, not just new technology."}
@@ -1011,11 +1012,11 @@ export default function HomePage() {
         {/* ============================================================
             Trust bar — أربتك بالأرقام (مصغر)
             ============================================================ */}
-        <div className="py-12 md:py-16 border-b border-border">
+        <div className="py-6 md:py-10 border-b border-border">
           <div className="container-page">
             
             {/* العنوان الرئيسي والوصف */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-6">
               <div className="flex items-center justify-center gap-4 mb-2">
                 <span className="h-[1px] w-10 md:w-16 bg-[#D4AF37]/70 hidden sm:block"></span>
                 <h2 className="text-2xl md:text-3xl font-extrabold text-[#0B3D2E]">
@@ -1031,7 +1032,7 @@ export default function HomePage() {
             </div>
 
             {/* الكروت الأربعة */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
               {[
                 {
                   icon: Building2,
@@ -1070,12 +1071,12 @@ export default function HomePage() {
                 return (
                   <div
                     key={i}
-                    className="rounded-[14px] border border-[#E5E7EB] bg-white p-5 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300"
+                    className="rounded-[14px] border border-[#E5E7EB] bg-white p-4 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300"
                   >
                     {/* الأيقونة والقوس الذهبي */}
-                    <div className="relative mb-4 flex items-center justify-center h-14 w-14">
+                    <div className="relative mb-3 flex items-center justify-center h-12 w-12">
                       <div className="absolute inset-0 rounded-full bg-[#F3F4F6]"></div>
-                      <Icon className="relative z-10 h-6 w-6 text-[#374151]" strokeWidth={1.5} />
+                      <Icon className="relative z-10 h-5 w-5 text-[#374151]" strokeWidth={1.5} />
                       <svg
                         className="absolute inset-0 h-full w-full rotate-[-45deg]"
                         viewBox="0 0 100 100"
@@ -1093,17 +1094,17 @@ export default function HomePage() {
                       </svg>
                     </div>
 
-                    <div className="text-3xl md:text-4xl font-extrabold text-[#0B3D2E] leading-none tracking-tight mb-2">
+                    <div className="text-2xl md:text-3xl font-extrabold text-[#0B3D2E] leading-none tracking-tight mb-1">
                       {item.num}
                     </div>
 
-                    <div className="h-3 w-[1px] bg-[#D4AF37] mb-2"></div>
+                    <div className="h-2 w-[1px] bg-[#D4AF37] mb-1"></div>
 
-                    <div className="font-bold text-sm md:text-base text-[#0B3D2E] mb-1">
+                    <div className="font-bold text-sm text-[#0B3D2E] mb-1">
                       {lang === "ar" ? item.titleAr : item.titleEn}
                     </div>
 
-                    <div className="text-sm text-[#4B5563]">
+                    <div className="text-xs md:text-sm text-[#4B5563]">
                       {lang === "ar" ? item.descAr : item.descEn}
                     </div>
                   </div>
@@ -1118,7 +1119,7 @@ export default function HomePage() {
       {/* ============================================================
           4. SERVICES — 6 cards
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           eyebrow={t("pages.index.text14")}
           title={
@@ -1133,7 +1134,7 @@ export default function HomePage() {
           }
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {SERVICES.map((s, i) => {
             const Icon = icons[i];
 
@@ -1271,7 +1272,7 @@ export default function HomePage() {
             const cta = ctaLabels[s.slug] ?? { ar: "استكشف الخدمة", en: "Explore service" };
 
             return (
-              <Card key={s.slug} className="flex flex-col">
+              <Card key={s.slug} className="flex flex-col p-4 md:p-5">
                 {img && (
                   <img
                     src={img.src}
@@ -1280,7 +1281,7 @@ export default function HomePage() {
                     height={450}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-40 object-cover rounded-md mb-4"
+                    className="w-full h-40 object-contain bg-slate-50 rounded-md mb-3 p-2"
                   />
                 )}
 
@@ -1288,17 +1289,17 @@ export default function HomePage() {
                   <div className="h-10 w-10 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center shrink-0">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-lg font-bold leading-snug pt-1.5">
+                  <h3 className="text-base md:text-lg font-bold leading-snug pt-1.5 text-[#0B3D2E]">
                     {lang === "ar" ? cardTitle.ar : cardTitle.en}
                   </h3>
                 </div>
 
-                <p className="mt-4 text-base text-[#4B5563] leading-relaxed">
+                <p className="mt-3 text-sm md:text-base text-[#4B5563] leading-relaxed">
                   {lang === "ar" ? desc.ar : desc.en}
                 </p>
 
                 {bullets && (
-                  <ul className="mt-4 space-y-2 text-base text-[#4B5563]">
+                  <ul className="mt-3 space-y-1 text-sm md:text-base text-[#4B5563]">
                     {bullets.map((b) => (
                       <li key={b} className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
@@ -1325,8 +1326,8 @@ export default function HomePage() {
       {/* ============================================================
           5. WHY ARABTEC
           ============================================================ */}
-      <Section>
-        <div className="text-center mb-8 md:mb-10">
+      <Section className="!py-6 md:!py-10">
+        <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#0B3D2E]">
             {lang === "ar"
               ? "لماذا تختار أربتك شريكاً تقنياً؟"
@@ -1335,7 +1336,7 @@ export default function HomePage() {
         </div>
 
         {/* الصف الأول: 4 كروت */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {[
             {
               icon: BadgeCheck,
@@ -1370,17 +1371,17 @@ export default function HomePage() {
             return (
               <div
                 key={i}
-                className="rounded-[12px] border border-[#E5E7EB] bg-white p-5 flex flex-col items-center text-center shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow"
+                className="rounded-[12px] border border-[#E5E7EB] bg-white p-4 flex flex-col items-center text-center shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow"
               >
-                <div className="mb-4">
-                  <Icon className="h-8 w-8 text-[#0B3D2E]" strokeWidth={1.5} />
+                <div className="mb-3">
+                  <Icon className="h-7 w-7 text-[#0B3D2E]" strokeWidth={1.5} />
                 </div>
 
-                <h3 className="font-bold text-base md:text-lg text-[#0B3D2E] mb-2">
+                <h3 className="font-bold text-base text-[#0B3D2E] mb-1">
                   {lang === "ar" ? c.titleAr : c.titleEn}
                 </h3>
 
-                <p className="text-sm md:text-base text-[#4B5563] leading-relaxed">
+                <p className="text-sm text-[#4B5563] leading-relaxed">
                   {lang === "ar" ? c.descAr : c.descEn}
                 </p>
               </div>
@@ -1389,8 +1390,8 @@ export default function HomePage() {
         </div>
 
         {/* الصف التاني: الشريط الأخضر (الأرقام) */}
-        <div className="mt-6 md:mt-8 max-w-6xl mx-auto rounded-[16px] bg-[#0B3D2E] text-white py-5 md:py-6 px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 divide-x divide-white/20 rtl:divide-x-reverse">
+        <div className="mt-4 md:mt-6 max-w-6xl mx-auto rounded-[16px] bg-[#0B3D2E] text-white py-4 md:py-5 px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-4 gap-x-4 divide-x divide-white/20 rtl:divide-x-reverse">
             {[
               { num: "30+", titleAr: "عاماً من الخبرة", titleEn: "Years of experience" },
               { num: "16,000+", titleAr: "عميل يثق بنا", titleEn: "Clients trust us" },
@@ -1403,10 +1404,10 @@ export default function HomePage() {
                   i >= 2 ? "lg:border-none" : ""
                 }`}
               >
-                <div className="text-2xl md:text-3xl font-extrabold tracking-tight mb-1">
+                <div className="text-xl md:text-2xl font-extrabold tracking-tight mb-1">
                   {stat.num}
                 </div>
-                <div className="text-sm md:text-base text-white/90">
+                <div className="text-sm text-white/90">
                   {lang === "ar" ? stat.titleAr : stat.titleEn}
                 </div>
               </div>
@@ -1418,17 +1419,17 @@ export default function HomePage() {
       {/* ============================================================
           6. INDUSTRIES — القطاعات التي نخدمها
           ============================================================ */}
-      <Section>
-        <div className="mb-8 md:mb-10 text-start">
-          <div className="text-sm font-bold text-[color:var(--gold)] mb-2">
+      <Section className="!py-6 md:!py-10">
+        <div className="mb-6 text-start">
+          <div className="text-sm font-bold text-[color:var(--gold)] mb-1">
             {lang === "ar" ? "القطاعات التي نخدمها" : "Industries we serve"}
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3D2E]">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#0B3D2E]">
             {lang === "ar" ? "حلول تقنية مصممة لقطاعك" : "Technology solutions designed for your sector"}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
             {
               icon: Landmark,
@@ -1477,17 +1478,17 @@ export default function HomePage() {
             return (
               <div
                 key={i}
-                className="rounded-xl border border-[#E5E7EB] bg-white p-5 flex items-center gap-4 shadow-sm hover:shadow-md hover:border-[#0B3D2E]/30 transition-all duration-300"
+                className="rounded-xl border border-[#E5E7EB] bg-white p-4 flex items-center gap-3 shadow-sm hover:shadow-md hover:border-[#0B3D2E]/30 transition-all duration-300"
               >
                 <div className="shrink-0 text-[#0B3D2E]">
-                  <Icon className="h-10 w-10 md:h-12 md:w-12" strokeWidth={1.2} />
+                  <Icon className="h-8 w-8 md:h-10 md:w-10" strokeWidth={1.2} />
                 </div>
 
                 <div className="text-start">
-                  <h3 className="text-base md:text-lg font-bold text-[#0B3D2E] mb-2">
+                  <h3 className="text-base font-bold text-[#0B3D2E] mb-1">
                     {lang === "ar" ? ind.titleAr : ind.titleEn}
                   </h3>
-                  <p className="text-sm md:text-base text-[#4B5563] leading-relaxed">
+                  <p className="text-sm text-[#4B5563] leading-relaxed">
                     {lang === "ar" ? ind.descAr : ind.descEn}
                   </p>
                 </div>
@@ -1496,12 +1497,12 @@ export default function HomePage() {
           })}
         </div>
 
-        <div className="mt-8 flex justify-start">
+        <div className="mt-6 flex justify-start">
           <Link
             to="/industries"
-            className="inline-flex items-center gap-2 text-sm md:text-base font-bold text-[#0B3D2E] hover:text-[color:var(--gold)] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#0B3D2E] hover:text-[color:var(--gold)] transition-colors"
           >
-            <ArrowLeft className="h-4 w-4 md:h-5 md:w-5 rtl:rotate-180" />
+            <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
             {lang === "ar" ? "استكشف القطاعات التي نخدمها" : "Explore the sectors we serve"}
           </Link>
         </div>
@@ -1517,18 +1518,18 @@ export default function HomePage() {
           9. CTA
           ============================================================ */}
       <section className="section-dark bg-primary text-primary-foreground">
-        <div className="container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold">
+        <div className="container-page py-10 md:py-14 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold">
             {lang === "ar"
               ? "هل تخطط لمشروع تقني أو تحول مؤسسي جديد؟"
               : "Planning a new technology project or transformation?"}
           </h2>
-          <p className="mt-6 max-w-3xl mx-auto text-lg text-primary-foreground/90 leading-relaxed">
+          <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-primary-foreground/90 leading-relaxed">
             {lang === "ar"
               ? "تحدثوا مع فريق أربتك لمناقشة احتياجات مؤسستكم وتحديد الحلول التقنية المناسبة، سواء كنتم تبحثون عن نظام ERP، حل ذكاء اصطناعي، تطوير برمجيات، بنية تحتية، شبكات أو أنظمة مراقبة وتحكم بالدخول."
               : "Talk to the ARABTEC team about your needs and the right solutions — whether you're exploring ERP, AI, software development, infrastructure, networks, or surveillance and access control."}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             {/* الزر الأول — أبيض */}
             <Link
               to="/contact"
@@ -1551,7 +1552,7 @@ export default function HomePage() {
       {/* ============================================================
           10. FAQ
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={
             lang === "ar"
@@ -1559,70 +1560,72 @@ export default function HomePage() {
               : "Frequently asked questions about ARABTEC solutions"
           }
         />
-        <FAQ
-          items={[
-            {
-              q: {
-                ar: "ما الخدمات التقنية التي تقدمها أربتك؟",
-                en: "What technology services does ARABTEC provide?",
+        <div className="mt-6">
+          <FAQ
+            items={[
+              {
+                q: {
+                  ar: "ما الخدمات التقنية التي تقدمها أربتك؟",
+                  en: "What technology services does ARABTEC provide?",
+                },
+                a: {
+                  ar: "تقدم أربتك حلول الذكاء الاصطناعي و AI Agents، أنظمة ERP وتطبيقات الأعمال، تطوير البرمجيات وتكامل الأنظمة، الحلول السحابية والبنية التحتية، الشبكات والاتصال، وأنظمة المراقبة والحضور والتحكم بالدخول.",
+                  en: "ARABTEC provides AI & AI Agents solutions, ERP and business applications, software development and system integration, cloud and infrastructure, networks and connectivity, and surveillance, attendance and access control.",
+                },
               },
-              a: {
-                ar: "تقدم أربتك حلول الذكاء الاصطناعي و AI Agents، أنظمة ERP وتطبيقات الأعمال، تطوير البرمجيات وتكامل الأنظمة، الحلول السحابية والبنية التحتية، الشبكات والاتصال، وأنظمة المراقبة والحضور والتحكم بالدخول.",
-                en: "ARABTEC provides AI & AI Agents solutions, ERP and business applications, software development and system integration, cloud and infrastructure, networks and connectivity, and surveillance, attendance and access control.",
+              {
+                q: {
+                  ar: "هل تقدم أربتك حلولاً مخصصة للجهات الحكومية؟",
+                  en: "Does ARABTEC offer tailored solutions for government entities?",
+                },
+                a: {
+                  ar: "نعم، يمكن تصميم الحلول وفق إجراءات الجهة الحكومية ومتطلبات المستخدمين والربط مع الأنظمة والبيانات القائمة، بعد دراسة النطاق والمتطلبات الفنية والتنظيمية للمشروع.",
+                  en: "Yes — solutions can be designed around government procedures, user requirements and integration with existing systems and data, after studying the project's scope, technical and regulatory requirements.",
+                },
               },
-            },
-            {
-              q: {
-                ar: "هل تقدم أربتك حلولاً مخصصة للجهات الحكومية؟",
-                en: "Does ARABTEC offer tailored solutions for government entities?",
+              {
+                q: {
+                  ar: "هل تطور أربتك أنظمة وبرمجيات مخصصة؟",
+                  en: "Does ARABTEC build custom systems and software?",
+                },
+                a: {
+                  ar: "نعم، تشمل خدمات تطوير البرمجيات الأنظمة المؤسسية، تطبيقات الويب والهاتف وسطح المكتب، البوابات الرقمية وتكامل الأنظمة وواجهات API.",
+                  en: "Yes — software development covers enterprise systems, web, mobile and desktop applications, digital portals, system integration and APIs.",
+                },
               },
-              a: {
-                ar: "نعم، يمكن تصميم الحلول وفق إجراءات الجهة الحكومية ومتطلبات المستخدمين والربط مع الأنظمة والبيانات القائمة، بعد دراسة النطاق والمتطلبات الفنية والتنظيمية للمشروع.",
-                en: "Yes — solutions can be designed around government procedures, user requirements and integration with existing systems and data, after studying the project's scope, technical and regulatory requirements.",
+              {
+                q: {
+                  ar: "هل يمكن ربط حلول الذكاء الاصطناعي بأنظمة المؤسسة؟",
+                  en: "Can AI solutions be integrated with enterprise systems?",
+                },
+                a: {
+                  ar: "يمكن تصميم AI Agents وربطها بالوثائق وقواعد المعرفة والأنظمة المؤسسية المصرح بها، وفق نطاق المشروع وضوابط البيانات والصلاحيات.",
+                  en: "AI Agents can be designed and connected to authorized documents, knowledge bases and enterprise systems — according to project scope, data controls and access policies.",
+                },
               },
-            },
-            {
-              q: {
-                ar: "هل تطور أربتك أنظمة وبرمجيات مخصصة؟",
-                en: "Does ARABTEC build custom systems and software?",
+              {
+                q: {
+                  ar: "هل تقدم أربتك أنظمة ERP قابلة للتخصيص؟",
+                  en: "Does ARABTEC offer customizable ERP systems?",
+                },
+                a: {
+                  ar: "تقدم أربتك حلول ERP وتطبيقات أعمال يمكن مواءمتها مع عمليات المؤسسة وربطها بالمالية والموارد البشرية والمشتريات والمخزون وغيرها، وفق احتياجات المشروع.",
+                  en: "ARABTEC offers ERP and business applications that can be aligned with your operations and integrated with finance, HR, procurement, inventory and more — based on project needs.",
+                },
               },
-              a: {
-                ar: "نعم، تشمل خدمات تطوير البرمجيات الأنظمة المؤسسية، تطبيقات الويب والهاتف وسطح المكتب، البوابات الرقمية وتكامل الأنظمة وواجهات API.",
-                en: "Yes — software development covers enterprise systems, web, mobile and desktop applications, digital portals, system integration and APIs.",
+              {
+                q: {
+                  ar: "هل تقدم أربتك خدمات التنفيذ والدعم؟",
+                  en: "Does ARABTEC provide implementation and support services?",
+                },
+                a: {
+                  ar: "تغطي خدمات أربتك، بحسب نطاق العقد، مراحل الدراسة والتصميم والتطوير أو التوريد والتنفيذ والتكامل والتدريب والدعم التشغيلي.",
+                  en: "Depending on the contract scope, ARABTEC services cover study, design, development or supply, delivery, integration, training and operational support.",
+                },
               },
-            },
-            {
-              q: {
-                ar: "هل يمكن ربط حلول الذكاء الاصطناعي بأنظمة المؤسسة؟",
-                en: "Can AI solutions be integrated with enterprise systems?",
-              },
-              a: {
-                ar: "يمكن تصميم AI Agents وربطها بالوثائق وقواعد المعرفة والأنظمة المؤسسية المصرح بها، وفق نطاق المشروع وضوابط البيانات والصلاحيات.",
-                en: "AI Agents can be designed and connected to authorized documents, knowledge bases and enterprise systems — according to project scope, data controls and access policies.",
-              },
-            },
-            {
-              q: {
-                ar: "هل تقدم أربتك أنظمة ERP قابلة للتخصيص؟",
-                en: "Does ARABTEC offer customizable ERP systems?",
-              },
-              a: {
-                ar: "تقدم أربتك حلول ERP وتطبيقات أعمال يمكن مواءمتها مع عمليات المؤسسة وربطها بالمالية والموارد البشرية والمشتريات والمخزون وغيرها، وفق احتياجات المشروع.",
-                en: "ARABTEC offers ERP and business applications that can be aligned with your operations and integrated with finance, HR, procurement, inventory and more — based on project needs.",
-              },
-            },
-            {
-              q: {
-                ar: "هل تقدم أربتك خدمات التنفيذ والدعم؟",
-                en: "Does ARABTEC provide implementation and support services?",
-              },
-              a: {
-                ar: "تغطي خدمات أربتك، بحسب نطاق العقد، مراحل الدراسة والتصميم والتطوير أو التوريد والتنفيذ والتكامل والتدريب والدعم التشغيلي.",
-                en: "Depending on the contract scope, ARABTEC services cover study, design, development or supply, delivery, integration, training and operational support.",
-              },
-            },
-          ]}
-        />
+            ]}
+          />
+        </div>
 
         <JsonLd
           data={{

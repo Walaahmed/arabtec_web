@@ -1230,7 +1230,7 @@ export default function ServicesIndex() {
       {/* ============================================================
           1. HERO
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <Breadcrumbs
           items={[
             { label: { ar: "الرئيسية", en: "Home" }, to: "/" },
@@ -1238,7 +1238,7 @@ export default function ServicesIndex() {
           ]}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center mt-4 md:mt-6">
           {/* الصورة — يسار */}
           <div className="order-2 lg:order-1">
             <img
@@ -1267,24 +1267,24 @@ export default function ServicesIndex() {
                 : "Integrated technology services for enterprises and government entities"}
             </h1>
             
-            <p className="mt-6 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تقدم أربتك مجموعة متكاملة من الخدمات والحلول التقنية المصممة لمساعدة المؤسسات والجهات الحكومية على تطوير أنظمتها، أتمتة عملياتها، تحسين الاتصال بين إداراتها ومواقعها، والاستفادة من البيانات والتقنيات الحديثة في رفع الكفاءة التشغيلية وتحسين جودة الخدمات."
                 : "ARABTEC provides an integrated portfolio of technology services and solutions designed to help enterprises and government entities modernize systems, automate operations, improve connectivity across departments and sites, and leverage data and modern technologies to raise operational efficiency and improve service quality."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "نجمع بين الخبرة الممتدة في البنية التحتية والشبكات وأنظمة المراقبة والحضور، وبين الإمكانات الحديثة في الذكاء الاصطناعي، وكلاء الأعمال الذكيين، أنظمة ERP، تطوير البرمجيات، تكامل الأنظمة والحلول السحابية."
                 : "We combine deep expertise in infrastructure, networks, surveillance and attendance systems with modern capabilities in AI, intelligent business agents, ERP, software development, system integration and cloud solutions."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "نعمل مع العميل منذ مرحلة تحليل الاحتياج وتصميم الحل، مرورًا بالتطوير والتوريد والتنفيذ والتكامل، وصولاً إلى التدريب والدعم والتشغيل وفق نطاق المشروع."
                 : "We work with clients from requirements analysis and solution design, through development, supply, delivery and integration, to training, support and operations — according to project scope."}
             </p>
 
             {/* الأزرار: الأول أبيض والتاني أخضر */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 to="/contact"
                 className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-[#0B3D2E] border border-[#0B3D2E] hover:bg-slate-50 transition"
@@ -1305,31 +1305,31 @@ export default function ServicesIndex() {
       {/* ============================================================
           2. مقدمة الخدمات
           ============================================================ */}
-      <Section className="bg-white !py-12 md:!py-16">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "منظومة واحدة تغطي احتياجات المؤسسة التقنية"
             : "One ecosystem covering your enterprise technology needs"}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-8">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-4 md:mt-6">
           <div>
-            <p className="text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "لا تعمل الأنظمة المؤسسية بمعزل عن بعضها. فالبرمجيات تحتاج إلى بنية تحتية مستقرة، والذكاء الاصطناعي يحتاج إلى بيانات وأنظمة متكاملة، وأنظمة ERP تحتاج إلى تطوير وربط واتصال آمن بين الإدارات والفروع."
                 : "Enterprise systems do not operate in isolation. Software needs stable infrastructure, AI needs integrated data and systems, and ERP needs development, integration and secure connectivity across departments and branches."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "لهذا تقدم أربتك خدماتها باعتبارها منظومة مترابطة، مع إمكانية تنفيذ خدمة محددة أو تصميم حل متكامل يجمع بين أكثر من مجال وفق أهداف المؤسسة وبيئتها التقنية."
                 : "ARABTEC therefore delivers its services as a connected ecosystem — supporting either a specific service or a fully integrated solution across multiple domains, according to the organization's goals and technology environment."}
             </p>
 
-            <h3 className="mt-8 text-xl font-bold text-[#0B3D2E]">
+            <h3 className="mt-6 text-xl font-bold text-[#0B3D2E]">
               {isAr ? "تشمل خدماتنا ستة مجالات رئيسية:" : "Our services cover six main areas:"}
             </h3>
 
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-4 space-y-3">
               {(isAr
                 ? [
                     "حلول الذكاء الاصطناعي و AI Agents",
@@ -1354,7 +1354,7 @@ export default function ServicesIndex() {
                     <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center shrink-0">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <span className="pt-2 text-[16px] md:text-[17px] font-medium text-slate-800">{item}</span>
+                    <span className="pt-2 text-[16px] font-medium text-slate-800">{item}</span>
                   </li>
                 );
               })}
@@ -1366,29 +1366,29 @@ export default function ServicesIndex() {
       {/* ============================================================
           الخدمة 1: AI
           ============================================================ */}
-           <Section className="!py-12 md:!py-16">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="!py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "حلول الذكاء الاصطناعي و AI Agents للمؤسسات"
                 : "AI Solutions & AI Agents for enterprises"}
             </h2>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "نساعد الجهات الحكومية والمؤسسات على الاستفادة العملية من الذكاء الاصطناعي من خلال تطوير حلول ذكية ووكلاء أعمال قادرين على الوصول إلى المعلومات المصرح بها، تنفيذ المهام، دعم الموظفين والمتعاملين، وتحسين سرعة ودقة العمليات."
                 : "We help government entities and enterprises put AI to practical use through intelligent solutions and business agents that access authorized information, execute tasks, support employees and customers, and improve speed and accuracy of operations."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تصمم حلول AI Agents وفق احتياجات المؤسسة، ويمكن ربطها بالأنظمة الداخلية، قواعد البيانات، الوثائق، بوابات الخدمات، أنظمة ERP ومنصات إدارة علاقات العملاء."
                 : "AI Agents are designed around each organization's needs and can be integrated with internal systems, databases, documents, service portals, ERP and CRM platforms."}
             </p>
 
-            <h3 className="mt-8 text-xl font-bold text-[#0B3D2E]">
+            <h3 className="mt-6 text-xl font-bold text-[#0B3D2E]">
               {isAr ? "تشمل الخدمة" : "The service includes"}
             </h3>
-            <div className="mt-5 space-y-5">
+            <div className="mt-4 space-y-4">
               {(isAr
                 ? [
                     { t: "وكلاء ذكاء اصطناعي لخدمة المتعاملين", d: "مساعدون ذكيون للرد على الاستفسارات، توجيه المستخدمين، متابعة الطلبات وتقديم المعلومات من المصادر المعتمدة." },
@@ -1409,12 +1409,12 @@ export default function ServicesIndex() {
               ).map((item) => (
                 <div key={item.t}>
                   <h4 className="font-bold text-base text-slate-800">{item.t}</h4>
-                  <p className="mt-2 text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
+                  <p className="mt-1 text-[15px] md:text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <Link
                 to="/services/$slug"
                 params={{ slug: "ai-agents" }}
@@ -1427,8 +1427,8 @@ export default function ServicesIndex() {
           </div>
 
           {/* الصورة: sticky + عرض كامل بدون قص */}
-          <div className="lg:sticky lg:top-24">
-            <div className="bg-slate-50/50 rounded-xl p-3 border border-border/40">
+          <div className="lg:sticky lg:top-24 mt-6 lg:mt-0">
+            <div className="bg-slate-50/50 rounded-xl p-2 md:p-3 border border-border/40">
               <img
                 src={aiImg}
                 alt={isAr
@@ -1448,11 +1448,11 @@ export default function ServicesIndex() {
       {/* ============================================================
           الخدمة 2: ERP
           ============================================================ */}
-           <Section className="bg-white !py-12 md:!py-16">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           {/* الصورة */}
-          <div className="order-2 lg:order-1 lg:sticky lg:top-24">
-            <div className="bg-slate-50/50 rounded-xl p-3 border border-border/40">
+          <div className="order-2 lg:order-1 lg:sticky lg:top-24 mt-6 lg:mt-0">
+            <div className="bg-slate-50/50 rounded-xl p-2 md:p-3 border border-border/40">
               <img
                 src={erpImg}
                 alt={isAr
@@ -1471,21 +1471,21 @@ export default function ServicesIndex() {
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr ? "أنظمة ERP وتطبيقات الأعمال المؤسسية" : "ERP & Enterprise Business Applications"}
             </h2>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تساعد حلول ERP المؤسسات على توحيد بياناتها وعملياتها ضمن نظام مركزي يربط الإدارات المالية والتشغيلية والإدارية، ويوفر رؤية أوضح للأداء والموارد والتكاليف."
                 : "ERP solutions help enterprises unify their data and operations in a central system connecting financial, operational and administrative departments, providing clearer visibility of performance, resources and costs."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تقدم أربتك خدمات تحليل المتطلبات، تخصيص النظام، تطوير الوحدات، ترحيل البيانات، تكامل الأنظمة، التدريب والدعم، وفق طبيعة المؤسسة وحجم عملياتها."
                 : "ARABTEC provides requirements analysis, system customization, module development, data migration, system integration, training and support — according to the organization's nature and scale."}
             </p>
 
-            <h3 className="mt-8 text-xl font-bold text-[#0B3D2E]">
+            <h3 className="mt-6 text-xl font-bold text-[#0B3D2E]">
               {isAr ? "تشمل الخدمة" : "The service includes"}
             </h3>
-            <div className="mt-5 space-y-5">
+            <div className="mt-4 space-y-4">
               {(isAr
                 ? [
                     { t: "الإدارة المالية والمحاسبة", d: "إدارة الحسابات العامة، المصروفات، الإيرادات، الميزانيات، القيود والتقارير المالية." },
@@ -1510,12 +1510,12 @@ export default function ServicesIndex() {
               ).map((item) => (
                 <div key={item.t}>
                   <h4 className="font-bold text-base text-slate-800">{item.t}</h4>
-                  <p className="mt-2 text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
+                  <p className="mt-1 text-[15px] md:text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <Link
                 to="/services/$slug"
                 params={{ slug: "erp-business-applications" }}
@@ -1532,27 +1532,27 @@ export default function ServicesIndex() {
       {/* ============================================================
           الخدمة 3: تطوير البرمجيات
           ============================================================ */}
-          <Section className="!py-12 md:!py-16">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="!py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr ? "تطوير البرمجيات وتكامل الأنظمة" : "Software Development & System Integration"}
             </h2>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "نطور حلولاً برمجية مخصصة تتوافق مع إجراءات المؤسسة ومتطلبات المستخدمين، وتساعد على تحويل العمليات اليدوية أو المتفرقة إلى أنظمة رقمية مترابطة وقابلة للتوسع."
                 : "We build custom software aligned with the organization's processes and user requirements, helping turn manual or fragmented operations into connected, scalable digital systems."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تشمل خبرات أربتك تطبيقات الويب و Android و iOS وتطبيقات سطح المكتب والحلول البرمجية والذكاء الاصطناعي."
                 : "ARABTEC's expertise covers web, Android, iOS and desktop applications, software solutions and AI."}
             </p>
 
-            <h3 className="mt-8 text-xl font-bold text-[#0B3D2E]">
+            <h3 className="mt-6 text-xl font-bold text-[#0B3D2E]">
               {isAr ? "تشمل الخدمة" : "The service includes"}
             </h3>
-            <div className="mt-5 space-y-5">
+            <div className="mt-4 space-y-4">
               {(isAr
                 ? [
                     { t: "الأنظمة المؤسسية المخصصة", d: "تطوير أنظمة داخلية لإدارة العمليات والموافقات والطلبات والبيانات وفق آلية عمل المؤسسة." },
@@ -1577,12 +1577,12 @@ export default function ServicesIndex() {
               ).map((item) => (
                 <div key={item.t}>
                   <h4 className="font-bold text-base text-slate-800">{item.t}</h4>
-                  <p className="mt-2 text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
+                  <p className="mt-1 text-[15px] md:text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <Link
                 to="/services/$slug"
                 params={{ slug: "software-development" }}
@@ -1595,8 +1595,8 @@ export default function ServicesIndex() {
           </div>
 
           {/* الصورة */}
-          <div className="lg:sticky lg:top-24">
-            <div className="bg-slate-50/50 rounded-xl p-3 border border-border/40">
+          <div className="lg:sticky lg:top-24 mt-6 lg:mt-0">
+            <div className="bg-slate-50/50 rounded-xl p-2 md:p-3 border border-border/40">
               <img
                 src={softwareImg}
                 alt={isAr
@@ -1616,11 +1616,11 @@ export default function ServicesIndex() {
       {/* ============================================================
           الخدمة 4: السحابة
           ============================================================ */}
-            <Section className="bg-white !py-12 md:!py-16">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           {/* الصورة */}
-          <div className="order-2 lg:order-1 lg:sticky lg:top-24">
-            <div className="bg-slate-50/50 rounded-xl p-3 border border-border/40">
+          <div className="order-2 lg:order-1 lg:sticky lg:top-24 mt-6 lg:mt-0">
+            <div className="bg-slate-50/50 rounded-xl p-2 md:p-3 border border-border/40">
               <img
                 src={cloudImg}
                 alt={isAr
@@ -1639,21 +1639,21 @@ export default function ServicesIndex() {
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr ? "السحابة والبنية التحتية التقنية" : "Cloud & IT Infrastructure"}
             </h2>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "نساعد المؤسسات على بناء وتحديث بيئاتها التقنية من خلال حلول الخوادم والتخزين والحوسبة السحابية والنسخ الاحتياطي وتجهيز مواقع العمل، بما يدعم استقرار الأنظمة واستمرارية العمليات وقابلية التوسع."
                 : "We help organizations build and modernize their technology environments through servers, storage, cloud, backup and workplace solutions — supporting system stability, business continuity and scalability."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تغطي خدمات أربتك مراحل التقييم والتصميم والتوريد والتركيب والإعداد والاختبار والتشغيل والدعم، وفق نطاق المشروع ومتطلبات المؤسسة."
                 : "ARABTEC's services cover assessment, design, supply, installation, configuration, testing, operation and support — according to project scope and requirements."}
             </p>
 
-            <h3 className="mt-8 text-xl font-bold text-[#0B3D2E]">
+            <h3 className="mt-6 text-xl font-bold text-[#0B3D2E]">
               {isAr ? "تشمل الخدمة" : "The service includes"}
             </h3>
-            <div className="mt-5 space-y-5">
+            <div className="mt-4 space-y-4">
               {(isAr
                 ? [
                     { t: "تقييم البنية التقنية", d: "مراجعة الخوادم والتخزين والأنظمة والاحتياجات التشغيلية وتحديد فرص التحديث." },
@@ -1678,12 +1678,12 @@ export default function ServicesIndex() {
               ).map((item) => (
                 <div key={item.t}>
                   <h4 className="font-bold text-base text-slate-800">{item.t}</h4>
-                  <p className="mt-2 text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
+                  <p className="mt-1 text-[15px] md:text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <Link
                 to="/services/$slug"
                 params={{ slug: "cloud-infrastructure" }}
@@ -1700,27 +1700,27 @@ export default function ServicesIndex() {
       {/* ============================================================
           الخدمة 5: الشبكات
           ============================================================ */}
-           <Section className="!py-12 md:!py-16">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="!py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr ? "الشبكات والاتصال وربط المواقع" : "Networks, Connectivity & Multi-site Linking"}
             </h2>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "نصمم وننفذ حلول الشبكات والاتصال التي تساعد المؤسسات على ربط المستخدمين والأنظمة والفروع والمواقع ضمن بيئة تقنية مستقرة وقابلة للإدارة والتوسع."
                 : "We design and deliver network and connectivity solutions that help organizations connect users, systems, branches and sites within a stable, manageable and scalable environment."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تمتلك أربتك خبرة في الشبكات المؤسسية، LAN و WAN، الألياف الضوئية، الشبكات اللاسلكية، WiMax، VSAT، Point-to-Point، VoIP والكابلات الهيكلية."
                 : "ARABTEC has expertise in enterprise networks, LAN & WAN, fiber optics, wireless networks, WiMax, VSAT, Point-to-Point, VoIP and structured cabling."}
             </p>
 
-            <h3 className="mt-8 text-xl font-bold text-[#0B3D2E]">
+            <h3 className="mt-6 text-xl font-bold text-[#0B3D2E]">
               {isAr ? "تشمل الخدمة" : "The service includes"}
             </h3>
-            <div className="mt-5 space-y-5">
+            <div className="mt-4 space-y-4">
               {(isAr
                 ? [
                     { t: "تصميم الشبكات المؤسسية", d: "تحليل المتطلبات وإعداد تصميم الشبكة وفق عدد المستخدمين والمواقع والأنظمة." },
@@ -1745,12 +1745,12 @@ export default function ServicesIndex() {
               ).map((item) => (
                 <div key={item.t}>
                   <h4 className="font-bold text-base text-slate-800">{item.t}</h4>
-                  <p className="mt-2 text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
+                  <p className="mt-1 text-[15px] md:text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <Link
                 to="/services/$slug"
                 params={{ slug: "network-connectivity" }}
@@ -1763,8 +1763,8 @@ export default function ServicesIndex() {
           </div>
 
           {/* الصورة */}
-          <div className="lg:sticky lg:top-24">
-            <div className="bg-slate-50/50 rounded-xl p-3 border border-border/40">
+          <div className="lg:sticky lg:top-24 mt-6 lg:mt-0">
+            <div className="bg-slate-50/50 rounded-xl p-2 md:p-3 border border-border/40">
               <img
                 src={networkImg}
                 alt={isAr
@@ -1784,11 +1784,11 @@ export default function ServicesIndex() {
       {/* ============================================================
           الخدمة 6: المراقبة والحضور
           ============================================================ */}
-           <Section className="bg-white !py-12 md:!py-16">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           {/* الصورة */}
-          <div className="order-2 lg:order-1 lg:sticky lg:top-24">
-            <div className="bg-slate-50/50 rounded-xl p-3 border border-border/40">
+          <div className="order-2 lg:order-1 lg:sticky lg:top-24 mt-6 lg:mt-0">
+            <div className="bg-slate-50/50 rounded-xl p-2 md:p-3 border border-border/40">
               <img
                 src={surveillanceImg}
                 alt={isAr
@@ -1807,21 +1807,21 @@ export default function ServicesIndex() {
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr ? "أنظمة المراقبة والحضور والتحكم بالدخول" : "Surveillance, Attendance & Access Control"}
             </h2>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تقدم أربتك حلولاً متكاملة لمراقبة المواقع وتنظيم دخول الأفراد وتسجيل الحضور والانصراف، بما يساعد المؤسسات على إدارة منشآتها وموظفيها ومواقعها بصورة أكثر كفاءة."
                 : "ARABTEC provides integrated solutions for site surveillance, people access and attendance logging — helping organizations manage facilities, employees and sites more efficiently."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تشمل خبرة الشركة كاميرات المراقبة، أنظمة الحضور، البصمة، التعرف على الوجه وراحة اليد، أنظمة التحكم بالدخول و RFID."
                 : "The company's expertise includes surveillance cameras, attendance systems, biometrics, face and palm recognition, access control and RFID."}
             </p>
 
-            <h3 className="mt-8 text-xl font-bold text-[#0B3D2E]">
+            <h3 className="mt-6 text-xl font-bold text-[#0B3D2E]">
               {isAr ? "تشمل الخدمة" : "The service includes"}
             </h3>
-            <div className="mt-5 space-y-5">
+            <div className="mt-4 space-y-4">
               {(isAr
                 ? [
                     { t: "أنظمة كاميرات المراقبة", d: "توريد وتركيب وإعداد كاميرات المراقبة الداخلية والخارجية وفق طبيعة الموقع." },
@@ -1846,12 +1846,12 @@ export default function ServicesIndex() {
               ).map((item) => (
                 <div key={item.t}>
                   <h4 className="font-bold text-base text-slate-800">{item.t}</h4>
-                  <p className="mt-2 text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
+                  <p className="mt-1 text-[15px] md:text-[16px] text-slate-600 leading-relaxed">{item.d}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <Link
                 to="/services/$slug"
                 params={{ slug: "surveillance-access-control" }}
@@ -1868,7 +1868,7 @@ export default function ServicesIndex() {
       {/* ============================================================
           قسم الحلول المتكاملة
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "أكثر من خدمة ضمن حل مؤسسي واحد" : "More than one service within a single enterprise solution"}
           intro={
@@ -1878,7 +1878,7 @@ export default function ServicesIndex() {
           }
         />
 
-        <div className="grid gap-6 md:grid-cols-2 mt-8">
+        <div className="grid gap-4 md:grid-cols-2 mt-6">
           {(isAr
             ? [
                 {
@@ -1917,11 +1917,11 @@ export default function ServicesIndex() {
                 },
               ]
           ).map((sol) => (
-            <Card key={sol.t} className="p-6 border-border/60 shadow-sm bg-card">
+            <Card key={sol.t} className="p-5 md:p-6 border-border/60 shadow-sm bg-card">
               <h3 className="text-lg font-bold text-[#0B3D2E]">{sol.t}</h3>
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-3 space-y-2">
                 {sol.items.map((x) => (
-                  <li key={x} className="flex items-start gap-3 text-[16px] text-slate-700">
+                  <li key={x} className="flex items-start gap-3 text-[15px] md:text-[16px] text-slate-700">
                     <span className="text-[color:var(--gold)] mt-1 shrink-0">•</span>
                     <span className="leading-relaxed">{x}</span>
                   </li>
@@ -1935,7 +1935,7 @@ export default function ServicesIndex() {
       {/* ============================================================
           قسم القطاعات
           ============================================================ */}
-      <Section className="bg-white !py-12 md:!py-16">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "حلول تقنية مصممة لقطاعك "
@@ -1947,8 +1947,8 @@ export default function ServicesIndex() {
           }
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-8">
-          <div className="space-y-4">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
+          <div className="space-y-3">
             {[
               {
                 icon: Landmark,
@@ -1997,14 +1997,14 @@ export default function ServicesIndex() {
               return (
                 <div
                   key={row.en}
-                  className="rounded-lg border border-border bg-card p-5 shadow-sm flex items-start gap-4"
+                  className="rounded-lg border border-border bg-card p-4 shadow-sm flex items-start gap-4"
                 >
-                  <div className="h-11 w-11 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center shrink-0">
+                  <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center shrink-0">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="font-bold text-[17px] text-[#0B3D2E]">{isAr ? row.ar : row.en}</div>
-                    <p className="mt-2 text-[16px] text-slate-700 leading-relaxed">
+                    <div className="font-bold text-[16px] text-[#0B3D2E]">{isAr ? row.ar : row.en}</div>
+                    <p className="mt-1 text-[15px] md:text-[16px] text-slate-700 leading-relaxed">
                       {isAr ? row.descAr : row.descEn}
                     </p>
                   </div>
@@ -2022,11 +2022,11 @@ export default function ServicesIndex() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-xl shadow-md w-full h-auto object-cover"
+            className="rounded-xl shadow-md w-full h-auto object-cover mt-6 lg:mt-0"
           />
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/industries" variant="outline">
             {isAr ? "استكشف القطاعات التي نخدمها" : "Explore the sectors we serve"}
           </CTAButton>
@@ -2036,14 +2036,14 @@ export default function ServicesIndex() {
       {/* ============================================================
           منهجية تقديم الخدمة — 7 مراحل
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "منهجية منظمة من التحليل إلى التشغيل"
             : "A structured methodology from analysis to operations"}
         />
 
-        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mt-8">
+        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { t: "دراسة الاحتياج", d: "فهم أهداف المؤسسة وتحدياتها والعمليات والمستخدمين والأنظمة والبنية الحالية." },
@@ -2064,12 +2064,12 @@ export default function ServicesIndex() {
                 { t: "Go-live & support", d: "Launch, monitor performance, and provide support and improvement per agreement." },
               ]
           ).map((step, i) => (
-            <li key={i} className="relative rounded-xl border border-border bg-card p-5 shadow-sm">
-              <div className="text-3xl font-extrabold text-[color:var(--gold)]">
+            <li key={i} className="relative rounded-xl border border-border bg-card p-4 md:p-5 shadow-sm">
+              <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--gold)]">
                 0{i + 1}
               </div>
-              <div className="mt-2 font-bold text-[#0B3D2E]">{step.t}</div>
-              <p className="mt-2 text-[15px] md:text-[16px] text-slate-700 leading-relaxed">
+              <div className="mt-1 font-bold text-[#0B3D2E]">{step.t}</div>
+              <p className="mt-1 text-[14px] md:text-[15px] text-slate-700 leading-relaxed">
                 {step.d}
               </p>
             </li>
@@ -2080,14 +2080,14 @@ export default function ServicesIndex() {
       {/* ============================================================
           لماذا أربتك؟
           ============================================================ */}
-      <Section className="bg-white !py-12 md:!py-16">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "لماذا تختار المؤسسات خدمات أربتك؟"
             : "Why organizations choose ARABTEC services"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             {
               icon: BadgeCheck,
@@ -2140,12 +2140,12 @@ export default function ServicesIndex() {
           ].map((c) => {
             const Icon = c.icon;
             return (
-              <Card key={c.h.en} className="p-6 border-border/60 shadow-sm bg-card">
-                <div className="h-11 w-11 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-4">
+              <Card key={c.h.en} className="p-5 md:p-6 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#0B3D2E]">{l(c.h)}</h3>
-                <p className="mt-3 text-[16px] md:text-[17px] text-slate-700 leading-relaxed">{l(c.d)}</p>
+                <p className="mt-2 text-[15px] md:text-[16px] text-slate-700 leading-relaxed">{l(c.d)}</p>
               </Card>
             );
           })}
@@ -2156,18 +2156,18 @@ export default function ServicesIndex() {
           دعوة لاتخاذ إجراء
           ============================================================ */}
       <section className="relative overflow-hidden bg-[#0B3D2E] text-white">
-        <div className="relative container-page py-16 text-center">
+        <div className="relative container-page py-12 md:py-16 text-center">
           <h2 className="text-2xl md:text-3xl text-white font-bold">
             {isAr
               ? "ما الخدمة التقنية التي تحتاجها مؤسستكم؟"
               : "Which technology service does your organization need?"}
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-white/90 text-[17px] md:text-lg leading-relaxed">
+          <p className="mt-3 max-w-3xl mx-auto text-white/90 text-[16px] md:text-lg leading-relaxed">
             {isAr
               ? "شاركوا فريق أربتك بأهداف المشروع والتحديات الحالية، وسنعمل معكم على تحديد الخدمات المناسبة وتصميم نطاق عمل يتوافق مع احتياجات المؤسسة وبيئتها التقنية."
               : "Share your project goals and current challenges with the ARABTEC team, and we will work with you to determine the right services and design a scope that fits your organization and technology environment."}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/contact"
               className="rounded-md bg-white px-6 py-3 text-sm font-bold text-[#0B3D2E] hover:bg-slate-100 transition"
@@ -2187,14 +2187,14 @@ export default function ServicesIndex() {
       {/* ============================================================
           الأسئلة الشائعة
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "أسئلة شائعة عن خدمات أربتك التقنية"
             : "Frequently asked questions about ARABTEC technology services"}
         />
 
-        <div className="mt-8">
+        <div className="mt-6">
           <FAQ
             items={[
               {

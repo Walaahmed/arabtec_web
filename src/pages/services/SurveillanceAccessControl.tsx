@@ -95,7 +95,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           1. HERO
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <Breadcrumbs
           items={[
             { label: { ar: "الرئيسية", en: "Home" }, to: "/" },
@@ -104,7 +104,7 @@ export default function SurveillanceAccessControlPage() {
           ]}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center mt-4 md:mt-6">
           <div className="order-2 lg:order-1">
             <img
               src={heroImg}
@@ -125,28 +125,28 @@ export default function SurveillanceAccessControlPage() {
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {isAr ? "حلول ذكية لإدارة المواقع والموظفين والدخول" : "Smart solutions for sites, employees and access"}
             </div>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
+            <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
               {isAr
                 ? "أنظمة المراقبة والحضور والتحكم بالدخول للجهات الحكومية والمؤسسات"
                 : "Surveillance, attendance and access control systems for government and enterprises"}
             </h1>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تقدم أربتك حلولًا متكاملة تساعد الجهات الحكومية والمؤسسات على مراقبة المواقع، تنظيم دخول الأفراد، تسجيل حضور الموظفين وانصرافهم، وإدارة الأجهزة والبيانات من خلال أنظمة مركزية قابلة للتكامل مع البيئة التقنية للمؤسسة."
                 : "ARABTEC provides integrated solutions that help government entities and enterprises monitor sites, organize access, log attendance and manage devices and data through central systems that integrate with the enterprise technology environment."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تشمل خدماتنا كاميرات المراقبة الداخلية والخارجية، كاميرات IP، أنظمة التسجيل والإدارة، أنظمة الحضور والانصراف، البصمة، التعرف على الوجه، البطاقات و RFID، إضافة إلى أنظمة التحكم بالدخول وربطها بالموارد البشرية وأنظمة ERP وفق نطاق المشروع."
                 : "Our services include indoor and outdoor surveillance cameras, IP cameras, recording and management systems, attendance systems, biometrics, face recognition, RFID and cards, plus access control systems — integrated with HR and ERP per project scope."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نبدأ بدراسة الموقع وعدد المستخدمين والمداخل والأجهزة واحتياجات التسجيل والتقارير والتكامل، ثم نصمم الحل وننفذ أعمال التوريد والتركيب والإعداد والاختبار والتدريب والصيانة."
                 : "We start by studying the site, users, entrances, devices, and recording, reporting and integration needs — then design the solution and deliver supply, installation, configuration, testing, training and maintenance."}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <CTAButton to="/contact">
                 {isAr ? "اطلب زيارة ميدانية" : "Request a site survey"}
               </CTAButton>
@@ -155,7 +155,7 @@ export default function SurveillanceAccessControlPage() {
               </CTAButton>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2">
               {(isAr
                 ? ["كاميرات مراقبة", "كاميرات IP", "NVR و DVR", "الحضور والانصراف", "البصمة", "التعرف على الوجه", "RFID", "التحكم بالدخول", "التكامل والصيانة"]
                 : ["Surveillance cameras", "IP cameras", "NVR & DVR", "Attendance", "Biometrics", "Face recognition", "RFID", "Access control", "Integration & maintenance"]
@@ -175,27 +175,27 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           2. منظومة متكاملة لإدارة المنشأة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "مراقبة المواقع وتنظيم الدخول وإدارة الحضور ضمن بيئة واحدة"
             : "Site monitoring, access organization and attendance in one environment"}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تعمل أنظمة المراقبة والحضور والتحكم بالدخول بصورة أفضل عندما يتم تصميمها باعتبارها منظومة واحدة، وليس أجهزة منفصلة."
                 : "Surveillance, attendance and access control systems work better when designed as one ecosystem rather than separate devices."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن ربط الكاميرات وأجهزة الحضور وقارئات البطاقات والأبواب والبوابات ضمن شبكة المؤسسة، مع إدارة المستخدمين والصلاحيات والسجلات والتقارير من خلال واجهات مركزية وفق احتياجات المشروع."
                 : "Cameras, attendance devices, card readers, doors and gates can be connected within the enterprise network — with user, permission, log and report management through central interfaces per project needs."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "مكونات المنظومة" : "Ecosystem components"}
             </h3>
 
@@ -204,7 +204,7 @@ export default function SurveillanceAccessControlPage() {
                 ? ["كاميرات المراقبة", "أنظمة التسجيل", "محطات الإدارة والمشاهدة", "أجهزة الحضور والانصراف", "قارئات البصمة", "التعرف على الوجه", "بطاقات RFID", "قارئات الدخول", "الأقفال والأبواب والبوابات", "الخوادم والتخزين", "الشبكات والاتصال", "أنظمة الموارد البشرية و ERP"]
                 : ["Surveillance cameras", "Recording systems", "Management & viewing stations", "Attendance devices", "Biometric readers", "Face recognition", "RFID cards", "Access readers", "Locks, doors & gates", "Servers & storage", "Networks & connectivity", "HR & ERP systems"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -213,11 +213,11 @@ export default function SurveillanceAccessControlPage() {
           </div>
 
           {/* مخطط المنظومة */}
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="font-bold mb-4 text-sm">
+          <div className="rounded-2xl border border-border bg-card p-4 md:p-6">
+            <h3 className="font-bold mb-4 text-sm text-[#0B3D2E]">
               {isAr ? "مخطط المنظومة" : "Ecosystem diagram"}
             </h3>
-            <div className="flex flex-col items-center gap-3 text-xs">
+            <div className="flex flex-col items-center gap-3 text-xs md:text-sm">
               {(isAr
                 ? ["المستخدمون والمداخل والمواقع", "كاميرات وأجهزة حضور وقارئات دخول", "الشبكة", "منصة الإدارة والتسجيل", "التقارير والموارد البشرية و ERP"]
                 : ["Users, entrances & sites", "Cameras, attendance devices & readers", "Network", "Management & recording platform", "Reports, HR & ERP"]
@@ -239,14 +239,14 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           3. خدمات أنظمة المراقبة — 8 خدمات
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "حلول مراقبة مرئية للمباني والمواقع والمنشآت"
             : "Visual surveillance solutions for buildings, sites and facilities"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             {
               icon: Activity,
@@ -323,17 +323,17 @@ export default function SurveillanceAccessControlPage() {
           ].map((svc) => {
             const Icon = svc.icon;
             return (
-              <Card key={svc.hEn}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={svc.hEn} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{isAr ? svc.hAr : svc.hEn}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? svc.hAr : svc.hEn}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                   {isAr ? svc.descAr : svc.descEn}
                 </p>
                 <ul className="mt-3 space-y-1.5">
                   {(isAr ? svc.itemsAr : svc.itemsEn).map((x) => (
-                    <li key={x} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <li key={x} className="flex items-start gap-2 text-[14px] md:text-[15px] text-[#4B5563]">
                       <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                       <span>{x}</span>
                     </li>
@@ -348,8 +348,8 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           4. أنظمة الحضور والانصراف
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <img
             src={attendanceImg}
             alt={isAr
@@ -359,27 +359,27 @@ export default function SurveillanceAccessControlPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "إدارة حضور الموظفين ضمن نظام منظم وقابل للتكامل"
                 : "Managing employee attendance in an organized, integrable system"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تساعد أنظمة الحضور والانصراف المؤسسات على تسجيل أوقات دخول الموظفين وخروجهم، وإدارة جداول العمل والتقارير وربط البيانات بأنظمة الموارد البشرية والرواتب وفق التكامل المتاح."
                 : "Attendance systems help organizations log employee check-in and check-out times, manage work schedules and reports, and integrate data with HR and payroll per available integration."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن تصميم النظام لموقع واحد أو عدة فروع، مع اختيار وسيلة التحقق المناسبة حسب عدد الموظفين وطبيعة العمل وبيئة الموقع."
                 : "The system can be designed for one site or multiple branches, choosing the appropriate verification method based on users, work nature and site environment."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "وسائل تسجيل الحضور" : "Attendance recording methods"}
             </h3>
 
@@ -388,14 +388,14 @@ export default function SurveillanceAccessControlPage() {
                 ? ["البصمة", "التعرف على الوجه", "البطاقات", "RFID", "الرقم الوظيفي", "وسائل تحقق متعددة"]
                 : ["Biometrics", "Face recognition", "Cards", "RFID", "Employee ID", "Multi-factor methods"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
               ))}
             </ul>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "وظائف نظام الحضور" : "Attendance system functions"}
             </h3>
 
@@ -404,7 +404,7 @@ export default function SurveillanceAccessControlPage() {
                 ? ["تسجيل الدخول والخروج", "إدارة الموظفين", "إدارة الفروع", "جداول العمل", "الورديات", "التأخير", "الغياب", "العمل الإضافي", "الإجازات عند توفر التكامل", "التقارير", "التصدير إلى الموارد البشرية", "إدارة أجهزة متعددة"]
                 : ["Check-in & check-out", "Employee management", "Branch management", "Work schedules", "Shifts", "Lateness", "Absence", "Overtime", "Leave (with integration)", "Reports", "Export to HR", "Multi-device management"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                   <span>{x}</span>
                 </li>
@@ -417,7 +417,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           5. الحضور بالبصمة
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "تسجيل الحضور باستخدام البصمة" : "Attendance using biometrics"}
           intro={
@@ -426,13 +426,13 @@ export default function SurveillanceAccessControlPage() {
               : "Biometric devices log employee attendance through identity verification, transferring records to the attendance system and reports. The device is chosen based on employees, registered users, installation environment, available connectivity and number of sites."}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <ul className="grid gap-2 md:grid-cols-2">
             {(isAr
               ? ["توريد جهاز البصمة", "تسجيل الموظفين", "إعداد أوقات العمل", "ربط الجهاز بالشبكة", "إعداد المستخدمين", "نقل سجلات الحضور", "اختبار الجهاز", "تدريب المسؤولين", "الدعم والصيانة"]
               : ["Biometric device supply", "Employee enrollment", "Work hours setup", "Device network connectivity", "User setup", "Attendance log transfer", "Device testing", "Admin training", "Support & maintenance"]
             ).map((x) => (
-              <li key={x} className="flex items-start gap-2 text-sm">
+              <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                 <Fingerprint className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                 <span>{x}</span>
               </li>
@@ -440,7 +440,7 @@ export default function SurveillanceAccessControlPage() {
           </ul>
 
           <div>
-            <h3 className="font-bold mb-3">
+            <h3 className="font-bold mb-3 text-lg text-[#0B3D2E]">
               {isAr ? "بيئات الاستخدام" : "Deployment environments"}
             </h3>
             <ul className="grid gap-2 md:grid-cols-2">
@@ -448,7 +448,7 @@ export default function SurveillanceAccessControlPage() {
                 ? ["المكاتب", "المؤسسات الحكومية", "المدارس", "المستشفيات", "المصانع", "المستودعات", "الفروع", "المواقع التشغيلية"]
                 : ["Offices", "Government institutions", "Schools", "Hospitals", "Factories", "Warehouses", "Branches", "Operational sites"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                   <span>{x}</span>
                 </li>
@@ -461,7 +461,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           6. الحضور بالتعرف على الوجه
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "تسجيل الحضور من خلال التعرف على الوجه"
@@ -477,17 +477,17 @@ export default function SurveillanceAccessControlPage() {
             ? ["تسجيل الموظفين", "التعرف على المستخدم", "تسجيل الدخول والخروج", "إدارة عدة أجهزة", "ربط الفروع", "إعداد التقارير", "التكامل مع الموارد البشرية", "تحديد صلاحيات الاستخدام"]
             : ["Employee enrollment", "User recognition", "Check-in/out logging", "Multi-device management", "Branch connectivity", "Reporting", "HR integration", "Usage permissions"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <Scan className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
+        <div className="mt-6 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
           <div className="flex items-start gap-3">
             <AlertCircle className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-[15px] md:text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يتم استخدام تقنيات التعرف على الوجه وفق سياسات المؤسسة والمتطلبات التنظيمية المعتمدة، وبعد تحديد آلية جمع البيانات واستخدامها وحفظها."
                 : "Face recognition technologies are used per the organization's policies and approved regulatory requirements — after defining data collection, use and storage."}
@@ -499,7 +499,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           7. البطاقات و RFID
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "حلول بطاقات لإدارة الحضور والدخول"
@@ -510,15 +510,15 @@ export default function SurveillanceAccessControlPage() {
               : "RFID or ID cards are used to log attendance or grant access to specific areas per the system used. The card can be linked to employee, visitor or user data, defining allowed locations and times."}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <h3 className="font-bold mb-3">{isAr ? "الاستخدامات" : "Uses"}</h3>
+            <h3 className="font-bold mb-3 text-lg text-[#0B3D2E]">{isAr ? "الاستخدامات" : "Uses"}</h3>
             <ul className="grid gap-2 md:grid-cols-2">
               {(isAr
                 ? ["تسجيل الحضور", "فتح الأبواب", "الدخول إلى المكاتب", "الدخول إلى غرف محددة", "إدارة الموظفين", "إدارة الزوار", "ربط البطاقة بالهوية الوظيفية", "تتبع سجلات الدخول"]
                 : ["Attendance logging", "Door opening", "Office access", "Restricted room access", "Employee management", "Visitor management", "Linking card to employee ID", "Access log tracking"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CreditCard className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -527,13 +527,13 @@ export default function SurveillanceAccessControlPage() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-3">{isAr ? "مكونات الحل" : "Solution components"}</h3>
+            <h3 className="font-bold mb-3 text-lg text-[#0B3D2E]">{isAr ? "مكونات الحل" : "Solution components"}</h3>
             <ul className="grid gap-2 md:grid-cols-2">
               {(isAr
                 ? ["البطاقات", "قارئات البطاقات", "وحدات التحكم", "الأبواب أو البوابات", "نظام الإدارة", "قاعدة المستخدمين", "الصلاحيات", "التقارير"]
                 : ["Cards", "Card readers", "Control units", "Doors or gates", "Management system", "User database", "Permissions", "Reports"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -546,26 +546,26 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           8. أنظمة التحكم بالدخول
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "إدارة صلاحيات الدخول إلى المباني والمناطق المحددة"
                 : "Managing access rights to buildings and restricted areas"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تساعد أنظمة التحكم بالدخول المؤسسة على تنظيم من يستطيع دخول كل مبنى أو باب أو منطقة، وفي أي وقت، مع الاحتفاظ بسجلات العمليات وإدارة المستخدمين والصلاحيات مركزيًا."
                 : "Access control systems help the organization organize who can access each building, door or area and at what time — while retaining operation logs and managing users and permissions centrally."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن تنفيذ النظام على باب واحد أو عدة مبانٍ ومواقع، وربطه بالبطاقات أو البصمة أو التعرف على الوجه وفق نطاق المشروع."
                 : "The system can be implemented on one door or multiple buildings and sites, integrated with cards, biometrics or face recognition per project scope."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "مكونات نظام التحكم بالدخول" : "Access control system components"}
             </h3>
 
@@ -574,7 +574,7 @@ export default function SurveillanceAccessControlPage() {
                 ? ["قارئات البطاقات", "قارئات البصمة", "أجهزة التعرف على الوجه", "وحدات التحكم", "الأقفال الكهربائية", "أزرار الخروج", "حساسات الأبواب", "البوابات", "نظام الإدارة", "صلاحيات المستخدمين", "سجلات الدخول والخروج"]
                 : ["Card readers", "Biometric readers", "Face recognition devices", "Control units", "Electric locks", "Exit buttons", "Door sensors", "Gates", "Management system", "User permissions", "Access logs"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <DoorOpen className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -591,19 +591,19 @@ export default function SurveillanceAccessControlPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover"
+            className="rounded-lg shadow-lg w-full h-auto object-cover mt-6 lg:mt-0"
           />
         </div>
 
         {/* الوظائف */}
-        <div className="mt-10">
-          <h3 className="font-bold mb-4">{isAr ? "الوظائف" : "Functions"}</h3>
+        <div className="mt-6">
+          <h3 className="font-bold mb-4 text-lg text-[#0B3D2E]">{isAr ? "الوظائف" : "Functions"}</h3>
           <ul className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
             {(isAr
               ? ["إضافة المستخدمين", "تحديد الأبواب المسموح بها", "تحديد أوقات الدخول", "إلغاء الصلاحيات", "إدارة عدة مواقع", "متابعة حالة الأبواب", "استخراج سجلات الدخول", "إدارة البطاقات المفقودة", "تنظيم صلاحيات الموظفين والزوار", "ربط النظام بقاعدة المستخدمين"]
               : ["Adding users", "Defining allowed doors", "Defining access times", "Revoking permissions", "Multi-site management", "Door status monitoring", "Extracting access logs", "Lost card management", "Employee & visitor permissions", "User database integration"]
             ).map((x) => (
-              <li key={x} className="flex items-start gap-2 text-sm">
+              <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                 <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                 <span>{x}</span>
               </li>
@@ -615,7 +615,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           9. إدارة الزوار
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "تنظيم دخول الزوار والمقاولين والموردين"
@@ -631,17 +631,17 @@ export default function SurveillanceAccessControlPage() {
             ? ["تسجيل بيانات الزائر", "تحديد الموظف أو الإدارة المضيفة", "تحديد موعد الزيارة", "إصدار بطاقة مؤقتة", "منح صلاحية دخول محددة", "تسجيل وقت الدخول", "تسجيل وقت الخروج", "إلغاء البطاقة بعد الزيارة", "إعداد تقارير الزيارات"]
             : ["Visitor data logging", "Defining host employee or department", "Visit time scheduling", "Temporary card issuance", "Granting specific access", "Entry time logging", "Exit time logging", "Card cancellation after visit", "Visit report generation"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <Users className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
+        <div className="mt-6 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
           <div className="flex items-start gap-3">
             <AlertCircle className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-[15px] md:text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تحدد البيانات المطلوبة للاستخدام والاحتفاظ وفق سياسة المؤسسة والمتطلبات التنظيمية المعتمدة."
                 : "Required data for use and retention is defined by the organization's policy and approved regulatory requirements."}
@@ -653,7 +653,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           10. ربط الحضور بالموارد البشرية و ERP
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "نقل بيانات الحضور إلى الأنظمة الإدارية"
@@ -664,9 +664,9 @@ export default function SurveillanceAccessControlPage() {
               : "The attendance system can be integrated with HR or ERP to reduce manual entry and use attendance records for lateness, absence, overtime and payroll calculation per approved rules."}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <h3 className="font-bold mb-3">
+            <h3 className="font-bold mb-3 text-lg text-[#0B3D2E]">
               {isAr ? "البيانات القابلة للتكامل" : "Integrable data"}
             </h3>
             <ul className="grid gap-2 md:grid-cols-2">
@@ -674,7 +674,7 @@ export default function SurveillanceAccessControlPage() {
                 ? ["بيانات الموظفين", "أوقات الدخول والخروج", "الورديات", "التأخير", "الغياب", "ساعات العمل", "العمل الإضافي", "الإجازات", "الفروع", "أرقام الموظفين"]
                 : ["Employee data", "Check-in/out times", "Shifts", "Lateness", "Absence", "Work hours", "Overtime", "Leave", "Branches", "Employee numbers"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -683,7 +683,7 @@ export default function SurveillanceAccessControlPage() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-3">
+            <h3 className="font-bold mb-3 text-lg text-[#0B3D2E]">
               {isAr ? "آليات التكامل المحتملة" : "Potential integration methods"}
             </h3>
             <ul className="grid gap-2">
@@ -691,7 +691,7 @@ export default function SurveillanceAccessControlPage() {
                 ? ["واجهات API", "تبادل الملفات", "التكامل مع قاعدة البيانات", "مزامنة دورية", "ربط مباشر وفق النظام المتاح"]
                 : ["APIs", "File exchange", "Database integration", "Periodic synchronization", "Direct link per available system"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <Database className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -701,11 +701,11 @@ export default function SurveillanceAccessControlPage() {
         </div>
 
         {/* مخطط التكامل */}
-        <div className="mt-10 rounded-2xl border border-border bg-card p-6 overflow-x-auto">
-          <h3 className="font-bold mb-4 text-sm">
+        <div className="mt-6 rounded-2xl border border-border bg-card p-4 md:p-6 overflow-x-auto">
+          <h3 className="font-bold mb-3 text-sm text-[#0B3D2E]">
             {isAr ? "مخطط التكامل" : "Integration diagram"}
           </h3>
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-medium min-w-max">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm font-medium min-w-max">
             {(isAr
               ? ["جهاز الحضور", "منصة الحضور", "نظام الموارد البشرية", "الرواتب والتقارير"]
               : ["Attendance device", "Attendance platform", "HR system", "Payroll & reports"]
@@ -722,7 +722,7 @@ export default function SurveillanceAccessControlPage() {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services/erp-business-applications" variant="outline">
             {isAr ? "استكشف أنظمة ERP وتطبيقات الأعمال" : "Explore ERP & business applications"}
           </CTAButton>
@@ -732,7 +732,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           11. ربط الكاميرات بالشبكة والبنية التحتية
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "بنية تقنية تدعم التسجيل والمشاهدة والإدارة المركزية"
@@ -748,14 +748,14 @@ export default function SurveillanceAccessControlPage() {
             ? ["نقاط الشبكة", "المبدلات", "الكابلات", "الألياف الضوئية عند الحاجة", "أجهزة التسجيل", "الخوادم", "التخزين", "الشاشات", "غرفة المراقبة", "ربط الفروع", "المراقبة المركزية"]
             : ["Network outlets", "Switches", "Cables", "Fiber optics if needed", "Recording devices", "Servers", "Storage", "Screens", "Control room", "Branch connectivity", "Central monitoring"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <Network className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap gap-3">
           <CTAButton to="/services/network-connectivity" variant="outline">
             {isAr ? "استكشف حلول الشبكات والاتصال" : "Explore networks & connectivity"}
           </CTAButton>
@@ -768,34 +768,34 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           12. أنظمة المراقبة للجهات الحكومية
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-deep)]/10 px-3 py-1 text-xs font-semibold text-[color:var(--brand-deep)] mb-3">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0B3D2E]/10 px-3 py-1 text-xs font-semibold text-[#0B3D2E] mb-3">
               <Landmark className="h-3.5 w-3.5" />
               {isAr ? "للجهات الحكومية" : "For government entities"}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "حلول للمباني والمراكز والمواقع الحكومية"
                 : "Solutions for government buildings, centers and sites"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن تصميم أنظمة المراقبة والحضور والتحكم بالدخول للجهات الحكومية وفق عدد المواقع والمستخدمين والمداخل ومتطلبات الإدارة والتقارير والتكامل."
                 : "Government surveillance, attendance and access control systems can be designed based on sites, users, entrances and management, reporting and integration requirements."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يراعى في المشروع تنظيم الصلاحيات، إدارة الأجهزة مركزيًا، توثيق المواقع، وربط الأنظمة بالبنية التقنية للجهة."
                 : "The project considers permission organization, central device management, site documentation and connecting systems to the entity's technology infrastructure."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "حالات الاستخدام" : "Use cases"}
             </h3>
 
-            <div className="mt-4 space-y-4">
+            <div className="mt-4 space-y-3">
               {(isAr
                 ? [
                     { t: "المباني الحكومية", d: "مراقبة المداخل والممرات والمواقف والمرافق، وتنظيم الدخول إلى المناطق المحددة." },
@@ -817,8 +817,8 @@ export default function SurveillanceAccessControlPage() {
                 <div key={item.t} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold">{item.t}</h4>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.d}</p>
+                    <h4 className="font-bold text-base text-[#0B3D2E]">{item.t}</h4>
+                    <p className="mt-1 text-[15px] md:text-[16px] text-[#4B5563] leading-relaxed">{item.d}</p>
                   </div>
                 </div>
               ))}
@@ -834,7 +834,7 @@ export default function SurveillanceAccessControlPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover"
+            className="rounded-lg shadow-lg w-full h-auto object-cover mt-6 lg:mt-0"
           />
         </div>
       </Section>
@@ -842,14 +842,14 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           13. حلول للقطاعات الحيوية
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "أنظمة مصممة وفق طبيعة كل منشأة"
             : "Systems designed according to each facility's nature"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             { ar: "النفط والغاز", en: "Oil & gas", icon: Factory, itemsAr: ["مراقبة المواقع التشغيلية", "مراقبة المستودعات", "إدارة المداخل", "حضور الموظفين", "بطاقات الدخول", "ربط المواقع مركزيًا"], itemsEn: ["Operational site surveillance", "Warehouse surveillance", "Entrance management", "Employee attendance", "Access cards", "Central site connectivity"] },
             { ar: "التعليم", en: "Education", icon: GraduationCap, itemsAr: ["مراقبة المداخل والممرات", "حضور الموظفين", "إدارة دخول المنشآت", "كاميرات المدارس والجامعات", "ربط الفروع", "إدارة الزوار"], itemsEn: ["Entrance & corridor surveillance", "Staff attendance", "Facility access management", "School & university cameras", "Branch connectivity", "Visitor management"] },
@@ -860,14 +860,14 @@ export default function SurveillanceAccessControlPage() {
           ].map((sec) => {
             const Icon = sec.icon;
             return (
-              <Card key={sec.en}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={sec.en} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base mb-3">{isAr ? sec.ar : sec.en}</h3>
+                <h3 className="font-bold text-base mb-3 text-[#0B3D2E]">{isAr ? sec.ar : sec.en}</h3>
                 <ul className="space-y-1.5">
                   {(isAr ? sec.itemsAr : sec.itemsEn).map((x) => (
-                    <li key={x} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                       <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                       <span>{x}</span>
                     </li>
@@ -878,7 +878,7 @@ export default function SurveillanceAccessControlPage() {
           })}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/industries" variant="outline">
             {isAr ? "استكشف القطاعات التي نخدمها" : "Explore the sectors we serve"}
           </CTAButton>
@@ -888,8 +888,8 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           14. غرفة المراقبة والإدارة المركزية
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <img
             src={controlRoomImg}
             alt={isAr
@@ -899,22 +899,22 @@ export default function SurveillanceAccessControlPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "واجهة موحدة لمتابعة المواقع والأجهزة"
                 : "Unified interface for tracking sites and devices"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن تجهيز غرفة مراقبة أو مركز إدارة لعرض الكاميرات ومتابعة حالة الأجهزة والوصول إلى التسجيلات وإدارة عدة مواقع وفق الصلاحيات."
                 : "A control room or management center can be prepared to display cameras, track device status, access recordings and manage multiple sites per permissions."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "المكونات المحتملة" : "Potential components"}
             </h3>
 
@@ -923,14 +923,14 @@ export default function SurveillanceAccessControlPage() {
                 ? ["شاشات العرض", "محطات المشاهدة", "خوادم الإدارة", "أجهزة التسجيل", "التخزين", "شبكة الاتصال", "أجهزة التحكم", "طاولات العمل", "نظام إدارة الكاميرات", "صلاحيات المستخدمين"]
                 : ["Display screens", "Viewing stations", "Management servers", "Recording devices", "Storage", "Connectivity network", "Control devices", "Workstations", "Camera management system", "User permissions"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <MonitorPlay className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
               ))}
             </ul>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "الوظائف" : "Functions"}
             </h3>
 
@@ -939,7 +939,7 @@ export default function SurveillanceAccessControlPage() {
                 ? ["عرض مباشر", "عرض عدة مواقع", "استرجاع التسجيلات", "توزيع الشاشات", "متابعة حالة الكاميرات", "إدارة المستخدمين", "تنظيم أسماء المواقع", "استخراج التقارير"]
                 : ["Live view", "Multi-site view", "Recording retrieval", "Display distribution", "Camera status monitoring", "User management", "Site naming", "Report generation"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                   <span>{x}</span>
                 </li>
@@ -952,7 +952,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           15. منهجية تنفيذ المشروع — 10 مراحل
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "منهجية واضحة من المسح الميداني إلى التشغيل"
@@ -986,12 +986,12 @@ export default function SurveillanceAccessControlPage() {
                 { t: "Operations & maintenance", d: "Monitoring devices, handling faults and performing maintenance per agreement." },
               ]
           ).map((step, i) => (
-            <li key={i} className="relative rounded-xl border border-border bg-card p-5">
-              <div className="text-3xl font-extrabold text-[color:var(--gold)]">
+            <li key={i} className="relative rounded-xl border border-border bg-card p-4 md:p-5 shadow-sm">
+              <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--gold)]">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="mt-1 font-semibold text-sm">{step.t}</div>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{step.d}</p>
+              <div className="mt-1 font-bold text-[#0B3D2E]">{step.t}</div>
+              <p className="mt-1 text-[14px] md:text-[15px] text-[#4B5563] leading-relaxed">{step.d}</p>
             </li>
           ))}
         </ol>
@@ -1000,14 +1000,14 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           16. فوائد النظام المتكامل
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "كيف تدعم هذه الأنظمة إدارة المؤسسة؟"
             : "How do these systems support enterprise management?"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { t: "إدارة مركزية", d: "متابعة الكاميرات والأجهزة والمستخدمين والمواقع من خلال منصات موحدة." },
@@ -1030,10 +1030,10 @@ export default function SurveillanceAccessControlPage() {
                 { t: "Improved operational management", d: "Detecting faults and monitoring cameras, devices and recording status." },
               ]
           ).map((c) => (
-            <Card key={c.t}>
+            <Card key={c.t} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
               <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mb-3" />
-              <h3 className="font-bold text-base">{c.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+              <h3 className="font-bold text-base text-[#0B3D2E]">{c.t}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{c.d}</p>
             </Card>
           ))}
         </div>
@@ -1042,14 +1042,14 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           17. لماذا أربتك؟
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "لماذا تختار المؤسسات أربتك لهذه الأنظمة؟"
             : "Why organizations choose ARABTEC for these systems"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { t: "خبرة في أنظمة المراقبة والحضور", d: "خبرة في كاميرات المراقبة وأنظمة الحضور والبصمة والتعرف على الوجه وراحة اليد و RFID والتحكم بالدخول." },
@@ -1072,10 +1072,10 @@ export default function SurveillanceAccessControlPage() {
                 { t: "Scalable solutions", d: "Adding cameras, devices, users and sites within an organized design." },
               ]
           ).map((c) => (
-            <Card key={c.t}>
+            <Card key={c.t} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
               <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mb-3" />
-              <h3 className="font-bold text-sm">{c.t}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{c.d}</p>
+              <h3 className="font-bold text-base text-[#0B3D2E]">{c.t}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{c.d}</p>
             </Card>
           ))}
         </div>
@@ -1084,14 +1084,14 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           18. خدمات مرتبطة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "خدمات تدعم نجاح أنظمة المراقبة والحضور والدخول"
             : "Services supporting surveillance, attendance & access success"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-5 mt-6">
           {[
             { ar: "الشبكات والاتصال", en: "Networks & connectivity", descAr: "توفير نقاط الشبكة وربط الكاميرات والأجهزة والفروع ومراكز الإدارة.", descEn: "Providing network outlets and connecting cameras, devices, branches and management centers.", link: "network-connectivity" },
             { ar: "السحابة والبنية التحتية", en: "Cloud & infrastructure", descAr: "توفير الخوادم والتخزين والنسخ الاحتياطي وبيئات التشغيل.", descEn: "Providing servers, storage, backup and operating environments.", link: "cloud-infrastructure" },
@@ -1099,15 +1099,15 @@ export default function SurveillanceAccessControlPage() {
             { ar: "تطوير البرمجيات وتكامل الأنظمة", en: "Software development & system integration", descAr: "تطوير واجهات التكامل والبوابات والتقارير المخصصة.", descEn: "Developing integration interfaces, portals and custom reports.", link: "software-development" },
             { ar: "حلول الذكاء الاصطناعي و AI Agents", en: "AI & AI Agents solutions", descAr: "إضافة وظائف ذكية للبحث والتحليل وأتمتة التقارير عند توفر حالة استخدام مناسبة.", descEn: "Adding intelligent functions for search, analysis and report automation when a suitable use case exists.", link: "ai-agents" },
           ].map((c) => (
-            <Card key={c.link}>
-              <h3 className="font-bold text-sm">{isAr ? c.ar : c.en}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+            <Card key={c.link} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? c.ar : c.en}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                 {isAr ? c.descAr : c.descEn}
               </p>
               <Link
                 to="/services/$slug"
                 params={{ slug: c.link }}
-                className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-deep hover:text-gold"
+                className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#0B3D2E] hover:text-[color:var(--gold)]"
               >
                 {isAr ? "استكشف الخدمة" : "Explore service"}
                 <ArrowLeft className="h-3.5 w-3.5 rtl:rotate-180" />
@@ -1129,33 +1129,33 @@ export default function SurveillanceAccessControlPage() {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         /> */}
-        <div className="relative container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
+        <div className="relative container-page py-10 md:py-14 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground/90">
             {isAr
               ? "هل تحتاج منشأتكم إلى نظام مراقبة أو حضور أو تحكم بالدخول؟"
               : "Does your facility need surveillance, attendance or access control?"}
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/85">
+          <p className="mt-3 max-w-3xl mx-auto text-[16px] md:text-lg text-primary-foreground/90 leading-relaxed">
             {isAr
               ? "شاركوا فريق أربتك بعدد المواقع والمداخل والموظفين والأجهزة المطلوبة، وسنعمل معكم على إجراء المسح الميداني وتصميم حل مناسب للمراقبة والحضور والتحكم بالدخول والتكامل مع الأنظمة القائمة."
               : "Share your sites, entrances, employees and required devices with the ARABTEC team — we'll work with you to conduct the site survey and design a suitable surveillance, attendance and access control solution integrated with existing systems."}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/contact"
-              className="rounded-md bg-background px-6 py-3 text-sm font-semibold text-primary hover:bg-secondary"
+              className="rounded-md bg-background px-6 py-3 text-sm font-bold text-primary hover:bg-secondary transition"
             >
               {isAr ? "اطلب زيارة ميدانية" : "Request a site survey"}
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
+              className="rounded-md border border-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-gold transition"
             >
               {isAr ? "اطلب استشارة تقنية" : "Request a technical consultation"}
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
+              className="rounded-md border border-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-gold transition"
             >
               {isAr ? "اطلب عرضًا فنيًا" : "Request a technical proposal"}
             </Link>
@@ -1166,115 +1166,117 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           20. FAQ
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "أسئلة شائعة عن أنظمة المراقبة والحضور والتحكم بالدخول"
             : "Frequently asked questions about surveillance, attendance and access control"}
         />
 
-        <FAQ
-          items={[
-            {
-              q: { ar: "ما الخدمات التي تقدمها أربتك في هذا المجال؟", en: "What services does ARABTEC offer in this area?" },
-              a: {
-                ar: "تقدم أربتك حلول كاميرات المراقبة، كاميرات IP، أنظمة التسجيل، المراقبة المركزية، أنظمة الحضور والانصراف، البصمة، التعرف على الوجه، RFID، البطاقات وأنظمة التحكم بالدخول.",
-                en: "ARABTEC provides surveillance cameras, IP cameras, recording systems, central monitoring, attendance systems, biometrics, face recognition, RFID, cards and access control systems.",
+        <div className="mt-6">
+          <FAQ
+            items={[
+              {
+                q: { ar: "ما الخدمات التي تقدمها أربتك في هذا المجال؟", en: "What services does ARABTEC offer in this area?" },
+                a: {
+                  ar: "تقدم أربتك حلول كاميرات المراقبة، كاميرات IP، أنظمة التسجيل، المراقبة المركزية، أنظمة الحضور والانصراف، البصمة، التعرف على الوجه، RFID، البطاقات وأنظمة التحكم بالدخول.",
+                  en: "ARABTEC provides surveillance cameras, IP cameras, recording systems, central monitoring, attendance systems, biometrics, face recognition, RFID, cards and access control systems.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك كاميرات مراقبة للمؤسسات؟", en: "Does ARABTEC provide enterprise surveillance cameras?" },
-              a: {
-                ar: "نعم، يمكن تصميم وتركيب أنظمة مراقبة للمكاتب والمباني والفروع والمستودعات والمواقع التشغيلية وفق المسح الميداني.",
-                en: "Yes — surveillance systems for offices, buildings, branches, warehouses and operational sites can be designed and installed based on a site survey.",
+              {
+                q: { ar: "هل تقدم أربتك كاميرات مراقبة للمؤسسات؟", en: "Does ARABTEC provide enterprise surveillance cameras?" },
+                a: {
+                  ar: "نعم، يمكن تصميم وتركيب أنظمة مراقبة للمكاتب والمباني والفروع والمستودعات والمواقع التشغيلية وفق المسح الميداني.",
+                  en: "Yes — surveillance systems for offices, buildings, branches, warehouses and operational sites can be designed and installed based on a site survey.",
+                },
               },
-            },
-            {
-              q: { ar: "ما الفرق بين NVR و DVR؟", en: "What's the difference between NVR and DVR?" },
-              a: {
-                ar: "يستخدم DVR عادة مع أنظمة كاميرات تعتمد على توصيلات مخصصة، بينما يستخدم NVR غالبًا مع كاميرات IP المتصلة بالشبكة.",
-                en: "DVR is typically used with cameras relying on dedicated wiring, while NVR is usually used with network-connected IP cameras.",
+              {
+                q: { ar: "ما الفرق بين NVR و DVR؟", en: "What's the difference between NVR and DVR?" },
+                a: {
+                  ar: "يستخدم DVR عادة مع أنظمة كاميرات تعتمد على توصيلات مخصصة، بينما يستخدم NVR غالبًا مع كاميرات IP المتصلة بالشبكة.",
+                  en: "DVR is typically used with cameras relying on dedicated wiring, while NVR is usually used with network-connected IP cameras.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن ربط كاميرات عدة فروع؟", en: "Can cameras from multiple branches be connected?" },
-              a: {
-                ar: "نعم، يمكن تصميم مراقبة مركزية لعدة مواقع وفق جاهزية الشبكة والبنية التحتية وسعة التخزين.",
-                en: "Yes — central monitoring across multiple sites can be designed based on network and infrastructure readiness and storage capacity.",
+              {
+                q: { ar: "هل يمكن ربط كاميرات عدة فروع؟", en: "Can cameras from multiple branches be connected?" },
+                a: {
+                  ar: "نعم، يمكن تصميم مراقبة مركزية لعدة مواقع وفق جاهزية الشبكة والبنية التحتية وسعة التخزين.",
+                  en: "Yes — central monitoring across multiple sites can be designed based on network and infrastructure readiness and storage capacity.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك أنظمة حضور وانصراف؟", en: "Does ARABTEC provide attendance systems?" },
-              a: {
-                ar: "نعم، تشمل الحلول البصمة والتعرف على الوجه والبطاقات و RFID، مع تقارير وإدارة أجهزة متعددة.",
-                en: "Yes — solutions include biometrics, face recognition, cards and RFID, with reporting and multi-device management.",
+              {
+                q: { ar: "هل تقدم أربتك أنظمة حضور وانصراف؟", en: "Does ARABTEC provide attendance systems?" },
+                a: {
+                  ar: "نعم، تشمل الحلول البصمة والتعرف على الوجه والبطاقات و RFID، مع تقارير وإدارة أجهزة متعددة.",
+                  en: "Yes — solutions include biometrics, face recognition, cards and RFID, with reporting and multi-device management.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن ربط الحضور بالموارد البشرية؟", en: "Can attendance be integrated with HR?" },
-              a: {
-                ar: "نعم، يمكن ربط بيانات الحضور بنظام الموارد البشرية أو ERP عبر وسائل التكامل المتاحة.",
-                en: "Yes — attendance data can be integrated with HR or ERP via available integration methods.",
+              {
+                q: { ar: "هل يمكن ربط الحضور بالموارد البشرية؟", en: "Can attendance be integrated with HR?" },
+                a: {
+                  ar: "نعم، يمكن ربط بيانات الحضور بنظام الموارد البشرية أو ERP عبر وسائل التكامل المتاحة.",
+                  en: "Yes — attendance data can be integrated with HR or ERP via available integration methods.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن استخدام التعرف على الوجه للحضور؟", en: "Can face recognition be used for attendance?" },
-              a: {
-                ar: "نعم، يمكن استخدام أجهزة التعرف على الوجه وفق متطلبات المشروع وسياسات المؤسسة والمتطلبات التنظيمية المعتمدة.",
-                en: "Yes — face recognition devices can be used per project requirements and the organization's policies and approved regulatory requirements.",
+              {
+                q: { ar: "هل يمكن استخدام التعرف على الوجه للحضور؟", en: "Can face recognition be used for attendance?" },
+                a: {
+                  ar: "نعم، يمكن استخدام أجهزة التعرف على الوجه وفق متطلبات المشروع وسياسات المؤسسة والمتطلبات التنظيمية المعتمدة.",
+                  en: "Yes — face recognition devices can be used per project requirements and the organization's policies and approved regulatory requirements.",
+                },
               },
-            },
-            {
-              q: { ar: "ما هو نظام التحكم بالدخول؟", en: "What is an access control system?" },
-              a: {
-                ar: "هو نظام يدير صلاحيات دخول المستخدمين إلى الأبواب والمباني والمناطق المحددة باستخدام بطاقة أو بصمة أو وسيلة تحقق أخرى.",
-                en: "It's a system that manages user access rights to doors, buildings and restricted areas using a card, biometrics or another verification method.",
+              {
+                q: { ar: "ما هو نظام التحكم بالدخول؟", en: "What is an access control system?" },
+                a: {
+                  ar: "هو نظام يدير صلاحيات دخول المستخدمين إلى الأبواب والمباني والمناطق المحددة باستخدام بطاقة أو بصمة أو وسيلة تحقق أخرى.",
+                  en: "It's a system that manages user access rights to doors, buildings and restricted areas using a card, biometrics or another verification method.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تحديد أوقات دخول مختلفة للموظفين؟", en: "Can different access times be defined for employees?" },
-              a: {
-                ar: "نعم، يمكن إعداد صلاحيات بحسب المستخدم والباب والموقع والوقت وفق إمكانات النظام.",
-                en: "Yes — permissions can be configured per user, door, site and time based on system capabilities.",
+              {
+                q: { ar: "هل يمكن تحديد أوقات دخول مختلفة للموظفين؟", en: "Can different access times be defined for employees?" },
+                a: {
+                  ar: "نعم، يمكن إعداد صلاحيات بحسب المستخدم والباب والموقع والوقت وفق إمكانات النظام.",
+                  en: "Yes — permissions can be configured per user, door, site and time based on system capabilities.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن إدارة الزوار؟", en: "Can visitors be managed?" },
-              a: {
-                ar: "يمكن إضافة وظائف لتسجيل الزوار وإصدار صلاحيات أو بطاقات مؤقتة ومتابعة الدخول والخروج.",
-                en: "Visitor logging, temporary cards or permissions, and entry/exit tracking can be added.",
+              {
+                q: { ar: "هل يمكن إدارة الزوار؟", en: "Can visitors be managed?" },
+                a: {
+                  ar: "يمكن إضافة وظائف لتسجيل الزوار وإصدار صلاحيات أو بطاقات مؤقتة ومتابعة الدخول والخروج.",
+                  en: "Visitor logging, temporary cards or permissions, and entry/exit tracking can be added.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن ربط نظام الدخول بعدة مبانٍ؟", en: "Can the access system connect multiple buildings?" },
-              a: {
-                ar: "نعم، يمكن إدارة عدة مبانٍ ومواقع من خلال نظام مركزي وفق البنية المتاحة.",
-                en: "Yes — multiple buildings and sites can be managed from a central system per available infrastructure.",
+              {
+                q: { ar: "هل يمكن ربط نظام الدخول بعدة مبانٍ؟", en: "Can the access system connect multiple buildings?" },
+                a: {
+                  ar: "نعم، يمكن إدارة عدة مبانٍ ومواقع من خلال نظام مركزي وفق البنية المتاحة.",
+                  en: "Yes — multiple buildings and sites can be managed from a central system per available infrastructure.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تشمل الخدمة التركيب والتدريب؟", en: "Does the service include installation and training?" },
-              a: {
-                ar: "يمكن أن يشمل نطاق المشروع التوريد والتركيب والإعداد والاختبار والتدريب والتسليم.",
-                en: "Project scope can include supply, installation, configuration, testing, training and handover.",
+              {
+                q: { ar: "هل تشمل الخدمة التركيب والتدريب؟", en: "Does the service include installation and training?" },
+                a: {
+                  ar: "يمكن أن يشمل نطاق المشروع التوريد والتركيب والإعداد والاختبار والتدريب والتسليم.",
+                  en: "Project scope can include supply, installation, configuration, testing, training and handover.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك الصيانة؟", en: "Does ARABTEC provide maintenance?" },
-              a: {
-                ar: "نعم، يمكن تقديم الصيانة الوقائية ومعالجة الأعطال ومراجعة التسجيل والأجهزة وفق اتفاقية الخدمة.",
-                en: "Yes — preventive maintenance, fault handling, recording and device review can be provided per the service agreement.",
+              {
+                q: { ar: "هل تقدم أربتك الصيانة؟", en: "Does ARABTEC provide maintenance?" },
+                a: {
+                  ar: "نعم، يمكن تقديم الصيانة الوقائية ومعالجة الأعطال ومراجعة التسجيل والأجهزة وفق اتفاقية الخدمة.",
+                  en: "Yes — preventive maintenance, fault handling, recording and device review can be provided per the service agreement.",
+                },
               },
-            },
-            {
-              q: { ar: "كم يستغرق تنفيذ المشروع؟", en: "How long does project implementation take?" },
-              a: {
-                ar: "تعتمد المدة على عدد المواقع والكاميرات والأجهزة والمداخل والكابلات والتكاملات والأعمال الميدانية المطلوبة.",
-                en: "Duration depends on sites, cameras, devices, entrances, cables, integrations and required field work.",
+              {
+                q: { ar: "كم يستغرق تنفيذ المشروع؟", en: "How long does project implementation take?" },
+                a: {
+                  ar: "تعتمد المدة على عدد المواقع والكاميرات والأجهزة والمداخل والكابلات والتكاملات والأعمال الميدانية المطلوبة.",
+                  en: "Duration depends on sites, cameras, devices, entrances, cables, integrations and required field work.",
+                },
               },
-            },
-          ]}
-        />
+            ]}
+          />
+        </div>
 
         <JsonLd
           data={{

@@ -99,7 +99,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           1. HERO
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <Breadcrumbs
           items={[
             { label: { ar: "الرئيسية", en: "Home" }, to: "/" },
@@ -108,7 +108,7 @@ export default function ErpBusinessApplicationsPage() {
           ]}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center mt-4 md:mt-6">
           <div className="order-2 lg:order-1">
             <img
               src={heroImg}
@@ -129,28 +129,28 @@ export default function ErpBusinessApplicationsPage() {
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {isAr ? "حلول إدارة موارد المؤسسات" : "Enterprise resource management solutions"}
             </div>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
+            <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
               {isAr
                 ? "أنظمة ERP وتطبيقات الأعمال لإدارة مؤسسة أكثر تكاملًا وكفاءة"
                 : "ERP & business applications for a more integrated and efficient enterprise"}
             </h1>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تساعد أربتك الجهات الحكومية والمؤسسات والشركات على توحيد عملياتها وبياناتها من خلال أنظمة ERP وتطبيقات أعمال مؤسسية تربط الإدارات المالية والإدارية والتشغيلية ضمن منصة مركزية واحدة."
                 : "ARABTEC helps government entities, organizations and companies unify their operations and data through ERP and enterprise business applications connecting financial, administrative and operational departments in one central platform."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نقدم خدمات دراسة المتطلبات، تصميم الحل، تخصيص الوحدات، تطوير الوظائف، تكامل الأنظمة، ترحيل البيانات، الاختبار، تدريب المستخدمين ودعم الإطلاق، بما يتوافق مع طبيعة عمليات المؤسسة وأهدافها التشغيلية."
                 : "We provide requirements study, solution design, module customization, function development, system integration, data migration, testing, user training and go-live support — aligned with the organization's operations and operational objectives."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تهدف حلول ERP إلى تقليل الاعتماد على العمليات اليدوية والأنظمة المنفصلة، وتحسين دقة البيانات، تسريع الموافقات، رفع كفاءة العمل وتوفير رؤية أوضح لصناع القرار."
                 : "ERP solutions aim to reduce reliance on manual processes and disconnected systems, improve data accuracy, accelerate approvals, raise work efficiency and give decision-makers clearer visibility."}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <CTAButton to="/contact">
                 {isAr ? "اطلب استشارة ERP" : "Request an ERP consultation"}
               </CTAButton>
@@ -160,7 +160,7 @@ export default function ErpBusinessApplicationsPage() {
             </div>
 
             {/* شريط مختصر */}
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2">
               {(isAr
                 ? ["الإدارة المالية", "الموارد البشرية", "المشتريات", "المخزون", "الأصول", "إدارة المشاريع", "التقارير", "تكامل الأنظمة"]
                 : ["Finance", "HR", "Procurement", "Inventory", "Assets", "Projects", "Reports", "Integration"]
@@ -180,21 +180,21 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           2. ما هو نظام ERP؟
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "ما هو نظام ERP لإدارة موارد المؤسسة؟"
             : "What is an ERP system for enterprise resource management?"}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نظام ERP هو منصة مؤسسية توحد البيانات والإجراءات بين إدارات المؤسسة، وتساعد على إدارة الموارد المالية والبشرية والتشغيلية من خلال قاعدة بيانات مركزية وسير عمل مترابط."
                 : "An ERP system is an enterprise platform that unifies data and procedures across the organization's departments, helping manage financial, human and operational resources through a central database and interconnected workflow."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "بدلًا من تشغيل كل إدارة على ملفات أو أنظمة منفصلة، يتيح نظام ERP مشاركة المعلومات بين الإدارات بصورة منظمة، وتقليل تكرار إدخال البيانات، وتحسين دقة التقارير ومتابعة العمليات والموافقات."
                 : "Instead of each department running on separate files or systems, an ERP enables structured information sharing, reduces duplicate data entry, and improves report accuracy and tracking of processes and approvals."}
@@ -202,8 +202,8 @@ export default function ErpBusinessApplicationsPage() {
           </div>
 
           {/* جدول المقارنة */}
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="font-bold text-lg mb-4">
+          <div className="rounded-2xl border border-border bg-card p-4 md:p-6">
+            <h3 className="font-bold text-lg mb-4 text-[#0B3D2E]">
               {isAr
                 ? "الفرق بين الأنظمة المنفصلة ونظام ERP"
                 : "Difference between separate systems and ERP"}
@@ -251,8 +251,8 @@ export default function ErpBusinessApplicationsPage() {
         </div>
 
         {/* مخطط: إدارات منفصلة ← ERP مركزي ← بيانات موحدة */}
-        <div className="mt-10 rounded-2xl border border-border bg-card p-6 overflow-x-auto">
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-medium min-w-max">
+        <div className="mt-6 rounded-2xl border border-border bg-card p-4 md:p-6 overflow-x-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm font-medium min-w-max">
             {(isAr
               ? ["إدارات منفصلة", "ERP مركزي", "بيانات وتقارير موحدة"]
               : ["Separate departments", "Central ERP", "Unified data & reports"]
@@ -273,7 +273,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           3. وحدات نظام ERP — 9 وحدات
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "وحدات ERP تغطي العمليات الأساسية للمؤسسة"
@@ -284,7 +284,7 @@ export default function ErpBusinessApplicationsPage() {
               : "Modules can be implemented based on the organization's needs — either within a comprehensive project or in successive phases — with customization of procedures, forms, permissions and reports."}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             {
               icon: DollarSign,
@@ -370,17 +370,17 @@ export default function ErpBusinessApplicationsPage() {
           ].map((mod) => {
             const Icon = mod.icon;
             return (
-              <Card key={mod.hEn}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={mod.hEn} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{isAr ? mod.hAr : mod.hEn}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? mod.hAr : mod.hEn}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                   {isAr ? mod.descAr : mod.descEn}
                 </p>
                 <ul className="mt-3 space-y-1.5">
                   {(isAr ? mod.itemsAr : mod.itemsEn).map((x) => (
-                    <li key={x} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <li key={x} className="flex items-start gap-2 text-[14px] md:text-[15px] text-[#4B5563]">
                       <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                       <span>{x}</span>
                     </li>
@@ -395,8 +395,8 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           4. ERP للجهات الحكومية
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <img
             src={govErpImg}
             alt={isAr
@@ -406,7 +406,7 @@ export default function ErpBusinessApplicationsPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
@@ -414,27 +414,27 @@ export default function ErpBusinessApplicationsPage() {
               <Landmark className="h-3.5 w-3.5" />
               {isAr ? "للجهات الحكومية" : "For government entities"}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "أنظمة ERP تدعم الإدارة الحكومية المتكاملة"
                 : "ERP systems supporting integrated government management"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن تصميم حلول ERP للجهات الحكومية بهدف توحيد البيانات والإجراءات، أتمتة الموافقات، تعزيز الرقابة الإدارية والمالية، وتحسين القدرة على متابعة الموارد والمشاريع والأصول."
                 : "ERP solutions for government entities can be designed to unify data and procedures, automate approvals, strengthen administrative and financial control, and improve the ability to track resources, projects and assets."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يراعى في تصميم الحل الهيكل التنظيمي، تعدد الإدارات والفروع، مستويات الصلاحيات، مسارات الاعتماد، التكامل مع الأنظمة الحكومية ومتطلبات التقارير."
                 : "The solution considers the organizational structure, multiple departments and branches, permission levels, approval paths, integration with government systems and reporting requirements."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "حالات الاستخدام الحكومية" : "Government use cases"}
             </h3>
 
-            <div className="mt-4 space-y-4">
+            <div className="mt-4 space-y-3">
               {(isAr
                 ? [
                     { t: "الإدارة المالية والميزانية", d: "إدارة البنود والميزانيات والمصروفات والالتزامات والتقارير المالية." },
@@ -456,8 +456,8 @@ export default function ErpBusinessApplicationsPage() {
                 <div key={item.t} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold">{item.t}</h4>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.d}</p>
+                    <h4 className="font-bold text-base text-[#0B3D2E]">{item.t}</h4>
+                    <p className="mt-1 text-[15px] md:text-[16px] text-[#4B5563] leading-relaxed">{item.d}</p>
                   </div>
                 </div>
               ))}
@@ -469,7 +469,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           5. تطبيقات الأعمال المؤسسية
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "تطبيقات أعمال مكملة لنظام ERP"
@@ -480,7 +480,7 @@ export default function ErpBusinessApplicationsPage() {
               : "The organization may need specialized applications or portals alongside the ERP or integrated with it to cover procedures the core system doesn't fully provide. ARABTEC develops custom business applications based on the organization's needs, connected to ERP modules and internal/external systems."}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             { icon: Users, hAr: "بوابة الموظفين", hEn: "Employee portal", dAr: "طلبات الإجازة، الخدمات الذاتية، الاطلاع على البيانات والرواتب والموافقات.", dEn: "Leave requests, self-services, viewing data, payroll and approvals." },
             { icon: ShoppingCart, hAr: "بوابة الموردين", hEn: "Vendor portal", dAr: "التسجيل، تحديث البيانات، تقديم العروض، متابعة أوامر الشراء والفواتير.", dEn: "Registration, data updates, submitting quotes, tracking purchase orders and invoices." },
@@ -492,12 +492,12 @@ export default function ErpBusinessApplicationsPage() {
           ].map((c) => {
             const Icon = c.icon;
             return (
-              <Card key={c.hEn}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={c.hEn} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{isAr ? c.hAr : c.hEn}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? c.hAr : c.hEn}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                   {isAr ? c.dAr : c.dEn}
                 </p>
               </Card>
@@ -505,7 +505,7 @@ export default function ErpBusinessApplicationsPage() {
           })}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services/software-development" variant="outline">
             {isAr
               ? "استكشف تطوير البرمجيات وتكامل الأنظمة"
@@ -517,7 +517,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           6. تخصيص نظام ERP
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "نظام ERP مصمم وفق عمليات المؤسسة"
@@ -533,17 +533,17 @@ export default function ErpBusinessApplicationsPage() {
             ? ["النماذج والحقول", "مسارات العمل", "الموافقات", "الصلاحيات", "الهيكل التنظيمي", "قواعد العمل", "التقارير", "الإشعارات", "الواجهات", "اللغة العربية والإنجليزية", "الوحدات الإضافية", "التكاملات"]
             : ["Forms & fields", "Workflows", "Approvals", "Permissions", "Org structure", "Business rules", "Reports", "Notifications", "Interfaces", "Arabic & English", "Additional modules", "Integrations"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
+        <div className="mt-6 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
           <div className="flex items-start gap-3">
             <AlertCircle className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-[15px] md:text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يتم تقييم كل طلب تخصيص للتأكد من ضرورته وتأثيره على سهولة الصيانة والتحديث والتوسع مستقبلًا."
                 : "Every customization request is evaluated for necessity and its impact on maintainability, updates and future expansion."}
@@ -555,15 +555,15 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           7. تكامل ERP مع الأنظمة
           ============================================================ */}
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="!py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "تكامل ERP مع البيئة التقنية للمؤسسة"
                 : "ERP integration with the enterprise technology environment"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تزداد قيمة نظام ERP عند ربطه بالأنظمة والخدمات الأخرى، بحيث تنتقل البيانات بصورة منظمة وتقل الحاجة إلى الإدخال اليدوي المتكرر."
                 : "The value of an ERP increases when connected to other systems and services — data moves in an organized way and the need for repeated manual entry decreases."}
@@ -595,12 +595,12 @@ export default function ErpBusinessApplicationsPage() {
                 const Icon = row.icon;
                 return (
                   <div key={row.t} className="flex items-start gap-3">
-                    <div className="h-9 w-9 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center shrink-0">
+                    <div className="h-9 w-9 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center shrink-0">
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm">{row.t}</h4>
-                      <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">{row.d}</p>
+                      <h4 className="font-bold text-[15px] md:text-base text-[#0B3D2E]">{row.t}</h4>
+                      <p className="mt-0.5 text-[14px] md:text-[15px] text-[#4B5563] leading-relaxed">{row.d}</p>
                     </div>
                   </div>
                 );
@@ -617,13 +617,13 @@ export default function ErpBusinessApplicationsPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover"
+            className="rounded-lg shadow-lg w-full h-auto object-cover mt-6 lg:mt-0"
           />
         </div>
 
         {/* المخطط المعماري */}
-        <div className="mt-10 rounded-2xl border border-border bg-card p-6 overflow-x-auto">
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-medium min-w-max">
+        <div className="mt-6 rounded-2xl border border-border bg-card p-4 md:p-6 overflow-x-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm font-medium min-w-max">
             {(isAr
               ? ["المستخدمون والتطبيقات", "طبقة التكامل", "ERP", "المالية / الموارد البشرية / المشتريات / المخزون / المشاريع"]
               : ["Users & applications", "Integration layer", "ERP", "Finance / HR / Procurement / Inventory / Projects"]
@@ -644,8 +644,8 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           8. ترحيل البيانات
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <img
             src={migrationImg}
             alt={isAr
@@ -655,26 +655,26 @@ export default function ErpBusinessApplicationsPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "ترحيل البيانات من الأنظمة القديمة إلى ERP"
                 : "Data migration from legacy systems to ERP"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يعد ترحيل البيانات من المراحل الأساسية في مشروع ERP، ويشمل جمع البيانات وتنظيفها ومراجعتها وتحويلها واختبارها قبل نقلها إلى النظام الجديد."
                 : "Data migration is one of the key phases in an ERP project — including collecting, cleaning, reviewing, converting and testing data before transferring it to the new system."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "مراحل ترحيل البيانات" : "Data migration phases"}
             </h3>
 
-            <ol className="mt-4 space-y-4">
+            <ol className="mt-4 space-y-3">
               {(isAr
                 ? [
                     { t: "حصر مصادر البيانات", d: "تحديد الأنظمة والملفات وقواعد البيانات الحالية." },
@@ -700,15 +700,15 @@ export default function ErpBusinessApplicationsPage() {
                     {i + 1}
                   </div>
                   <div>
-                    <h4 className="font-semibold">{step.t}</h4>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{step.d}</p>
+                    <h4 className="font-bold text-base text-[#0B3D2E]">{step.t}</h4>
+                    <p className="mt-1 text-[15px] md:text-[16px] text-[#4B5563] leading-relaxed">{step.d}</p>
                   </div>
                 </li>
               ))}
             </ol>
 
-            <div className="mt-6 rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
-              <p className="text-sm text-muted-foreground leading-relaxed">
+            <div className="mt-4 rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-3 md:p-4">
+              <p className="text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                 <strong>{isAr ? "ملاحظة: " : "Note: "}</strong>
                 {isAr
                   ? "تعتمد جودة الترحيل على جودة البيانات المصدر وتعاون فرق المؤسسة في المراجعة والاعتماد."
@@ -722,7 +722,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           9. الاستضافة والبنية التقنية
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "خيارات تشغيل تناسب متطلبات المؤسسة"
@@ -733,7 +733,7 @@ export default function ErpBusinessApplicationsPage() {
               : "The ERP operating environment can be designed according to the organization's needs, performance, scalability, integration requirements and internal policies."}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             { icon: Layers, hAr: "استضافة سحابية", hEn: "Cloud hosting", dAr: "تشغيل النظام ضمن بيئة سحابية قابلة للتوسع وفق متطلبات المشروع.", dEn: "Running the system in a scalable cloud environment per project requirements." },
             { icon: Database, hAr: "استضافة داخل المؤسسة", hEn: "On-premise hosting", dAr: "تشغيل النظام على خوادم المؤسسة عند توفر المتطلبات الفنية اللازمة.", dEn: "Running the system on the organization's servers when the required technical requirements are available." },
@@ -743,12 +743,12 @@ export default function ErpBusinessApplicationsPage() {
           ].map((c) => {
             const Icon = c.icon;
             return (
-              <Card key={c.hEn}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={c.hEn} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{isAr ? c.hAr : c.hEn}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? c.hAr : c.hEn}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                   {isAr ? c.dAr : c.dEn}
                 </p>
               </Card>
@@ -756,7 +756,7 @@ export default function ErpBusinessApplicationsPage() {
           })}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services/cloud-infrastructure" variant="outline">
             {isAr ? "استكشف حلول السحابة والبنية التحتية" : "Explore cloud & infrastructure solutions"}
           </CTAButton>
@@ -766,7 +766,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           10. منهجية تنفيذ ERP — 10 مراحل
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "منهجية تنفيذ منظمة من التحليل إلى التشغيل"
@@ -800,12 +800,12 @@ export default function ErpBusinessApplicationsPage() {
                 { t: "Support & improvement", d: "Supporting users, handling feedback and evolving the system as needed." },
               ]
           ).map((step, i) => (
-            <li key={i} className="relative rounded-xl border border-border bg-card p-5">
-              <div className="text-3xl font-extrabold text-[color:var(--gold)]">
+            <li key={i} className="relative rounded-xl border border-border bg-card p-4 md:p-5 shadow-sm">
+              <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--gold)]">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="mt-1 font-semibold text-sm">{step.t}</div>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{step.d}</p>
+              <div className="mt-1 font-bold text-[#0B3D2E]">{step.t}</div>
+              <p className="mt-1 text-[14px] md:text-[15px] text-[#4B5563] leading-relaxed">{step.d}</p>
             </li>
           ))}
         </ol>
@@ -814,12 +814,12 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           11. فوائد نظام ERP
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "كيف يدعم ERP كفاءة المؤسسة؟" : "How does ERP support enterprise efficiency?"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { t: "توحيد البيانات", d: "تجميع معلومات الإدارات في قاعدة بيانات مركزية." },
@@ -842,10 +842,10 @@ export default function ErpBusinessApplicationsPage() {
                 { t: "Better UX", d: "Portals and self-services for employees, managers, customers and vendors." },
               ]
           ).map((c) => (
-            <Card key={c.t}>
+            <Card key={c.t} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
               <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mb-3" />
-              <h3 className="font-bold text-base">{c.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+              <h3 className="font-bold text-base text-[#0B3D2E]">{c.t}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{c.d}</p>
             </Card>
           ))}
         </div>
@@ -854,12 +854,12 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           12. القطاعات المستفيدة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr ? "حلول ERP قابلة للتخصيص حسب القطاع" : "ERP solutions customizable by sector"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             { ar: "الجهات الحكومية", en: "Government entities", itemsAr: ["المالية والميزانية", "الموارد البشرية", "المشتريات والعقود", "الأصول", "المشاريع والمبادرات", "الموافقات والتقارير"], itemsEn: ["Finance & budget", "Human resources", "Procurement & contracts", "Assets", "Projects & initiatives", "Approvals & reports"] },
             { ar: "النفط والغاز", en: "Oil & gas", itemsAr: ["المشتريات", "المخزون", "الأصول", "الصيانة", "المشاريع", "المواقع والفروع"], itemsEn: ["Procurement", "Inventory", "Assets", "Maintenance", "Projects", "Sites & branches"] },
@@ -868,11 +868,11 @@ export default function ErpBusinessApplicationsPage() {
             { ar: "البنوك والخدمات المالية", en: "Banking & finance", itemsAr: ["المالية", "الموارد البشرية", "المشتريات", "الأصول", "الموافقات", "التقارير الإدارية"], itemsEn: ["Finance", "HR", "Procurement", "Assets", "Approvals", "Admin reporting"] },
             { ar: "الشركات والمؤسسات", en: "Enterprises", itemsAr: ["المحاسبة", "المبيعات", "المشتريات", "المخزون", "الموارد البشرية", "إدارة المشاريع"], itemsEn: ["Accounting", "Sales", "Procurement", "Inventory", "HR", "Project management"] },
           ].map((sec) => (
-            <Card key={sec.en}>
-              <h3 className="font-bold text-base mb-3">{isAr ? sec.ar : sec.en}</h3>
+            <Card key={sec.en} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base mb-3 text-[#0B3D2E]">{isAr ? sec.ar : sec.en}</h3>
               <ul className="space-y-1.5">
                 {(isAr ? sec.itemsAr : sec.itemsEn).map((x) => (
-                  <li key={x} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                     <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                     <span>{x}</span>
                   </li>
@@ -882,7 +882,7 @@ export default function ErpBusinessApplicationsPage() {
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/industries" variant="outline">
             {isAr ? "استكشف القطاعات التي نخدمها" : "Explore the sectors we serve"}
           </CTAButton>
@@ -892,14 +892,14 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           13. لماذا أربتك؟
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "لماذا تختار المؤسسات أربتك لتنفيذ ERP؟"
             : "Why organizations choose ARABTEC for ERP implementation"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { t: "فهم الأعمال والعمليات", d: "نبدأ بتحليل إجراءات المؤسسة وأهدافها قبل إعداد النظام." },
@@ -922,10 +922,10 @@ export default function ErpBusinessApplicationsPage() {
                 { t: "Single point of accountability", d: "Managing analysis, setup, development, integration, training and support within a clear scope." },
               ]
           ).map((c) => (
-            <Card key={c.t}>
+            <Card key={c.t} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
               <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mb-3" />
-              <h3 className="font-bold text-base">{c.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+              <h3 className="font-bold text-base text-[#0B3D2E]">{c.t}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{c.d}</p>
             </Card>
           ))}
         </div>
@@ -934,14 +934,14 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           14. خدمات مرتبطة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "خدمات تدعم نجاح مشروع ERP"
             : "Services supporting the success of your ERP project"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-5 mt-6">
           {[
             { ar: "تطوير البرمجيات وتكامل الأنظمة", en: "Software development & system integration", descAr: "تطوير الوحدات والبوابات وواجهات API وربط النظام بالتطبيقات الأخرى.", descEn: "Developing modules, portals, APIs and connecting the system to other applications.", link: "software-development" },
             { ar: "حلول الذكاء الاصطناعي و AI Agents", en: "AI & AI Agents solutions", descAr: "استخدام الذكاء الاصطناعي للوصول إلى البيانات أو دعم المستخدمين وفق الصلاحيات.", descEn: "Using AI to access data or support users within permissions.", link: "ai-agents" },
@@ -949,15 +949,15 @@ export default function ErpBusinessApplicationsPage() {
             { ar: "الشبكات والاتصال", en: "Networks & connectivity", descAr: "ضمان الاتصال بين الإدارات والفروع والمستخدمين والنظام المركزي.", descEn: "Ensuring connectivity between departments, branches, users and the central system.", link: "network-connectivity" },
             { ar: "أنظمة الحضور والتحكم بالدخول", en: "Attendance & access control", descAr: "ربط بيانات الحضور والانصراف بالموارد البشرية والرواتب.", descEn: "Linking attendance data to HR and payroll.", link: "surveillance-access-control" },
           ].map((c) => (
-            <Card key={c.link}>
-              <h3 className="font-bold text-sm">{isAr ? c.ar : c.en}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+            <Card key={c.link} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? c.ar : c.en}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                 {isAr ? c.descAr : c.descEn}
               </p>
               <Link
                 to="/services/$slug"
                 params={{ slug: c.link }}
-                className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-deep hover:text-gold"
+                className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#0B3D2E] hover:text-[color:var(--gold)]"
               >
                 {isAr ? "استكشف الخدمة" : "Explore service"}
                 <ArrowLeft className="h-3.5 w-3.5 rtl:rotate-180" />
@@ -979,27 +979,27 @@ export default function ErpBusinessApplicationsPage() {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         /> */}
-        <div className="relative container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
+        <div className="relative container-page py-10 md:py-14 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground/90">
             {isAr
               ? "هل تخططون لتنفيذ أو تحديث نظام ERP؟"
               : "Are you planning to implement or upgrade an ERP system?"}
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/85">
+          <p className="mt-3 max-w-3xl mx-auto text-[16px] md:text-lg text-primary-foreground/90 leading-relaxed">
             {isAr
               ? "شاركوا فريق أربتك باحتياجات المؤسسة والأنظمة الحالية والوحدات المطلوبة، وسنعمل معكم على دراسة العمليات وتحديد نطاق الحل وخطة التنفيذ المناسبة."
               : "Share your organization's needs, current systems and required modules with the ARABTEC team — we'll work with you to study the processes, define the solution scope and the right implementation plan."}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/contact"
-              className="rounded-md bg-background px-6 py-3 text-sm font-semibold text-primary hover:bg-secondary"
+              className="rounded-md bg-background px-6 py-3 text-sm font-bold text-primary hover:bg-secondary transition"
             >
               {isAr ? "اطلب استشارة ERP" : "Request an ERP consultation"}
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
+              className="rounded-md border border-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-gold transition"
             >
               {isAr ? "اطلب عرضًا توضيحيًا" : "Request a demo"}
             </Link>
@@ -1010,108 +1010,110 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           16. FAQ
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "أسئلة شائعة عن أنظمة ERP وتطبيقات الأعمال"
             : "Frequently asked questions about ERP and business applications"}
         />
 
-        <FAQ
-          items={[
-            {
-              q: { ar: "ما هو نظام ERP؟", en: "What is an ERP system?" },
-              a: {
-                ar: "نظام ERP هو منصة متكاملة لإدارة موارد وعمليات المؤسسة، وتربط بين المالية والموارد البشرية والمشتريات والمخزون والمبيعات والأصول والمشاريع ضمن قاعدة بيانات مركزية.",
-                en: "An ERP is an integrated platform for managing the organization's resources and operations — connecting finance, HR, procurement, inventory, sales, assets and projects in a central database.",
+        <div className="mt-6">
+          <FAQ
+            items={[
+              {
+                q: { ar: "ما هو نظام ERP؟", en: "What is an ERP system?" },
+                a: {
+                  ar: "نظام ERP هو منصة متكاملة لإدارة موارد وعمليات المؤسسة، وتربط بين المالية والموارد البشرية والمشتريات والمخزون والمبيعات والأصول والمشاريع ضمن قاعدة بيانات مركزية.",
+                  en: "An ERP is an integrated platform for managing the organization's resources and operations — connecting finance, HR, procurement, inventory, sales, assets and projects in a central database.",
+                },
               },
-            },
-            {
-              q: { ar: "ما الفائدة من تطبيق نظام ERP؟", en: "What are the benefits of implementing ERP?" },
-              a: {
-                ar: "يساعد ERP على توحيد البيانات، تقليل العمليات اليدوية، تسريع الموافقات، تحسين دقة التقارير ورفع كفاءة العمل بين الإدارات.",
-                en: "ERP helps unify data, reduce manual processes, accelerate approvals, improve report accuracy and raise work efficiency across departments.",
+              {
+                q: { ar: "ما الفائدة من تطبيق نظام ERP؟", en: "What are the benefits of implementing ERP?" },
+                a: {
+                  ar: "يساعد ERP على توحيد البيانات، تقليل العمليات اليدوية، تسريع الموافقات، تحسين دقة التقارير ورفع كفاءة العمل بين الإدارات.",
+                  en: "ERP helps unify data, reduce manual processes, accelerate approvals, improve report accuracy and raise work efficiency across departments.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك أنظمة ERP للجهات الحكومية؟", en: "Does ARABTEC offer ERP systems for government entities?" },
-              a: {
-                ar: "نعم، يمكن تصميم حلول ERP للجهات الحكومية وفق الهيكل التنظيمي ومسارات الموافقات والميزانيات والمشتريات والموارد البشرية والأصول والمشاريع.",
-                en: "Yes — ERP solutions can be designed for government entities according to their organizational structure, approval paths, budgets, procurement, HR, assets and projects.",
+              {
+                q: { ar: "هل تقدم أربتك أنظمة ERP للجهات الحكومية؟", en: "Does ARABTEC offer ERP systems for government entities?" },
+                a: {
+                  ar: "نعم، يمكن تصميم حلول ERP للجهات الحكومية وفق الهيكل التنظيمي ومسارات الموافقات والميزانيات والمشتريات والموارد البشرية والأصول والمشاريع.",
+                  en: "Yes — ERP solutions can be designed for government entities according to their organizational structure, approval paths, budgets, procurement, HR, assets and projects.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تخصيص نظام ERP؟", en: "Can an ERP system be customized?" },
-              a: {
-                ar: "نعم، يمكن تخصيص النماذج والإجراءات والصلاحيات والتقارير والتكاملات وفق احتياجات المؤسسة ونطاق المشروع.",
-                en: "Yes — forms, procedures, permissions, reports and integrations can be customized based on the organization's needs and project scope.",
+              {
+                q: { ar: "هل يمكن تخصيص نظام ERP؟", en: "Can an ERP system be customized?" },
+                a: {
+                  ar: "نعم، يمكن تخصيص النماذج والإجراءات والصلاحيات والتقارير والتكاملات وفق احتياجات المؤسسة ونطاق المشروع.",
+                  en: "Yes — forms, procedures, permissions, reports and integrations can be customized based on the organization's needs and project scope.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تنفيذ وحدات محددة فقط؟", en: "Can specific modules be implemented only?" },
-              a: {
-                ar: "نعم، يمكن تنفيذ المشروع على مراحل والبدء بالوحدات ذات الأولوية ثم إضافة وحدات أخرى لاحقًا.",
-                en: "Yes — the project can be delivered in phases, starting with priority modules, then adding others later.",
+              {
+                q: { ar: "هل يمكن تنفيذ وحدات محددة فقط؟", en: "Can specific modules be implemented only?" },
+                a: {
+                  ar: "نعم، يمكن تنفيذ المشروع على مراحل والبدء بالوحدات ذات الأولوية ثم إضافة وحدات أخرى لاحقًا.",
+                  en: "Yes — the project can be delivered in phases, starting with priority modules, then adding others later.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن ربط ERP بأنظمة المؤسسة؟", en: "Can the ERP be integrated with enterprise systems?" },
-              a: {
-                ar: "نعم، يمكن ربطه بأنظمة الحضور و CRM والبوابات وقواعد البيانات والأنظمة البنكية والتجارة الإلكترونية وغيرها من خلال وسائل التكامل المتاحة.",
-                en: "Yes — it can be integrated with attendance systems, CRM, portals, databases, banking systems, e-commerce and others through available integration methods.",
+              {
+                q: { ar: "هل يمكن ربط ERP بأنظمة المؤسسة؟", en: "Can the ERP be integrated with enterprise systems?" },
+                a: {
+                  ar: "نعم، يمكن ربطه بأنظمة الحضور و CRM والبوابات وقواعد البيانات والأنظمة البنكية والتجارة الإلكترونية وغيرها من خلال وسائل التكامل المتاحة.",
+                  en: "Yes — it can be integrated with attendance systems, CRM, portals, databases, banking systems, e-commerce and others through available integration methods.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك خدمات ترحيل البيانات؟", en: "Does ARABTEC provide data migration services?" },
-              a: {
-                ar: "نعم، تشمل الخدمة تحليل وتنظيف وتحويل واختبار ونقل البيانات من الأنظمة أو الملفات القديمة إلى النظام الجديد.",
-                en: "Yes — the service includes analyzing, cleaning, converting, testing and transferring data from legacy systems or files to the new system.",
+              {
+                q: { ar: "هل تقدم أربتك خدمات ترحيل البيانات؟", en: "Does ARABTEC provide data migration services?" },
+                a: {
+                  ar: "نعم، تشمل الخدمة تحليل وتنظيف وتحويل واختبار ونقل البيانات من الأنظمة أو الملفات القديمة إلى النظام الجديد.",
+                  en: "Yes — the service includes analyzing, cleaning, converting, testing and transferring data from legacy systems or files to the new system.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يشمل المشروع تدريب الموظفين؟", en: "Does the project include employee training?" },
-              a: {
-                ar: "يمكن أن يشمل نطاق المشروع تدريب المستخدمين الرئيسيين والنهائيين وفرق الدعم وفق الخطة المعتمدة.",
-                en: "The project scope can include training key users, end users and support teams per the approved plan.",
+              {
+                q: { ar: "هل يشمل المشروع تدريب الموظفين؟", en: "Does the project include employee training?" },
+                a: {
+                  ar: "يمكن أن يشمل نطاق المشروع تدريب المستخدمين الرئيسيين والنهائيين وفرق الدعم وفق الخطة المعتمدة.",
+                  en: "The project scope can include training key users, end users and support teams per the approved plan.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تشغيل ERP على السحابة؟", en: "Can ERP run on the cloud?" },
-              a: {
-                ar: "يمكن تصميم بيئة سحابية أو داخلية أو هجينة وفق احتياجات المؤسسة ومتطلبات الأداء والسياسات المعتمدة.",
-                en: "A cloud, on-premise or hybrid environment can be designed based on the organization's needs, performance requirements and approved policies.",
+              {
+                q: { ar: "هل يمكن تشغيل ERP على السحابة؟", en: "Can ERP run on the cloud?" },
+                a: {
+                  ar: "يمكن تصميم بيئة سحابية أو داخلية أو هجينة وفق احتياجات المؤسسة ومتطلبات الأداء والسياسات المعتمدة.",
+                  en: "A cloud, on-premise or hybrid environment can be designed based on the organization's needs, performance requirements and approved policies.",
+                },
               },
-            },
-            {
-              q: { ar: "كم يستغرق تنفيذ نظام ERP؟", en: "How long does ERP implementation take?" },
-              a: {
-                ar: "تعتمد المدة على عدد الوحدات، حجم المؤسسة، مستوى التخصيص، جاهزية البيانات، التكاملات وسرعة اعتماد المتطلبات.",
-                en: "Duration depends on the number of modules, organization size, customization level, data readiness, integrations and speed of requirements approval.",
+              {
+                q: { ar: "كم يستغرق تنفيذ نظام ERP؟", en: "How long does ERP implementation take?" },
+                a: {
+                  ar: "تعتمد المدة على عدد الوحدات، حجم المؤسسة، مستوى التخصيص، جاهزية البيانات، التكاملات وسرعة اعتماد المتطلبات.",
+                  en: "Duration depends on the number of modules, organization size, customization level, data readiness, integrations and speed of requirements approval.",
+                },
               },
-            },
-            {
-              q: { ar: "ما الفرق بين ERP وبرنامج المحاسبة؟", en: "What's the difference between ERP and accounting software?" },
-              a: {
-                ar: "برنامج المحاسبة يركز على العمليات المالية، بينما يربط ERP بين المالية والموارد البشرية والمشتريات والمخزون والمبيعات والأصول والمشاريع ضمن نظام واحد.",
-                en: "Accounting software focuses on financial operations, while ERP connects finance, HR, procurement, inventory, sales, assets and projects in one system.",
+              {
+                q: { ar: "ما الفرق بين ERP وبرنامج المحاسبة؟", en: "What's the difference between ERP and accounting software?" },
+                a: {
+                  ar: "برنامج المحاسبة يركز على العمليات المالية، بينما يربط ERP بين المالية والموارد البشرية والمشتريات والمخزون والمبيعات والأصول والمشاريع ضمن نظام واحد.",
+                  en: "Accounting software focuses on financial operations, while ERP connects finance, HR, procurement, inventory, sales, assets and projects in one system.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن ربط نظام الحضور بالرواتب؟", en: "Can attendance be linked to payroll?" },
-              a: {
-                ar: "نعم، يمكن ربط بيانات الحضور والانصراف والإجازات بنظام الموارد البشرية والرواتب وفق التكامل المتاح.",
-                en: "Yes — attendance, leave and checkout data can be linked to HR and payroll per available integration.",
+              {
+                q: { ar: "هل يمكن ربط نظام الحضور بالرواتب؟", en: "Can attendance be linked to payroll?" },
+                a: {
+                  ar: "نعم، يمكن ربط بيانات الحضور والانصراف والإجازات بنظام الموارد البشرية والرواتب وفق التكامل المتاح.",
+                  en: "Yes — attendance, leave and checkout data can be linked to HR and payroll per available integration.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تطوير تطبيقات مخصصة مرتبطة بـ ERP؟", en: "Can custom applications be developed and linked to ERP?" },
-              a: {
-                ar: "نعم، يمكن تطوير بوابات وتطبيقات ويب وهاتف ووحدات مخصصة تتكامل مع نظام ERP.",
-                en: "Yes — portals, web and mobile apps and custom modules can be developed to integrate with the ERP.",
+              {
+                q: { ar: "هل يمكن تطوير تطبيقات مخصصة مرتبطة بـ ERP؟", en: "Can custom applications be developed and linked to ERP?" },
+                a: {
+                  ar: "نعم، يمكن تطوير بوابات وتطبيقات ويب وهاتف ووحدات مخصصة تتكامل مع نظام ERP.",
+                  en: "Yes — portals, web and mobile apps and custom modules can be developed to integrate with the ERP.",
+                },
               },
-            },
-          ]}
-        />
+            ]}
+          />
+        </div>
 
         <JsonLd
           data={{

@@ -1,9 +1,12 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "@/lib/router";
 import { useI18n } from "@/lib/i18n";
 
-// ✅ قراءة الشعارات بالطريقة الصحيحة لـ Vite
+// ======================================================
+// Partner Logos
+// ======================================================
+
 const partnerLogos = Object.values(
   import.meta.glob("@/assets/partners/*.{png,jpg,jpeg,webp,svg}", {
     eager: true,
@@ -12,129 +15,643 @@ const partnerLogos = Object.values(
   })
 ) as string[];
 
+// ======================================================
+// Partners 3D / Infinite Slider
+// ======================================================
+
 export default function Partners3DSlider() {
   const { lang } = useI18n();
   const isAr = lang === "ar";
-  const scrollRef1 = useRef<HTMLDivElement>(null);
-  const scrollRef2 = useRef<HTMLDivElement>(null);
 
-  // دالة عشان نسحب الشريط يمين وشمال
-  const scroll = (direction: "left" | "right") => {
-    const amount = direction === "left" ? -300 : 300;
-    scrollRef1.current?.scrollBy({ left: amount, behavior: "smooth" });
-    scrollRef2.current?.scrollBy({ left: amount, behavior: "smooth" });
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const animationRef = useRef<number | null>(null);
+
+  const positionRef = useRef(0);
+  const lastTimeRef = useRef<number | null>(null);
+
+  const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const dragStartX = useRef(0);
+  const dragStartPosition = useRef(0);
+
+  // ====================================================
+  // Repeat logos multiple times
+  // This prevents any empty space during the loop.
+  // ====================================================
+
+  const repeatedLogos = [
+    ...partnerLogos,
+    ...partnerLogos,
+    ...partnerLogos,
+    ...partnerLogos,
+  ];
+
+  // ====================================================
+  // Infinite automatic animation
+  // ====================================================
+
+  useEffect(() => {
+    const track = trackRef.current;
+
+    if (!track || partnerLogos.length === 0) {
+      return;
+    }
+
+    const speed = 45;
+
+    const animate = (time: number) => {
+      if (lastTimeRef.current === null) {
+        lastTimeRef.current = time;
+      }
+
+      const delta = time - lastTimeRef.current;
+      lastTimeRef.current = time;
+
+      if (!isPaused && !isDragging) {
+        const movement = (speed * delta) / 1000;
+
+        // Arabic = right direction
+        // English = left direction
+        if (isAr) {
+          positionRef.current += movement;
+        } else {
+          positionRef.current -= movement;
+        }
+
+        // ------------------------------------------------
+        // Width of ONE complete logo set
+        // ------------------------------------------------
+
+        const firstSetWidth =
+          track.scrollWidth / 4;
+
+        // ------------------------------------------------
+        // Seamless infinite loop
+        // ------------------------------------------------
+
+        if (isAr) {
+          if (
+            positionRef.current >= firstSetWidth
+          ) {
+            positionRef.current -= firstSetWidth;
+          }
+        } else {
+          if (
+            positionRef.current <= -firstSetWidth
+          ) {
+            positionRef.current += firstSetWidth;
+          }
+        }
+
+        track.style.transform =
+          `translate3d(${positionRef.current}px, 0, 0)`;
+      }
+
+      animationRef.current =
+        requestAnimationFrame(animate);
+    };
+
+    animationRef.current =
+      requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current !== null) {
+        cancelAnimationFrame(
+          animationRef.current
+        );
+      }
+
+      lastTimeRef.current = null;
+    };
+  }, [isAr, isPaused, isDragging]);
+
+  // ====================================================
+  // Arrow navigation
+  // ====================================================
+
+  const moveSlider = (
+    direction: "left" | "right"
+  ) => {
+    const amount = 280;
+
+    if (isAr) {
+      if (direction === "left") {
+        positionRef.current += amount;
+      } else {
+        positionRef.current -= amount;
+      }
+    } else {
+      if (direction === "left") {
+        positionRef.current -= amount;
+      } else {
+        positionRef.current += amount;
+      }
+    }
+
+    if (trackRef.current) {
+      trackRef.current.style.transform =
+        `translate3d(${positionRef.current}px, 0, 0)`;
+    }
+
+    lastTimeRef.current = null;
   };
 
-  // بنقسم الشعارات لنصين عشان نعمل صفين
-  const half = Math.ceil(partnerLogos.length / 2);
-  const row1 = partnerLogos.slice(0, half);
-  const row2 = partnerLogos.slice(half);
+  // ====================================================
+  // Drag / Touch
+  // ====================================================
 
-  // لو مفيش صور متسابة، مش هنعرض حاجة
-  if (!partnerLogos.length) return null;
+  const handlePointerDown = (
+    clientX: number
+  ) => {
+    setIsDragging(true);
+
+    dragStartX.current = clientX;
+    dragStartPosition.current =
+      positionRef.current;
+  };
+
+  const handlePointerMove = (
+    clientX: number
+  ) => {
+    if (
+      !isDragging ||
+      !trackRef.current
+    ) {
+      return;
+    }
+
+    const difference =
+      clientX - dragStartX.current;
+
+    positionRef.current =
+      dragStartPosition.current +
+      difference;
+
+    trackRef.current.style.transform =
+      `translate3d(${positionRef.current}px, 0, 0)`;
+  };
+
+  const handlePointerUp = () => {
+    setIsDragging(false);
+    lastTimeRef.current = null;
+  };
+
+  // ====================================================
+  // Empty state
+  // ====================================================
+
+  if (!partnerLogos.length) {
+    return null;
+  }
+
+  // ====================================================
+  // Render
+  // ====================================================
 
   return (
-    <div className="w-full bg-white py-12 overflow-hidden">
-      {/* تحديد عرض السلايدر كله بـ 1200 بكسل وتوسيطه */}
-      <div className="container-page max-w-[1200px] mx-auto relative">
-        
-        {/* العنوان */}
-        <div className="text-center md:text-start mb-10">
-          <div className="text-sm font-bold text-[#D4AF37] mb-2 flex items-center justify-center md:justify-start gap-2">
-            <span>{isAr ? "شراكات تقنية" : "Technology partnerships"}</span>
-            <span className="h-[2px] w-8 bg-[#D4AF37]"></span>
+    <section
+      dir={isAr ? "rtl" : "ltr"}
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-white
+        py-20
+        md:py-24
+      "
+    >
+      {/* ==================================================
+          Header
+      ================================================== */}
+
+      <div
+        className="
+          mx-auto
+          w-full
+          max-w-[1400px]
+          px-5
+          sm:px-8
+          lg:px-12
+        "
+      >
+        <div
+          className={`mb-12 ${
+            isAr
+              ? "text-right"
+              : "text-left"
+          }`}
+        >
+          {/* Small heading */}
+
+          <div
+            className="
+              mb-4
+              flex
+              items-center
+              gap-3
+              text-sm
+              font-semibold
+              uppercase
+              tracking-[0.18em]
+              text-[#D4AF37]
+            "
+          >
+            <span
+              className="
+                h-[2px]
+                w-10
+                bg-[#D4AF37]
+              "
+            />
+
+            <span>
+              {isAr
+                ? "شراكاتنا التقنية"
+                : "Our partnerships"}
+            </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3D2E] mb-2">
-            {isAr ? "شركاؤنا في التقنية" : "Our technology partners"}
-          </h2>
-          <p className="text-muted-foreground text-sm md:text-base">
+
+          {/* Main heading */}
+
+          <h2
+            className="
+              max-w-3xl
+              text-3xl
+              font-extrabold
+              leading-tight
+              text-[#0B3D2E]
+              sm:text-4xl
+              md:text-5xl
+            "
+          >
             {isAr
-              ? "خبرات متكاملة تدعم نجاح أعمالكم"
-              : "Integrated expertise supporting your business success"}
+              ? "شركاؤنا وعملاؤنا"
+              : "Our customers and partners"}
+          </h2>
+
+          {/* Description */}
+
+          <p
+            className="
+              mt-4
+              max-w-2xl
+              text-base
+              leading-8
+              text-gray-500
+              md:text-lg
+            "
+          >
+            {isAr
+              ? "نفخر بالتعاون مع مجموعة من الجهات والمؤسسات الرائدة في مختلف القطاعات."
+              : "We are proud to work with leading organisations across a wide range of industries."}
           </p>
         </div>
-
-        {/* الصف الأول */}
-        <div className="relative mb-6">
-          {/* زر اليسار */}
-          <button
-            onClick={() => scroll(isAr ? "right" : "left")}
-            className="absolute start-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-sm hover:bg-gray-50"
-          >
-            <ArrowLeft className={`w-5 h-5 text-gray-600 ${isAr ? "rotate-180" : ""}`} />
-          </button>
-
-          <div
-            ref={scrollRef1}
-            className="flex gap-8 md:gap-12 overflow-x-auto items-center px-10 py-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-          >
-            {[...row1, ...row1].map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt={`Partner ${i}`}
-                className="w-[1200px] h-auto max-w-[200px] md:max-w-[250px] object-contain shrink-0 transition-all duration-300"
-              />
-            ))}
-          </div>
-
-          {/* زر اليمين */}
-          <button
-            onClick={() => scroll(isAr ? "left" : "right")}
-            className="absolute end-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-sm hover:bg-gray-50"
-          >
-            <ArrowRight className={`w-5 h-5 text-gray-600 ${isAr ? "rotate-180" : ""}`} />
-          </button>
-        </div>
-
-        {/* فاصل */}
-        <div className="w-full h-[1px] bg-gray-100 my-6"></div>
-
-        {/* الصف الثاني */}
-        <div className="relative mb-12">
-          {/* زر اليسار */}
-          <button
-            onClick={() => scroll(isAr ? "right" : "left")}
-            className="absolute start-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-sm hover:bg-gray-50"
-          >
-            <ArrowLeft className={`w-5 h-5 text-gray-600 ${isAr ? "rotate-180" : ""}`} />
-          </button>
-
-          <div
-            ref={scrollRef2}
-            className="flex gap-8 md:gap-12 overflow-x-auto items-center px-10 py-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-          >
-            {[...row2, ...row2].map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt={`Partner ${i}`}
-                className="w-[1200px] h-auto max-w-[200px] md:max-w-[250px] object-contain shrink-0 transition-all duration-300"
-              />
-            ))}
-          </div>
-
-          {/* زر اليمين */}
-          <button
-            onClick={() => scroll(isAr ? "left" : "right")}
-            className="absolute end-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-sm hover:bg-gray-50"
-          >
-            <ArrowRight className={`w-5 h-5 text-gray-600 ${isAr ? "rotate-180" : ""}`} />
-          </button>
-        </div>
-
-        {/* الزر السفلي */}
-        <div className="flex justify-center mt-6">
-          <Link
-            to="/partners-clients"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-2.5 text-sm font-semibold text-[#0B3D2E] hover:bg-gray-50 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
-            {isAr ? "عرض جميع الشركاء" : "View all partners"}
-          </Link>
-        </div>
-
       </div>
-    </div>
+
+      {/* ==================================================
+          Slider Area
+      ================================================== */}
+
+      <div
+        className="relative w-full"
+        onMouseEnter={() =>
+          setIsPaused(true)
+        }
+        onMouseLeave={() => {
+          setIsPaused(false);
+          handlePointerUp();
+        }}
+      >
+        {/* ==================================================
+            Left Fade
+        ================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-y-0
+            start-0
+            z-20
+            w-20
+            bg-gradient-to-r
+            from-white
+            via-white/80
+            to-transparent
+            md:w-36
+          "
+        />
+
+        {/* ==================================================
+            Right Fade
+        ================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-y-0
+            end-0
+            z-20
+            w-20
+            bg-gradient-to-l
+            from-white
+            via-white/80
+            to-transparent
+            md:w-36
+          "
+        />
+
+        {/* ==================================================
+            Left Arrow
+        ================================================== */}
+
+        <button
+          type="button"
+          aria-label={
+            isAr
+              ? "التالي"
+              : "Next"
+          }
+          onClick={() =>
+            moveSlider(
+              isAr
+                ? "right"
+                : "left"
+            )
+          }
+          className="
+            absolute
+            start-4
+            top-1/2
+            z-30
+            flex
+            h-11
+            w-11
+            -translate-y-1/2
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-gray-200
+            bg-white
+            text-gray-700
+            shadow-md
+            transition-all
+            duration-300
+            hover:scale-105
+            hover:border-[#D4AF37]
+            hover:text-[#0B3D2E]
+            md:start-8
+          "
+        >
+          <ArrowLeft
+            className={`h-5 w-5 ${
+              isAr
+                ? "rotate-180"
+                : ""
+            }`}
+          />
+        </button>
+
+        {/* ==================================================
+            Right Arrow
+        ================================================== */}
+
+        <button
+          type="button"
+          aria-label={
+            isAr
+              ? "السابق"
+              : "Previous"
+          }
+          onClick={() =>
+            moveSlider(
+              isAr
+                ? "left"
+                : "right"
+            )
+          }
+          className="
+            absolute
+            end-4
+            top-1/2
+            z-30
+            flex
+            h-11
+            w-11
+            -translate-y-1/2
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-gray-200
+            bg-white
+            text-gray-700
+            shadow-md
+            transition-all
+            duration-300
+            hover:scale-105
+            hover:border-[#D4AF37]
+            hover:text-[#0B3D2E]
+            md:end-8
+          "
+        >
+          <ArrowRight
+            className={`h-5 w-5 ${
+              isAr
+                ? "rotate-180"
+                : ""
+            }`}
+          />
+        </button>
+
+        {/* ==================================================
+            Slider Viewport
+        ================================================== */}
+
+        <div
+          className="
+            relative
+            w-full
+            overflow-hidden
+            cursor-grab
+            select-none
+            active:cursor-grabbing
+          "
+          onMouseDown={(e) =>
+            handlePointerDown(
+              e.clientX
+            )
+          }
+          onMouseMove={(e) =>
+            handlePointerMove(
+              e.clientX
+            )
+          }
+          onMouseUp={handlePointerUp}
+          onMouseLeave={handlePointerUp}
+          onTouchStart={(e) =>
+            handlePointerDown(
+              e.touches[0].clientX
+            )
+          }
+          onTouchMove={(e) =>
+            handlePointerMove(
+              e.touches[0].clientX
+            )
+          }
+          onTouchEnd={handlePointerUp}
+        >
+          {/* ==================================================
+              Infinite Track
+          ================================================== */}
+
+          <div
+            ref={trackRef}
+            className="
+              flex
+              w-max
+              items-center
+              gap-10
+              py-6
+              will-change-transform
+              md:gap-14
+              lg:gap-16
+            "
+          >
+            {repeatedLogos.map(
+              (logo, index) => (
+                <div
+                  key={`${logo}-${index}`}
+                  className="
+                    group
+                    flex
+                    h-[90px]
+                    w-[150px]
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    border
+                    border-gray-100
+                    bg-white
+                    px-6
+                    shadow-[0_4px_20px_rgba(0,0,0,0.04)]
+                    transition-all
+                    duration-500
+                    hover:-translate-y-1
+                    hover:border-gray-200
+                    hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)]
+                    sm:h-[100px]
+                    sm:w-[175px]
+                    md:h-[110px]
+                    md:w-[200px]
+                  "
+                >
+                  <img
+                    src={logo}
+                    alt={`Partner ${
+                      index + 1
+                    }`}
+                    draggable={false}
+                    className="
+                      max-h-[58px]
+                      max-w-[135px]
+                      object-contain
+                      opacity-70
+                      grayscale
+                      transition-all
+                      duration-500
+                      group-hover:scale-105
+                      group-hover:opacity-100
+                      group-hover:grayscale-0
+                      sm:max-h-[65px]
+                      sm:max-w-[155px]
+                      md:max-h-[70px]
+                      md:max-w-[175px]
+                    "
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* ==================================================
+          View All Button
+      ================================================== */}
+
+      <div
+        className="
+          mx-auto
+          mt-12
+          flex
+          w-full
+          max-w-[1400px]
+          justify-center
+          px-5
+          sm:px-8
+          lg:px-12
+        "
+      >
+        <Link
+          to="/partners-clients"
+          className="
+            group
+            inline-flex
+            items-center
+            gap-3
+            rounded-full
+            border
+            border-gray-200
+            bg-white
+            px-7
+            py-3
+            text-sm
+            font-semibold
+            text-[#0B3D2E]
+            shadow-sm
+            transition-all
+            duration-300
+            hover:border-[#D4AF37]
+            hover:bg-[#0B3D2E]
+            hover:text-white
+            hover:shadow-md
+          "
+        >
+          <span>
+            {isAr
+              ? "عرض جميع الشركاء"
+              : "View all partners"}
+          </span>
+
+          {isAr ? (
+            <ArrowLeft
+              className="
+                h-4
+                w-4
+                transition-transform
+                duration-300
+                group-hover:-translate-x-1
+              "
+            />
+          ) : (
+            <ArrowRight
+              className="
+                h-4
+                w-4
+                transition-transform
+                duration-300
+                group-hover:translate-x-1
+              "
+            />
+          )}
+        </Link>
+      </div>
+    </section>
   );
 }

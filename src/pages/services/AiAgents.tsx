@@ -84,7 +84,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           1. HERO
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <Breadcrumbs
           items={[
             { label: { ar: "الرئيسية", en: "Home" }, to: "/" },
@@ -93,7 +93,7 @@ export default function AiAgentsPage() {
           ]}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center mt-4 md:mt-6">
           {/* الصورة — يسار */}
           <div className="order-2 lg:order-1">
             <img
@@ -116,23 +116,23 @@ export default function AiAgentsPage() {
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {isAr ? "حلول الذكاء الاصطناعي للمؤسسات" : "AI solutions for enterprises"}
             </div>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
+            <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
               {isAr
                 ? "حلول الذكاء الاصطناعي و AI Agents للجهات الحكومية والمؤسسات"
                 : "AI & AI Agents solutions for government entities and enterprises"}
             </h1>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تساعد أربتك الجهات الحكومية والمؤسسات على الاستفادة العملية من الذكاء الاصطناعي من خلال تصميم وتطوير وكلاء ذكاء اصطناعي ومساعدين مؤسسيين قادرين على الوصول إلى المعلومات المصرح بها، دعم المستخدمين، تنفيذ المهام وأتمتة الإجراءات ضمن بيئة العمل."
                 : "ARABTEC helps government entities and enterprises put AI to practical use by designing and building AI agents and enterprise assistants capable of accessing authorized information, supporting users, executing tasks and automating procedures within the work environment."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نطور حلول AI Agents قابلة للتكامل مع الأنظمة المؤسسية، قواعد البيانات، الوثائق، بوابات الخدمات، أنظمة ERP ومنصات إدارة علاقات العملاء، بما يساعد على تحسين سرعة الوصول إلى المعلومات، تقليل الأعمال اليدوية ورفع كفاءة الخدمات والعمليات."
                 : "We build AI Agents integrable with enterprise systems, databases, documents, service portals, ERP and CRM — improving access to information, reducing manual work and raising the efficiency of services and operations."}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <CTAButton to="/contact">
                 {isAr ? "اطلب عرضًا توضيحيًا" : "Request a demo"}
               </CTAButton>
@@ -142,7 +142,7 @@ export default function AiAgentsPage() {
             </div>
 
             {/* شريط مختصر */}
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2">
               {[
                 { ar: "مساعدون ذكيون للموظفين", en: "AI copilots for employees" },
                 { ar: "خدمة المتعاملين", en: "Customer service" },
@@ -166,21 +166,21 @@ export default function AiAgentsPage() {
       {/* ============================================================
           2. ما هو Agent AI؟
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "ما هو وكيل الذكاء الاصطناعي Agent AI؟"
             : "What is an AI Agent?"}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "وكيل الذكاء الاصطناعي هو نظام ذكي مصمم لفهم طلب المستخدم، الوصول إلى المصادر والأنظمة المصرح بها، تحليل المعلومات واتخاذ خطوات محددة لتنفيذ مهمة أو مساعدة المستخدم في إنجازها."
                 : "An AI Agent is an intelligent system designed to understand a user's request, access authorized sources and systems, analyze information and take specific steps to execute a task or help the user complete it."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "لا يقتصر Agent AI على تقديم إجابة نصية؛ بل يمكن تصميمه للبحث في الوثائق، جمع البيانات، تحديث الطلبات، إنشاء ملخصات، توجيه المعاملات، إعداد التقارير والتفاعل مع أنظمة المؤسسة وفق الصلاحيات والقواعد المحددة."
                 : "AI Agent is not limited to providing a text answer — it can be designed to search documents, collect data, update requests, create summaries, route transactions, prepare reports and interact with enterprise systems within defined permissions and rules."}
@@ -188,8 +188,8 @@ export default function AiAgentsPage() {
           </div>
 
           {/* جدول المقارنة */}
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="font-bold text-lg mb-4">
+          <div className="rounded-2xl border border-border bg-card p-4 md:p-6">
+            <h3 className="font-bold text-lg mb-3 text-[#0B3D2E]">
               {isAr
                 ? "الفرق بين Chatbot تقليدي و Agent AI مؤسسي"
                 : "Difference between traditional Chatbot and enterprise AI Agent"}
@@ -238,7 +238,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           3. حالات استخدام الذكاء الاصطناعي — 6 حالات
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "حلول ذكاء اصطناعي مصممة لاحتياجات المؤسسة"
@@ -249,7 +249,7 @@ export default function AiAgentsPage() {
               : "AI use cases vary by sector, operations and available data. ARABTEC therefore starts by studying the need and identifying tasks that can be improved or automated before designing the solution."}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             {
               icon: Users,
@@ -308,17 +308,17 @@ export default function AiAgentsPage() {
           ].map((c) => {
             const Icon = c.icon;
             return (
-              <Card key={c.hEn}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={c.hEn} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{isAr ? c.hAr : c.hEn}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? c.hAr : c.hEn}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                   {isAr ? c.descAr : c.descEn}
                 </p>
                 <ul className="mt-3 space-y-1.5">
                   {(isAr ? c.itemsAr : c.itemsEn).map((x) => (
-                    <li key={x} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <li key={x} className="flex items-start gap-2 text-[14px] md:text-[15px] text-[#4B5563]">
                       <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                       <span>{x}</span>
                     </li>
@@ -333,8 +333,8 @@ export default function AiAgentsPage() {
       {/* ============================================================
           4. حلول AI للجهات الحكومية
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <img
             src={govAiImg}
             alt={isAr
@@ -344,7 +344,7 @@ export default function AiAgentsPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
@@ -352,20 +352,20 @@ export default function AiAgentsPage() {
               <Landmark className="h-3.5 w-3.5" />
               {isAr ? "للجهات الحكومية" : "For government entities"}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr ? "حلول AI تدعم تطوير الخدمات الحكومية" : "AI solutions supporting government services"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن تصميم حلول الذكاء الاصطناعي للجهات الحكومية بهدف تسهيل الوصول إلى المعلومات، تحسين تجربة المتعامل، دعم الموظفين وتسريع الإجراءات الداخلية، مع ربط الحل بمصادر المعرفة والأنظمة المعتمدة وفق نطاق المشروع."
                 : "AI solutions for government entities can be designed to facilitate access to information, improve customer experience, support employees and accelerate internal procedures — with the solution connected to approved knowledge sources and systems within the project scope."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "حالات الاستخدام الحكومية" : "Government use cases"}
             </h3>
 
-            <div className="mt-4 space-y-4">
+            <div className="mt-4 space-y-3">
               {(isAr
                 ? [
                     { t: "مساعد الخدمات الحكومية", d: "مساعدة المتعامل على معرفة الخدمة المناسبة، متطلباتها، خطواتها والقنوات المتاحة لتقديمها." },
@@ -387,8 +387,8 @@ export default function AiAgentsPage() {
                 <div key={item.t} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold">{item.t}</h4>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.d}</p>
+                    <h4 className="font-bold text-base text-[#0B3D2E]">{item.t}</h4>
+                    <p className="mt-1 text-[15px] md:text-[16px] text-[#4B5563] leading-relaxed">{item.d}</p>
                   </div>
                 </div>
               ))}
@@ -400,22 +400,22 @@ export default function AiAgentsPage() {
       {/* ============================================================
           5. المساعد الذكي الداخلي
           ============================================================ */}
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="!py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-deep)]/10 px-3 py-1 text-xs font-semibold text-[color:var(--brand-deep)] mb-3">
               <Building2 className="h-3.5 w-3.5" />
               {isAr ? "للمؤسسات" : "For enterprises"}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr ? "معرفة المؤسسة في واجهة ذكية واحدة" : "Enterprise knowledge in one intelligent interface"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تتوزع المعرفة المؤسسية عادة بين الملفات المشتركة، أنظمة إدارة الوثائق، البريد الإلكتروني، المواقع الداخلية وقواعد البيانات. يمكن للمساعد الذكي توحيد الوصول إلى هذه المعرفة من خلال واجهة محادثة بسيطة."
                 : "Enterprise knowledge is usually spread across shared files, document management systems, email, intranets and databases. The intelligent assistant can unify access to this knowledge through a simple chat interface."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يسأل الموظف باللغة الطبيعية، ويبحث النظام في المصادر المعتمدة ويعرض الإجابة أو الوثيقة ذات العلاقة وفق الصلاحيات المحددة."
                 : "The employee asks in natural language, the system searches approved sources and presents the answer or relevant document according to defined permissions."}
@@ -423,10 +423,10 @@ export default function AiAgentsPage() {
 
             <div className="grid gap-6 md:grid-cols-2 mt-6">
               <div>
-                <h3 className="font-bold mb-3">
+                <h3 className="font-bold mb-3 text-[#0B3D2E]">
                   {isAr ? "مصادر التكامل المحتملة" : "Potential integration sources"}
                 </h3>
-                <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <ul className="space-y-1.5 text-[15px] md:text-base text-[#4B5563]">
                   {(isAr
                     ? ["أنظمة إدارة الوثائق", "بوابات الإنترانت", "قواعد المعرفة SharePoint", "أنظمة ERP", "أنظمة CRM", "قواعد البيانات", "واجهات API", "التخزين السحابي أو الداخلي", "الملفات المؤسسية"]
                     : ["Document management systems", "Intranet portals", "SharePoint knowledge bases", "ERP systems", "CRM systems", "Databases", "APIs", "Cloud or on-premise storage", "Enterprise files"]
@@ -440,10 +440,10 @@ export default function AiAgentsPage() {
               </div>
 
               <div>
-                <h3 className="font-bold mb-3">
+                <h3 className="font-bold mb-3 text-[#0B3D2E]">
                   {isAr ? "النتائج المتوقعة" : "Expected outcomes"}
                 </h3>
-                <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <ul className="space-y-1.5 text-[15px] md:text-base text-[#4B5563]">
                   {(isAr
                     ? ["تقليل الوقت المستغرق في البحث", "توحيد الوصول إلى المعرفة", "دعم الموظفين الجدد", "تقليل تكرار الاستفسارات", "تحسين الاستفادة من الوثائق", "تقديم إجابات مبنية على المصادر المعتمدة"]
                     : ["Reduced research time", "Unified knowledge access", "Support for new employees", "Fewer repeated inquiries", "Better use of documents", "Source-based answers"]
@@ -467,7 +467,7 @@ export default function AiAgentsPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover"
+            className="rounded-lg shadow-lg w-full h-auto object-cover mt-6 lg:mt-0"
           />
         </div>
       </Section>
@@ -475,7 +475,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           6. تكامل AI Agents مع الأنظمة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "تكامل الذكاء الاصطناعي مع الأنظمة والبيانات المؤسسية"
@@ -486,7 +486,7 @@ export default function AiAgentsPage() {
               : "An AI Agent's value increases when it's integrated with the enterprise environment instead of operating as a standalone tool. Integration can be designed to let the agent access data or execute specific actions per approved permissions and rules."}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             { icon: Database, hAr: "أنظمة ERP", hEn: "ERP systems", descAr: "الوصول إلى معلومات العمليات والموارد والطلبات والمخزون والموظفين وفق الصلاحيات.", descEn: "Access to operations, resources, requests, inventory and employee information within permissions." },
             { icon: Users, hAr: "أنظمة CRM", hEn: "CRM systems", descAr: "الاطلاع على بيانات العملاء والحالات والتفاعلات وتقديم الدعم للموظفين.", descEn: "Access customer, case and interaction data and support employees." },
@@ -497,12 +497,12 @@ export default function AiAgentsPage() {
           ].map((c) => {
             const Icon = c.icon;
             return (
-              <Card key={c.hEn}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={c.hEn} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{isAr ? c.hAr : c.hEn}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? c.hAr : c.hEn}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                   {isAr ? c.descAr : c.descEn}
                 </p>
               </Card>
@@ -511,8 +511,8 @@ export default function AiAgentsPage() {
         </div>
 
         {/* مخطط معماري */}
-        <div className="mt-10 rounded-2xl border border-border bg-card p-6 overflow-x-auto">
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-medium min-w-max">
+        <div className="mt-6 rounded-2xl border border-border bg-card p-4 md:p-6 overflow-x-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm font-medium min-w-max">
             {(isAr
               ? ["المستخدم", "Agent AI", "طبقة التكامل", "ERP / CRM", "الوثائق", "قواعد البيانات", "بوابات الخدمات"]
               : ["User", "AI Agent", "Integration Layer", "ERP / CRM", "Documents", "Databases", "Service Portals"]
@@ -529,7 +529,7 @@ export default function AiAgentsPage() {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services/software-development" variant="outline">
             {isAr
               ? "استكشف خدمات تطوير البرمجيات وتكامل الأنظمة"
@@ -541,7 +541,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           7. بنية الحل
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "مكونات حل Agent AI المؤسسي" : "Components of an enterprise AI Agent solution"}
         />
@@ -565,12 +565,12 @@ export default function AiAgentsPage() {
                 { t: "Monitoring & improvement", d: "Monitors usage, answer quality and cases requiring development or human intervention." },
               ]
           ).map((step, i) => (
-            <li key={i} className="relative rounded-xl border border-border bg-card p-5">
-              <div className="text-3xl font-extrabold text-[color:var(--gold)]">
+            <li key={i} className="relative rounded-xl border border-border bg-card p-4 md:p-5 shadow-sm">
+              <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--gold)]">
                 0{i + 1}
               </div>
-              <div className="mt-1 font-semibold">{step.t}</div>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.d}</p>
+              <div className="mt-1 font-bold text-[#0B3D2E]">{step.t}</div>
+              <p className="mt-1 text-[14px] md:text-[15px] text-[#4B5563] leading-relaxed">{step.d}</p>
             </li>
           ))}
         </ol>
@@ -579,7 +579,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           8. البيانات والصلاحيات والحوكمة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "ذكاء اصطناعي مصمم وفق بيئة المؤسسة"
@@ -617,17 +617,17 @@ export default function AiAgentsPage() {
                 "Data retention policies",
               ]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
+        <div className="mt-6 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
           <div className="flex items-start gap-3">
             <Shield className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-[15px] md:text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "لا تمنح حلول AI Agents صلاحيات مفتوحة بصورة افتراضية. يتم تحديد الوصول والوظائف وفق نطاق المشروع وسياسات المؤسسة والأنظمة المصرح بها."
                 : "AI Agents solutions do not grant open permissions by default. Access and functions are defined according to project scope, enterprise policies and approved systems."}
@@ -639,14 +639,14 @@ export default function AiAgentsPage() {
       {/* ============================================================
           9. القطاعات المستفيدة
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "حلول ذكاء اصطناعي قابلة للتخصيص حسب القطاع"
             : "AI solutions customizable by sector"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             { key: "government", ar: "الجهات الحكومية", en: "Government", itemsAr: ["خدمات المتعاملين", "البحث في السياسات واللوائح", "دعم الموظفين", "متابعة الطلبات", "تحليل الملاحظات"], itemsEn: ["Customer services", "Policy search", "Employee support", "Request tracking", "Feedback analysis"] },
             { key: "oil-gas", ar: "النفط والغاز", en: "Oil & gas", itemsAr: ["البحث في الأدلة التشغيلية", "تلخيص التقارير", "فرق دعم المواقع", "تحليل البيانات التشغيلية", "إدارة المعرفة الفنية"], itemsEn: ["Operational manual search", "Report summarization", "Site support teams", "Operational data analysis", "Technical knowledge management"] },
@@ -655,11 +655,11 @@ export default function AiAgentsPage() {
             { key: "banking", ar: "البنوك والخدمات المالية", en: "Banking & finance", itemsAr: ["دعم الموظفين", "البحث في السياسات", "تصنيف الطلبات", "تحليل المراسلات", "أتمتة المهام الداخلية"], itemsEn: ["Employee support", "Policy search", "Request classification", "Correspondence analysis", "Internal task automation"] },
             { key: "enterprise", ar: "الشركات والمؤسسات", en: "Enterprises", itemsAr: ["مساعد موارد بشرية", "مساعد خدمة العملاء", "البحث في الوثائق", "أتمتة العمليات", "تحليل بيانات الأعمال"], itemsEn: ["HR assistant", "Customer service assistant", "Document search", "Process automation", "Business data analysis"] },
           ].map((sec) => (
-            <Card key={sec.key}>
-              <h3 className="font-bold text-base mb-3">{isAr ? sec.ar : sec.en}</h3>
+            <Card key={sec.key} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base mb-3 text-[#0B3D2E]">{isAr ? sec.ar : sec.en}</h3>
               <ul className="space-y-1.5">
                 {(isAr ? sec.itemsAr : sec.itemsEn).map((x) => (
-                  <li key={x} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                     <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                     <span>{x}</span>
                   </li>
@@ -669,7 +669,7 @@ export default function AiAgentsPage() {
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/industries" variant="outline">
             {isAr ? "استكشف القطاعات التي نخدمها" : "Explore the sectors we serve"}
           </CTAButton>
@@ -679,7 +679,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           10. منهجية تنفيذ المشروع — 8 مراحل
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "من تحديد حالة الاستخدام إلى الإطلاق والتحسين"
@@ -709,12 +709,12 @@ export default function AiAgentsPage() {
                 { t: "Monitoring & improvement", d: "Monitoring usage, answers, and performance and evolving the solution based on outcomes." },
               ]
           ).map((step, i) => (
-            <li key={i} className="relative rounded-xl border border-border bg-card p-5">
-              <div className="text-3xl font-extrabold text-[color:var(--gold)]">
+            <li key={i} className="relative rounded-xl border border-border bg-card p-4 md:p-5 shadow-sm">
+              <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--gold)]">
                 0{i + 1}
               </div>
-              <div className="mt-1 font-semibold">{step.t}</div>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.d}</p>
+              <div className="mt-1 font-bold text-[#0B3D2E]">{step.t}</div>
+              <p className="mt-1 text-[14px] md:text-[15px] text-[#4B5563] leading-relaxed">{step.d}</p>
             </li>
           ))}
         </ol>
@@ -723,14 +723,14 @@ export default function AiAgentsPage() {
       {/* ============================================================
           11. لماذا أربتك؟
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "لماذا تختار المؤسسات أربتك لحلول الذكاء الاصطناعي؟"
             : "Why organizations choose ARABTEC for AI solutions"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {(isAr
             ? [
                 { t: "فهم الأنظمة المؤسسية", d: "نجمع بين المعرفة بالبرمجيات وتطبيقات الأعمال والبنية التحتية والشبكات والتكامل، بما يساعد على بناء حل متصل ببيئة المؤسسة." },
@@ -749,12 +749,12 @@ export default function AiAgentsPage() {
                 { t: "Single point of accountability", d: "Managing analysis, design, development, integration, testing and support within a clear scope." },
               ]
           ).map((c) => (
-            <Card key={c.t}>
-              <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+            <Card key={c.t} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                 <Sparkles className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-base">{c.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+              <h3 className="font-bold text-base text-[#0B3D2E]">{c.t}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{c.d}</p>
             </Card>
           ))}
         </div>
@@ -763,29 +763,29 @@ export default function AiAgentsPage() {
       {/* ============================================================
           12. خدمات مرتبطة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "خدمات تدعم نجاح حلول الذكاء الاصطناعي"
             : "Services supporting the success of AI solutions"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {[
             { ar: "تطوير البرمجيات وتكامل الأنظمة", en: "Software development & system integration", descAr: "تطوير الواجهات والبوابات وواجهات API وربط Agent AI بأنظمة المؤسسة.", descEn: "Developing interfaces, portals, APIs and connecting AI Agent to enterprise systems.", link: "software-development" },
             { ar: "أنظمة ERP وتطبيقات الأعمال", en: "ERP & business applications", descAr: "ربط الذكاء الاصطناعي بالعمليات والبيانات المؤسسية.", descEn: "Connecting AI to enterprise processes and data.", link: "erp-business-applications" },
             { ar: "السحابة والبنية التحتية", en: "Cloud & infrastructure", descAr: "تجهيز البيئة التقنية والاستضافة المطلوبة لتشغيل الحل وفق نطاق المشروع.", descEn: "Preparing the technology environment and required hosting per project scope.", link: "cloud-infrastructure" },
             { ar: "الشبكات والاتصال", en: "Networks & connectivity", descAr: "دعم الاتصال بين المستخدمين والمواقع والأنظمة المؤسسية.", descEn: "Supporting connectivity between users, sites and enterprise systems.", link: "network-connectivity" },
           ].map((c) => (
-            <Card key={c.link}>
-              <h3 className="font-bold text-base">{isAr ? c.ar : c.en}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            <Card key={c.link} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? c.ar : c.en}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                 {isAr ? c.descAr : c.descEn}
               </p>
               <Link
                 to="/services/$slug"
                 params={{ slug: c.link }}
-                className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-deep hover:text-gold"
+                className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#0B3D2E] hover:text-[color:var(--gold)]"
               >
                 {isAr ? "استكشف الخدمة" : "Explore service"}
                 <ArrowLeft className="h-3.5 w-3.5 rtl:rotate-180" />
@@ -807,27 +807,27 @@ export default function AiAgentsPage() {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         /> */}
-        <div className="relative container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
+        <div className="relative container-page py-10 md:py-14 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground/90">
             {isAr
               ? "هل لديكم عملية أو خدمة يمكن تحسينها بالذكاء الاصطناعي؟"
               : "Do you have a process or service that AI can improve?"}
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/85">
+          <p className="mt-3 max-w-3xl mx-auto text-[16px] md:text-lg text-primary-foreground/90 leading-relaxed">
             {isAr
               ? "شاركوا فريق أربتك بالتحدي أو حالة الاستخدام التي ترغبون في تطويرها، وسنعمل معكم على دراسة المتطلبات والبيانات والأنظمة وتحديد المسار المناسب لبدء مشروع Agent AI مؤسسي."
               : "Share the challenge or use case you want to develop with the ARABTEC team — we will work with you to study requirements, data and systems and define the right path to start an enterprise AI Agent project."}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/contact"
-              className="rounded-md bg-background px-6 py-3 text-sm font-semibold text-primary hover:bg-secondary"
+              className="rounded-md bg-background px-6 py-3 text-sm font-bold text-primary hover:bg-secondary transition"
             >
               {isAr ? "اطلب عرضًا توضيحيًا" : "Request a demo"}
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
+              className="rounded-md border border-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-gold transition"
             >
               {isAr ? "اطلب استشارة لحالة الاستخدام" : "Request a use case consultation"}
             </Link>
@@ -838,101 +838,103 @@ export default function AiAgentsPage() {
       {/* ============================================================
           14. FAQ
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "أسئلة شائعة عن AI Agents وحلول الذكاء الاصطناعي"
             : "Frequently asked questions about AI Agents and AI solutions"}
         />
 
-        <FAQ
-          items={[
-            {
-              q: { ar: "ما هو Agent AI؟", en: "What is an AI Agent?" },
-              a: {
-                ar: "Agent AI هو وكيل ذكاء اصطناعي يستطيع فهم طلب المستخدم، الوصول إلى المعلومات والأنظمة المصرح بها وتنفيذ خطوات أو مهام محددة وفق القواعد والصلاحيات المعتمدة.",
-                en: "An AI Agent is an artificial intelligence agent that can understand a user's request, access authorized information and systems, and execute specific steps or tasks within approved rules and permissions.",
+        <div className="mt-6">
+          <FAQ
+            items={[
+              {
+                q: { ar: "ما هو Agent AI؟", en: "What is an AI Agent?" },
+                a: {
+                  ar: "Agent AI هو وكيل ذكاء اصطناعي يستطيع فهم طلب المستخدم، الوصول إلى المعلومات والأنظمة المصرح بها وتنفيذ خطوات أو مهام محددة وفق القواعد والصلاحيات المعتمدة.",
+                  en: "An AI Agent is an artificial intelligence agent that can understand a user's request, access authorized information and systems, and execute specific steps or tasks within approved rules and permissions.",
+                },
               },
-            },
-            {
-              q: { ar: "ما الفرق بين Chatbot و Agent AI؟", en: "What's the difference between a Chatbot and an AI Agent?" },
-              a: {
-                ar: "يركز Chatbot عادة على الرد على الأسئلة، بينما يمكن لـ Agent AI البحث في عدة مصادر، فهم السياق والتفاعل مع الأنظمة أو تنفيذ إجراءات محددة عند السماح له بذلك.",
-                en: "A Chatbot typically focuses on answering questions, while an AI Agent can search multiple sources, understand context and interact with systems or execute specific actions when allowed.",
+              {
+                q: { ar: "ما الفرق بين Chatbot و Agent AI؟", en: "What's the difference between a Chatbot and an AI Agent?" },
+                a: {
+                  ar: "يركز Chatbot عادة على الرد على الأسئلة، بينما يمكن لـ Agent AI البحث في عدة مصادر، فهم السياق والتفاعل مع الأنظمة أو تنفيذ إجراءات محددة عند السماح له بذلك.",
+                  en: "A Chatbot typically focuses on answering questions, while an AI Agent can search multiple sources, understand context and interact with systems or execute specific actions when allowed.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن ربط Agent AI بأنظمة المؤسسة؟", en: "Can an AI Agent be integrated with enterprise systems?" },
-              a: {
-                ar: "نعم، يمكن ربطه بأنظمة ERP و CRM وقواعد البيانات وأنظمة الوثائق والبوابات الرقمية من خلال واجهات API أو وسائل التكامل المتاحة.",
-                en: "Yes — it can be connected to ERP, CRM, databases, document systems and digital portals through APIs or available integration methods.",
+              {
+                q: { ar: "هل يمكن ربط Agent AI بأنظمة المؤسسة؟", en: "Can an AI Agent be integrated with enterprise systems?" },
+                a: {
+                  ar: "نعم، يمكن ربطه بأنظمة ERP و CRM وقواعد البيانات وأنظمة الوثائق والبوابات الرقمية من خلال واجهات API أو وسائل التكامل المتاحة.",
+                  en: "Yes — it can be connected to ERP, CRM, databases, document systems and digital portals through APIs or available integration methods.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن للوكيل الذكي البحث في الوثائق الداخلية؟", en: "Can the agent search internal documents?" },
-              a: {
-                ar: "نعم، يمكن تصميم مساعد ذكي للبحث في السياسات والإجراءات والعقود والتقارير وقواعد المعرفة المصرح بها.",
-                en: "Yes — an intelligent assistant can be designed to search policies, procedures, contracts, reports and approved knowledge bases.",
+              {
+                q: { ar: "هل يمكن للوكيل الذكي البحث في الوثائق الداخلية؟", en: "Can the agent search internal documents?" },
+                a: {
+                  ar: "نعم، يمكن تصميم مساعد ذكي للبحث في السياسات والإجراءات والعقود والتقارير وقواعد المعرفة المصرح بها.",
+                  en: "Yes — an intelligent assistant can be designed to search policies, procedures, contracts, reports and approved knowledge bases.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن استخدام الذكاء الاصطناعي في الجهات الحكومية؟", en: "Can AI be used in government entities?" },
-              a: {
-                ar: "نعم، يمكن استخدامه لدعم الموظفين والمتعاملين، البحث في السياسات، تحسين الوصول إلى الخدمات، أتمتة بعض الإجراءات وتحليل البيانات، وفق متطلبات الجهة ونطاق المشروع.",
-                en: "Yes — it can support employees and customers, search policies, improve service access, automate some procedures and analyze data — per the entity's requirements and project scope.",
+              {
+                q: { ar: "هل يمكن استخدام الذكاء الاصطناعي في الجهات الحكومية؟", en: "Can AI be used in government entities?" },
+                a: {
+                  ar: "نعم، يمكن استخدامه لدعم الموظفين والمتعاملين، البحث في السياسات، تحسين الوصول إلى الخدمات، أتمتة بعض الإجراءات وتحليل البيانات، وفق متطلبات الجهة ونطاق المشروع.",
+                  en: "Yes — it can support employees and customers, search policies, improve service access, automate some procedures and analyze data — per the entity's requirements and project scope.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تدعم الحلول اللغة العربية؟", en: "Do the solutions support Arabic?" },
-              a: {
-                ar: "يمكن تصميم واجهات ومصادر معرفة وتجارب استخدام باللغة العربية والإنجليزية، وفق جودة المحتوى والوثائق المتاحة ومتطلبات المشروع.",
-                en: "Interfaces, knowledge sources and user experiences can be designed in Arabic and English — per content quality, available documents and project requirements.",
+              {
+                q: { ar: "هل تدعم الحلول اللغة العربية؟", en: "Do the solutions support Arabic?" },
+                a: {
+                  ar: "يمكن تصميم واجهات ومصادر معرفة وتجارب استخدام باللغة العربية والإنجليزية، وفق جودة المحتوى والوثائق المتاحة ومتطلبات المشروع.",
+                  en: "Interfaces, knowledge sources and user experiences can be designed in Arabic and English — per content quality, available documents and project requirements.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تشغيل الحل داخل بيئة المؤسسة؟", en: "Can the solution run inside the enterprise environment?" },
-              a: {
-                ar: "تحدد خيارات الاستضافة والبنية التقنية خلال مرحلة التصميم وفق متطلبات المؤسسة والأنظمة والسياسات المعتمدة.",
-                en: "Hosting options and architecture are defined during the design phase based on the organization's requirements, systems and approved policies.",
+              {
+                q: { ar: "هل يمكن تشغيل الحل داخل بيئة المؤسسة؟", en: "Can the solution run inside the enterprise environment?" },
+                a: {
+                  ar: "تحدد خيارات الاستضافة والبنية التقنية خلال مرحلة التصميم وفق متطلبات المؤسسة والأنظمة والسياسات المعتمدة.",
+                  en: "Hosting options and architecture are defined during the design phase based on the organization's requirements, systems and approved policies.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يصل Agent AI إلى جميع بيانات المؤسسة؟", en: "Does the AI Agent access all enterprise data?" },
-              a: {
-                ar: "لا. يتم تحديد مصادر البيانات والصلاحيات وفق نطاق المشروع، ولا يسمح للوكيل بالوصول إلا إلى الأنظمة والمعلومات المعتمدة.",
-                en: "No. Data sources and permissions are defined by project scope — the agent can only access approved systems and information.",
+              {
+                q: { ar: "هل يصل Agent AI إلى جميع بيانات المؤسسة؟", en: "Does the AI Agent access all enterprise data?" },
+                a: {
+                  ar: "لا. يتم تحديد مصادر البيانات والصلاحيات وفق نطاق المشروع، ولا يسمح للوكيل بالوصول إلا إلى الأنظمة والمعلومات المعتمدة.",
+                  en: "No. Data sources and permissions are defined by project scope — the agent can only access approved systems and information.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن بدء المشروع بنموذج أولي؟", en: "Can the project start with a prototype?" },
-              a: {
-                ar: "نعم، يمكن البدء بإثبات مفهوم أو نموذج أولي لحالة استخدام محددة، ثم تقييم النتائج قبل التوسع.",
-                en: "Yes — you can start with a proof of concept or prototype for a specific use case, then evaluate the results before expansion.",
+              {
+                q: { ar: "هل يمكن بدء المشروع بنموذج أولي؟", en: "Can the project start with a prototype?" },
+                a: {
+                  ar: "نعم، يمكن البدء بإثبات مفهوم أو نموذج أولي لحالة استخدام محددة، ثم تقييم النتائج قبل التوسع.",
+                  en: "Yes — you can start with a proof of concept or prototype for a specific use case, then evaluate the results before expansion.",
+                },
               },
-            },
-            {
-              q: { ar: "كم يستغرق تطوير Agent AI؟", en: "How long does developing an AI Agent take?" },
-              a: {
-                ar: "تعتمد المدة على حالة الاستخدام، عدد مصادر البيانات، جاهزية الوثائق، التكاملات المطلوبة والصلاحيات. يتم تحديد المدة بعد تحليل المتطلبات.",
-                en: "Duration depends on the use case, number of data sources, document readiness, required integrations and permissions. It is determined after requirements analysis.",
+              {
+                q: { ar: "كم يستغرق تطوير Agent AI؟", en: "How long does developing an AI Agent take?" },
+                a: {
+                  ar: "تعتمد المدة على حالة الاستخدام، عدد مصادر البيانات، جاهزية الوثائق، التكاملات المطلوبة والصلاحيات. يتم تحديد المدة بعد تحليل المتطلبات.",
+                  en: "Duration depends on the use case, number of data sources, document readiness, required integrations and permissions. It is determined after requirements analysis.",
+                },
               },
-            },
-            {
-              q: { ar: "ما البيانات المطلوبة لبدء المشروع؟", en: "What data is needed to start the project?" },
-              a: {
-                ar: "تختلف البيانات وفق الحالة، وقد تشمل السياسات والوثائق وقواعد المعرفة وأوصاف الإجراءات وعينات من الطلبات والبيانات المطلوب تحليلها.",
-                en: "Data varies by case and may include policies, documents, knowledge bases, procedure descriptions, sample requests and data to analyze.",
+              {
+                q: { ar: "ما البيانات المطلوبة لبدء المشروع؟", en: "What data is needed to start the project?" },
+                a: {
+                  ar: "تختلف البيانات وفق الحالة، وقد تشمل السياسات والوثائق وقواعد المعرفة وأوصاف الإجراءات وعينات من الطلبات والبيانات المطلوب تحليلها.",
+                  en: "Data varies by case and may include policies, documents, knowledge bases, procedure descriptions, sample requests and data to analyze.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن دمج الموظف البشري مع Agent AI؟", en: "Can a human employee work alongside an AI Agent?" },
-              a: {
-                ar: "نعم، يمكن تصميم الحل بحيث يحول الحالات المعقدة أو غير المكتملة إلى الموظف المختص مع توفير ملخص للسياق والمعلومات المتاحة.",
-                en: "Yes — the solution can be designed to escalate complex or incomplete cases to a specialist employee, with a summary of context and available information.",
+              {
+                q: { ar: "هل يمكن دمج الموظف البشري مع Agent AI؟", en: "Can a human employee work alongside an AI Agent?" },
+                a: {
+                  ar: "نعم، يمكن تصميم الحل بحيث يحول الحالات المعقدة أو غير المكتملة إلى الموظف المختص مع توفير ملخص للسياق والمعلومات المتاحة.",
+                  en: "Yes — the solution can be designed to escalate complex or incomplete cases to a specialist employee, with a summary of context and available information.",
+                },
               },
-            },
-          ]}
-        />
+            ]}
+          />
+        </div>
 
         <JsonLd
           data={{

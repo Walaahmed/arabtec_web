@@ -438,7 +438,7 @@ export default function IndustriesPage() {
       {/* ============================================================
           1. HERO
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <Breadcrumbs
           items={[
             { label: { ar: "الرئيسية", en: "Home" }, to: "/" },
@@ -446,7 +446,7 @@ export default function IndustriesPage() {
           ]}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center mt-2">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center mt-4 md:mt-6">
           {/* الصورة — يسار */}
           <div className="order-2 lg:order-1">
             <img
@@ -471,28 +471,28 @@ export default function IndustriesPage() {
                 ? "حلول تقنية تراعي احتياجات كل قطاع"
                 : "Technology solutions for each sector's needs"}
             </div>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
+            <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
               {isAr
                 ? "حلول تقنية مصمّمة لقطاعك"
                 : "Technology solutions designed for your sector"}
             </h1>
-            <p className="mt-6 text-base text-[#4B5563] leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تختلف الاحتياجات التقنية باختلاف طبيعة القطاع، حجم العمليات، عدد المواقع والمستخدمين، حساسية البيانات، ومتطلبات التكامل واستمرارية الخدمات."
                 : "Technology needs vary by sector, operation scale, number of sites and users, data sensitivity, and integration and continuity requirements."}
             </p>
-            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تعمل أربتك مع الجهات الحكومية والمؤسسات والشركات على دراسة بيئة العمل وتحديد الحلول المناسبة، بدءًا من الذكاء الاصطناعي وأنظمة ERP وتطوير البرمجيات، وصولاً إلى السحابة والبنية التحتية والشبكات وأنظمة المراقبة والحضور والتحكم بالدخول."
                 : "ARABTEC works with government entities, organizations and companies to study the operating environment and identify the right solutions — from AI, ERP and software development to cloud, infrastructure, networks, surveillance, attendance and access control."}
             </p>
-            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نصمم الحلول وفق أولويات كل قطاع، مع إمكانية تنفيذ خدمة محددة أو بناء منظومة تقنية متكاملة تجمع بين الأنظمة والتطبيقات والبنية التحتية والاتصال ضمن مشروع واحد."
                 : "We design solutions around each sector's priorities, delivering either a specific service or a complete technology ecosystem combining systems, applications, infrastructure and connectivity in one project."}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
   {/* الزر الأول — أخضر */}
   <Link
     to="/contact"
@@ -511,7 +511,7 @@ export default function IndustriesPage() {
 </div>
 
             {/* شريط القطاعات أسفل الأزرار */}
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2">
               {sectors.map((s, i) => {
                 const Icon = industryIcons[i];
                 return (
@@ -533,31 +533,31 @@ export default function IndustriesPage() {
       {/* ============================================================
           2. حلول مصممة حسب القطاع
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "التقنية المناسبة تبدأ بفهم طبيعة المؤسسة"
             : "The right technology starts with understanding the organization"}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <p className="text-base text-[#4B5563] leading-relaxed">
+            <p className="text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "لا يكفي تطبيق التقنية نفسها في جميع القطاعات. فالجهة الحكومية تحتاج إلى خدمات رقمية وإجراءات وموافقات مؤسسية، بينما تعتمد المنشآت الصناعية على الاتصال بين المواقع والبنية التشغيلية، وتحتاج المؤسسات التعليمية والصحية والمالية إلى حلول تناسب مستخدميها وعملياتها وأنظمتها."
                 : "Applying the same technology across all sectors is not enough. Government entities need digital services and institutional procedures and approvals, industrial facilities depend on site-to-site connectivity and operational infrastructure, and educational, healthcare and financial institutions need solutions suited to their users, operations and systems."}
             </p>
-            <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تبدأ أربتك بدراسة أهداف المؤسسة والتحديات الحالية والأنظمة والبيانات والمواقع والمستخدمين، ثم تحدد الخدمات والتقنيات التي يمكن أن تحقق قيمة عملية قابلة للتطوير."
                 : "ARABTEC starts by studying the organization's goals, current challenges, systems, data, sites and users, then identifies the services and technologies that can deliver scalable, practical value."}
             </p>
 
-            <h3 className="mt-8 font-bold text-lg">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "العناصر التي تتم دراستها" : "Elements we study"}
             </h3>
 
-            <ul className="mt-5 grid gap-2.5 md:grid-cols-2">
+            <ul className="mt-4 grid gap-2.5 md:grid-cols-2">
               {(isAr
                 ? [
                     "طبيعة العمليات والخدمات",
@@ -588,7 +588,7 @@ export default function IndustriesPage() {
                     "Support and operations requirements",
                   ]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-base text-[#4B5563]">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -606,8 +606,8 @@ export default function IndustriesPage() {
         const Icon = industryIcons[index];
 
         return (
-          <Section key={sector.key} id={sector.key}>
-            <div className="grid gap-10 lg:grid-cols-2 items-stretch">
+          <Section key={sector.key} id={sector.key} className="!py-6 md:!py-10">
+            <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-stretch">
               {/* الصورة */}
               <img
                 src={sector.img}
@@ -616,29 +616,29 @@ export default function IndustriesPage() {
                 height={1067}
                 loading="lazy"
                 decoding="async"
-                className={`rounded-lg shadow-lg w-full h-full min-h-[400px] lg:min-h-[500px] object-cover ${
+                className={`rounded-lg shadow-lg w-full h-full min-h-[300px] md:min-h-[400px] object-cover mt-6 lg:mt-0 ${
                   isEven ? "order-2 lg:order-1" : "order-2 lg:order-2"
                 }`}
               />
 
               {/* النص */}
               <div className={isEven ? "order-1 lg:order-2" : "order-1 lg:order-1"}>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center shrink-0">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center shrink-0">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[color:var(--brand-deep)] leading-tight">
                     {isAr ? sector.titleAr : sector.titleEn}
                   </h2>
                 </div>
 
-                <p className="mt-5 text-base text-[#4B5563] leading-relaxed">
+                <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
                   {isAr ? sector.descAr : sector.descEn}
                 </p>
 
                 {sector.noteAr && (
-                  <div className="mt-5 rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
-                    <p className="text-base text-[#4B5563] leading-relaxed">
+                  <div className="mt-4 rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
+                    <p className="text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                       {isAr ? sector.noteAr : sector.noteEn}
                     </p>
                   </div>
@@ -657,24 +657,24 @@ export default function IndustriesPage() {
             </div>
 
             {/* الحلول المناسبة */}
-            <div className="mt-10">
-              <h3 className="text-xl font-bold mb-6">
+            <div className="mt-6 md:mt-8">
+              <h3 className="text-xl font-bold mb-4 text-[#0B3D2E]">
                 {isAr ? sector.solutionsTitleAr : sector.solutionsTitleEn}
               </h3>
 
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {sector.solutions.map((sol) => {
                   const solTitle = isAr ? sol.hAr : sol.hEn;
                   const solItems = isAr ? sol.itemsAr : sol.itemsEn;
 
                   return (
-                    <Card key={sol.link}>
-                      <h4 className="font-bold text-base">{solTitle}</h4>
-                      <ul className="mt-3 space-y-2">
+                    <Card key={sol.link} className="p-5 border-border/60 shadow-sm bg-card">
+                      <h4 className="font-bold text-base text-[#0B3D2E]">{solTitle}</h4>
+                      <ul className="mt-3 space-y-1.5">
                         {solItems.map((x) => (
                           <li
                             key={x}
-                            className="flex items-start gap-2 text-base text-[#4B5563]"
+                            className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]"
                           >
                             <span className="text-[color:var(--gold)] mt-0.5 shrink-0">
                               •
@@ -686,7 +686,7 @@ export default function IndustriesPage() {
                       <Link
                         to="/services/$slug"
                         params={{ slug: sol.link }}
-                        className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-deep hover:text-gold"
+                        className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#0B3D2E] hover:text-[color:var(--gold)]"
                       >
                         {isAr ? `استكشف ${solTitle}` : `Explore ${solTitle}`}
                         <ArrowLeft className="h-3.5 w-3.5 rtl:rotate-180" />
@@ -703,14 +703,14 @@ export default function IndustriesPage() {
       {/* ============================================================
           حالات المشاريع المتكاملة
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "أمثلة على حلول متكاملة حسب طبيعة المؤسسة"
             : "Examples of integrated solutions by organization type"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 mt-6">
           {(isAr
             ? [
                 {
@@ -749,11 +749,11 @@ export default function IndustriesPage() {
                 },
               ]
           ).map((c) => (
-            <Card key={c.t}>
-              <h3 className="text-lg font-bold">{c.t}</h3>
-              <ul className="mt-4 space-y-2">
+            <Card key={c.t} className="p-5 md:p-6 border-border/60 shadow-sm bg-card">
+              <h3 className="text-lg font-bold text-[#0B3D2E]">{c.t}</h3>
+              <ul className="mt-3 space-y-1.5">
                 {c.items.map((x) => (
-                  <li key={x} className="flex items-start gap-2 text-base text-[#4B5563]">
+                  <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                     <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                     <span>{x}</span>
                   </li>
@@ -767,14 +767,14 @@ export default function IndustriesPage() {
       {/* ============================================================
           منهجية العمل حسب القطاع — 8 مراحل
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "منهجية تربط الحل التقني بأهداف المؤسسة"
             : "A methodology linking the technology solution to the organization's goals"}
         />
 
-        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { t: "فهم القطاع", d: "دراسة طبيعة الخدمات والعمليات والمستخدمين والمواقع والمتطلبات المؤسسية." },
@@ -797,12 +797,12 @@ export default function IndustriesPage() {
                 { t: "Support & evolution", d: "Monitoring performance, addressing feedback and expanding the solution as needed." },
               ]
           ).map((step, i) => (
-            <li key={i} className="relative rounded-xl border border-border bg-card p-5">
-              <div className="text-3xl font-extrabold text-[color:var(--gold)]">
+            <li key={i} className="relative rounded-xl border border-border bg-card p-4 md:p-5 shadow-sm">
+              <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--gold)]">
                 0{i + 1}
               </div>
-              <div className="mt-1 font-semibold">{step.t}</div>
-              <p className="mt-3 text-base text-[#4B5563] leading-relaxed">
+              <div className="mt-1 font-bold text-[#0B3D2E]">{step.t}</div>
+              <p className="mt-1 text-[14px] md:text-[15px] text-[#4B5563] leading-relaxed">
                 {step.d}
               </p>
             </li>
@@ -813,14 +813,14 @@ export default function IndustriesPage() {
       {/* ============================================================
           لماذا أربتك؟
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "لماذا تختار القطاعات الحيوية أربتك شريكًا تقنيًا؟"
             : "Why vital sectors choose ARABTEC as a technology partner"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { h: "خبرة تقنية منذ عام 1996", d: "خبرة ممتدة في الشبكات والاتصال والبنية التحتية والبرمجيات والأنظمة المتكاملة." },
@@ -843,9 +843,9 @@ export default function IndustriesPage() {
                 { h: "Institutional experience", d: "Experience working with government, industrial, educational and commercial institutions." },
               ]
           ).map((c) => (
-            <Card key={c.h}>
-              <h3 className="font-bold text-base">{c.h}</h3>
-              <p className="mt-3 text-base text-[#4B5563] leading-relaxed">{c.d}</p>
+            <Card key={c.h} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base text-[#0B3D2E]">{c.h}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{c.d}</p>
             </Card>
           ))}
         </div>
@@ -854,12 +854,12 @@ export default function IndustriesPage() {
       {/* ============================================================
           قسم الخدمات
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "استكشف خدمات أربتك التقنية" : "Explore ARABTEC technology services"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             { ar: "حلول الذكاء الاصطناعي و AI Agents", en: "AI Solutions & AI Agents", slug: "ai-agents", icon: Cpu },
             { ar: "أنظمة ERP وتطبيقات الأعمال", en: "ERP & Business Applications", slug: "erp-business-applications", icon: Database },
@@ -874,15 +874,15 @@ export default function IndustriesPage() {
                 key={s.slug}
                 to="/services/$slug"
                 params={{ slug: s.slug }}
-                className="rounded-lg border border-border bg-card p-5 hover:border-[color:var(--brand-deep)]/40 hover:shadow-md transition"
+                className="rounded-xl border border-border bg-card p-4 md:p-5 hover:border-[color:var(--brand-deep)]/40 hover:shadow-md transition"
               >
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-3">
+                <div className="h-10 w-10 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <div className="font-semibold">
+                <div className="font-bold text-[#0B3D2E]">
                   {isAr ? s.ar : s.en}
                 </div>
-                <div className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand-deep hover:text-gold">
+                <div className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-brand-deep hover:text-gold">
                   {isAr ? "استكشف الخدمة" : "Explore service"}
                   <ArrowLeft className="h-3.5 w-3.5 rtl:rotate-180" />
                 </div>
@@ -896,22 +896,22 @@ export default function IndustriesPage() {
           CTA
           ============================================================ */}
  <section className="relative overflow-hidden bg-primary text-primary-foreground">
-  <div className="relative container-page py-16 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/90">
+  <div className="relative container-page py-10 md:py-14 text-center">
+    <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground/90">
       {isAr
         ? "ما التحدي التقني الذي تواجهه مؤسستك؟"
         : "What technology challenge does your organization face?"}
     </h2>
-    <p className="mt-6 max-w-3xl mx-auto text-lg text-primary-foreground/90 leading-relaxed">
+    <p className="mt-4 max-w-3xl mx-auto text-[16px] md:text-lg text-primary-foreground/90 leading-relaxed">
       {isAr
         ? "شاركنا احتياجات مؤسستك، لنساعدك على تحديد الحلول المناسبة ونطاق المشروع."
         : "Share your organization's needs so we can help you define the right solutions and project scope."}
     </p>
-    <div className="mt-8 flex flex-wrap justify-center gap-3">
+    <div className="mt-6 flex flex-wrap justify-center gap-3">
       {/* الزر الأساسي — ذهبي */}
       <Link
         to="/contact"
-        className="rounded-md bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-[#0B3D2E] hover:bg-[#B8942E] transition"
+        className="rounded-md bg-[color:var(--gold)] px-6 py-3 text-sm font-bold text-[#0B3D2E] hover:bg-[#B8942E] transition"
       >
         {isAr ? "ناقش احتياجاتك معنا" : "Discuss your needs with us"}
       </Link>
@@ -919,7 +919,7 @@ export default function IndustriesPage() {
       {/* الزر الثانوي — إطار أبيض */}
       <Link
         to="/contact"
-        className="rounded-md bg-transparent border border-white px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
+        className="rounded-md bg-transparent border border-white px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition"
       >
         {isAr ? "اطلب عرضًا فنيًا" : "Request a technical proposal"}
       </Link>
@@ -928,162 +928,98 @@ export default function IndustriesPage() {
 </section>
 
       {/* ============================================================
-          نموذج التواصل المختصر
-          ============================================================ */}
-      {/* <Section>
-        <SectionHead
-          title={isAr
-            ? "أخبرنا عن مؤسستكم واحتياجها التقني"
-            : "Tell us about your organization and technology needs"}
-        />
-
-        <div className="max-w-3xl mx-auto rounded-2xl border border-border bg-card p-8">
-          <p className="text-base text-[#4B5563] leading-relaxed text-center">
-            {isAr
-              ? "يمكنكم التواصل مع فريق أربتك مباشرة عبر صفحة «تواصل معنا» لملء النموذج التفصيلي، حيث سيتمكن فريقنا من مراجعة طبيعة قطاعكم والاحتياجات التقنية لمؤسستكم وتقديم التصور المناسب."
-              : "You can reach the ARABTEC team directly through the Contact page to fill in the detailed form. Our team will review your sector and technology needs and provide the right concept."}
-          </p>
-
-          <div className="mt-6 flex justify-center">
-            <Link
-              to="/contact"
-              className="rounded-md bg-[color:var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
-            >
-              {isAr ? "انتقل إلى نموذج التواصل" : "Go to the contact form"}
-            </Link>
-          </div>
-
-          <ul className="mt-6 grid gap-2.5 md:grid-cols-2 text-base text-[#4B5563]">
-            {(isAr
-              ? [
-                  "الاسم الكامل *",
-                  "اسم الجهة أو المؤسسة *",
-                  "المسمى الوظيفي",
-                  "البريد الإلكتروني للعمل *",
-                  "رقم الهاتف",
-                  "الدولة",
-                  "القطاع *",
-                  "حجم المؤسسة",
-                  "عدد الموظفين",
-                  "عدد المواقع أو الفروع",
-                  "الخدمات المطلوبة *",
-                  "هل توجد أنظمة حالية؟",
-                ]
-              : [
-                  "Full name *",
-                  "Organization name *",
-                  "Job title",
-                  "Work email *",
-                  "Phone number",
-                  "Country",
-                  "Sector *",
-                  "Organization size",
-                  "Number of employees",
-                  "Number of sites or branches",
-                  "Required services *",
-                  "Existing systems?",
-                ]
-            ).map((x) => (
-              <li key={x} className="flex items-start gap-2">
-                <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
-                <span>{x}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Section> */}
-
-      {/* ============================================================
           الأسئلة الشائعة
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "أسئلة شائعة عن الحلول التقنية حسب القطاع"
             : "Frequently asked questions about sector-specific technology solutions"}
         />
 
-        <FAQ
-          items={[
-            {
-              q: { ar: "ما القطاعات التي تخدمها أربتك؟", en: "Which sectors does ARABTEC serve?" },
-              a: {
-                ar: "تقدم أربتك حلولاً تقنية للجهات الحكومية والنفط والغاز والتعليم والرعاية الصحية والبنوك والخدمات المالية والشركات والمؤسسات، وفق نطاق الخدمات والقدرات المتاحة.",
-                en: "ARABTEC provides technology solutions for government, oil & gas, education, healthcare, banking & finance, and corporates & enterprises — according to the scope of services and capabilities available.",
+        <div className="mt-6">
+          <FAQ
+            items={[
+              {
+                q: { ar: "ما القطاعات التي تخدمها أربتك؟", en: "Which sectors does ARABTEC serve?" },
+                a: {
+                  ar: "تقدم أربتك حلولاً تقنية للجهات الحكومية والنفط والغاز والتعليم والرعاية الصحية والبنوك والخدمات المالية والشركات والمؤسسات، وفق نطاق الخدمات والقدرات المتاحة.",
+                  en: "ARABTEC provides technology solutions for government, oil & gas, education, healthcare, banking & finance, and corporates & enterprises — according to the scope of services and capabilities available.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك حلولاً تقنية للجهات الحكومية؟", en: "Does ARABTEC provide technology solutions for government entities?" },
-              a: {
-                ar: "نعم، يمكن تصميم حلول تشمل الذكاء الاصطناعي و ERP والبوابات الحكومية وتكامل الأنظمة والسحابة والشبكات وأنظمة الحضور والمراقبة.",
-                en: "Yes — solutions can include AI, ERP, government portals, system integration, cloud, networks and attendance and surveillance systems.",
+              {
+                q: { ar: "هل تقدم أربتك حلولاً تقنية للجهات الحكومية؟", en: "Does ARABTEC provide technology solutions for government entities?" },
+                a: {
+                  ar: "نعم، يمكن تصميم حلول تشمل الذكاء الاصطناعي و ERP والبوابات الحكومية وتكامل الأنظمة والسحابة والشبكات وأنظمة الحضور والمراقبة.",
+                  en: "Yes — solutions can include AI, ERP, government portals, system integration, cloud, networks and attendance and surveillance systems.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تختلف الحلول التقنية من قطاع إلى آخر؟", en: "Do technology solutions differ by sector?" },
-              a: {
-                ar: "نعم، يتم تصميم الحل وفق طبيعة العمليات والمستخدمين والمواقع والأنظمة والبيانات والأهداف التشغيلية لكل مؤسسة.",
-                en: "Yes — the solution is designed according to each organization's operations, users, sites, systems, data and operational goals.",
+              {
+                q: { ar: "هل تختلف الحلول التقنية من قطاع إلى آخر؟", en: "Do technology solutions differ by sector?" },
+                a: {
+                  ar: "نعم، يتم تصميم الحل وفق طبيعة العمليات والمستخدمين والمواقع والأنظمة والبيانات والأهداف التشغيلية لكل مؤسسة.",
+                  en: "Yes — the solution is designed according to each organization's operations, users, sites, systems, data and operational goals.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن دمج أكثر من خدمة ضمن مشروع واحد؟", en: "Can multiple services be combined in one project?" },
-              a: {
-                ar: "نعم، يمكن دمج البرمجيات و ERP والذكاء الاصطناعي والبنية التحتية والشبكات والأنظمة الذكية ضمن حل متكامل.",
-                en: "Yes — software, ERP, AI, infrastructure, networks and smart systems can be combined into an integrated solution.",
+              {
+                q: { ar: "هل يمكن دمج أكثر من خدمة ضمن مشروع واحد؟", en: "Can multiple services be combined in one project?" },
+                a: {
+                  ar: "نعم، يمكن دمج البرمجيات و ERP والذكاء الاصطناعي والبنية التحتية والشبكات والأنظمة الذكية ضمن حل متكامل.",
+                  en: "Yes — software, ERP, AI, infrastructure, networks and smart systems can be combined into an integrated solution.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك حلولاً لقطاع النفط والغاز؟", en: "Does ARABTEC provide solutions for oil & gas?" },
-              a: {
-                ar: "يمكن تقديم حلول الشبكات وربط المواقع والبنية التحتية و ERP وتطوير التطبيقات وأنظمة المراقبة والحضور وفق احتياجات المشروع.",
-                en: "Solutions can include networks, multi-site connectivity, infrastructure, ERP, application development, and surveillance and attendance systems — per project requirements.",
+              {
+                q: { ar: "هل تقدم أربتك حلولاً لقطاع النفط والغاز؟", en: "Does ARABTEC provide solutions for oil & gas?" },
+                a: {
+                  ar: "يمكن تقديم حلول الشبكات وربط المواقع والبنية التحتية و ERP وتطوير التطبيقات وأنظمة المراقبة والحضور وفق احتياجات المشروع.",
+                  en: "Solutions can include networks, multi-site connectivity, infrastructure, ERP, application development, and surveillance and attendance systems — per project requirements.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك حلولاً للمؤسسات التعليمية؟", en: "Does ARABTEC provide solutions for educational institutions?" },
-              a: {
-                ar: "نعم، تشمل الحلول الممكنة الشبكات والبوابات والأنظمة الإدارية و ERP والحضور والمراقبة والسحابة والذكاء الاصطناعي المؤسسي.",
-                en: "Yes — solutions can include networks, portals, administrative systems, ERP, attendance, surveillance, cloud and enterprise AI.",
+              {
+                q: { ar: "هل تقدم أربتك حلولاً للمؤسسات التعليمية؟", en: "Does ARABTEC provide solutions for educational institutions?" },
+                a: {
+                  ar: "نعم، تشمل الحلول الممكنة الشبكات والبوابات والأنظمة الإدارية و ERP والحضور والمراقبة والسحابة والذكاء الاصطناعي المؤسسي.",
+                  en: "Yes — solutions can include networks, portals, administrative systems, ERP, attendance, surveillance, cloud and enterprise AI.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك حلولاً للمنشآت الصحية؟", en: "Does ARABTEC provide solutions for healthcare facilities?" },
-              a: {
-                ar: "يمكن تقديم حلول تقنية وإدارية تشمل الشبكات والبنية التحتية والبرمجيات و ERP والحضور والتحكم بالدخول، وفق نطاق المشروع.",
-                en: "Technology and administrative solutions can include networks, infrastructure, software, ERP, attendance and access control — per project scope.",
+              {
+                q: { ar: "هل تقدم أربتك حلولاً للمنشآت الصحية؟", en: "Does ARABTEC provide solutions for healthcare facilities?" },
+                a: {
+                  ar: "يمكن تقديم حلول تقنية وإدارية تشمل الشبكات والبنية التحتية والبرمجيات و ERP والحضور والتحكم بالدخول، وفق نطاق المشروع.",
+                  en: "Technology and administrative solutions can include networks, infrastructure, software, ERP, attendance and access control — per project scope.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك حلولاً للبنوك والمؤسسات المالية؟", en: "Does ARABTEC provide solutions for banks and financial institutions?" },
-              a: {
-                ar: "يمكن تصميم حلول مؤسسية للبرمجيات والتكامل والذكاء الاصطناعي و ERP والبنية التحتية والشبكات وفق سياسات ومتطلبات المؤسسة.",
-                en: "Enterprise solutions can be designed for software, integration, AI, ERP, infrastructure and networks — according to the institution's policies and requirements.",
+              {
+                q: { ar: "هل تقدم أربتك حلولاً للبنوك والمؤسسات المالية؟", en: "Does ARABTEC provide solutions for banks and financial institutions?" },
+                a: {
+                  ar: "يمكن تصميم حلول مؤسسية للبرمجيات والتكامل والذكاء الاصطناعي و ERP والبنية التحتية والشبكات وفق سياسات ومتطلبات المؤسسة.",
+                  en: "Enterprise solutions can be designed for software, integration, AI, ERP, infrastructure and networks — according to the institution's policies and requirements.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تنفيذ المشروع على مراحل؟", en: "Can the project be delivered in phases?" },
-              a: {
-                ar: "نعم، يمكن البدء بخدمة أو إدارة أو موقع محدد ثم التوسع إلى أنظمة وفروع أخرى وفق الأولويات.",
-                en: "Yes — starting with a specific service, department or site, then expanding to other systems and branches based on priorities.",
+              {
+                q: { ar: "هل يمكن تنفيذ المشروع على مراحل؟", en: "Can the project be delivered in phases?" },
+                a: {
+                  ar: "نعم، يمكن البدء بخدمة أو إدارة أو موقع محدد ثم التوسع إلى أنظمة وفروع أخرى وفق الأولويات.",
+                  en: "Yes — starting with a specific service, department or site, then expanding to other systems and branches based on priorities.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك استشارة قبل تحديد الحل؟", en: "Does ARABTEC provide consultation before defining the solution?" },
-              a: {
-                ar: "تبدأ المشروعات عادة بدراسة الاحتياج والأنظمة والعمليات والمواقع، ثم تحديد الحل والخدمات المناسبة.",
-                en: "Projects typically start with studying needs, systems, operations and sites, then defining the right solution and services.",
+              {
+                q: { ar: "هل تقدم أربتك استشارة قبل تحديد الحل؟", en: "Does ARABTEC provide consultation before defining the solution?" },
+                a: {
+                  ar: "تبدأ المشروعات عادة بدراسة الاحتياج والأنظمة والعمليات والمواقع، ثم تحديد الحل والخدمات المناسبة.",
+                  en: "Projects typically start with studying needs, systems, operations and sites, then defining the right solution and services.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تطوير حل مخصص لقطاع غير مذكور؟", en: "Can a custom solution be developed for a sector not listed?" },
-              a: {
-                ar: "نعم، يتم تقييم احتياجات القطاعات الأخرى وتحديد الحلول التي تقع ضمن خدمات أربتك وقدراتها الفنية.",
-                en: "Yes — needs of other sectors are assessed, and solutions are identified within ARABTEC's services and technical capabilities.",
+              {
+                q: { ar: "هل يمكن تطوير حل مخصص لقطاع غير مذكور؟", en: "Can a custom solution be developed for a sector not listed?" },
+                a: {
+                  ar: "نعم، يتم تقييم احتياجات القطاعات الأخرى وتحديد الحلول التي تقع ضمن خدمات أربتك وقدراتها الفنية.",
+                  en: "Yes — needs of other sectors are assessed, and solutions are identified within ARABTEC's services and technical capabilities.",
+                },
               },
-            },
-          ]}
-        />
+            ]}
+          />
+        </div>
 
         <JsonLd
           data={{

@@ -859,7 +859,7 @@ export default function AboutPage() {
       {/* ============================================================
           1. HERO
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <Breadcrumbs
           items={[
             { label: { ar: "الرئيسية", en: "Home" }, to: "/" },
@@ -867,7 +867,7 @@ export default function AboutPage() {
           ]}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center mt-4 md:mt-6">
           {/* النص — يمين */}
           <div className="order-1 lg:order-2">
             <div className="text-sm font-bold uppercase tracking-wider text-[color:var(--gold)]">
@@ -879,24 +879,24 @@ export default function AboutPage() {
                 : "A technology partner with deep expertise in building integrated enterprise solutions"}
             </h1>
             
-            <p className="mt-6 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تأسست أربتك عام 1996 لتقديم حلول تقنية موثوقة تساعد المؤسسات على تطوير بيئاتها التشغيلية، تحسين الاتصال بين أنظمتها ومواقعها، والاستفادة من التقنيات الحديثة في بناء أعمال أكثر كفاءة ومرونة واستدامة."
                 : "ARABTEC was founded in 1996 to deliver reliable technology solutions that help organizations evolve their operating environments, improve connectivity across systems and sites, and leverage modern technologies to build more efficient, resilient and sustainable businesses."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "على مدار مسيرتها، تطورت خبرات أربتك من الشبكات والاتصالات والبنية التحتية وأنظمة المراقبة والحضور، لتشمل تطوير البرمجيات، أنظمة ERP وتطبيقات الأعمال، الحلول السحابية، تكامل الأنظمة، وحلول الذكاء الاصطناعي و AI Agents."
                 : "Over the years, ARABTEC's expertise evolved from networks, communications, infrastructure, surveillance and attendance systems to include software development, ERP and business applications, cloud solutions, system integration, and AI & AI Agents."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "نعمل مع الجهات الحكومية والمؤسسات والشركات لتقديم حلول تقنية متكاملة تبدأ من فهم الاحتياج، مرورًا بالتصميم والتطوير والتوريد والتنفيذ، وصولاً إلى التكامل والتدريب والدعم التشغيلي."
                 : "We work with government entities, organizations and companies to deliver integrated technology solutions — from understanding the need, through design, development, supply and delivery, to integration, training and operational support."}
             </p>
 
             {/* الأزرار: زر أخضر وزر أبيض */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 to="/contact"
                 className="rounded-md bg-[#0B3D2E] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0B3D2E]/90 transition"
@@ -924,7 +924,7 @@ export default function AboutPage() {
             height={900}
             fetchPriority="high"
             decoding="async"
-            className="rounded-xl shadow-md order-2 lg:order-1 object-cover w-full h-auto"
+            className="rounded-xl shadow-md order-2 lg:order-1 object-cover w-full h-auto mt-6 lg:mt-0"
           />
         </div>
       </Section>
@@ -932,8 +932,8 @@ export default function AboutPage() {
       {/* ============================================================
           2. نبذة عن أربتك
           ============================================================ */}
-      <Section className="bg-white !py-12 md:!py-16 border-y border-border/50">
-        <div className="grid gap-10 lg:grid-cols-2 items-center">
+      <Section className="bg-white !py-6 md:!py-10 border-y border-border/50">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center">
           {/* الصورة */}
           <img
             src={aboutImg}
@@ -946,7 +946,7 @@ export default function AboutPage() {
             height={900}
             loading="lazy"
             decoding="async"
-            className="rounded-xl shadow-md order-2 lg:order-1 object-cover w-full h-auto"
+            className="rounded-xl shadow-md order-2 lg:order-1 object-cover w-full h-auto mt-6 lg:mt-0"
           />
 
           {/* النص */}
@@ -956,22 +956,22 @@ export default function AboutPage() {
                 ? "خبرة تقنية تجمع بين الأسس الراسخة والتقنيات الحديثة"
                 : "Technology expertise combining solid foundations with modern capabilities"}
             </h2>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "أربتك شركة متخصصة في تقديم الحلول والخدمات التقنية للمؤسسات والجهات الحكومية والشركات بمختلف أحجامها."
                 : "ARABTEC is a specialized provider of technology solutions and services for enterprises, government entities and companies of all sizes."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "بدأت الشركة بخبرات قوية في الاتصال، الشبكات، البنية التحتية التقنية، أنظمة المراقبة، أنظمة الحضور والانصراف وتوريد الحلول التقنية، ثم وسعت نطاق أعمالها ليشمل تطوير البرمجيات، تطبيقات الويب والهاتف وسطح المكتب، الأتمتة، الأنظمة المؤسسية والحلول الرقمية الحديثة."
                 : "The company started with strong expertise in communications, networks, IT infrastructure, surveillance, attendance systems and technology supply — then expanded into software development, web, mobile and desktop applications, automation, enterprise systems and modern digital solutions."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تتبنى أربتك منهجًا متكاملًا يقوم على توفير نقطة مسؤولية واضحة للمشروع، تغطي التخطيط والتصميم والتنفيذ والإدارة والدعم، بما يساعد العميل على تقليل التعقيد وتحسين جودة التنفيذ واستمرارية الخدمة."
                 : "ARABTEC adopts an integrated approach built on a single point of accountability for the project — covering planning, design, delivery, management and support, helping clients reduce complexity and improve delivery quality and service continuity."}
             </p>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "تأسست أربتك عام 1996، ويذكر ملف الشركة خبرتها في الاتصال، الشبكات، المراقبة، الحضور، البرمجيات، الأتمتة والحلول التقنية المتكاملة."
                 : "ARABTEC was founded in 1996, and its company profile highlights expertise in communications, networks, surveillance, attendance, software, automation and integrated technology solutions."}
@@ -983,21 +983,21 @@ export default function AboutPage() {
       {/* ============================================================
           3. رؤيتنا ورسالتنا — بطاقتين
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "رؤيتنا ورسالتنا" : "Our vision and mission"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 mt-8">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 mt-6">
           {/* الرؤية */}
-          <Card className="h-full border-border/60 shadow-sm p-6">
+          <Card className="h-full border-border/60 shadow-sm p-5 md:p-6">
             <div className="h-12 w-12 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-4">
               <Eye className="h-6 w-6" />
             </div>
             <h3 className="text-xl font-bold text-[#0B3D2E]">
               {isAr ? "رؤيتنا" : "Our vision"}
             </h3>
-            <p className="mt-4 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-[17px] text-slate-700 leading-relaxed">
               {isAr
                 ? "أن نكون شريكًا تقنيًا موثوقًا للمؤسسات والجهات الحكومية، وأن نساهم في بناء بيئات رقمية مترابطة وذكية تدعم النمو، ترفع الكفاءة التشغيلية وتحسن جودة الخدمات."
                 : "To be a trusted technology partner for enterprises and government entities, contributing to connected, intelligent digital environments that support growth, raise operational efficiency and improve service quality."}
@@ -1005,14 +1005,14 @@ export default function AboutPage() {
           </Card>
 
           {/* الرسالة */}
-          <Card className="h-full border-border/60 shadow-sm p-6">
+          <Card className="h-full border-border/60 shadow-sm p-5 md:p-6">
             <div className="h-12 w-12 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-4">
               <Target className="h-6 w-6" />
             </div>
             <h3 className="text-xl font-bold text-[#0B3D2E]">
               {isAr ? "رسالتنا" : "Our mission"}
             </h3>
-            <p className="mt-4 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-[17px] text-slate-700 leading-relaxed">
               {isAr
                 ? "تقديم حلول تقنية متكاملة وعملية تجمع بين الخبرة، الابتكار وجودة التنفيذ، وتساعد عملاءنا على تحديث أنظمتهم، أتمتة عملياتهم، ربط بياناتهم والاستفادة من التقنيات الحديثة بما يتوافق مع أهدافهم المؤسسية."
                 : "Delivering integrated, practical technology solutions that combine expertise, innovation and delivery quality — helping our clients modernize systems, automate operations, connect data and leverage modern technologies in line with their organizational goals."}
@@ -1024,12 +1024,12 @@ export default function AboutPage() {
       {/* ============================================================
           4. ما الذي يميز أربتك؟ — 6 بطاقات
           ============================================================ */}
-      <Section className="bg-white !py-12 md:!py-16">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr ? "قيمة تتجاوز تقديم التقنية" : "Value beyond delivering technology"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             {
               icon: BadgeCheck,
@@ -1082,12 +1082,12 @@ export default function AboutPage() {
           ].map((c) => {
             const Icon = c.icon;
             return (
-              <Card key={c.h.en} className="p-6 border-border/60 shadow-sm bg-card">
-                <div className="h-11 w-11 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-4">
+              <Card key={c.h.en} className="p-5 md:p-6 border-border/60 shadow-sm bg-card">
+                <div className="h-11 w-11 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#0B3D2E]">{l(c.h)}</h3>
-                <p className="mt-3 text-[16px] md:text-[17px] text-slate-700 leading-relaxed">{l(c.d)}</p>
+                <p className="mt-2 text-[15px] md:text-[16px] text-slate-700 leading-relaxed">{l(c.d)}</p>
               </Card>
             );
           })}
@@ -1097,7 +1097,7 @@ export default function AboutPage() {
       {/* ============================================================
           5. مجالات خبرتنا — 6 بطاقات بأيقونات تقنية
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "خبرات تقنية تدعم رحلة التحول المؤسسي" : "Technology expertise supporting the enterprise transformation journey"}
           intro={
@@ -1107,7 +1107,7 @@ export default function AboutPage() {
           }
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             {
               slug: "ai-agents",
@@ -1160,16 +1160,16 @@ export default function AboutPage() {
           ].map((c, i) => {
             const Icon = expertiseIcons[i];
             return (
-              <Card key={c.slug} className="p-6 border-border/60 shadow-sm bg-card">
-                <div className="h-11 w-11 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-4">
+              <Card key={c.slug} className="p-5 md:p-6 border-border/60 shadow-sm bg-card">
+                <div className="h-11 w-11 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#0B3D2E]">{l(c.h)}</h3>
-                <p className="mt-3 text-[16px] md:text-[17px] text-slate-700 leading-relaxed">{l(c.d)}</p>
+                <p className="mt-2 text-[15px] md:text-[16px] text-slate-700 leading-relaxed">{l(c.d)}</p>
                 <Link
                   to="/services/$slug"
                   params={{ slug: c.slug }}
-                  className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-[#0B3D2E] hover:text-[color:var(--gold)]"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[#0B3D2E] hover:text-[color:var(--gold)]"
                 >
                   {isAr ? "استكشف الخدمة" : "Explore service"}
                   <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
@@ -1179,7 +1179,7 @@ export default function AboutPage() {
           })}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services" variant="outline">
             {isAr ? "عرض جميع الخدمات" : "View all services"}
           </CTAButton>
@@ -1189,19 +1189,19 @@ export default function AboutPage() {
       {/* ============================================================
           6. القطاعات التي نخدمها
           ============================================================ */}
-      <Section className="bg-white !py-12 md:!py-16">
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr ? "حلول مصممة للقطاعات الحيوية" : "Solutions designed for vital sectors"}
             </h2>
-            <p className="mt-5 text-[17px] md:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-slate-700 leading-relaxed">
               {isAr
                 ? "ندرك أن لكل قطاع أولويات تشغيلية وتقنية مختلفة. لذلك تصمم أربتك حلولها وفق طبيعة عمل المؤسسة، حجم عملياتها، متطلبات الاتصال والتكامل، حساسية البيانات والحاجة إلى استمرارية الخدمة."
                 : "We understand that each sector has different operational and technology priorities. ARABTEC therefore designs solutions according to the organization's nature, scale, connectivity and integration requirements, data sensitivity and need for service continuity."}
             </p>
 
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { icon: Landmark, ar: "الجهات الحكومية", en: "Government" },
                 { icon: Fuel, ar: "النفط والغاز", en: "Oil & Gas" },
@@ -1214,12 +1214,12 @@ export default function AboutPage() {
                 return (
                   <div
                     key={s.en}
-                    className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-sm"
+                    className="flex items-center gap-3 rounded-lg border border-border bg-card p-3 md:p-4 shadow-sm"
                   >
                     <div className="h-10 w-10 rounded-md bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center shrink-0">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <span className="text-base font-semibold text-slate-800">
+                    <span className="text-[15px] md:text-base font-semibold text-slate-800">
                       {isAr ? s.ar : s.en}
                     </span>
                   </div>
@@ -1227,7 +1227,7 @@ export default function AboutPage() {
               })}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <CTAButton to="/industries" variant="outline">
                 {isAr ? "استكشف القطاعات التي نخدمها" : "Explore the sectors we serve"}
               </CTAButton>
@@ -1245,7 +1245,7 @@ export default function AboutPage() {
             height={900}
             loading="lazy"
             decoding="async"
-            className="rounded-xl shadow-md w-full h-auto object-cover"
+            className="rounded-xl shadow-md w-full h-auto object-cover mt-6 lg:mt-0"
           />
         </div>
       </Section>
@@ -1253,12 +1253,12 @@ export default function AboutPage() {
       {/* ============================================================
           7. منهجيتنا — 5 مراحل
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "منهجية عمل تركز على احتياج المؤسسة ونتائج المشروع" : "A methodology focused on the enterprise's needs and project outcomes"}
         />
 
-        <ol className="grid gap-4 md:grid-cols-5 mt-8">
+        <ol className="grid gap-4 md:grid-cols-5 mt-6">
           {(isAr
             ? [
                 { t: "التحليل وفهم الاحتياج", d: "دراسة الأهداف المؤسسية والتحديات والعمليات والمستخدمين والأنظمة والبيانات الحالية." },
@@ -1277,13 +1277,13 @@ export default function AboutPage() {
           ).map((step, i) => (
             <li
               key={i}
-              className="relative rounded-xl border border-border bg-card p-5 shadow-sm"
+              className="relative rounded-xl border border-border bg-card p-4 md:p-5 shadow-sm"
             >
-              <div className="text-3xl font-extrabold text-[color:var(--gold)]">
+              <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--gold)]">
                 0{i + 1}
               </div>
-              <div className="mt-2 font-bold text-[#0B3D2E]">{step.t}</div>
-              <p className="mt-2 text-[15px] md:text-[16px] text-slate-700 leading-relaxed">
+              <div className="mt-1 font-bold text-[#0B3D2E]">{step.t}</div>
+              <p className="mt-1 text-[14px] md:text-[15px] text-slate-700 leading-relaxed">
                 {step.d}
               </p>
             </li>
@@ -1294,12 +1294,12 @@ export default function AboutPage() {
       {/* ============================================================
           8. قيمنا — 6 قيم
           ============================================================ */}
-      <Section className="bg-white !py-12 md:!py-16">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr ? "القيم التي تقود عملنا" : "The values that drive our work"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {(isAr
             ? [
                 { t: "الجودة", d: "نلتزم بتقديم حلول مصممة ومنفذة وفق متطلبات واضحة ومعايير جودة تناسب طبيعة المشروع." },
@@ -1318,18 +1318,18 @@ export default function AboutPage() {
                 { t: "Sustainability", d: "We design scalable, manageable and supportable solutions so value continues well beyond project go-live." },
               ]
           ).map((v, i) => (
-            <Card key={i} className="p-6 border-border/60 shadow-sm bg-card">
+            <Card key={i} className="p-5 md:p-6 border-border/60 shadow-sm bg-card">
               <h3 className="font-bold text-lg text-[#0B3D2E]">{v.t}</h3>
-              <p className="mt-3 text-[16px] md:text-[17px] text-slate-700 leading-relaxed">{v.d}</p>
+              <p className="mt-2 text-[15px] md:text-[16px] text-slate-700 leading-relaxed">{v.d}</p>
             </Card>
           ))}
         </div>
       </Section>
 
-      {/* ============================================================
+    {/* ============================================================
           9. خبرتنا مع المؤسسات — شريط شعارات
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "ثقة بُنيت عبر مشروعات وقطاعات متعددة" : "Trust built across projects and sectors"}
           intro={
@@ -1340,7 +1340,7 @@ export default function AboutPage() {
         />
 
         {/* شريط شعارات العملاء */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
           {[
             {
               logo: aramcoLogo,
@@ -1365,43 +1365,42 @@ export default function AboutPage() {
           ].map((c, i) => (
             <div
               key={i}
-              className="h-24 rounded-xl border border-border bg-white grid place-items-center p-4 shadow-sm hover:shadow-md transition-shadow"
+              className="h-20 md:h-24 rounded-xl border border-border bg-white grid place-items-center p-3 md:p-4 shadow-sm hover:shadow-md transition-shadow"
             >
               <img
                 src={c.logo}
                 alt={isAr ? c.altAr : c.altEn}
                 loading="lazy"
                 decoding="async"
-                className="max-h-12 max-w-full w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-10 md:max-h-12 max-w-full w-auto object-contain transition-transform duration-300 hover:scale-105"
               />
             </div>
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/partners-clients" variant="outline">
             {isAr ? "تعرّف إلى شركائنا وعملائنا" : "Meet our partners & clients"}
           </CTAButton>
         </div>
       </Section>
-
       {/* ============================================================
           10. CTA — خلفية تقنية
           ============================================================ */}
       <section className="bg-[#0B3D2E] text-white">
-        <div className="container-page py-16 text-center">
+        <div className="container-page py-10 md:py-14 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white">
             {isAr
               ? "نساعدكم على تحويل الاحتياج التقني إلى مشروع قابل للتنفيذ"
               : "We help you turn technical needs into an executable project"}
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-white/90 text-[17px] md:text-lg leading-relaxed">
+          <p className="mt-3 max-w-3xl mx-auto text-white/90 text-[16px] md:text-lg leading-relaxed">
             {isAr
               ? "سواء كانت مؤسستكم تخطط لتطبيق نظام ERP، تطوير منصة رقمية، إطلاق Agent AI، تحديث البنية التحتية، ربط المواقع والفروع أو تنفيذ أنظمة مراقبة وتحكم بالدخول، يعمل فريق أربتك معكم على دراسة الاحتياج وتصميم الحل المناسب."
               : "Whether you're planning an ERP system, a digital platform, launching an AI Agent, modernizing infrastructure, linking sites and branches, or implementing surveillance and access control systems — the ARABTEC team works with you to study the need and design the right solution."}
           </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/contact"
               className="rounded-md bg-white px-6 py-3 text-sm font-bold text-[#0B3D2E] hover:bg-slate-100 transition"
@@ -1421,12 +1420,12 @@ export default function AboutPage() {
       {/* ============================================================
           11. FAQ
           ============================================================ */}
-      <Section className="!py-12 md:!py-16">
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "أسئلة شائعة عن أربتك" : "Frequently asked questions about ARABTEC"}
         />
 
-        <div className="mt-8">
+        <div className="mt-6">
           <FAQ
             items={[
               {

@@ -89,7 +89,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           1. HERO
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <Breadcrumbs
           items={[
             { label: { ar: "الرئيسية", en: "Home" }, to: "/" },
@@ -98,7 +98,7 @@ export default function CloudInfrastructurePage() {
           ]}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center mt-4 md:mt-6">
           <div className="order-2 lg:order-1">
             <img
               src={heroImg}
@@ -119,28 +119,28 @@ export default function CloudInfrastructurePage() {
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {isAr ? "بنية تقنية مرنة وقابلة للتوسع" : "Flexible, scalable technology infrastructure"}
             </div>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
+            <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
               {isAr
                 ? "حلول السحابة والبنية التحتية التقنية للجهات الحكومية والمؤسسات"
                 : "Cloud and IT infrastructure solutions for government and enterprises"}
             </h1>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تساعد أربتك الجهات الحكومية والمؤسسات على بناء وتحديث بيئاتها التقنية من خلال حلول متكاملة تشمل الحوسبة السحابية، الخوادم، التخزين، مراكز البيانات، النسخ الاحتياطي، استمرارية الأعمال وتجهيز مواقع العمل."
                 : "ARABTEC helps government entities and enterprises build and modernize their technology environments through integrated solutions covering cloud computing, servers, storage, data centers, backup, business continuity and workplace setup."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نبدأ بدراسة البنية الحالية واحتياجات الأنظمة والمستخدمين، ثم نصمم بيئة تقنية قابلة للتوسع تدعم استقرار الخدمات، تحسين الأداء، إدارة الموارد وتهيئة المؤسسة للتحول الرقمي وتطبيقات الأعمال والذكاء الاصطناعي."
                 : "We start by studying the current environment and the needs of systems and users, then design a scalable technology environment that supports service stability, performance improvement, resource management and readiness for digital transformation, business applications and AI."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تشمل خدماتنا التقييم والتصميم والتوريد والتركيب والإعداد والاختبار والترحيل والتشغيل والدعم، وفق متطلبات المشروع والسياسات والبيئة التقنية المعتمدة لدى المؤسسة."
                 : "Our services cover assessment, design, supply, installation, configuration, testing, migration, operations and support — according to the organization's requirements, policies and approved technology environment."}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <CTAButton to="/contact">
                 {isAr ? "اطلب استشارة للبنية التحتية" : "Request an infrastructure consultation"}
               </CTAButton>
@@ -149,7 +149,7 @@ export default function CloudInfrastructurePage() {
               </CTAButton>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2">
               {(isAr
                 ? ["الحوسبة السحابية", "الخوادم والتخزين", "مراكز البيانات", "النسخ الاحتياطي", "استمرارية الأعمال", "التعافي من الكوارث", "التشغيل والدعم"]
                 : ["Cloud computing", "Servers & storage", "Data centers", "Backup", "Business continuity", "Disaster recovery", "Operations & support"]
@@ -169,27 +169,27 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           2. ما المقصود بالبنية التحتية التقنية؟
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "الأساس الذي تعتمد عليه الأنظمة والخدمات الرقمية"
             : "The foundation that digital systems and services rely on"}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تشمل البنية التحتية التقنية الموارد والأنظمة التي تعتمد عليها التطبيقات والبيانات والمستخدمون، مثل الخوادم، التخزين، أنظمة التشغيل، الشبكات، النسخ الاحتياطي، مراكز البيانات والبيئات السحابية."
                 : "Technology infrastructure covers the resources and systems that applications, data and users rely on — servers, storage, operating systems, networks, backup, data centers and cloud environments."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "كلما كانت البنية التقنية مصممة ومدارة بصورة صحيحة، أصبحت المؤسسة أكثر قدرة على تشغيل أنظمتها بكفاءة، إضافة خدمات جديدة، دعم المستخدمين والتوسع دون تعقيد غير ضروري."
                 : "The better the infrastructure is designed and managed, the more capable the organization is to run its systems efficiently, add new services, support users and scale without unnecessary complexity."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "مكونات البنية التحتية التقنية" : "Infrastructure components"}
             </h3>
 
@@ -198,7 +198,7 @@ export default function CloudInfrastructurePage() {
                 ? ["الخوادم", "أنظمة التخزين", "مراكز البيانات", "أنظمة التشغيل", "الحوسبة السحابية", "النسخ الاحتياطي", "التعافي من الأعطال", "المراقبة والإدارة", "أجهزة المستخدمين", "التراخيص والمنصات", "الاتصال والشبكات", "بيئات التطوير والاختبار والإنتاج"]
                 : ["Servers", "Storage systems", "Data centers", "Operating systems", "Cloud computing", "Backup", "Disaster recovery", "Monitoring & management", "End-user devices", "Licenses & platforms", "Connectivity & networks", "Dev/test/prod environments"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -207,8 +207,8 @@ export default function CloudInfrastructurePage() {
           </div>
 
           {/* مخطط طبقات */}
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="font-bold mb-4 text-sm">
+          <div className="rounded-2xl border border-border bg-card p-4 md:p-6">
+            <h3 className="font-bold mb-4 text-sm text-[#0B3D2E]">
               {isAr ? "مخطط الطبقات" : "Layered architecture"}
             </h3>
             <div className="flex flex-col items-center gap-3 text-xs">
@@ -233,14 +233,14 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           3. خدمات السحابة والبنية التحتية — 12 خدمة
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "خدمات متكاملة من التقييم إلى التشغيل"
             : "Integrated services from assessment to operations"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             {
               icon: Activity,
@@ -353,17 +353,17 @@ export default function CloudInfrastructurePage() {
           ].map((svc) => {
             const Icon = svc.icon;
             return (
-              <Card key={svc.hEn}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={svc.hEn} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{isAr ? svc.hAr : svc.hEn}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? svc.hAr : svc.hEn}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                   {isAr ? svc.descAr : svc.descEn}
                 </p>
                 <ul className="mt-3 space-y-1.5">
                   {(isAr ? svc.itemsAr : svc.itemsEn).map((x) => (
-                    <li key={x} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <li key={x} className="flex items-start gap-2 text-[14px] md:text-[15px] text-[#4B5563]">
                       <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                       <span>{x}</span>
                     </li>
@@ -378,8 +378,8 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           4. الحوسبة السحابية للمؤسسات
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <img
             src={cloudImg}
             alt={isAr
@@ -389,27 +389,27 @@ export default function CloudInfrastructurePage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "بيئات سحابية تدعم المرونة والتوسع"
                 : "Cloud environments supporting flexibility and scaling"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تساعد الحوسبة السحابية المؤسسات على تشغيل التطبيقات والموارد التقنية ضمن بيئات قابلة للتوسع والإدارة، مع إمكانية توزيع الخدمات بين السحابة والأنظمة الداخلية وفق احتياجات المشروع."
                 : "Cloud computing helps organizations run applications and technology resources in scalable, manageable environments — with the ability to distribute services between cloud and internal systems according to project needs."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يتم اختيار النموذج السحابي وفق طبيعة التطبيقات، البيانات، عدد المستخدمين، متطلبات التكامل، الأداء والسياسات الداخلية للمؤسسة."
                 : "The cloud model is chosen based on the applications, data, number of users, integration, performance and the organization's internal policies."}
             </p>
 
-            <div className="mt-6 space-y-4">
+            <div className="mt-6 space-y-3">
               {(isAr
                 ? [
                     { t: "السحابة العامة", d: "استخدام موارد سحابية مشتركة تقدمها جهة مزودة للخدمة ضمن اشتراك أو استهلاك محدد." },
@@ -427,8 +427,8 @@ export default function CloudInfrastructurePage() {
                 <div key={item.t} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold">{item.t}</h4>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.d}</p>
+                    <h4 className="font-bold text-base text-[#0B3D2E]">{item.t}</h4>
+                    <p className="mt-1 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{item.d}</p>
                   </div>
                 </div>
               ))}
@@ -440,34 +440,34 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           5. حلول السحابة للجهات الحكومية
           ============================================================ */}
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="!py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-deep)]/10 px-3 py-1 text-xs font-semibold text-[color:var(--brand-deep)] mb-3">
               <Landmark className="h-3.5 w-3.5" />
               {isAr ? "للجهات الحكومية" : "For government entities"}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "بنية سحابية تدعم الخدمات الحكومية الرقمية"
                 : "Cloud infrastructure supporting digital government services"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن للجهات الحكومية الاستفادة من البيئات السحابية لتشغيل التطبيقات، تطوير الخدمات، إدارة الموارد التقنية ودعم التوسع، وفق السياسات والمتطلبات التنظيمية المعتمدة."
                 : "Government entities can benefit from cloud environments to run applications, develop services, manage technology resources and support expansion — per approved policies and regulatory requirements."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يتم تصميم الحل بعد دراسة نوع البيانات، مكان استضافة الأنظمة، احتياجات التكامل، مستوى التوفر وأولويات استمرارية الخدمة."
                 : "The solution is designed after studying data type, system hosting location, integration needs, availability level and service continuity priorities."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "حالات الاستخدام" : "Use cases"}
             </h3>
 
-            <div className="mt-4 space-y-4">
+            <div className="mt-4 space-y-3">
               {(isAr
                 ? [
                     { t: "استضافة البوابات والخدمات الرقمية", d: "تشغيل بوابات الخدمات وتطبيقات الموظفين والمتعاملين ضمن بيئة قابلة للتوسع." },
@@ -489,8 +489,8 @@ export default function CloudInfrastructurePage() {
                 <div key={item.t} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold">{item.t}</h4>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.d}</p>
+                    <h4 className="font-bold text-base text-[#0B3D2E]">{item.t}</h4>
+                    <p className="mt-1 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{item.d}</p>
                   </div>
                 </div>
               ))}
@@ -506,7 +506,7 @@ export default function CloudInfrastructurePage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover"
+            className="rounded-lg shadow-lg w-full h-auto object-cover mt-6 lg:mt-0"
           />
         </div>
       </Section>
@@ -514,8 +514,8 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           6. الخوادم والتخزين
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <img
             src={serversImg}
             alt={isAr
@@ -525,30 +525,30 @@ export default function CloudInfrastructurePage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "موارد تقنية تدعم أداء الأنظمة واستقرارها"
                 : "Technology resources supporting system performance and stability"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تعتمد التطبيقات وقواعد البيانات والخدمات المؤسسية على خوادم وأنظمة تخزين مصممة وفق الأحمال الحالية وخطط النمو المستقبلية."
                 : "Enterprise applications, databases and services rely on servers and storage designed for current workloads and future growth plans."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نساعد المؤسسة على تحديد السعة والموارد المناسبة، وإعداد البيئات ومراقبة الأداء وتنظيم الاستفادة من الخوادم والتخزين."
                 : "We help the organization determine the right capacity and resources, set up environments, monitor performance and organize server and storage utilization."}
             </p>
 
-            <div className="grid gap-6 md:grid-cols-2 mt-6">
+            <div className="grid gap-4 md:gap-6 md:grid-cols-2 mt-6">
               <div>
-                <h3 className="font-bold mb-3">{isAr ? "الخوادم" : "Servers"}</h3>
-                <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <h3 className="font-bold mb-3 text-[#0B3D2E]">{isAr ? "الخوادم" : "Servers"}</h3>
+                <ul className="space-y-1.5 text-[15px] md:text-base text-[#4B5563]">
                   {(isAr
                     ? ["خوادم التطبيقات", "خوادم قواعد البيانات", "خوادم الملفات", "خوادم الويب", "خوادم الهوية", "خوادم البريد والخدمات", "خوادم الاختبار", "خوادم النسخ الاحتياطي"]
                     : ["Application servers", "Database servers", "File servers", "Web servers", "Identity servers", "Mail & service servers", "Test servers", "Backup servers"]
@@ -562,8 +562,8 @@ export default function CloudInfrastructurePage() {
               </div>
 
               <div>
-                <h3 className="font-bold mb-3">{isAr ? "التخزين" : "Storage"}</h3>
-                <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <h3 className="font-bold mb-3 text-[#0B3D2E]">{isAr ? "التخزين" : "Storage"}</h3>
+                <ul className="space-y-1.5 text-[15px] md:text-base text-[#4B5563]">
                   {(isAr
                     ? ["تخزين الملفات", "تخزين قواعد البيانات", "التخزين المركزي", "التخزين الشبكي", "تخزين النسخ الاحتياطية", "أرشفة البيانات", "توسعة السعة", "إدارة الأداء"]
                     : ["File storage", "Database storage", "Central storage", "Network storage", "Backup storage", "Data archiving", "Capacity expansion", "Performance management"]
@@ -583,7 +583,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           7. النسخ الاحتياطي واستعادة البيانات
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "خطط واضحة لحماية استمرارية البيانات"
@@ -599,17 +599,17 @@ export default function CloudInfrastructurePage() {
             ? ["تحديد البيانات الحرجة", "تحديد عدد مرات النسخ", "تحديد مكان حفظ النسخ", "تحديد فترة الاحتفاظ", "تشفير النسخ عند الحاجة", "مراقبة نجاح النسخ", "اختبار الاستعادة", "توثيق إجراءات الاسترجاع", "تحديد المسؤوليات", "إعداد تقارير دورية"]
             : ["Identifying critical data", "Defining backup frequency", "Defining backup location", "Defining retention period", "Encrypting backups when needed", "Monitoring backup success", "Restore testing", "Documenting restore procedures", "Defining responsibilities", "Periodic reporting"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-6 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
+        <div className="mt-6 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
           <div className="flex items-start gap-3">
             <AlertCircle className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-[15px] md:text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يجب اختبار استعادة البيانات بصورة دورية؛ لأن نجاح عملية النسخ وحده لا يضمن إمكانية الاسترجاع الكامل."
                 : "Data restore must be tested regularly — because backup success alone doesn't guarantee full recoverability."}
@@ -621,7 +621,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           8. استمرارية الأعمال والتعافي من الكوارث
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "جاهزية تقنية للتعامل مع الأعطال والتوقفات"
@@ -632,10 +632,10 @@ export default function CloudInfrastructurePage() {
               : "Business continuity and disaster recovery plans help the organization define how to restore systems and services after major failures or loss of the primary site. The plan depends on each system's priority, service dependencies, data volume and operational requirements."}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 mt-6">
           <div>
-            <h3 className="font-bold mb-3">{isAr ? "أهداف الاستعادة" : "Recovery objectives"}</h3>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
+            <h3 className="font-bold mb-3 text-[#0B3D2E]">{isAr ? "أهداف الاستعادة" : "Recovery objectives"}</h3>
+            <ul className="space-y-1.5 text-[15px] md:text-base text-[#4B5563]">
               {(isAr
                 ? ["الوقت المستهدف لاستعادة الخدمة", "مقدار البيانات المقبول فقدانها", "ترتيب الأنظمة حسب الأولوية", "الموقع أو البيئة البديلة", "آلية التحويل والاسترجاع", "الفرق والمسؤوليات"]
                 : ["Target service recovery time", "Acceptable data loss", "System priority ordering", "Alternate site or environment", "Failover & recovery mechanism", "Teams & responsibilities"]
@@ -649,8 +649,8 @@ export default function CloudInfrastructurePage() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-3">{isAr ? "اختبارات الاستمرارية" : "Continuity tests"}</h3>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
+            <h3 className="font-bold mb-3 text-[#0B3D2E]">{isAr ? "اختبارات الاستمرارية" : "Continuity tests"}</h3>
+            <ul className="space-y-1.5 text-[15px] md:text-base text-[#4B5563]">
               {(isAr
                 ? ["اختبار استعادة البيانات", "اختبار تشغيل الأنظمة البديلة", "اختبار التحويل بين البيئات", "اختبار خطط التواصل", "مراجعة زمن الاستعادة", "توثيق الملاحظات", "تحديث الخطة"]
                 : ["Data restore testing", "Alternate system operation testing", "Environment failover testing", "Communication plan testing", "Recovery time review", "Notes documentation", "Plan updates"]
@@ -665,8 +665,8 @@ export default function CloudInfrastructurePage() {
         </div>
 
         {/* مخطط الاستعادة */}
-        <div className="mt-10 rounded-2xl border border-border bg-card p-6 overflow-x-auto">
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-medium min-w-max">
+        <div className="mt-6 rounded-2xl border border-border bg-card p-4 md:p-6 overflow-x-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm font-medium min-w-max">
             {(isAr
               ? ["الموقع الرئيسي", "عطل", "النسخ والبيئة البديلة", "استعادة", "عودة الخدمات الأساسية"]
               : ["Primary site", "Failure", "Backup & alternate environment", "Recovery", "Core services restored"]
@@ -687,15 +687,15 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           9. مراكز البيانات وغرف الخوادم
           ============================================================ */}
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="!py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "تجهيز بيئات تشغيل منظمة وقابلة للإدارة"
                 : "Preparing organized, manageable operating environments"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تحتاج غرف الخوادم ومراكز البيانات إلى تخطيط واضح للمعدات والطاقة والتبريد والكابلات والمراقبة، بما يسهل التشغيل والصيانة ويقلل الأعطال الناتجة عن البيئة غير المنظمة."
                 : "Server rooms and data centers need clear planning for equipment, power, cooling, cabling and monitoring — making operations and maintenance easier and reducing failures from unorganized environments."}
@@ -706,7 +706,7 @@ export default function CloudInfrastructurePage() {
                 ? ["تقييم الموقع", "تصميم توزيع المعدات", "تركيب الخزائن", "تنظيم الكابلات", "أنظمة الطاقة الاحتياطية", "التبريد", "ترقيم المعدات", "المراقبة البيئية", "تجهيز الخوادم والتخزين", "اختبار التشغيل", "التوثيق", "خطة الصيانة"]
                 : ["Site assessment", "Equipment layout design", "Rack installation", "Cable organization", "Backup power systems", "Cooling", "Equipment labeling", "Environmental monitoring", "Servers & storage setup", "Operation testing", "Documentation", "Maintenance plan"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -723,7 +723,7 @@ export default function CloudInfrastructurePage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover"
+            className="rounded-lg shadow-lg w-full h-auto object-cover mt-6 lg:mt-0"
           />
         </div>
       </Section>
@@ -731,7 +731,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           10. تحديث البنية التحتية القديمة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "تحديث البيئة التقنية لدعم الأنظمة الحديثة"
@@ -742,9 +742,9 @@ export default function CloudInfrastructurePage() {
               : "Organizations may face old servers, limited storage capacity, scaling difficulties or inconsistent operating environments. ARABTEC helps assess the current infrastructure and define a phased modernization plan that reduces the impact of change on existing services."}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <h3 className="font-bold mb-3">
+            <h3 className="font-bold mb-3 text-[#0B3D2E]">
               {isAr ? "مجالات التحديث" : "Modernization areas"}
             </h3>
             <ul className="grid gap-2 md:grid-cols-2">
@@ -752,7 +752,7 @@ export default function CloudInfrastructurePage() {
                 ? ["تحديث الخوادم", "توسعة التخزين", "توحيد أنظمة التشغيل", "تطبيق الافتراضية", "الانتقال إلى السحابة", "تحديث النسخ الاحتياطي", "تجهيز بيئة تعافي", "إعادة تنظيم مركز البيانات", "تحديث أجهزة المستخدمين", "تحسين المراقبة والإدارة"]
                 : ["Server upgrades", "Storage expansion", "OS standardization", "Virtualization adoption", "Cloud migration", "Backup modernization", "Recovery environment setup", "Data center reorganization", "End-user device refresh", "Monitoring & management improvement"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -761,7 +761,7 @@ export default function CloudInfrastructurePage() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-3">
+            <h3 className="font-bold mb-3 text-[#0B3D2E]">
               {isAr ? "مسارات التحديث" : "Modernization paths"}
             </h3>
             <ul className="grid gap-2 md:grid-cols-2">
@@ -769,7 +769,7 @@ export default function CloudInfrastructurePage() {
                 ? ["تحسين البنية الحالية", "استبدال المعدات القديمة", "دمج الخوادم", "الانتقال إلى الافتراضية", "الانتقال إلى بيئة هجينة", "ترحيل تطبيقات محددة إلى السحابة"]
                 : ["Improving current infrastructure", "Replacing old equipment", "Server consolidation", "Migrating to virtualization", "Migrating to hybrid environment", "Migrating specific applications to cloud"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                   <span>{x}</span>
                 </li>
@@ -782,7 +782,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           11. تجهيز مواقع العمل والفروع
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "بيئة تقنية جاهزة لتشغيل المستخدمين والخدمات"
@@ -798,14 +798,14 @@ export default function CloudInfrastructurePage() {
             ? ["حصر المستخدمين والاحتياجات", "أجهزة الحاسب والعمل", "الخوادم المحلية عند الحاجة", "الشبكات والاتصال", "الطابعات والأجهزة الطرفية", "التراخيص", "البريد والخدمات المكتبية", "أنظمة الحضور", "التحكم بالدخول", "كاميرات المراقبة", "التثبيت والإعداد", "التسليم والدعم"]
             : ["User & needs inventory", "Computers & work devices", "Local servers if needed", "Networks & connectivity", "Printers & peripherals", "Licensing", "Email & office services", "Attendance systems", "Access control", "Surveillance cameras", "Installation & configuration", "Handover & support"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services/network-connectivity" variant="outline">
             {isAr ? "استكشف حلول الشبكات والاتصال" : "Explore networks & connectivity"}
           </CTAButton>
@@ -815,7 +815,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           12. البنية التحتية لأنظمة ERP
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "بيئة تشغيل تدعم أداء نظام ERP"
@@ -831,14 +831,14 @@ export default function CloudInfrastructurePage() {
             ? ["خوادم التطبيقات", "خوادم قواعد البيانات", "التخزين", "النسخ الاحتياطي", "بيئة الاختبار", "بيئة الإنتاج", "ربط الفروع", "المراقبة", "خطط التوسع", "استمرارية الخدمة"]
             : ["Application servers", "Database servers", "Storage", "Backup", "Test environment", "Production environment", "Branch connectivity", "Monitoring", "Expansion plans", "Service continuity"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services/erp-business-applications" variant="outline">
             {isAr ? "استكشف أنظمة ERP وتطبيقات الأعمال" : "Explore ERP & business applications"}
           </CTAButton>
@@ -848,7 +848,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           13. البنية التحتية لحلول الذكاء الاصطناعي
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "موارد تقنية تدعم تشغيل AI Agents والمنصات الذكية"
@@ -864,14 +864,14 @@ export default function CloudInfrastructurePage() {
             ? ["خوادم التطبيقات", "تخزين الوثائق", "قواعد البيانات", "بيئة التكامل", "المراقبة", "إدارة الهوية والصلاحيات", "موارد المعالجة", "النسخ الاحتياطي", "بيئات الاختبار والإنتاج", "التكامل مع السحابة أو الأنظمة الداخلية"]
             : ["Application servers", "Document storage", "Databases", "Integration environment", "Monitoring", "Identity & permission management", "Compute resources", "Backup", "Test & production environments", "Cloud or internal system integration"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <Sparkles className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services/ai-agents" variant="outline">
             {isAr ? "استكشف حلول الذكاء الاصطناعي و AI Agents" : "Explore AI & AI Agents"}
           </CTAButton>
@@ -881,7 +881,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           14. إدارة ومراقبة البنية التحتية
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "متابعة مستمرة للأداء والموارد"
@@ -892,10 +892,10 @@ export default function CloudInfrastructurePage() {
               : "Centralized monitoring helps the organization detect issues, track resource usage and analyze performance before failures affect users and services."}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 mt-6">
           <div>
-            <h3 className="font-bold mb-3">{isAr ? "عناصر المراقبة" : "Monitoring elements"}</h3>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
+            <h3 className="font-bold mb-3 text-[#0B3D2E]">{isAr ? "عناصر المراقبة" : "Monitoring elements"}</h3>
+            <ul className="space-y-1.5 text-[15px] md:text-base text-[#4B5563]">
               {(isAr
                 ? ["حالة الخوادم", "استخدام المعالج والذاكرة", "استخدام التخزين", "أداء التطبيقات", "حالة النسخ الاحتياطي", "التنبيهات", "سجلات الأعطال", "توفر الخدمات", "استهلاك الموارد السحابية", "تقارير الأداء"]
                 : ["Server status", "CPU & memory usage", "Storage usage", "Application performance", "Backup status", "Alerts", "Failure logs", "Service availability", "Cloud resource consumption", "Performance reports"]
@@ -909,8 +909,8 @@ export default function CloudInfrastructurePage() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-3">{isAr ? "الدعم التشغيلي" : "Operational support"}</h3>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
+            <h3 className="font-bold mb-3 text-[#0B3D2E]">{isAr ? "الدعم التشغيلي" : "Operational support"}</h3>
+            <ul className="space-y-1.5 text-[15px] md:text-base text-[#4B5563]">
               {(isAr
                 ? ["استقبال البلاغات", "تصنيف الأعطال", "معالجة المشكلات", "التصعيد", "تنفيذ التحديثات", "التوثيق", "إعداد التقارير", "متابعة مؤشرات الخدمة"]
                 : ["Receiving reports", "Fault classification", "Issue handling", "Escalation", "Applying updates", "Documentation", "Reporting", "Service indicator tracking"]
@@ -928,14 +928,14 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           15. القطاعات المستفيدة
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "بنية تقنية تناسب متطلبات القطاعات الحيوية"
             : "Technology infrastructure fitting vital sector requirements"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             { key: "government", ar: "الجهات الحكومية", en: "Government entities", itemsAr: ["استضافة الخدمات الرقمية", "تشغيل الأنظمة الحكومية", "بيئات سحابية وهجينة", "النسخ الاحتياطي", "استمرارية الأعمال", "مراكز البيانات"], itemsEn: ["Hosting digital services", "Running government systems", "Cloud & hybrid environments", "Backup", "Business continuity", "Data centers"] },
             { key: "oil-gas", ar: "النفط والغاز", en: "Oil & gas", itemsAr: ["ربط المواقع", "الخوادم والتخزين", "البيئات التشغيلية", "النسخ الاحتياطي", "التعافي من الكوارث", "تجهيز المواقع"], itemsEn: ["Site connectivity", "Servers & storage", "Operational environments", "Backup", "Disaster recovery", "Site setup"] },
@@ -944,11 +944,11 @@ export default function CloudInfrastructurePage() {
             { key: "banking", ar: "البنوك والخدمات المالية", en: "Banking & finance", itemsAr: ["البيئات المؤسسية", "النسخ الاحتياطي", "استمرارية الأعمال", "مراكز البيانات", "البيئات الهجينة", "إدارة الموارد"], itemsEn: ["Enterprise environments", "Backup", "Business continuity", "Data centers", "Hybrid environments", "Resource management"] },
             { key: "enterprise", ar: "الشركات والمؤسسات", en: "Enterprises", itemsAr: ["تحديث الخوادم", "الحوسبة السحابية", "تجهيز الفروع", "النسخ الاحتياطي", "تشغيل الأنظمة", "الدعم الفني"], itemsEn: ["Server modernization", "Cloud computing", "Branch setup", "Backup", "Running systems", "Technical support"] },
           ].map((sec) => (
-            <Card key={sec.key}>
-              <h3 className="font-bold text-base mb-3">{isAr ? sec.ar : sec.en}</h3>
+            <Card key={sec.key} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base mb-3 text-[#0B3D2E]">{isAr ? sec.ar : sec.en}</h3>
               <ul className="space-y-1.5">
                 {(isAr ? sec.itemsAr : sec.itemsEn).map((x) => (
-                  <li key={x} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                     <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                     <span>{x}</span>
                   </li>
@@ -958,7 +958,7 @@ export default function CloudInfrastructurePage() {
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/industries" variant="outline">
             {isAr ? "استكشف القطاعات التي نخدمها" : "Explore the sectors we serve"}
           </CTAButton>
@@ -968,7 +968,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           16. منهجية التنفيذ — 10 مراحل
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "منهجية واضحة من التقييم إلى التشغيل"
@@ -1002,12 +1002,12 @@ export default function CloudInfrastructurePage() {
                 { t: "Operations & support", d: "Monitoring performance, handling faults and improving per agreement scope." },
               ]
           ).map((step, i) => (
-            <li key={i} className="relative rounded-xl border border-border bg-card p-5">
-              <div className="text-3xl font-extrabold text-[color:var(--gold)]">
+            <li key={i} className="relative rounded-xl border border-border bg-card p-4 md:p-5 shadow-sm">
+              <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--gold)]">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="mt-1 font-semibold text-sm">{step.t}</div>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{step.d}</p>
+              <div className="mt-1 font-bold text-[#0B3D2E]">{step.t}</div>
+              <p className="mt-1 text-[14px] md:text-[15px] text-[#4B5563] leading-relaxed">{step.d}</p>
             </li>
           ))}
         </ol>
@@ -1016,14 +1016,14 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           17. فوائد تحديث البنية التحتية
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "كيف تدعم البنية التقنية أهداف المؤسسة؟"
             : "How does IT infrastructure support the organization's goals?"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { t: "تحسين الاستقرار", d: "بيئة أكثر قدرة على تشغيل الأنظمة والخدمات باستمرارية." },
@@ -1046,10 +1046,10 @@ export default function CloudInfrastructurePage() {
                 { t: "Better management", d: "Tracking resources and performance with central tools and reports." },
               ]
           ).map((c) => (
-            <Card key={c.t}>
+            <Card key={c.t} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
               <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mb-3" />
-              <h3 className="font-bold text-base">{c.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+              <h3 className="font-bold text-base text-[#0B3D2E]">{c.t}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{c.d}</p>
             </Card>
           ))}
         </div>
@@ -1058,14 +1058,14 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           18. لماذا أربتك؟
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "لماذا تختار المؤسسات أربتك للبنية التحتية التقنية؟"
             : "Why organizations choose ARABTEC for IT infrastructure"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { t: "خبرة تقنية ممتدة", d: "خبرة في البنية التحتية، الأنظمة، الشبكات والاتصال منذ سنوات طويلة." },
@@ -1086,10 +1086,10 @@ export default function CloudInfrastructurePage() {
                 { t: "Single point of accountability", d: "Managing assessment, design, supply, delivery, handover and support within an organized project." },
               ]
           ).map((c) => (
-            <Card key={c.t}>
+            <Card key={c.t} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
               <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mb-3" />
-              <h3 className="font-bold text-sm">{c.t}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{c.d}</p>
+              <h3 className="font-bold text-base text-[#0B3D2E]">{c.t}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{c.d}</p>
             </Card>
           ))}
         </div>
@@ -1098,14 +1098,14 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           19. خدمات مرتبطة
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "خدمات تكمل البنية التقنية للمؤسسة"
             : "Services complementing the organization's IT infrastructure"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-5 mt-6">
           {[
             { ar: "الشبكات والاتصال", en: "Networks & connectivity", descAr: "ربط الخوادم والمستخدمين والمواقع والبيئات السحابية.", descEn: "Connecting servers, users, sites and cloud environments.", link: "network-connectivity" },
             { ar: "أنظمة ERP وتطبيقات الأعمال", en: "ERP & business applications", descAr: "تشغيل الأنظمة المالية والإدارية والتشغيلية على بنية مناسبة.", descEn: "Running financial, administrative and operational systems on suitable infrastructure.", link: "erp-business-applications" },
@@ -1113,15 +1113,15 @@ export default function CloudInfrastructurePage() {
             { ar: "حلول الذكاء الاصطناعي و AI Agents", en: "AI & AI Agents solutions", descAr: "تجهيز بيئة تشغيل للمنصات الذكية والوثائق والتكاملات.", descEn: "Preparing the environment for intelligent platforms, documents and integrations.", link: "ai-agents" },
             { ar: "أنظمة المراقبة والحضور والتحكم بالدخول", en: "Surveillance, attendance & access control", descAr: "تجهيز الأنظمة والأجهزة وربطها بالبنية التقنية للمؤسسة.", descEn: "Preparing systems and devices and connecting them to the enterprise infrastructure.", link: "surveillance-access-control" },
           ].map((c) => (
-            <Card key={c.link}>
-              <h3 className="font-bold text-sm">{isAr ? c.ar : c.en}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+            <Card key={c.link} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? c.ar : c.en}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                 {isAr ? c.descAr : c.descEn}
               </p>
               <Link
                 to="/services/$slug"
                 params={{ slug: c.link }}
-                className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-deep hover:text-gold"
+                className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#0B3D2E] hover:text-[color:var(--gold)]"
               >
                 {isAr ? "استكشف الخدمة" : "Explore service"}
                 <ArrowLeft className="h-3.5 w-3.5 rtl:rotate-180" />
@@ -1143,33 +1143,33 @@ export default function CloudInfrastructurePage() {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         /> */}
-        <div className="relative container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
+        <div className="relative container-page py-10 md:py-14 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground/90">
             {isAr
               ? "هل تحتاج مؤسستكم إلى تحديث أو توسيع البنية التقنية؟"
               : "Does your organization need to modernize or expand its IT infrastructure?"}
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/85">
+          <p className="mt-3 max-w-3xl mx-auto text-[16px] md:text-lg text-primary-foreground/90 leading-relaxed">
             {isAr
               ? "شاركوا فريق أربتك بالبيئة الحالية والتحديات والأنظمة المطلوب تشغيلها، وسنعمل معكم على تقييم الاحتياج وتصميم بنية تقنية تناسب أهداف المؤسسة ومتطلبات الأداء والتوسع والاستمرارية."
               : "Share your current environment, challenges and systems with the ARABTEC team — we'll work with you to assess the need and design an infrastructure that fits your goals, performance, scaling and continuity requirements."}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/contact"
-              className="rounded-md bg-background px-6 py-3 text-sm font-semibold text-primary hover:bg-secondary"
+              className="rounded-md bg-background px-6 py-3 text-sm font-bold text-primary hover:bg-secondary transition"
             >
               {isAr ? "اطلب استشارة للبنية التحتية" : "Request an infrastructure consultation"}
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
+              className="rounded-md border border-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-gold transition"
             >
               {isAr ? "اطلب تقييمًا للبيئة التقنية" : "Request a technology assessment"}
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
+              className="rounded-md border border-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-gold transition"
             >
               {isAr ? "اطلب عرضًا فنيًا" : "Request a technical proposal"}
             </Link>
@@ -1180,115 +1180,117 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           21. FAQ
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "أسئلة شائعة عن السحابة والبنية التحتية التقنية"
             : "Frequently asked questions about cloud & IT infrastructure"}
         />
 
-        <FAQ
-          items={[
-            {
-              q: { ar: "ما المقصود بالبنية التحتية التقنية؟", en: "What is IT infrastructure?" },
-              a: {
-                ar: "تشمل البنية التحتية التقنية الخوادم والتخزين ومراكز البيانات وأنظمة التشغيل والسحابة والنسخ الاحتياطي والموارد التي تعتمد عليها التطبيقات والبيانات والمستخدمون.",
-                en: "IT infrastructure includes servers, storage, data centers, operating systems, cloud, backup and the resources that applications, data and users rely on.",
+        <div className="mt-6">
+          <FAQ
+            items={[
+              {
+                q: { ar: "ما المقصود بالبنية التحتية التقنية؟", en: "What is IT infrastructure?" },
+                a: {
+                  ar: "تشمل البنية التحتية التقنية الخوادم والتخزين ومراكز البيانات وأنظمة التشغيل والسحابة والنسخ الاحتياطي والموارد التي تعتمد عليها التطبيقات والبيانات والمستخدمون.",
+                  en: "IT infrastructure includes servers, storage, data centers, operating systems, cloud, backup and the resources that applications, data and users rely on.",
+                },
               },
-            },
-            {
-              q: { ar: "ما الفرق بين السحابة العامة والخاصة والهجينة؟", en: "What's the difference between public, private and hybrid cloud?" },
-              a: {
-                ar: "السحابة العامة تعتمد على موارد يقدمها مزود خارجي، والسحابة الخاصة تكون مخصصة لمؤسسة واحدة، بينما تجمع السحابة الهجينة بين الأنظمة الداخلية والخدمات السحابية.",
-                en: "Public cloud uses resources provided by an external provider, private cloud is dedicated to one organization, and hybrid cloud combines on-premise systems with cloud services.",
+              {
+                q: { ar: "ما الفرق بين السحابة العامة والخاصة والهجينة؟", en: "What's the difference between public, private and hybrid cloud?" },
+                a: {
+                  ar: "السحابة العامة تعتمد على موارد يقدمها مزود خارجي، والسحابة الخاصة تكون مخصصة لمؤسسة واحدة، بينما تجمع السحابة الهجينة بين الأنظمة الداخلية والخدمات السحابية.",
+                  en: "Public cloud uses resources provided by an external provider, private cloud is dedicated to one organization, and hybrid cloud combines on-premise systems with cloud services.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك خدمات ترحيل الأنظمة إلى السحابة؟", en: "Does ARABTEC provide cloud migration services?" },
-              a: {
-                ar: "نعم، يمكن أن تشمل الخدمة تقييم جاهزية الأنظمة وتصميم البيئة المستهدفة وترحيل التطبيقات والبيانات والاختبار والدعم.",
-                en: "Yes — the service can include system readiness assessment, target environment design, application and data migration, testing and support.",
+              {
+                q: { ar: "هل تقدم أربتك خدمات ترحيل الأنظمة إلى السحابة؟", en: "Does ARABTEC provide cloud migration services?" },
+                a: {
+                  ar: "نعم، يمكن أن تشمل الخدمة تقييم جاهزية الأنظمة وتصميم البيئة المستهدفة وترحيل التطبيقات والبيانات والاختبار والدعم.",
+                  en: "Yes — the service can include system readiness assessment, target environment design, application and data migration, testing and support.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تشغيل الأنظمة داخل المؤسسة؟", en: "Can systems run on-premise?" },
-              a: {
-                ar: "نعم، يمكن تصميم بيئة داخلية أو سحابية أو هجينة وفق متطلبات المؤسسة وطبيعة الأنظمة والسياسات المعتمدة.",
-                en: "Yes — an on-premise, cloud or hybrid environment can be designed per the organization's needs, system nature and approved policies.",
+              {
+                q: { ar: "هل يمكن تشغيل الأنظمة داخل المؤسسة؟", en: "Can systems run on-premise?" },
+                a: {
+                  ar: "نعم، يمكن تصميم بيئة داخلية أو سحابية أو هجينة وفق متطلبات المؤسسة وطبيعة الأنظمة والسياسات المعتمدة.",
+                  en: "Yes — an on-premise, cloud or hybrid environment can be designed per the organization's needs, system nature and approved policies.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك حلول الخوادم والتخزين؟", en: "Does ARABTEC provide server and storage solutions?" },
-              a: {
-                ar: "نعم، تشمل الخدمات تصميم وتوريد وتركيب وإعداد الخوادم وأنظمة التخزين وفق احتياجات التطبيقات والبيانات.",
-                en: "Yes — services include designing, supplying, installing and configuring servers and storage systems per application and data needs.",
+              {
+                q: { ar: "هل تقدم أربتك حلول الخوادم والتخزين؟", en: "Does ARABTEC provide server and storage solutions?" },
+                a: {
+                  ar: "نعم، تشمل الخدمات تصميم وتوريد وتركيب وإعداد الخوادم وأنظمة التخزين وفق احتياجات التطبيقات والبيانات.",
+                  en: "Yes — services include designing, supplying, installing and configuring servers and storage systems per application and data needs.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تشمل الخدمة النسخ الاحتياطي؟", en: "Does the service include backup?" },
-              a: {
-                ar: "نعم، يمكن تصميم وتنفيذ سياسات النسخ الاحتياطي ومراقبة نجاحها واختبار استعادة البيانات.",
-                en: "Yes — backup policies can be designed and implemented, with success monitoring and data restore testing.",
+              {
+                q: { ar: "هل تشمل الخدمة النسخ الاحتياطي؟", en: "Does the service include backup?" },
+                a: {
+                  ar: "نعم، يمكن تصميم وتنفيذ سياسات النسخ الاحتياطي ومراقبة نجاحها واختبار استعادة البيانات.",
+                  en: "Yes — backup policies can be designed and implemented, with success monitoring and data restore testing.",
+                },
               },
-            },
-            {
-              q: { ar: "ما المقصود بالتعافي من الكوارث؟", en: "What is disaster recovery?" },
-              a: {
-                ar: "هو إعداد خطة وبيئة بديلة تساعد المؤسسة على استعادة الأنظمة والخدمات بعد حدوث عطل كبير أو توقف في الموقع الرئيسي.",
-                en: "It's preparing a plan and alternate environment that help the organization recover systems and services after a major failure or loss of the primary site.",
+              {
+                q: { ar: "ما المقصود بالتعافي من الكوارث؟", en: "What is disaster recovery?" },
+                a: {
+                  ar: "هو إعداد خطة وبيئة بديلة تساعد المؤسسة على استعادة الأنظمة والخدمات بعد حدوث عطل كبير أو توقف في الموقع الرئيسي.",
+                  en: "It's preparing a plan and alternate environment that help the organization recover systems and services after a major failure or loss of the primary site.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك خدمات استمرارية الأعمال؟", en: "Does ARABTEC provide business continuity services?" },
-              a: {
-                ar: "يمكن أن يشمل نطاق المشروع تحليل الأنظمة الحرجة وتحديد أولويات الاستعادة وإعداد خطط التحويل والاسترجاع والاختبار.",
-                en: "Project scope can include critical system analysis, recovery priority setting, failover and restore plans, and testing.",
+              {
+                q: { ar: "هل تقدم أربتك خدمات استمرارية الأعمال؟", en: "Does ARABTEC provide business continuity services?" },
+                a: {
+                  ar: "يمكن أن يشمل نطاق المشروع تحليل الأنظمة الحرجة وتحديد أولويات الاستعادة وإعداد خطط التحويل والاسترجاع والاختبار.",
+                  en: "Project scope can include critical system analysis, recovery priority setting, failover and restore plans, and testing.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تجهيز مركز بيانات أو غرفة خوادم؟", en: "Can a data center or server room be set up?" },
-              a: {
-                ar: "نعم، تشمل الخدمات التخطيط والخزائن والطاقة والتبريد والكابلات وتركيب المعدات والتوثيق.",
-                en: "Yes — services include planning, cabinets, power, cooling, cabling, equipment installation and documentation.",
+              {
+                q: { ar: "هل يمكن تجهيز مركز بيانات أو غرفة خوادم؟", en: "Can a data center or server room be set up?" },
+                a: {
+                  ar: "نعم، تشمل الخدمات التخطيط والخزائن والطاقة والتبريد والكابلات وتركيب المعدات والتوثيق.",
+                  en: "Yes — services include planning, cabinets, power, cooling, cabling, equipment installation and documentation.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك خدمات تشغيل وصيانة؟", en: "Does ARABTEC provide operations & maintenance?" },
-              a: {
-                ar: "نعم، يمكن تقديم المراقبة والتحديثات ومعالجة الأعطال وإدارة النسخ الاحتياطي والدعم وفق اتفاقية الخدمة.",
-                en: "Yes — monitoring, updates, fault handling, backup management and support can be provided per the service agreement.",
+              {
+                q: { ar: "هل تقدم أربتك خدمات تشغيل وصيانة؟", en: "Does ARABTEC provide operations & maintenance?" },
+                a: {
+                  ar: "نعم، يمكن تقديم المراقبة والتحديثات ومعالجة الأعطال وإدارة النسخ الاحتياطي والدعم وفق اتفاقية الخدمة.",
+                  en: "Yes — monitoring, updates, fault handling, backup management and support can be provided per the service agreement.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تجهيز فرع جديد بالكامل؟", en: "Can a new branch be fully set up?" },
-              a: {
-                ar: "نعم، يمكن تجهيز الموقع بالأجهزة والخوادم والشبكات والتراخيص وأنظمة الحضور والمراقبة والخدمات التقنية المطلوبة.",
-                en: "Yes — the site can be set up with devices, servers, networks, licenses, attendance systems, surveillance and required technology services.",
+              {
+                q: { ar: "هل يمكن تجهيز فرع جديد بالكامل؟", en: "Can a new branch be fully set up?" },
+                a: {
+                  ar: "نعم، يمكن تجهيز الموقع بالأجهزة والخوادم والشبكات والتراخيص وأنظمة الحضور والمراقبة والخدمات التقنية المطلوبة.",
+                  en: "Yes — the site can be set up with devices, servers, networks, licenses, attendance systems, surveillance and required technology services.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تدعم البنية التحتية أنظمة ERP؟", en: "Does the infrastructure support ERP systems?" },
-              a: {
-                ar: "نعم، يمكن تصميم بيئة مناسبة لتشغيل أنظمة ERP وقواعد البيانات والنسخ الاحتياطي وربط الفروع.",
-                en: "Yes — a suitable environment can be designed to run ERP systems, databases, backup and branch connectivity.",
+              {
+                q: { ar: "هل تدعم البنية التحتية أنظمة ERP؟", en: "Does the infrastructure support ERP systems?" },
+                a: {
+                  ar: "نعم، يمكن تصميم بيئة مناسبة لتشغيل أنظمة ERP وقواعد البيانات والنسخ الاحتياطي وربط الفروع.",
+                  en: "Yes — a suitable environment can be designed to run ERP systems, databases, backup and branch connectivity.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تجهيز بيئة لحلول الذكاء الاصطناعي؟", en: "Can an environment be set up for AI solutions?" },
-              a: {
-                ar: "نعم، تحدد الموارد المطلوبة وفق حجم البيانات والتطبيقات والتكاملات ونموذج التشغيل.",
-                en: "Yes — required resources are defined based on data volume, applications, integrations and operating model.",
+              {
+                q: { ar: "هل يمكن تجهيز بيئة لحلول الذكاء الاصطناعي؟", en: "Can an environment be set up for AI solutions?" },
+                a: {
+                  ar: "نعم، تحدد الموارد المطلوبة وفق حجم البيانات والتطبيقات والتكاملات ونموذج التشغيل.",
+                  en: "Yes — required resources are defined based on data volume, applications, integrations and operating model.",
+                },
               },
-            },
-            {
-              q: { ar: "كم يستغرق تنفيذ مشروع البنية التحتية؟", en: "How long does an infrastructure project take?" },
-              a: {
-                ar: "تعتمد المدة على حجم المشروع وعدد المواقع والمعدات والترحيل والتكامل والاختبارات المطلوبة.",
-                en: "Duration depends on project size, number of sites and equipment, migration, integration and required testing.",
+              {
+                q: { ar: "كم يستغرق تنفيذ مشروع البنية التحتية؟", en: "How long does an infrastructure project take?" },
+                a: {
+                  ar: "تعتمد المدة على حجم المشروع وعدد المواقع والمعدات والترحيل والتكامل والاختبارات المطلوبة.",
+                  en: "Duration depends on project size, number of sites and equipment, migration, integration and required testing.",
+                },
               },
-            },
-          ]}
-        />
+            ]}
+          />
+        </div>
 
         <JsonLd
           data={{

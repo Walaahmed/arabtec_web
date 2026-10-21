@@ -88,7 +88,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           1. HERO
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <Breadcrumbs
           items={[
             { label: { ar: "الرئيسية", en: "Home" }, to: "/" },
@@ -97,7 +97,7 @@ export default function SoftwareDevelopmentPage() {
           ]}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-center mt-4 md:mt-6">
           <div className="order-2 lg:order-1">
             <img
               src={heroImg}
@@ -118,28 +118,28 @@ export default function SoftwareDevelopmentPage() {
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {isAr ? "حلول برمجية مخصصة للمؤسسات" : "Custom software solutions for enterprises"}
             </div>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
+            <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[color:var(--brand-deep)]">
               {isAr
                 ? "تطوير البرمجيات وتكامل الأنظمة للجهات الحكومية والمؤسسات"
                 : "Software development and system integration for government and enterprises"}
             </h1>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تساعد أربتك الجهات الحكومية والمؤسسات على تحويل احتياجاتها التشغيلية إلى أنظمة وبرمجيات رقمية مصممة وفق إجراءات العمل والمستخدمين والبيانات والأنظمة القائمة."
                 : "ARABTEC helps government entities and enterprises turn their operational needs into digital systems and software designed around business processes, users, data and existing systems."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نطور أنظمة مؤسسية وتطبيقات ويب وجوال وسطح مكتب، وبوابات رقمية للموظفين والمتعاملين والعملاء والموردين، مع خدمات تكامل الأنظمة وواجهات API وتحديث الأنظمة القديمة."
                 : "We build enterprise systems, web, mobile and desktop applications, and digital portals for employees, customers, clients and vendors — plus system integration, APIs and legacy system modernization."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تبدأ خدماتنا بدراسة الاحتياج وتحليل العمليات، ثم تصميم تجربة المستخدم والبنية التقنية، مرورًا بالتطوير والاختبار والتكامل، وصولًا إلى الإطلاق والتدريب والدعم التشغيلي."
                 : "Our services start with requirements study and process analysis, then UX and architecture design, through development, testing and integration, to go-live, training and operational support."}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <CTAButton to="/contact">
                 {isAr ? "اطلب استشارة تطوير برمجيات" : "Request a software development consultation"}
               </CTAButton>
@@ -149,7 +149,7 @@ export default function SoftwareDevelopmentPage() {
             </div>
 
             {/* شريط مختصر */}
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2">
               {(isAr
                 ? ["أنظمة مؤسسية", "تطبيقات ويب", "تطبيقات جوال", "بوابات رقمية", "واجهات API", "تكامل الأنظمة", "تحديث الأنظمة القديمة", "أتمتة الإجراءات"]
                 : ["Enterprise systems", "Web apps", "Mobile apps", "Digital portals", "APIs", "System integration", "Legacy modernization", "Process automation"]
@@ -169,21 +169,21 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           2. تطوير البرمجيات المخصصة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "برمجيات مصممة وفق عمليات المؤسسة"
             : "Software designed around the organization's processes"}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "لا تتشابه احتياجات المؤسسات وعملياتها بالكامل. لذلك نطور حلولًا برمجية مخصصة تعكس إجراءات العمل الفعلية، وتساعد على رقمنة الخدمات، أتمتة المهام، توحيد البيانات وتحسين تجربة المستخدم."
                 : "Organizations don't have identical needs and processes. That's why we build custom software solutions that reflect actual business procedures and help digitize services, automate tasks, unify data and improve user experience."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن تطوير نظام جديد من البداية، أو إضافة وظائف إلى نظام قائم، أو تحديث تطبيق قديم وربطه بالمنظومة التقنية للمؤسسة."
                 : "You can develop a new system from scratch, add functions to an existing system, or modernize an old application and connect it to the enterprise technology ecosystem."}
@@ -191,10 +191,10 @@ export default function SoftwareDevelopmentPage() {
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-4">
+            <h3 className="font-bold text-lg mb-3 text-[#0B3D2E]">
               {isAr ? "متى تحتاج المؤسسة إلى برمجيات مخصصة؟" : "When does an organization need custom software?"}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1.5">
               {(isAr
                 ? [
                     "عندما لا يغطي النظام الجاهز جميع الإجراءات",
@@ -217,7 +217,7 @@ export default function SoftwareDevelopmentPage() {
                     "When the organization needs integration with external platforms and systems",
                   ]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -227,8 +227,8 @@ export default function SoftwareDevelopmentPage() {
         </div>
 
         {/* مخطط: التحديات ← تحليل ← تطوير ← نتائج */}
-        <div className="mt-10 rounded-2xl border border-border bg-card p-6 overflow-x-auto">
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-medium min-w-max">
+        <div className="mt-6 rounded-2xl border border-border bg-card p-4 md:p-6 overflow-x-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm font-medium min-w-max">
             {(isAr
               ? ["التحديات التشغيلية", "تحليل الاحتياج", "تطوير حل مخصص", "نتائج مؤسسية"]
               : ["Operational challenges", "Requirement analysis", "Custom solution development", "Enterprise outcomes"]
@@ -249,14 +249,14 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           3. خدمات تطوير البرمجيات — 10 خدمات
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "خدمات برمجية تغطي الأنظمة والمنصات والتطبيقات المؤسسية"
             : "Software services covering enterprise systems, platforms and applications"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             {
               icon: Layers,
@@ -351,17 +351,17 @@ export default function SoftwareDevelopmentPage() {
           ].map((svc) => {
             const Icon = svc.icon;
             return (
-              <Card key={svc.hEn}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={svc.hEn} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{isAr ? svc.hAr : svc.hEn}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? svc.hAr : svc.hEn}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                   {isAr ? svc.descAr : svc.descEn}
                 </p>
                 <ul className="mt-3 space-y-1.5">
                   {(isAr ? svc.itemsAr : svc.itemsEn).map((x) => (
-                    <li key={x} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <li key={x} className="flex items-start gap-2 text-[14px] md:text-[15px] text-[#4B5563]">
                       <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                       <span>{x}</span>
                     </li>
@@ -376,8 +376,8 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           4. تطوير البرمجيات للجهات الحكومية
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <img
             src={govSoftwareImg}
             alt={isAr
@@ -387,35 +387,35 @@ export default function SoftwareDevelopmentPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-deep)]/10 px-3 py-1 text-xs font-semibold text-[color:var(--brand-deep)] mb-3">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0B3D2E]/10 px-3 py-1 text-xs font-semibold text-[#0B3D2E] mb-3">
               <Landmark className="h-3.5 w-3.5" />
               {isAr ? "للجهات الحكومية" : "For government entities"}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "حلول برمجية تدعم تطوير الخدمات الحكومية"
                 : "Software solutions supporting government services"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "يمكن تطوير الأنظمة والبوابات الحكومية بما يتوافق مع طبيعة الإجراءات، تعدد المستخدمين، مستويات الصلاحيات، مسارات الموافقة ومتطلبات التكامل مع الأنظمة الداخلية والخارجية."
                 : "Government systems and portals can be built according to the nature of procedures, multiple user groups, permission levels, approval workflows and integration requirements with internal and external systems."}
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نركز على بناء خدمات رقمية واضحة وقابلة للاستخدام، تساعد على تقليل الإجراءات اليدوية، تسهيل وصول المتعاملين إلى الخدمات وتحسين قدرة الموظفين على إدارة الطلبات والمعاملات."
                 : "We focus on building clear, usable digital services that reduce manual procedures, ease customer access to services and improve employees' ability to manage requests and transactions."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "حالات الاستخدام" : "Use cases"}
             </h3>
 
-            <div className="mt-4 space-y-4">
+            <div className="mt-4 space-y-3">
               {(isAr
                 ? [
                     { t: "بوابات الخدمات الحكومية", d: "عرض الخدمات والمتطلبات والنماذج واستقبال الطلبات ومتابعتها رقميًا." },
@@ -437,8 +437,8 @@ export default function SoftwareDevelopmentPage() {
                 <div key={item.t} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold">{item.t}</h4>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.d}</p>
+                    <h4 className="font-bold text-base text-[#0B3D2E]">{item.t}</h4>
+                    <p className="mt-1 text-[15px] md:text-[16px] text-[#4B5563] leading-relaxed">{item.d}</p>
                   </div>
                 </div>
               ))}
@@ -450,21 +450,21 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           5. تطبيقات الويب
           ============================================================ */}
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="!py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "تطبيقات ويب مؤسسية سريعة وقابلة للتوسع"
                 : "Fast, scalable enterprise web applications"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نطور تطبيقات ويب تعمل على أجهزة الكمبيوتر والهواتف والأجهزة اللوحية، وتوفر واجهات واضحة للمستخدمين مع إمكانية الربط بالأنظمة وقواعد البيانات والخدمات الرقمية."
                 : "We build web applications that run on computers, phones and tablets, providing clear user interfaces with integration to systems, databases and digital services."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "خصائص التطبيقات" : "Application features"}
             </h3>
 
@@ -473,7 +473,7 @@ export default function SoftwareDevelopmentPage() {
                 ? ["تصميم متجاوب مع جميع الأجهزة", "دعم اللغة العربية والإنجليزية", "إدارة المستخدمين والصلاحيات", "مسارات العمل والموافقات", "التنبيهات والإشعارات", "التقارير ولوحات المعلومات", "الربط مع قواعد البيانات", "التكامل عبر API", "إدارة المحتوى والوثائق", "قابلية التوسع والتطوير"]
                 : ["Responsive across devices", "Arabic & English support", "User & permission management", "Workflows & approvals", "Alerts & notifications", "Reports & dashboards", "Database integration", "API integration", "Content & document management", "Scalability & evolution"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -490,7 +490,7 @@ export default function SoftwareDevelopmentPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover"
+            className="rounded-lg shadow-lg w-full h-auto object-cover mt-6 lg:mt-0"
           />
         </div>
       </Section>
@@ -498,8 +498,8 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           6. تطبيقات الجوال
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <img
             src={mobileAppImg}
             alt={isAr
@@ -509,22 +509,22 @@ export default function SoftwareDevelopmentPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "تطبيقات جوال تربط المستخدم بالخدمة أينما كان"
                 : "Mobile apps that connect users to services anywhere"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "نطور تطبيقات هاتف للجهات الحكومية والمؤسسات والشركات، بحيث توفر خدمات سهلة وآمنة للموظفين والعملاء والمتعاملين والفرق الميدانية."
                 : "We build mobile apps for government entities, organizations and companies, providing easy, secure services for employees, customers, clients and field teams."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "الوظائف المحتملة" : "Potential features"}
             </h3>
 
@@ -533,7 +533,7 @@ export default function SoftwareDevelopmentPage() {
                 ? ["تسجيل الدخول وإدارة الحساب", "تقديم الطلبات", "رفع المستندات", "متابعة حالة الطلب", "الإشعارات", "الموافقات", "الموقع الجغرافي", "التقاط الصور", "العمل الميداني", "الخدمات الذاتية", "التكامل مع أنظمة المؤسسة"]
                 : ["Login & account management", "Submitting requests", "Uploading documents", "Tracking request status", "Notifications", "Approvals", "Geolocation", "Photo capture", "Field work", "Self-services", "Integration with enterprise systems"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
@@ -546,7 +546,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           7. البوابات الرقمية
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "بوابات رقمية مصممة لكل فئة من المستخدمين"
@@ -557,7 +557,7 @@ export default function SoftwareDevelopmentPage() {
               : "Digital portals give the organization a unified access point for services, information, requests and data."}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 mt-6">
           {[
             {
               icon: Users,
@@ -590,14 +590,14 @@ export default function SoftwareDevelopmentPage() {
           ].map((portal) => {
             const Icon = portal.icon;
             return (
-              <Card key={portal.hEn}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={portal.hEn} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{isAr ? portal.hAr : portal.hEn}</h3>
+                <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? portal.hAr : portal.hEn}</h3>
                 <ul className="mt-3 grid gap-1.5 md:grid-cols-2">
                   {(isAr ? portal.itemsAr : portal.itemsEn).map((x) => (
-                    <li key={x} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <li key={x} className="flex items-start gap-2 text-[14px] md:text-[15px] text-[#4B5563]">
                       <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                       <span>{x}</span>
                     </li>
@@ -612,7 +612,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           8. تكامل الأنظمة
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "ربط الأنظمة والبيانات ضمن بيئة مؤسسية موحدة"
@@ -623,9 +623,9 @@ export default function SoftwareDevelopmentPage() {
               : "The organization may run on multiple internal and external systems. System integration services help unify data flow, reduce duplication and improve process accuracy."}
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 items-start mt-6">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start mt-6">
           <div>
-            <h3 className="font-bold mb-4">
+            <h3 className="font-bold mb-3 text-[#0B3D2E]">
               {isAr ? "الأنظمة القابلة للتكامل" : "Systems that can be integrated"}
             </h3>
             <ul className="grid gap-2 md:grid-cols-2">
@@ -633,14 +633,14 @@ export default function SoftwareDevelopmentPage() {
                 ? ["أنظمة ERP", "أنظمة CRM", "أنظمة الموارد البشرية", "أنظمة الحضور والانصراف", "أنظمة إدارة الوثائق", "بوابات الخدمات", "أنظمة الدفع", "أنظمة الرسائل والإشعارات", "قواعد البيانات", "تطبيقات الهاتف", "منصات الذكاء الاصطناعي", "الأنظمة الحكومية والخارجية وفق الإمكانات المتاحة"]
                 : ["ERP systems", "CRM systems", "HR systems", "Attendance systems", "Document management", "Service portals", "Payment systems", "Messaging & notifications", "Databases", "Mobile apps", "AI platforms", "Government & external systems per available capabilities"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <span>{x}</span>
                 </li>
               ))}
             </ul>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold mb-3 text-[#0B3D2E]">
               {isAr ? "أساليب التكامل" : "Integration methods"}
             </h3>
             <ul className="mt-3 grid gap-2 md:grid-cols-2">
@@ -648,7 +648,7 @@ export default function SoftwareDevelopmentPage() {
                 ? ["REST APIs", "SOAP Web Services", "Webhooks", "تكامل قواعد البيانات", "تبادل الملفات", "منصات وسيطة للتكامل", "واجهات الموردين والأنظمة الخارجية"]
                 : ["REST APIs", "SOAP Web Services", "Webhooks", "Database integration", "File exchange", "Middleware integration platforms", "Vendor & external system interfaces"]
               ).map((x) => (
-                <li key={x} className="flex items-start gap-2 text-sm">
+                <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                   <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                   <span>{x}</span>
                 </li>
@@ -657,11 +657,11 @@ export default function SoftwareDevelopmentPage() {
           </div>
 
           {/* مخطط معماري */}
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="font-bold mb-4 text-sm">
+          <div className="rounded-2xl border border-border bg-card p-4 md:p-6">
+            <h3 className="font-bold mb-3 text-sm text-[#0B3D2E]">
               {isAr ? "المخطط المعماري" : "Architecture diagram"}
             </h3>
-            <div className="flex flex-col items-center gap-3 text-xs">
+            <div className="flex flex-col items-center gap-2 text-xs md:text-sm">
               <div className="rounded-lg border border-border bg-background px-4 py-2 text-center">
                 {isAr ? "بوابة ويب / تطبيق هاتف / Agent AI" : "Web portal / mobile app / AI Agent"}
               </div>
@@ -688,7 +688,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           9. واجهات API
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "تصميم وتطوير واجهات API قابلة للإدارة والتوسع"
@@ -704,17 +704,17 @@ export default function SoftwareDevelopmentPage() {
             ? ["تحليل متطلبات التكامل", "تصميم بنية API", "تطوير واجهات REST أو SOAP", "توثيق الواجهات", "إدارة الإصدارات", "اختبار التكامل", "معالجة الأخطاء", "تسجيل العمليات", "تحديد الصلاحيات", "فرق دعم الأنظمة المتكاملة"]
             : ["Analyzing integration requirements", "API architecture design", "REST or SOAP development", "API documentation", "Version management", "Integration testing", "Error handling", "Operation logging", "Permissions setup", "Support for integrated systems"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-6 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-5">
+        <div className="mt-6 max-w-3xl mx-auto rounded-lg border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/5 p-4">
           <div className="flex items-start gap-3">
             <AlertCircle className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-[15px] md:text-base text-[#4B5563] leading-relaxed">
               {isAr
                 ? "تحدد آلية المصادقة والصلاحيات وإدارة الوصول وفق البنية التقنية والسياسات ومتطلبات المشروع."
                 : "Authentication, permissions and access management are defined according to the technology architecture, policies and project requirements."}
@@ -726,8 +726,8 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           10. تحديث الأنظمة القديمة
           ============================================================ */}
-      <Section className="bg-white">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+      <Section className="bg-white !py-6 md:!py-10">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 items-start">
           <img
             src={legacyImg}
             alt={isAr
@@ -737,26 +737,26 @@ export default function SoftwareDevelopmentPage() {
             height={1067}
             loading="lazy"
             decoding="async"
-            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1"
+            className="rounded-lg shadow-lg w-full h-auto object-cover order-2 lg:order-1 mt-6 lg:mt-0"
           />
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D2E]">
               {isAr
                 ? "تحديث الأنظمة القديمة دون فقدان القيمة التشغيلية"
                 : "Modernizing legacy systems without losing operational value"}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {isAr
                 ? "قد تصبح الأنظمة القديمة بطيئة أو صعبة الصيانة أو غير قابلة للتكامل مع الخدمات الحديثة. تساعد أربتك المؤسسات على تقييم هذه الأنظمة ووضع مسار مناسب لتحديثها أو إعادة بنائها."
                 : "Legacy systems can become slow, hard to maintain or unable to integrate with modern services. ARABTEC helps organizations assess these systems and define the right path to modernize or rebuild them."}
             </p>
 
-            <h3 className="mt-6 font-bold">
+            <h3 className="mt-6 font-bold text-lg text-[#0B3D2E]">
               {isAr ? "خيارات التحديث" : "Modernization options"}
             </h3>
 
-            <div className="mt-4 space-y-4">
+            <div className="mt-4 space-y-3">
               {(isAr
                 ? [
                     { t: "تحسين النظام الحالي", d: "تطوير وظائف وواجهات محددة مع المحافظة على البنية الأساسية عند ملاءمتها." },
@@ -778,8 +778,8 @@ export default function SoftwareDevelopmentPage() {
                 <div key={item.t} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[color:var(--gold)] mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="font-semibold">{item.t}</h4>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.d}</p>
+                    <h4 className="font-bold text-base text-[#0B3D2E]">{item.t}</h4>
+                    <p className="mt-1 text-[15px] md:text-[16px] text-[#4B5563] leading-relaxed">{item.d}</p>
                   </div>
                 </div>
               ))}
@@ -791,7 +791,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           11. تجربة المستخدم
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "تجربة استخدام واضحة تدعم إنجاز الخدمة"
@@ -807,7 +807,7 @@ export default function SoftwareDevelopmentPage() {
             ? ["دراسة المستخدمين", "تحليل رحلة الخدمة", "تصميم الهيكل والتنقل", "إعداد النماذج الأولية", "تصميم واجهة المستخدم", "اختبار سهولة الاستخدام", "تطبيق الهوية المؤسسية", "دعم اللغة العربية واتجاه RTL", "تحسين الوصول عبر الهاتف"]
             : ["User research", "Service journey analysis", "Structure & navigation design", "Prototyping", "UI design", "Usability testing", "Applying corporate identity", "Arabic & RTL support", "Mobile access optimization"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
@@ -818,7 +818,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           12. قواعد البيانات
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "بنية بيانات تدعم استقرار النظام ودقة المعلومات"
@@ -834,7 +834,7 @@ export default function SoftwareDevelopmentPage() {
             ? ["تصميم قواعد البيانات", "تحليل نماذج البيانات", "تنظيف البيانات", "نقل البيانات", "تحسين الاستعلامات", "أرشفة البيانات", "إدارة البيانات المرجعية", "إعداد التقارير", "تكامل قواعد البيانات", "مراجعة جودة البيانات"]
             : ["Database design", "Data model analysis", "Data cleaning", "Data migration", "Query optimization", "Data archiving", "Reference data management", "Reporting setup", "Database integration", "Data quality review"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <Database className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
@@ -845,7 +845,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           13. الذكاء الاصطناعي داخل البرمجيات
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "إضافة إمكانات الذكاء الاصطناعي إلى الأنظمة والتطبيقات"
@@ -861,14 +861,14 @@ export default function SoftwareDevelopmentPage() {
             ? ["مساعد ذكي داخل النظام", "البحث الذكي في الوثائق", "تصنيف الطلبات", "استخراج البيانات من المستندات", "تلخيص التقارير", "اقتراح الردود", "تحليل البيانات", "توجيه المعاملات", "دعم الموظفين والمتعاملين"]
             : ["In-system AI assistant", "Intelligent document search", "Request classification", "Extracting data from documents", "Report summarization", "Response suggestions", "Data analytics", "Transaction routing", "Supporting employees & customers"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <Sparkles className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services/ai-agents" variant="outline">
             {isAr ? "استكشف حلول الذكاء الاصطناعي و AI Agents" : "Explore AI & AI Agents solutions"}
           </CTAButton>
@@ -878,7 +878,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           14. ربط البرمجيات بأنظمة ERP
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "تطبيقات مخصصة تعمل مع نظام ERP"
@@ -894,14 +894,14 @@ export default function SoftwareDevelopmentPage() {
             ? ["بوابة موظفين مرتبطة بالموارد البشرية", "تطبيق موافقات مرتبط بـ ERP", "بوابة موردين مرتبطة بالمشتريات", "تطبيق مخزون ميداني", "بوابة عملاء مرتبطة بالمبيعات والفواتير", "لوحة تقارير تنفيذية", "نظام طلبات مرتبط بالمالية والمخزون"]
             : ["Employee portal connected to HR", "Approval app connected to ERP", "Vendor portal connected to procurement", "Field inventory app", "Customer portal connected to sales & invoices", "Executive reports dashboard", "Request system connected to finance & inventory"]
           ).map((x) => (
-            <li key={x} className="flex items-start gap-2 text-sm">
+            <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
               <CheckCircle2 className="h-4 w-4 text-[color:var(--gold)] mt-0.5 shrink-0" />
               <span>{x}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/services/erp-business-applications" variant="outline">
             {isAr ? "استكشف أنظمة ERP وتطبيقات الأعمال" : "Explore ERP & business applications"}
           </CTAButton>
@@ -911,14 +911,14 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           15. القطاعات المستفيدة
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "تطوير برمجيات مخصصة لمتطلبات القطاعات الحيوية"
             : "Custom software development for vital sector requirements"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {[
             { key: "government", ar: "الجهات الحكومية", en: "Government entities", itemsAr: ["بوابات الخدمات", "إدارة المعاملات", "الموافقات", "تطبيقات الموظفين", "تكامل الأنظمة", "لوحات الأداء"], itemsEn: ["Service portals", "Transactions management", "Approvals", "Employee apps", "System integration", "Performance dashboards"] },
             { key: "oil-gas", ar: "النفط والغاز", en: "Oil & gas", itemsAr: ["أنظمة العمليات", "إدارة المشاريع والمواقع", "تطبيقات الفرق الميدانية", "إدارة الصيانة", "تقارير الأداء", "تكامل البيانات"], itemsEn: ["Operations systems", "Projects & sites management", "Field team apps", "Maintenance management", "Performance reports", "Data integration"] },
@@ -927,11 +927,11 @@ export default function SoftwareDevelopmentPage() {
             { key: "banking", ar: "البنوك والخدمات المالية", en: "Banking & finance", itemsAr: ["بوابات العملاء والموظفين", "أتمتة الإجراءات", "أنظمة الموافقات", "تكامل التطبيقات", "إدارة الوثائق", "لوحات المتابعة"], itemsEn: ["Customer & employee portals", "Process automation", "Approval systems", "Application integration", "Document management", "Tracking dashboards"] },
             { key: "enterprise", ar: "الشركات والمؤسسات", en: "Enterprises", itemsAr: ["أنظمة الأعمال المخصصة", "بوابات العملاء والموردين", "تطبيقات الهاتف", "أنظمة الموافقات", "التكامل مع CRM و ERP", "تقارير الإدارة"], itemsEn: ["Custom business systems", "Customer & vendor portals", "Mobile apps", "Approval systems", "CRM & ERP integration", "Management reports"] },
           ].map((sec) => (
-            <Card key={sec.key}>
-              <h3 className="font-bold text-base mb-3">{isAr ? sec.ar : sec.en}</h3>
+            <Card key={sec.key} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base mb-3 text-[#0B3D2E]">{isAr ? sec.ar : sec.en}</h3>
               <ul className="space-y-1.5">
                 {(isAr ? sec.itemsAr : sec.itemsEn).map((x) => (
-                  <li key={x} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <li key={x} className="flex items-start gap-2 text-[15px] md:text-base text-[#4B5563]">
                     <span className="text-[color:var(--gold)] mt-0.5 shrink-0">•</span>
                     <span>{x}</span>
                   </li>
@@ -941,7 +941,7 @@ export default function SoftwareDevelopmentPage() {
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <CTAButton to="/industries" variant="outline">
             {isAr ? "استكشف القطاعات التي نخدمها" : "Explore the sectors we serve"}
           </CTAButton>
@@ -951,7 +951,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           16. منهجية التطوير — 10 مراحل
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "منهجية منظمة من الفكرة إلى التشغيل"
@@ -985,12 +985,12 @@ export default function SoftwareDevelopmentPage() {
                 { t: "Support & evolution", d: "Handling feedback, monitoring performance and releasing improvements." },
               ]
           ).map((step, i) => (
-            <li key={i} className="relative rounded-xl border border-border bg-card p-5">
-              <div className="text-3xl font-extrabold text-[color:var(--gold)]">
+            <li key={i} className="relative rounded-xl border border-border bg-card p-4 md:p-5 shadow-sm">
+              <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--gold)]">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="mt-1 font-semibold text-sm">{step.t}</div>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{step.d}</p>
+              <div className="mt-1 font-bold text-[#0B3D2E]">{step.t}</div>
+              <p className="mt-1 text-[14px] md:text-[15px] text-[#4B5563] leading-relaxed">{step.d}</p>
             </li>
           ))}
         </ol>
@@ -999,12 +999,12 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           17. نماذج التنفيذ
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr ? "نماذج مرنة لتنفيذ المشروع" : "Flexible delivery models"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {(isAr
             ? [
                 { icon: Layers, t: "تطوير مشروع كامل", d: "تحليل وتصميم وتطوير واختبار وإطلاق نظام أو منصة متكاملة." },
@@ -1023,12 +1023,12 @@ export default function SoftwareDevelopmentPage() {
           ).map((m) => {
             const Icon = m.icon;
             return (
-              <Card key={m.t}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={m.t} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-base">{m.t}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{m.d}</p>
+                <h3 className="font-bold text-base text-[#0B3D2E]">{m.t}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{m.d}</p>
               </Card>
             );
           })}
@@ -1038,14 +1038,14 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           18. لماذا أربتك؟
           ============================================================ */}
-      <Section className="bg-white">
+      <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "لماذا تختار المؤسسات أربتك لتطوير البرمجيات؟"
             : "Why organizations choose ARABTEC for software development"}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {(isAr
             ? [
                 { icon: Users, t: "فهم احتياجات المؤسسة", d: "نحلل العمليات والمستخدمين والأنظمة قبل بدء التطوير." },
@@ -1070,12 +1070,12 @@ export default function SoftwareDevelopmentPage() {
           ).map((c) => {
             const Icon = c.icon;
             return (
-              <Card key={c.t}>
-                <div className="h-11 w-11 rounded-lg bg-[color:var(--brand-deep)]/10 text-[color:var(--brand-deep)] grid place-items-center mb-4">
+              <Card key={c.t} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+                <div className="h-10 w-10 rounded-lg bg-[#0B3D2E]/10 text-[#0B3D2E] grid place-items-center mb-3">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-sm">{c.t}</h3>
-                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{c.d}</p>
+                <h3 className="font-bold text-base text-[#0B3D2E]">{c.t}</h3>
+                <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">{c.d}</p>
               </Card>
             );
           })}
@@ -1085,14 +1085,14 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           19. خدمات مرتبطة
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "خدمات تدعم نجاح المشروع البرمجي"
             : "Services supporting the success of your software project"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5 mt-6">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-5 mt-6">
           {[
             { ar: "حلول الذكاء الاصطناعي و AI Agents", en: "AI & AI Agents solutions", descAr: "دمج المساعدين الذكيين والبحث في الوثائق وأتمتة المهام داخل التطبيقات.", descEn: "Embedding AI assistants, document search and task automation inside applications.", link: "ai-agents" },
             { ar: "أنظمة ERP وتطبيقات الأعمال", en: "ERP & business applications", descAr: "ربط النظام المخصص بالعمليات والبيانات المالية والإدارية والتشغيلية.", descEn: "Connecting the custom system to financial, administrative and operational processes and data.", link: "erp-business-applications" },
@@ -1100,15 +1100,15 @@ export default function SoftwareDevelopmentPage() {
             { ar: "الشبكات والاتصال", en: "Networks & connectivity", descAr: "توفير الاتصال بين المستخدمين والمواقع والأنظمة.", descEn: "Providing connectivity between users, sites and systems.", link: "network-connectivity" },
             { ar: "أنظمة الحضور والتحكم بالدخول", en: "Attendance & access control", descAr: "ربط البرمجيات بأنظمة الحضور والانصراف والموارد البشرية.", descEn: "Connecting software to attendance and HR systems.", link: "surveillance-access-control" },
           ].map((c) => (
-            <Card key={c.link}>
-              <h3 className="font-bold text-sm">{isAr ? c.ar : c.en}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+            <Card key={c.link} className="p-4 md:p-5 border-border/60 shadow-sm bg-card">
+              <h3 className="font-bold text-base text-[#0B3D2E]">{isAr ? c.ar : c.en}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-[#4B5563] leading-relaxed">
                 {isAr ? c.descAr : c.descEn}
               </p>
               <Link
                 to="/services/$slug"
                 params={{ slug: c.link }}
-                className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-deep hover:text-gold"
+                className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#0B3D2E] hover:text-[color:var(--gold)]"
               >
                 {isAr ? "استكشف الخدمة" : "Explore service"}
                 <ArrowLeft className="h-3.5 w-3.5 rtl:rotate-180" />
@@ -1130,33 +1130,33 @@ export default function SoftwareDevelopmentPage() {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         /> */}
-        <div className="relative container-page py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground/85">
+        <div className="relative container-page py-10 md:py-14 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground/90">
             {isAr
               ? "هل لديكم نظام أو منصة ترغبون في تطويرها؟"
               : "Do you have a system or platform you want to develop?"}
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/85">
+          <p className="mt-3 max-w-3xl mx-auto text-[16px] md:text-lg text-primary-foreground/90 leading-relaxed">
             {isAr
               ? "شاركوا فريق أربتك بفكرة النظام أو التحدي التشغيلي أو التطبيق الحالي، وسنعمل معكم على دراسة المتطلبات وتحديد الوظائف والتكاملات وخطة التنفيذ المناسبة."
               : "Share your system idea, operational challenge or current application with the ARABTEC team — we'll work with you to study requirements and define the right functions, integrations and delivery plan."}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/contact"
-              className="rounded-md bg-background px-6 py-3 text-sm font-semibold text-primary hover:bg-secondary"
+              className="rounded-md bg-background px-6 py-3 text-sm font-bold text-primary hover:bg-secondary transition"
             >
               {isAr ? "اطلب استشارة تطوير برمجيات" : "Request a development consultation"}
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
+              className="rounded-md border border-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-gold transition"
             >
               {isAr ? "اطلب عرضًا فنيًا" : "Request a technical proposal"}
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-gold"
+              className="rounded-md border border-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-gold transition"
             >
               {isAr ? "اطلب نموذجًا أوليًا" : "Request a prototype"}
             </Link>
@@ -1167,129 +1167,131 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           21. FAQ
           ============================================================ */}
-      <Section>
+      <Section className="!py-6 md:!py-10">
         <SectionHead
           title={isAr
             ? "أسئلة شائعة عن تطوير البرمجيات وتكامل الأنظمة"
             : "Frequently asked questions about software development & system integration"}
         />
 
-        <FAQ
-          items={[
-            {
-              q: { ar: "ما المقصود بتطوير البرمجيات المخصصة؟", en: "What is custom software development?" },
-              a: {
-                ar: "هو تصميم وتطوير نظام أو تطبيق وفق إجراءات واحتياجات مؤسسة محددة، بدلًا من الاعتماد على منتج جاهز لا يغطي جميع المتطلبات.",
-                en: "It's the design and development of a system or application around a specific organization's procedures and needs, instead of relying on a ready-made product that doesn't cover all requirements.",
+        <div className="mt-6">
+          <FAQ
+            items={[
+              {
+                q: { ar: "ما المقصود بتطوير البرمجيات المخصصة؟", en: "What is custom software development?" },
+                a: {
+                  ar: "هو تصميم وتطوير نظام أو تطبيق وفق إجراءات واحتياجات مؤسسة محددة، بدلًا من الاعتماد على منتج جاهز لا يغطي جميع المتطلبات.",
+                  en: "It's the design and development of a system or application around a specific organization's procedures and needs, instead of relying on a ready-made product that doesn't cover all requirements.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك تطوير برمجيات للجهات الحكومية؟", en: "Does ARABTEC develop software for government entities?" },
-              a: {
-                ar: "نعم، يمكن تطوير بوابات خدمات وأنظمة معاملات وموافقات وتطبيقات موظفين ولوحات متابعة وتكاملات تناسب الجهات الحكومية، وفق متطلبات المشروع.",
-                en: "Yes — service portals, transactions, approvals, employee apps, tracking dashboards and integrations suited to government entities can be developed per project requirements.",
+              {
+                q: { ar: "هل تقدم أربتك تطوير برمجيات للجهات الحكومية؟", en: "Does ARABTEC develop software for government entities?" },
+                a: {
+                  ar: "نعم، يمكن تطوير بوابات خدمات وأنظمة معاملات وموافقات وتطبيقات موظفين ولوحات متابعة وتكاملات تناسب الجهات الحكومية، وفق متطلبات المشروع.",
+                  en: "Yes — service portals, transactions, approvals, employee apps, tracking dashboards and integrations suited to government entities can be developed per project requirements.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تطور أربتك تطبيقات ويب؟", en: "Does ARABTEC build web applications?" },
-              a: {
-                ar: "نعم، تشمل الخدمات تطوير تطبيقات ويب مؤسسية متجاوبة ترتبط بقواعد البيانات والأنظمة والخدمات الأخرى.",
-                en: "Yes — the services include developing responsive enterprise web apps connected to databases, systems and other services.",
+              {
+                q: { ar: "هل تطور أربتك تطبيقات ويب؟", en: "Does ARABTEC build web applications?" },
+                a: {
+                  ar: "نعم، تشمل الخدمات تطوير تطبيقات ويب مؤسسية متجاوبة ترتبط بقواعد البيانات والأنظمة والخدمات الأخرى.",
+                  en: "Yes — the services include developing responsive enterprise web apps connected to databases, systems and other services.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تطور أربتك تطبيقات Android و iOS؟", en: "Does ARABTEC build Android and iOS apps?" },
-              a: {
-                ar: "نعم، يمكن تطوير تطبيقات جوال للموظفين والعملاء والمتعاملين والعمليات الميدانية، مع ربطها بأنظمة المؤسسة.",
-                en: "Yes — mobile apps for employees, customers, clients and field operations can be built and integrated with enterprise systems.",
+              {
+                q: { ar: "هل تطور أربتك تطبيقات Android و iOS؟", en: "Does ARABTEC build Android and iOS apps?" },
+                a: {
+                  ar: "نعم، يمكن تطوير تطبيقات جوال للموظفين والعملاء والمتعاملين والعمليات الميدانية، مع ربطها بأنظمة المؤسسة.",
+                  en: "Yes — mobile apps for employees, customers, clients and field operations can be built and integrated with enterprise systems.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تطوير نظام مخصص من البداية؟", en: "Can a custom system be developed from scratch?" },
-              a: {
-                ar: "نعم، تبدأ الخدمة بتحليل الاحتياج والمتطلبات، ثم تصميم وتطوير واختبار وإطلاق النظام.",
-                en: "Yes — the service starts with requirement and need analysis, then design, development, testing and launch.",
+              {
+                q: { ar: "هل يمكن تطوير نظام مخصص من البداية؟", en: "Can a custom system be developed from scratch?" },
+                a: {
+                  ar: "نعم، تبدأ الخدمة بتحليل الاحتياج والمتطلبات، ثم تصميم وتطوير واختبار وإطلاق النظام.",
+                  en: "Yes — the service starts with requirement and need analysis, then design, development, testing and launch.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تحديث نظام قديم بدلًا من استبداله؟", en: "Can a legacy system be modernized instead of replaced?" },
-              a: {
-                ar: "يعتمد ذلك على حالة النظام. يمكن تحسينه أو إعادة بنائه أو نقله إلى بيئة ويب أو سحابية بعد تقييم البنية الحالية.",
-                en: "It depends on the system's state. It can be improved, rebuilt or moved to a web or cloud environment after assessing the current architecture.",
+              {
+                q: { ar: "هل يمكن تحديث نظام قديم بدلًا من استبداله؟", en: "Can a legacy system be modernized instead of replaced?" },
+                a: {
+                  ar: "يعتمد ذلك على حالة النظام. يمكن تحسينه أو إعادة بنائه أو نقله إلى بيئة ويب أو سحابية بعد تقييم البنية الحالية.",
+                  en: "It depends on the system's state. It can be improved, rebuilt or moved to a web or cloud environment after assessing the current architecture.",
+                },
               },
-            },
-            {
-              q: { ar: "ما المقصود بتكامل الأنظمة؟", en: "What is system integration?" },
-              a: {
-                ar: "هو ربط الأنظمة والتطبيقات بحيث تتبادل البيانات والوظائف بصورة منظمة من خلال واجهات API أو وسائل تكامل أخرى.",
-                en: "It's connecting systems and applications so they exchange data and functions in an organized way through APIs or other integration methods.",
+              {
+                q: { ar: "ما المقصود بتكامل الأنظمة؟", en: "What is system integration?" },
+                a: {
+                  ar: "هو ربط الأنظمة والتطبيقات بحيث تتبادل البيانات والوظائف بصورة منظمة من خلال واجهات API أو وسائل تكامل أخرى.",
+                  en: "It's connecting systems and applications so they exchange data and functions in an organized way through APIs or other integration methods.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن ربط النظام مع ERP؟", en: "Can the system be integrated with ERP?" },
-              a: {
-                ar: "نعم، يمكن ربط الأنظمة المخصصة بأنظمة ERP والوحدات المالية والموارد البشرية والمشتريات والمخزون وغيرها.",
-                en: "Yes — custom systems can be integrated with ERP and the finance, HR, procurement, inventory and other modules.",
+              {
+                q: { ar: "هل يمكن ربط النظام مع ERP؟", en: "Can the system be integrated with ERP?" },
+                a: {
+                  ar: "نعم، يمكن ربط الأنظمة المخصصة بأنظمة ERP والوحدات المالية والموارد البشرية والمشتريات والمخزون وغيرها.",
+                  en: "Yes — custom systems can be integrated with ERP and the finance, HR, procurement, inventory and other modules.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن ربط النظام بمنصة ذكاء اصطناعي؟", en: "Can the system be integrated with an AI platform?" },
-              a: {
-                ar: "نعم، يمكن دمج AI Agents والبحث الذكي ومعالجة المستندات وتحليل البيانات وفق حالة الاستخدام والصلاحيات.",
-                en: "Yes — AI Agents, intelligent search, document processing and data analytics can be integrated per use case and permissions.",
+              {
+                q: { ar: "هل يمكن ربط النظام بمنصة ذكاء اصطناعي؟", en: "Can the system be integrated with an AI platform?" },
+                a: {
+                  ar: "نعم، يمكن دمج AI Agents والبحث الذكي ومعالجة المستندات وتحليل البيانات وفق حالة الاستخدام والصلاحيات.",
+                  en: "Yes — AI Agents, intelligent search, document processing and data analytics can be integrated per use case and permissions.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تدعم الأنظمة اللغة العربية؟", en: "Do the systems support Arabic?" },
-              a: {
-                ar: "نعم، يمكن تطوير واجهات عربية تدعم اتجاه RTL، إضافة إلى نسخة إنجليزية عند الحاجة.",
-                en: "Yes — Arabic interfaces with RTL support can be built, plus an English version when needed.",
+              {
+                q: { ar: "هل تدعم الأنظمة اللغة العربية؟", en: "Do the systems support Arabic?" },
+                a: {
+                  ar: "نعم، يمكن تطوير واجهات عربية تدعم اتجاه RTL، إضافة إلى نسخة إنجليزية عند الحاجة.",
+                  en: "Yes — Arabic interfaces with RTL support can be built, plus an English version when needed.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تشمل الخدمة تصميم واجهة المستخدم؟", en: "Does the service include UI design?" },
-              a: {
-                ar: "يمكن أن تشمل الخدمة تحليل تجربة المستخدم وتصميم النماذج الأولية والواجهات قبل التطوير.",
-                en: "The service can include UX analysis and design of prototypes and interfaces before development.",
+              {
+                q: { ar: "هل تشمل الخدمة تصميم واجهة المستخدم؟", en: "Does the service include UI design?" },
+                a: {
+                  ar: "يمكن أن تشمل الخدمة تحليل تجربة المستخدم وتصميم النماذج الأولية والواجهات قبل التطوير.",
+                  en: "The service can include UX analysis and design of prototypes and interfaces before development.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تشمل الخدمة ترحيل البيانات؟", en: "Does the service include data migration?" },
-              a: {
-                ar: "يمكن أن يشمل المشروع تنظيف وتحويل واختبار ونقل البيانات من الأنظمة القديمة.",
-                en: "The project can include cleaning, converting, testing and transferring data from legacy systems.",
+              {
+                q: { ar: "هل تشمل الخدمة ترحيل البيانات؟", en: "Does the service include data migration?" },
+                a: {
+                  ar: "يمكن أن يشمل المشروع تنظيف وتحويل واختبار ونقل البيانات من الأنظمة القديمة.",
+                  en: "The project can include cleaning, converting, testing and transferring data from legacy systems.",
+                },
               },
-            },
-            {
-              q: { ar: "هل تقدم أربتك خدمات الاختبار؟", en: "Does ARABTEC provide testing services?" },
-              a: {
-                ar: "نعم، يمكن أن يشمل نطاق العمل الاختبارات الوظيفية والتكامل وقبول المستخدم والأداء والتوافق.",
-                en: "Yes — scope can include functional, integration, user acceptance, performance and compatibility testing.",
+              {
+                q: { ar: "هل تقدم أربتك خدمات الاختبار؟", en: "Does ARABTEC provide testing services?" },
+                a: {
+                  ar: "نعم، يمكن أن يشمل نطاق العمل الاختبارات الوظيفية والتكامل وقبول المستخدم والأداء والتوافق.",
+                  en: "Yes — scope can include functional, integration, user acceptance, performance and compatibility testing.",
+                },
               },
-            },
-            {
-              q: { ar: "كم يستغرق تطوير نظام مخصص؟", en: "How long does custom system development take?" },
-              a: {
-                ar: "تعتمد المدة على حجم المشروع وعدد الوظائف والتكاملات والمستخدمين وجاهزية المتطلبات وسرعة الاعتماد.",
-                en: "Duration depends on project size, number of functions and integrations, users, requirements readiness and speed of approval.",
+              {
+                q: { ar: "كم يستغرق تطوير نظام مخصص؟", en: "How long does custom system development take?" },
+                a: {
+                  ar: "تعتمد المدة على حجم المشروع وعدد الوظائف والتكاملات والمستخدمين وجاهزية المتطلبات وسرعة الاعتماد.",
+                  en: "Duration depends on project size, number of functions and integrations, users, requirements readiness and speed of approval.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن تنفيذ المشروع على مراحل؟", en: "Can the project be delivered in phases?" },
-              a: {
-                ar: "نعم، يمكن إطلاق الوظائف الأساسية أولًا ثم إضافة الوحدات والتكاملات ضمن مراحل لاحقة.",
-                en: "Yes — core functions can be launched first, then modules and integrations added in later phases.",
+              {
+                q: { ar: "هل يمكن تنفيذ المشروع على مراحل؟", en: "Can the project be delivered in phases?" },
+                a: {
+                  ar: "نعم، يمكن إطلاق الوظائف الأساسية أولًا ثم إضافة الوحدات والتكاملات ضمن مراحل لاحقة.",
+                  en: "Yes — core functions can be launched first, then modules and integrations added in later phases.",
+                },
               },
-            },
-            {
-              q: { ar: "هل يمكن البدء بنموذج أولي؟", en: "Can the project start with a prototype?" },
-              a: {
-                ar: "نعم، يمكن بناء نموذج أولي أو Proof of Concept لاختبار الفكرة وتجربة المستخدم قبل التطوير الكامل.",
-                en: "Yes — a prototype or Proof of Concept can be built to test the idea and UX before full development.",
+              {
+                q: { ar: "هل يمكن البدء بنموذج أولي؟", en: "Can the project start with a prototype?" },
+                a: {
+                  ar: "نعم، يمكن بناء نموذج أولي أو Proof of Concept لاختبار الفكرة وتجربة المستخدم قبل التطوير الكامل.",
+                  en: "Yes — a prototype or Proof of Concept can be built to test the idea and UX before full development.",
+                },
               },
-            },
-          ]}
-        />
+            ]}
+          />
+        </div>
 
         <JsonLd
           data={{
