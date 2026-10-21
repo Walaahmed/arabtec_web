@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "@/lib/router";
 import { useI18n } from "@/lib/i18n";
 
-// ✅ التعديل هنا: ضفنا query: '?url' عشان Vite يفهم إننا عايزين الرابط
+// ✅ قراءة الشعارات بالطريقة الصحيحة لـ Vite
 const partnerLogos = Object.values(
   import.meta.glob("@/assets/partners/*.{png,jpg,jpeg,webp,svg}", {
     eager: true,
@@ -35,7 +35,8 @@ export default function Partners3DSlider() {
 
   return (
     <div className="w-full bg-white py-12 overflow-hidden">
-      <div className="container-page relative">
+      {/* تحديد عرض السلايدر كله بـ 1200 بكسل وتوسيطه */}
+      <div className="container-page max-w-[1200px] mx-auto relative">
         
         {/* العنوان */}
         <div className="text-center md:text-start mb-10">
@@ -68,13 +69,12 @@ export default function Partners3DSlider() {
             className="flex gap-8 md:gap-12 overflow-x-auto items-center px-10 py-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           >
             {[...row1, ...row1].map((logo, i) => (
-             // في ملف Partners3DSlider.tsx
-<img
-  key={i}
-  src={logo}
-  alt={`Partner ${i}`}
-  className="h-10 md:h-12 w-auto object-contain shrink-0 transition-all duration-300"
-/>
+              <img
+                key={i}
+                src={logo}
+                alt={`Partner ${i}`}
+                className="w-[1200px] h-auto max-w-[200px] md:max-w-[250px] object-contain shrink-0 transition-all duration-300"
+              />
             ))}
           </div>
 
@@ -106,12 +106,11 @@ export default function Partners3DSlider() {
           >
             {[...row2, ...row2].map((logo, i) => (
               <img
-  key={i}
-  src={logo}
-  alt={`Partner ${i}`}
-  className="h-10 md:h-12 w-auto object-contain shrink-0 transition-all duration-300"
-/>
-
+                key={i}
+                src={logo}
+                alt={`Partner ${i}`}
+                className="w-[1200px] h-auto max-w-[200px] md:max-w-[250px] object-contain shrink-0 transition-all duration-300"
+              />
             ))}
           </div>
 

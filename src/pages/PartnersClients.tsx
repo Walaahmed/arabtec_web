@@ -46,7 +46,7 @@ import partnerOppImg from "@/assets/arabtec-enterprise-technology-team.jpg";
 import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
 
 // ============================================================
-// ✅ التعديل هنا: ضفنا query: '?url' للمجلدين
+// قراءة شعارات العملاء والشركاء ديناميكياً (مع إصلاح Vite)
 // ============================================================
 const clientLogos = Object.values(
   import.meta.glob("@/assets/logos/clients/*.{png,jpg,jpeg,webp,svg}", {
@@ -536,7 +536,7 @@ export default function PartnersPage() {
       </Section>
 
       {/* ============================================================
-          3. عملاؤنا
+          3. عملاؤنا (التعديل الجديد)
           ============================================================ */}
       <Section>
         <SectionHead
@@ -548,9 +548,10 @@ export default function PartnersPage() {
           }
         />
 
-        {/* شريط العملاء (نفس ستايل Partners3DSlider) */}
+        {/* شريط العملاء */}
         <div className="mt-8 relative w-full overflow-hidden">
-          <div className="container-page relative">
+          {/* تم تحديد العرض بـ 1200 بكسل هنا */}
+          <div className="container-page max-w-[1200px] mx-auto relative">
             
             <div className="relative">
               {/* زر اليسار */}
@@ -570,12 +571,13 @@ export default function PartnersPage() {
                   [...clientLogos, ...clientLogos].map((logo, i) => (
                     <div key={i} className="shrink-0 flex items-center justify-center">
                       <img
-  src={logo}
-  alt={`Client ${i}`}
-  loading="lazy"
-  decoding="async"
-  className="h-12 md:h-16 w-auto object-contain transition-all duration-300"
-/>
+                        src={logo}
+                        alt={`Client ${i}`}
+                        loading="lazy"
+                        decoding="async"
+                        // التعديل الجديد: عرض 1200 وارتفاع تلقائي مع تحديد max-w
+                        className="w-[1200px] h-auto max-w-[200px] md:max-w-[250px] object-contain shrink-0 transition-all duration-300"
+                      />
                     </div>
                   ))
                 ) : (
@@ -658,7 +660,7 @@ export default function PartnersPage() {
       </Section>
 
       {/* ============================================================
-          5. شركاؤنا التقنيون (شريط متحرك)
+          5. شركاؤنا التقنيون (التعديل الجديد)
           ============================================================ */}
       <Section>
         <SectionHead
@@ -679,9 +681,10 @@ export default function PartnersPage() {
           </p>
         </div>
 
-        {/* شريط الشركاء المتحرك */}
+        {/* شريط الشركاء */}
         <div className="mt-8 relative w-full overflow-hidden">
-          <div className="container-page relative">
+           {/* تم تحديد العرض بـ 1200 بكسل هنا */}
+          <div className="container-page max-w-[1200px] mx-auto relative">
             
             <div className="relative">
               {/* زر اليسار */}
@@ -700,13 +703,14 @@ export default function PartnersPage() {
                 {partnerLogos.length > 0 ? (
                   [...partnerLogos, ...partnerLogos].map((logo, i) => (
                     <div key={i} className="shrink-0 flex items-center justify-center">
-<img
-  src={logo}
-  alt={`Partner ${i}`}
-  loading="lazy"
-  decoding="async"
-  className="h-12 md:h-16 w-auto object-contain transition-all duration-300"
-/>
+                      <img
+                        src={logo}
+                        alt={`Partner ${i}`}
+                        loading="lazy"
+                        decoding="async"
+                        // التعديل الجديد: عرض 1200 وارتفاع تلقائي مع تحديد max-w
+                        className="w-[1200px] h-auto max-w-[200px] md:max-w-[250px] object-contain shrink-0 transition-all duration-300"
+                      />
                     </div>
                   ))
                 ) : (
