@@ -68,12 +68,13 @@ export default function Partners3DSlider() {
             className="flex gap-8 md:gap-12 overflow-x-auto items-center px-10 py-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           >
             {[...row1, ...row1].map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt={`Partner ${i}`}
-                className="h-10 md:h-12 w-auto object-contain shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
-              />
+             // في ملف Partners3DSlider.tsx
+<img
+  key={i}
+  src={logo}
+  alt={`Partner ${i}`}
+  className="h-10 md:h-12 w-auto object-contain shrink-0 transition-all duration-300"
+/>
             ))}
           </div>
 

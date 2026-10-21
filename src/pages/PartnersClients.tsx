@@ -570,12 +570,12 @@ export default function PartnersPage() {
                   [...clientLogos, ...clientLogos].map((logo, i) => (
                     <div key={i} className="shrink-0 flex items-center justify-center">
                       <img
-                        src={logo}
-                        alt={`Client ${i}`}
-                        loading="lazy"
-                        decoding="async"
-                        className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
-                      />
+  src={logo}
+  alt={`Client ${i}`}
+  loading="lazy"
+  decoding="async"
+  className="h-12 md:h-16 w-auto object-contain transition-all duration-300"
+/>
                     </div>
                   ))
                 ) : (
@@ -700,13 +700,13 @@ export default function PartnersPage() {
                 {partnerLogos.length > 0 ? (
                   [...partnerLogos, ...partnerLogos].map((logo, i) => (
                     <div key={i} className="shrink-0 flex items-center justify-center">
-                      <img
-                        src={logo}
-                        alt={`Partner ${i}`}
-                        loading="lazy"
-                        decoding="async"
-                        className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
-                      />
+<img
+  src={logo}
+  alt={`Partner ${i}`}
+  loading="lazy"
+  decoding="async"
+  className="h-12 md:h-16 w-auto object-contain transition-all duration-300"
+/>
                     </div>
                   ))
                 ) : (
