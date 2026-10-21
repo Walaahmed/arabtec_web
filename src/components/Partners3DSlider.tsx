@@ -106,11 +106,12 @@ export default function Partners3DSlider() {
           >
             {[...row2, ...row2].map((logo, i) => (
               <img
-                key={i}
-                src={logo}
-                alt={`Partner ${i}`}
-                className="h-10 md:h-12 w-auto object-contain shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
-              />
+  key={i}
+  src={logo}
+  alt={`Partner ${i}`}
+  className="h-10 md:h-12 w-auto object-contain shrink-0 transition-all duration-300"
+/>
+
             ))}
           </div>
 
