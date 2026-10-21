@@ -171,7 +171,7 @@ export default function NetworkConnectivityPage() {
       {/* ============================================================
           2. الشبكات المؤسسية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "شبكة تقنية تدعم الأنظمة والخدمات اليومية"
@@ -379,7 +379,7 @@ export default function NetworkConnectivityPage() {
       {/* ============================================================
           4. ربط الفروع والمواقع
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={branchImg}
@@ -521,7 +521,7 @@ export default function NetworkConnectivityPage() {
       {/* ============================================================
           6. الألياف الضوئية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
@@ -644,7 +644,7 @@ export default function NetworkConnectivityPage() {
       {/* ============================================================
           8. الشبكات اللاسلكية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={wifiImg}
@@ -759,7 +759,7 @@ export default function NetworkConnectivityPage() {
       {/* ============================================================
           10. الشبكات للجهات الحكومية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-deep)]/10 px-3 py-1 text-xs font-semibold text-[color:var(--brand-deep)] mb-3">
@@ -865,7 +865,7 @@ export default function NetworkConnectivityPage() {
       {/* ============================================================
           12. ربط الشبكة بالسحابة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "اتصال يدعم التطبيقات والأنظمة السحابية"
@@ -931,7 +931,7 @@ export default function NetworkConnectivityPage() {
       {/* ============================================================
           14. إدارة ومراقبة الشبكة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "متابعة مركزية للأداء والاتصال"
@@ -1026,7 +1026,7 @@ export default function NetworkConnectivityPage() {
       {/* ============================================================
           16. فوائد الشبكة المؤسسية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "كيف تدعم الشبكة أهداف المؤسسة؟"
@@ -1110,7 +1110,7 @@ export default function NetworkConnectivityPage() {
       {/* ============================================================
           18. خدمات مرتبطة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "خدمات تكمل حلول الشبكات والاتصال"

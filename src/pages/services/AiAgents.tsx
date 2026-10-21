@@ -166,7 +166,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           2. ما هو Agent AI؟
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "ما هو وكيل الذكاء الاصطناعي Agent AI؟"
@@ -333,7 +333,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           4. حلول AI للجهات الحكومية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={govAiImg}
@@ -475,7 +475,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           6. تكامل AI Agents مع الأنظمة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "تكامل الذكاء الاصطناعي مع الأنظمة والبيانات المؤسسية"
@@ -579,7 +579,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           8. البيانات والصلاحيات والحوكمة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "ذكاء اصطناعي مصمم وفق بيئة المؤسسة"
@@ -679,7 +679,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           10. منهجية تنفيذ المشروع — 8 مراحل
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "من تحديد حالة الاستخدام إلى الإطلاق والتحسين"
@@ -763,7 +763,7 @@ export default function AiAgentsPage() {
       {/* ============================================================
           12. خدمات مرتبطة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "خدمات تدعم نجاح حلول الذكاء الاصطناعي"

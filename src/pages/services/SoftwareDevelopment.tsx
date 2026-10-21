@@ -169,7 +169,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           2. تطوير البرمجيات المخصصة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "برمجيات مصممة وفق عمليات المؤسسة"
@@ -376,7 +376,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           4. تطوير البرمجيات للجهات الحكومية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={govSoftwareImg}
@@ -498,7 +498,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           6. تطبيقات الجوال
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={mobileAppImg}
@@ -612,7 +612,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           8. تكامل الأنظمة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "ربط الأنظمة والبيانات ضمن بيئة مؤسسية موحدة"
@@ -726,7 +726,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           10. تحديث الأنظمة القديمة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={legacyImg}
@@ -818,7 +818,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           12. قواعد البيانات
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "بنية بيانات تدعم استقرار النظام ودقة المعلومات"
@@ -878,7 +878,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           14. ربط البرمجيات بأنظمة ERP
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "تطبيقات مخصصة تعمل مع نظام ERP"
@@ -951,7 +951,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           16. منهجية التطوير — 10 مراحل
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "منهجية منظمة من الفكرة إلى التشغيل"
@@ -1038,7 +1038,7 @@ export default function SoftwareDevelopmentPage() {
       {/* ============================================================
           18. لماذا أربتك؟
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "لماذا تختار المؤسسات أربتك لتطوير البرمجيات؟"

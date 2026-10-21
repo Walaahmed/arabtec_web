@@ -180,7 +180,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           2. ما هو نظام ERP؟
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "ما هو نظام ERP لإدارة موارد المؤسسة؟"
@@ -395,7 +395,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           4. ERP للجهات الحكومية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={govErpImg}
@@ -517,7 +517,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           6. تخصيص نظام ERP
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "نظام ERP مصمم وفق عمليات المؤسسة"
@@ -644,7 +644,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           8. ترحيل البيانات
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={migrationImg}
@@ -766,7 +766,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           10. منهجية تنفيذ ERP — 10 مراحل
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "منهجية تنفيذ منظمة من التحليل إلى التشغيل"
@@ -854,7 +854,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           12. القطاعات المستفيدة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr ? "حلول ERP قابلة للتخصيص حسب القطاع" : "ERP solutions customizable by sector"}
         />
@@ -934,7 +934,7 @@ export default function ErpBusinessApplicationsPage() {
       {/* ============================================================
           14. خدمات مرتبطة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "خدمات تدعم نجاح مشروع ERP"

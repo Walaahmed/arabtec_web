@@ -169,7 +169,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           2. ما المقصود بالبنية التحتية التقنية؟
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "الأساس الذي تعتمد عليه الأنظمة والخدمات الرقمية"
@@ -378,7 +378,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           4. الحوسبة السحابية للمؤسسات
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={cloudImg}
@@ -514,7 +514,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           6. الخوادم والتخزين
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={serversImg}
@@ -621,7 +621,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           8. استمرارية الأعمال والتعافي من الكوارث
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "جاهزية تقنية للتعامل مع الأعطال والتوقفات"
@@ -731,7 +731,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           10. تحديث البنية التحتية القديمة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "تحديث البيئة التقنية لدعم الأنظمة الحديثة"
@@ -815,7 +815,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           12. البنية التحتية لأنظمة ERP
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "بيئة تشغيل تدعم أداء نظام ERP"
@@ -881,7 +881,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           14. إدارة ومراقبة البنية التحتية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "متابعة مستمرة للأداء والموارد"
@@ -968,7 +968,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           16. منهجية التنفيذ — 10 مراحل
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "منهجية واضحة من التقييم إلى التشغيل"
@@ -1058,7 +1058,7 @@ export default function CloudInfrastructurePage() {
       {/* ============================================================
           18. لماذا أربتك؟
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "لماذا تختار المؤسسات أربتك للبنية التحتية التقنية؟"

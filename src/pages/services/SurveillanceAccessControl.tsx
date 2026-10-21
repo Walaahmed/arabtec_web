@@ -175,7 +175,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           2. منظومة متكاملة لإدارة المنشأة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "مراقبة المواقع وتنظيم الدخول وإدارة الحضور ضمن بيئة واحدة"
@@ -348,7 +348,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           4. أنظمة الحضور والانصراف
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={attendanceImg}
@@ -461,7 +461,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           6. الحضور بالتعرف على الوجه
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "تسجيل الحضور من خلال التعرف على الوجه"
@@ -546,7 +546,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           8. أنظمة التحكم بالدخول
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-deep)]">
@@ -653,7 +653,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           10. ربط الحضور بالموارد البشرية و ERP
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "نقل بيانات الحضور إلى الأنظمة الإدارية"
@@ -768,7 +768,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           12. أنظمة المراقبة للجهات الحكومية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-deep)]/10 px-3 py-1 text-xs font-semibold text-[color:var(--brand-deep)] mb-3">
@@ -888,7 +888,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           14. غرفة المراقبة والإدارة المركزية
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <img
             src={controlRoomImg}
@@ -1000,7 +1000,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           16. فوائد النظام المتكامل
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "كيف تدعم هذه الأنظمة إدارة المؤسسة؟"
@@ -1084,7 +1084,7 @@ export default function SurveillanceAccessControlPage() {
       {/* ============================================================
           18. خدمات مرتبطة
           ============================================================ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <SectionHead
           title={isAr
             ? "خدمات تدعم نجاح أنظمة المراقبة والحضور والدخول"

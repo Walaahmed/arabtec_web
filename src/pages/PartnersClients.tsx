@@ -46,11 +46,12 @@ import partnerOppImg from "@/assets/arabtec-enterprise-technology-team.jpg";
 import ctaBg from "@/assets/arabtec-digital-connectivity-background.jpg";
 
 // ============================================================
-// قراءة شعارات العملاء والشركاء ديناميكياً
+// ✅ التعديل هنا: ضفنا query: '?url' للمجلدين
 // ============================================================
 const clientLogos = Object.values(
   import.meta.glob("@/assets/logos/clients/*.{png,jpg,jpeg,webp,svg}", {
     eager: true,
+    query: "?url",
     import: "default",
   })
 ) as string[];
@@ -58,6 +59,7 @@ const clientLogos = Object.values(
 const partnerLogos = Object.values(
   import.meta.glob("@/assets/logos/partners/*.{png,jpg,jpeg,webp,svg}", {
     eager: true,
+    query: "?url",
     import: "default",
   })
 ) as string[];
