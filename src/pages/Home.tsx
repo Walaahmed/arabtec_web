@@ -926,33 +926,33 @@ export default function HomePage() {
             <div className="text-xs font-semibold uppercase tracking-wider text-[color:var(--gold)]">
               {t("pages.index.text2")}
             </div>
-            <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.15] text-[color:var(--brand-deep)]">
+            <h1 className="mt-3 text-2xl md:text-3xl lg:text-4xl font-extrabold leading-[1.25] text-[color:var(--brand-deep)]">
               {lang === "ar"
                 ? "حلول تقنية متكاملة تقود تحول مؤسستكم نحو المستقبل"
                 : "Integrated technology solutions that drive your organization's transformation"}
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-[#4B5563] leading-relaxed">
+            <p className="mt-4 text-base md:text-lg text-[#4B5563] leading-[1.9]">
               {lang === "ar"
                 ? "منذ 1996، نقدم حلولًا تقنية متكاملة للجهات الحكومية والشركات، من البنية التحتية والأنظمة المؤسسية إلى الذكاء الاصطناعي والحلول السحابية."
                 : "Since 1996, we've delivered integrated technology solutions for government entities and enterprises — from infrastructure and enterprise systems to AI and cloud solutions."}
             </p>
-           <div className="mt-6 flex flex-wrap gap-3">
-  {/* الزر الأول — أبيض (استكشاف) */}
-  <Link
-    to="/services"
-    className="rounded-md bg-white border border-[#0B3D2E] px-6 py-3 text-sm font-semibold text-[#0B3D2E] hover:bg-gray-50 transition"
-  >
-    {lang === "ar" ? "استكشف حلولنا" : "Explore our solutions"}
-  </Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {/* الزر الأول — أبيض (استكشاف) */}
+              <Link
+                to="/services"
+                className="rounded-md bg-white border border-[#0B3D2E] px-6 py-3 text-sm font-semibold text-[#0B3D2E] hover:bg-gray-50 transition"
+              >
+                {lang === "ar" ? "استكشف حلولنا" : "Explore our solutions"}
+              </Link>
 
-  {/* الزر الثاني — أخضر (تواصل) */}
-  <Link
-    to="/contact"
-    className="rounded-md bg-[#0B3D2E] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
-  >
-    {lang === "ar" ? "ناقش مشروعك معنا" : "Discuss your project"}
-  </Link>
-</div>
+              {/* الزر الثاني — أخضر (تواصل) */}
+              <Link
+                to="/contact"
+                className="rounded-md bg-[#0B3D2E] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
+              >
+                {lang === "ar" ? "ناقش مشروعك معنا" : "Discuss your project"}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -987,8 +987,8 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {lang === "ar"
-                ? "أربتك شركة حلول تقنية سعودية تأسست عام 1996، وتعمل على مساعدة المؤسسات في تخطيط بيئاتها التقنية وتصميمها وتنفيذها وإدارتها ودعمها من خلال نقطة مسؤولية موحدة."
-                : "ARABTEC is a Saudi technology solutions company founded in 1996. We help organizations plan, design, implement, operate and support their technology environments through a single point of accountability."}
+                ? "أربتك شركة حلول تقنية سعودية تأسست عام 1996، وتعمل على مساعدة المؤسسات في تخطيط بيئاتها التقنية وتصميمها وتنفيذها وإدارتها ودعمها عبر نقطة اتصال واحدة تدير المشروع من البداية حتى التنفيذ."
+                : "ARABTEC is a Saudi technology solutions company founded in 1996. We help organizations plan, design, implement, operate and support their technology environments through a single point of contact managing the project from start to delivery."}
             </p>
             <p className="mt-3 text-[16px] md:text-lg text-[#4B5563] leading-relaxed">
               {lang === "ar"
@@ -1508,10 +1508,10 @@ export default function HomePage() {
         </div>
       </Section>
 
-           {/* ============================================================
+      {/* ============================================================
           8. PARTNERS & CLIENTS
           ============================================================ */}
-      <Section className="!py-4 md:!py-8">
+      <Section className="!py-0 md:!py-0">
         <Partners3DSlider />
       </Section>
       {/* ============================================================

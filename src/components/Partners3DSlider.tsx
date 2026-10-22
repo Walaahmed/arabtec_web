@@ -38,7 +38,6 @@ export default function Partners3DSlider() {
 
   // ====================================================
   // Repeat logos multiple times
-  // This prevents any empty space during the loop.
   // ====================================================
 
   const repeatedLogos = [
@@ -59,6 +58,7 @@ export default function Partners3DSlider() {
       return;
     }
 
+    // ✅ السرعة زي ما هي (45)
     const speed = 45;
 
     const animate = (time: number) => {
@@ -72,57 +72,36 @@ export default function Partners3DSlider() {
       if (!isPaused && !isDragging) {
         const movement = (speed * delta) / 1000;
 
-        // Arabic = right direction
-        // English = left direction
         if (isAr) {
           positionRef.current += movement;
         } else {
           positionRef.current -= movement;
         }
 
-        // ------------------------------------------------
-        // Width of ONE complete logo set
-        // ------------------------------------------------
-
-        const firstSetWidth =
-          track.scrollWidth / 4;
-
-        // ------------------------------------------------
-        // Seamless infinite loop
-        // ------------------------------------------------
+        const firstSetWidth = track.scrollWidth / 4;
 
         if (isAr) {
-          if (
-            positionRef.current >= firstSetWidth
-          ) {
+          if (positionRef.current >= firstSetWidth) {
             positionRef.current -= firstSetWidth;
           }
         } else {
-          if (
-            positionRef.current <= -firstSetWidth
-          ) {
+          if (positionRef.current <= -firstSetWidth) {
             positionRef.current += firstSetWidth;
           }
         }
 
-        track.style.transform =
-          `translate3d(${positionRef.current}px, 0, 0)`;
+        track.style.transform = `translate3d(${positionRef.current}px, 0, 0)`;
       }
 
-      animationRef.current =
-        requestAnimationFrame(animate);
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    animationRef.current =
-      requestAnimationFrame(animate);
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (animationRef.current !== null) {
-        cancelAnimationFrame(
-          animationRef.current
-        );
+        cancelAnimationFrame(animationRef.current);
       }
-
       lastTimeRef.current = null;
     };
   }, [isAr, isPaused, isDragging]);
@@ -131,9 +110,7 @@ export default function Partners3DSlider() {
   // Arrow navigation
   // ====================================================
 
-  const moveSlider = (
-    direction: "left" | "right"
-  ) => {
+  const moveSlider = (direction: "left" | "right") => {
     const amount = 280;
 
     if (isAr) {
@@ -151,8 +128,7 @@ export default function Partners3DSlider() {
     }
 
     if (trackRef.current) {
-      trackRef.current.style.transform =
-        `translate3d(${positionRef.current}px, 0, 0)`;
+      trackRef.current.style.transform = `translate3d(${positionRef.current}px, 0, 0)`;
     }
 
     lastTimeRef.current = null;
@@ -162,35 +138,19 @@ export default function Partners3DSlider() {
   // Drag / Touch
   // ====================================================
 
-  const handlePointerDown = (
-    clientX: number
-  ) => {
+  const handlePointerDown = (clientX: number) => {
     setIsDragging(true);
-
     dragStartX.current = clientX;
-    dragStartPosition.current =
-      positionRef.current;
+    dragStartPosition.current = positionRef.current;
   };
 
-  const handlePointerMove = (
-    clientX: number
-  ) => {
-    if (
-      !isDragging ||
-      !trackRef.current
-    ) {
-      return;
-    }
+  const handlePointerMove = (clientX: number) => {
+    if (!isDragging || !trackRef.current) return;
 
-    const difference =
-      clientX - dragStartX.current;
+    const difference = clientX - dragStartX.current;
+    positionRef.current = dragStartPosition.current + difference;
 
-    positionRef.current =
-      dragStartPosition.current +
-      difference;
-
-    trackRef.current.style.transform =
-      `translate3d(${positionRef.current}px, 0, 0)`;
+    trackRef.current.style.transform = `translate3d(${positionRef.current}px, 0, 0)`;
   };
 
   const handlePointerUp = () => {
@@ -218,8 +178,8 @@ export default function Partners3DSlider() {
         w-full
         overflow-hidden
         bg-white
-        py-20
-        md:py-24
+        py-4
+        md:py-6
       "
     >
       {/* ==================================================
@@ -237,40 +197,12 @@ export default function Partners3DSlider() {
         "
       >
         <div
-          className={`mb-12 ${
-            isAr
-              ? "text-right"
-              : "text-left"
+          className={`mb-6 md:mb-8 ${
+            isAr ? "text-right" : "text-left"
           }`}
         >
-          {/* Small heading */}
-
-          <div
-            className="
-              mb-4
-              flex
-              items-center
-              gap-3
-              text-sm
-              font-semibold
-              uppercase
-              tracking-[0.18em]
-              text-[#D4AF37]
-            "
-          >
-            <span
-              className="
-                h-[2px]
-                w-10
-                bg-[#D4AF37]
-              "
-            />
-
-            <span>
-              {isAr
-                ? "شراكاتنا التقنية"
-                : "Our partnerships"}
-            </span>
+          <div className="text-sm font-bold text-[color:var(--gold)] mb-1">
+            {isAr ? "شراكاتنا التقنية" : "Our partnerships"}
           </div>
 
           {/* Main heading */}
@@ -278,27 +210,25 @@ export default function Partners3DSlider() {
           <h2
             className="
               max-w-3xl
-              text-3xl
+              text-2xl
               font-extrabold
               leading-tight
               text-[#0B3D2E]
-              sm:text-4xl
-              md:text-5xl
+              sm:text-3xl
+              md:text-4xl
             "
           >
-            {isAr
-              ? "شركاؤنا وعملاؤنا"
-              : "Our customers and partners"}
+            {isAr ? "شركاؤنا وعملاؤنا" : "Our customers and partners"}
           </h2>
 
           {/* Description */}
 
           <p
             className="
-              mt-4
+              mt-2 md:mt-3
               max-w-2xl
               text-base
-              leading-8
+              leading-7
               text-gray-500
               md:text-lg
             "
@@ -316,17 +246,13 @@ export default function Partners3DSlider() {
 
       <div
         className="relative w-full"
-        onMouseEnter={() =>
-          setIsPaused(true)
-        }
+        onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => {
           setIsPaused(false);
           handlePointerUp();
         }}
       >
-        {/* ==================================================
-            Left Fade
-        ================================================== */}
+        {/* Left Fade */}
 
         <div
           className="
@@ -344,9 +270,7 @@ export default function Partners3DSlider() {
           "
         />
 
-        {/* ==================================================
-            Right Fade
-        ================================================== */}
+        {/* Right Fade */}
 
         <div
           className="
@@ -364,24 +288,12 @@ export default function Partners3DSlider() {
           "
         />
 
-        {/* ==================================================
-            Left Arrow
-        ================================================== */}
+        {/* Left Arrow */}
 
         <button
           type="button"
-          aria-label={
-            isAr
-              ? "التالي"
-              : "Next"
-          }
-          onClick={() =>
-            moveSlider(
-              isAr
-                ? "right"
-                : "left"
-            )
-          }
+          aria-label={isAr ? "التالي" : "Next"}
+          onClick={() => moveSlider(isAr ? "right" : "left")}
           className="
             absolute
             start-4
@@ -408,32 +320,16 @@ export default function Partners3DSlider() {
           "
         >
           <ArrowLeft
-            className={`h-5 w-5 ${
-              isAr
-                ? "rotate-180"
-                : ""
-            }`}
+            className={`h-5 w-5 ${isAr ? "rotate-180" : ""}`}
           />
         </button>
 
-        {/* ==================================================
-            Right Arrow
-        ================================================== */}
+        {/* Right Arrow */}
 
         <button
           type="button"
-          aria-label={
-            isAr
-              ? "السابق"
-              : "Previous"
-          }
-          onClick={() =>
-            moveSlider(
-              isAr
-                ? "left"
-                : "right"
-            )
-          }
+          aria-label={isAr ? "السابق" : "Previous"}
+          onClick={() => moveSlider(isAr ? "left" : "right")}
           className="
             absolute
             end-4
@@ -460,11 +356,7 @@ export default function Partners3DSlider() {
           "
         >
           <ArrowRight
-            className={`h-5 w-5 ${
-              isAr
-                ? "rotate-180"
-                : ""
-            }`}
+            className={`h-5 w-5 ${isAr ? "rotate-180" : ""}`}
           />
         </button>
 
@@ -481,28 +373,12 @@ export default function Partners3DSlider() {
             select-none
             active:cursor-grabbing
           "
-          onMouseDown={(e) =>
-            handlePointerDown(
-              e.clientX
-            )
-          }
-          onMouseMove={(e) =>
-            handlePointerMove(
-              e.clientX
-            )
-          }
+          onMouseDown={(e) => handlePointerDown(e.clientX)}
+          onMouseMove={(e) => handlePointerMove(e.clientX)}
           onMouseUp={handlePointerUp}
           onMouseLeave={handlePointerUp}
-          onTouchStart={(e) =>
-            handlePointerDown(
-              e.touches[0].clientX
-            )
-          }
-          onTouchMove={(e) =>
-            handlePointerMove(
-              e.touches[0].clientX
-            )
-          }
+          onTouchStart={(e) => handlePointerDown(e.touches[0].clientX)}
+          onTouchMove={(e) => handlePointerMove(e.touches[0].clientX)}
           onTouchEnd={handlePointerUp}
         >
           {/* ==================================================
@@ -515,68 +391,60 @@ export default function Partners3DSlider() {
               flex
               w-max
               items-center
-              gap-10
-              py-6
+              gap-8
+              py-3
               will-change-transform
-              md:gap-14
-              lg:gap-16
+              md:gap-10
+              lg:gap-12
             "
           >
-            {repeatedLogos.map(
-              (logo, index) => (
-                <div
-                  key={`${logo}-${index}`}
+            {repeatedLogos.map((logo, index) => (
+              <div
+                key={`${logo}-${index}`}
+                className="
+                  group
+                  flex
+                  h-[80px]
+                  w-[140px]
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  border
+                  border-gray-100
+                  bg-white
+                  px-5
+                  shadow-[0_4px_20px_rgba(0,0,0,0.04)]
+                  transition-all
+                  duration-500
+                  hover:-translate-y-1
+                  hover:border-gray-200
+                  hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)]
+                  sm:h-[90px]
+                  sm:w-[160px]
+                  md:h-[100px]
+                  md:w-[180px]
+                "
+              >
+                <img
+                  src={logo}
+                  alt={`Partner ${index + 1}`}
+                  draggable={false}
                   className="
-                    group
-                    flex
-                    h-[90px]
-                    w-[150px]
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    border
-                    border-gray-100
-                    bg-white
-                    px-6
-                    shadow-[0_4px_20px_rgba(0,0,0,0.04)]
-                    transition-all
+                    max-h-[50px]
+                    max-w-[120px]
+                    object-contain
+                    transition-transform
                     duration-500
-                    hover:-translate-y-1
-                    hover:border-gray-200
-                    hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)]
-                    sm:h-[100px]
-                    sm:w-[175px]
-                    md:h-[110px]
-                    md:w-[200px]
+                    group-hover:scale-105
+                    sm:max-h-[58px]
+                    sm:max-w-[140px]
+                    md:max-h-[62px]
+                    md:max-w-[155px]
                   "
-                >
-                  <img
-                    src={logo}
-                    alt={`Partner ${
-                      index + 1
-                    }`}
-                    draggable={false}
-                    className="
-                      max-h-[58px]
-                      max-w-[135px]
-                      object-contain
-                      opacity-70
-                      grayscale
-                      transition-all
-                      duration-500
-                      group-hover:scale-105
-                      group-hover:opacity-100
-                      group-hover:grayscale-0
-                      sm:max-h-[65px]
-                      sm:max-w-[155px]
-                      md:max-h-[70px]
-                      md:max-w-[175px]
-                    "
-                  />
-                </div>
-              )
-            )}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -588,7 +456,7 @@ export default function Partners3DSlider() {
       <div
         className="
           mx-auto
-          mt-12
+          mt-6 md:mt-8
           flex
           w-full
           max-w-[1400px]
@@ -624,9 +492,7 @@ export default function Partners3DSlider() {
           "
         >
           <span>
-            {isAr
-              ? "عرض جميع الشركاء"
-              : "View all partners"}
+            {isAr ? "عرض جميع الشركاء" : "View all partners"}
           </span>
 
           {isAr ? (

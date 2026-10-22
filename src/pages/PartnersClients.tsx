@@ -159,7 +159,7 @@ function Partners3DSlider({
         .partners-infinite-track {
           display: flex;
           width: max-content;
-          animation: partners-infinite-scroll 40s linear infinite;
+          animation: partners-infinite-scroll 120s linear infinite;
           will-change: transform;
         }
 
@@ -633,35 +633,35 @@ export default function PartnersPage() {
   // ============================================
   // 8. نموذج التواصل المختصر
   // ============================================
-  const formFields = isAr
-    ? [
-        "الاسم الكامل *",
-        "اسم الجهة أو الشركة *",
-        "المسمى الوظيفي",
-        "البريد الإلكتروني للعمل *",
-        "رقم الهاتف",
-        "الدولة",
-        "نوع الطلب *",
-        "القطاع",
-        "مجال الخدمة أو الشراكة *",
-        "نبذة عن المشروع أو فرصة التعاون *",
-        "هل ترغب في اجتماع؟",
-        "الموافقة على سياسة الخصوصية *",
-      ]
-    : [
-        "Full name *",
-        "Organization or company name *",
-        "Job title",
-        "Work email *",
-        "Phone number",
-        "Country",
-        "Request type *",
-        "Sector",
-        "Service or partnership area *",
-        "Project or partnership brief *",
-        "Would you like a meeting?",
-        "Accept privacy policy *",
-      ];
+  // const formFields = isAr
+  //   ? [
+  //       "الاسم الكامل *",
+  //       "اسم الجهة أو الشركة *",
+  //       "المسمى الوظيفي",
+  //       "البريد الإلكتروني للعمل *",
+  //       "رقم الهاتف",
+  //       "الدولة",
+  //       "نوع الطلب *",
+  //       "القطاع",
+  //       "مجال الخدمة أو الشراكة *",
+  //       "نبذة عن المشروع أو فرصة التعاون *",
+  //       "هل ترغب في اجتماع؟",
+  //       "الموافقة على سياسة الخصوصية *",
+  //     ]
+  //   : [
+  //       "Full name *",
+  //       "Organization or company name *",
+  //       "Job title",
+  //       "Work email *",
+  //       "Phone number",
+  //       "Country",
+  //       "Request type *",
+  //       "Sector",
+  //       "Service or partnership area *",
+  //       "Project or partnership brief *",
+  //       "Would you like a meeting?",
+  //       "Accept privacy policy *",
+  //     ];
 
   return (
     <>
@@ -1206,7 +1206,7 @@ export default function PartnersPage() {
       {/* ============================================================
           نموذج التواصل المختصر
           ============================================================ */}
-      <Section className="bg-white !py-6 md:!py-10">
+      {/* <Section className="bg-white !py-6 md:!py-10">
         <SectionHead
           title={
             isAr
@@ -1240,7 +1240,7 @@ export default function PartnersPage() {
             ))}
           </ul>
         </div>
-      </Section>
+      </Section> */}
 
       {/* ============================================================
           الأسئلة الشائعة

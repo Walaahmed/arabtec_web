@@ -772,7 +772,7 @@ export default function AiAgentsPage() {
 
         <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-6">
           {[
-            { ar: "تطوير البرمجيات وتكامل الأنظمة", en: "Software development & system integration", descAr: "تطوير الواجهات والبوابات وواجهات API وربط Agent AI بأنظمة المؤسسة.", descEn: "Developing interfaces, portals, APIs and connecting AI Agent to enterprise systems.", link: "software-development" },
+            { ar: "تطوير البرمجيات وتكامل الأنظمة", en: "Software development & system integration", descAr: "تطوير الواجهات والبوابات وواجهات API وربط AI Agent بأنظمة المؤسسة.", descEn: "Developing interfaces, portals, APIs and connecting AI Agent to enterprise systems.", link: "software-development" },
             { ar: "أنظمة ERP وتطبيقات الأعمال", en: "ERP & business applications", descAr: "ربط الذكاء الاصطناعي بالعمليات والبيانات المؤسسية.", descEn: "Connecting AI to enterprise processes and data.", link: "erp-business-applications" },
             { ar: "السحابة والبنية التحتية", en: "Cloud & infrastructure", descAr: "تجهيز البيئة التقنية والاستضافة المطلوبة لتشغيل الحل وفق نطاق المشروع.", descEn: "Preparing the technology environment and required hosting per project scope.", link: "cloud-infrastructure" },
             { ar: "الشبكات والاتصال", en: "Networks & connectivity", descAr: "دعم الاتصال بين المستخدمين والمواقع والأنظمة المؤسسية.", descEn: "Supporting connectivity between users, sites and enterprise systems.", link: "network-connectivity" },
@@ -815,7 +815,7 @@ export default function AiAgentsPage() {
           </h2>
           <p className="mt-3 max-w-3xl mx-auto text-[16px] md:text-lg text-primary-foreground/90 leading-relaxed">
             {isAr
-              ? "شاركوا فريق أربتك بالتحدي أو حالة الاستخدام التي ترغبون في تطويرها، وسنعمل معكم على دراسة المتطلبات والبيانات والأنظمة وتحديد المسار المناسب لبدء مشروع Agent AI مؤسسي."
+              ? "شاركوا فريق أربتك بالتحدي أو حالة الاستخدام التي ترغبون في تطويرها، وسنعمل معكم على دراسة المتطلبات والبيانات والأنظمة وتحديد المسار المناسب لبدء مشروع  AI Agent مؤسسي."
               : "Share the challenge or use case you want to develop with the ARABTEC team — we will work with you to study requirements, data and systems and define the right path to start an enterprise AI Agent project."}
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
