@@ -59,7 +59,7 @@ export default function Partners3DSlider() {
     }
 
     // ✅ السرعة زي ما هي (45)
-    const speed = 45;
+    const speed = 120;
 
     const animate = (time: number) => {
       if (lastTimeRef.current === null) {
