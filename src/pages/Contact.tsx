@@ -1634,7 +1634,7 @@ export default function ContactPage() {
             </span>
           </label>
 
-          <div className="md:col-span-2">
+          {/* <div className="md:col-span-2">
             <label className="text-sm font-medium block mb-1">
               {isAr ? "إرفاق ملف" : "Attach a file"}
             </label>
@@ -1649,7 +1649,7 @@ export default function ContactPage() {
                 ? "يمكنكم إرفاق نطاق العمل أو وثيقة RFP أو المتطلبات الفنية. الحد الأقصى: 10 MB"
                 : "You can attach scope of work, RFP or technical requirements. Max: 10 MB"}
             </p>
-          </div>
+          </div> */}
 
           <label
             className={`md:col-span-2 flex items-start gap-2 text-sm ${
